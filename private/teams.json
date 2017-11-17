@@ -1,0 +1,716 @@
+[
+    {
+        "teamId": 101,
+        "key": "solomid",
+        "teamName": "Team SoloMid",
+        "teamTag": "TSM",
+        "image": {
+            "full": "logo_tsm_2017.png"
+        },
+        "coach": {
+            "firstName": "Parth",
+            "lastName": "Naidu",
+            "nickname": "Parth"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 102,
+        "key": "immortals",
+        "teamName": "Immortals",
+        "teamTag": "IMT",
+        "image": {
+            "full": "logo_imt_2017.png"
+        },
+        "coach": {
+            "firstName": "Kim",
+            "lastName": "Sang-su",
+            "nickname": "SSONG"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 103,
+        "key": "counterlogicgaming",
+        "teamName": "Counter Logic Gaming",
+        "teamTag": "CLG",
+        "image": {
+            "full": "logo_clg_2017.png"
+        },
+        "coach": {
+            "firstName": "Anthony",
+            "lastName": "Gray",
+            "nickname": "Zikzlol"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 104,
+        "key": "cloud9",
+        "teamName": "Cloud9",
+        "teamTag": "C9",
+        "image": {
+            "full": "logo_c9_2017.png"
+        },
+        "coach": {
+            "firstName": "Bok",
+            "lastName": "Han-gyu",
+            "nickname": "Reapered"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 105,
+        "key": "dignitas",
+        "teamName": "Team Dignitas",
+        "teamTag": "DIG",
+        "image": {
+            "full": "logo_dig_2017.png"
+        },
+        "coach": {
+            "firstName": "David",
+            "lastName": "Roberson",
+            "nickname": "Cop"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 106,
+        "key": "teamenvy",
+        "teamName": "Team EnVyUs",
+        "teamTag": "NV",
+        "image": {
+            "full": "logo_nv_2017.png"
+        },
+        "coach": {
+            "firstName": "Kim",
+            "lastName": "Dong Hwan",
+            "nickname": "viOLet"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 107,
+        "key": "flyquest",
+        "teamName": "FlyQuest",
+        "teamTag": "FLY",
+        "image": {
+            "full": "logo_fly_2017.png"
+        },
+        "coach": {
+            "firstName": "Thomas",
+            "lastName": "Slotkin",
+            "nickname": "ThinkCard"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 108,
+        "key": "echofox",
+        "teamName": "Echo Fox",
+        "teamTag": "FOX",
+        "image": {
+            "full": "logo_fox_2017.png"
+        },
+        "coach": {
+            "firstName": "Nick",
+            "lastName": "Smith",
+            "nickname": "Inero"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 109,
+        "key": "teamliquid",
+        "teamName": "Team Liquid",
+        "teamTag": "TL",
+        "image": {
+            "full": "logo_tl_2017.png"
+        },
+        "coach": {
+            "firstName": "Jang",
+            "lastName": "Cain",
+            "nickname": "Nu-ri"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 110,
+        "key": "phoenix1",
+        "teamName": "Phoenix1",
+        "teamTag": "P1",
+        "image": {
+            "full": "logo_p1_2017.png"
+        },
+        "coach": {
+            "firstName": "Kim",
+            "lastName": "Sang-chul",
+            "nickname": "Fly"
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 201,
+        "key": "fnatic",
+        "teamName": "Fnatic",
+        "teamTag": "FNC",
+        "image": {
+            "full": "logo_fnc_2017.png"
+        },
+        "coach": {
+            "firstName": "Dylan",
+            "lastName": "Falco",
+            "nickname": "Dylan"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 202,
+        "key": "g2esports",
+        "teamName": "G2 Esports",
+        "teamTag": "G2",
+        "image": {
+            "full": "logo_g2_2017.png"
+        },
+        "coach": {
+            "firstName": "Joey",
+            "lastName": "Steltenpool",
+            "nickname": "YoungBuck"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 203,
+        "key": "misfits",
+        "teamName": "Misfits",
+        "teamTag": "MSF",
+        "image": {
+            "full": "logo_msf_2017.png"
+        },
+        "coach": {
+            "firstName": "Hussain",
+            "lastName": "Moosvi",
+            "nickname": "Daku"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 204,
+        "key": "roccat",
+        "teamName": "ROCCAT",
+        "teamTag": "ROC",
+        "image": {
+            "full": "logo_roc_2017.png"
+        },
+        "coach": {
+            "firstName": "Fabian",
+            "lastName": "Lohmann",
+            "nickname": "GrabbZ"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 205,
+        "key": "h2k",
+        "teamName": "H2K",
+        "teamTag": "H2K",
+        "image": {
+            "full": "logo_h2k_2017.png"
+        },
+        "coach": {
+            "firstName": "Neil",
+            "lastName": "Hammad",
+            "nickname": "pr0lly"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 206,
+        "key": "unicornsoflove",
+        "teamName": "Unicorns of Love",
+        "teamTag": "UOL",
+        "image": {
+            "full": "logo_uol_2017.png"
+        },
+        "coach": {
+            "firstName": "Fabian",
+            "lastName": "Mallant",
+            "nickname": "Sheepy"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 207,
+        "key": "splyce",
+        "teamName": "Splyce",
+        "teamTag": "SPY",
+        "image": {
+            "full": "logo_spy_2017.png"
+        },
+        "coach": {
+            "firstName": "Fayan",
+            "lastName": "Pertijs",
+            "nickname": "Gevous"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 208,
+        "key": "vitality",
+        "teamName": "Team Vitality",
+        "teamTag": "VIT",
+        "image": {
+            "full": "logo_vit_2017.png"
+        },
+        "coach": {
+            "firstName": "Jakob",
+            "lastName": "Mebdi",
+            "nickname": "YamatoCannon"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 209,
+        "key": "schalke04",
+        "teamName": "Schalke 04",
+        "teamTag": "S04",
+        "image": {
+            "full": "logo_s04_2017.png"
+        },
+        "coach": {
+            "firstName": "Micheal",
+            "lastName": "Archer",
+            "nickname": "Veteran"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 210,
+        "key": "giantsgaming",
+        "teamName": "Giants Gaming",
+        "teamTag": "GIA",
+        "image": {
+            "full": "logo_gia_2017.png"
+        },
+        "coach": {
+            "firstName": "André",
+            "lastName": "Guilhoto",
+            "nickname": "Guilhoto"
+        },
+        "seriesName": "EU LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 301,
+        "key": "longzhu",
+        "teamName": "Longzhu Gaming",
+        "teamTag": "LZ",
+        "image": {
+            "full": "logo_lz_2017.png"
+        },
+        "coach": {
+            "firstName": "Kim",
+            "lastName": "Jung-su",
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 302,
+        "key": "ktrolster",
+        "teamName": "kt Rolster",
+        "teamTag": "kt",
+        "image": {
+            "full": "logo_kt_2017.png"
+        },
+        "coach": {
+            "firstName": "Lee",
+            "lastName": "Ji-hun",
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 303,
+        "key": "samsunggalaxy",
+        "teamName": "Samsung Galaxy",
+        "teamTag": "SSG",
+        "image": {
+            "full": "logo_ssg_2017.png"
+        },
+        "coach": {
+            "firstName": "Yeo",
+            "lastName": "Chang-dong",
+            "nickname": "TrAce"
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 304,
+        "key": "sktelecomt1",
+        "teamName": "SK Telecom T1",
+        "teamTag": "SKT",
+        "image": {
+            "full": "logo_skt_2017.png"
+        },
+        "coach": {
+            "firstName": "Kim",
+            "lastName": "Jeong-gyun",
+            "nickname": "kkOma"
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 305,
+        "key": "afreecafreecs",
+        "teamName": "Afreeca Freecs",
+        "teamTag": "AFC",
+        "image": {
+            "full": "logo_afs_2017.png"
+        },
+        "coach": {
+            "firstName": "Choi",
+            "lastName": "Yeon-sung",
+            "nickname": "iloveoov"
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 306,
+        "key": "jinairgreenwings",
+        "teamName": "Jin Air GreenWings",
+        "teamTag": "JAG",
+        "image": {
+            "full": "logo_jag_2017.png"
+        },
+        "coach": {
+            "firstName": "Han",
+            "lastName": "Sang-yong",
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 307,
+        "key": "roxtigers",
+        "teamName": "ROX Tigers",
+        "teamTag": "ROX",
+        "image": {
+            "full": "logo_rox_2017.png"
+        },
+        "coach": {
+            "firstName": "Kang",
+            "lastName": "Hyun-jong",
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 308,
+        "key": "mvp",
+        "teamName": "MVP",
+        "teamTag": "MVP",
+        "image": {
+            "full": "logo_mvp_2017.png"
+        },
+        "coach": {
+            "firstName": "Kwon",
+            "lastName": "Jae-hwan",
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 401,
+        "key": "edward",
+        "teamName": "Edward Gaming",
+        "teamTag": "EDG",
+        "image": {
+            "full": "logo_edg_2017.png"
+        },
+        "coach": {
+            "firstName": "Jeong",
+            "lastName": "No-chul",
+            "nickname": "NoFe"
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 402,
+        "key": "teamwe",
+        "teamName": "Team WE",
+        "teamTag": "WE",
+        "image": {
+            "full": "logo_we_2017.png"
+        },
+        "coach": {
+            "firstName": "Yoon",
+            "lastName": "Sung-young",
+            "nickname": "Homme"
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 403,
+        "key": "invictus",
+        "teamName": "Invictus Gaming",
+        "teamTag": "IG",
+        "image": {
+            "full": "logo_ig_2017.png"
+        },
+        "coach": {
+            "firstName": "Yao",
+            "lastName": "Yue",
+            "nickname": "HoT"
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 404,
+        "key": "imay",
+        "teamName": "IMay",
+        "teamTag": "IM",
+        "image": {
+            "full": "logo_im_2017.png"
+        },
+        "coach": {
+            "firstName": "Son",
+            "lastName": "Dae-young",
+            "nickname": "Kezman"
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 405,
+        "key": "royalnevergiveup",
+        "teamName": "Royal Never Give Up",
+        "teamTag": "RNG",
+        "image": {
+            "full": "logo_rng_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 406,
+        "key": "omg",
+        "teamName": "OMG",
+        "teamTag": "OMG",
+        "image": {
+            "full": "logo_omg_2017.png"
+        },
+        "coach": {
+            "firstName": "Huang",
+            "lastName": "Ying-Xiang",
+            "nickname": "Tsukasa"
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 407,
+        "key": "newbee",
+        "teamName": "Newbee",
+        "teamTag": "NB",
+        "image": {
+            "full": "logo_nb_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 408,
+        "key": "suninggaming",
+        "teamName": "Suning Gaming",
+        "teamTag": "SNG",
+        "image": {
+            "full": "logo_sng_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 501,
+        "key": "ahq",
+        "teamName": "ahq e-Sports Club",
+        "teamTag": "AHQ",
+        "image": {
+            "full": "logo_ahq_2017.png"
+        },
+        "coach": {
+            "firstName": "Chen",
+            "lastName": "Ian-Fu",
+            "nickname": "Backstairs"
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 502,
+        "key": "jteam",
+        "teamName": "J Team",
+        "teamTag": "JT",
+        "image": {
+            "full": "logo_jt_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 503,
+        "key": "raisegaming",
+        "teamName": "Raise Gaming",
+        "teamTag": "RG",
+        "image": {
+            "full": "logo_rg_2017.png"
+        },
+        "coach": {
+            "firstName": "Kung",
+            "lastName": "Yu-Te",
+            "nickname": "Domo"
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 504,
+        "key": "flashwolves",
+        "teamName": "Flash Wolves",
+        "teamTag": "FW",
+        "image": {
+            "full": "logo_fw_2017.png"
+        },
+        "coach": {
+            "firstName": "Chou",
+            "lastName": "Steak",
+            "nickname": "Lu-Hsi"
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 505,
+        "key": "marhi17",
+        "teamName": "Machi17",
+        "teamTag": "M17",
+        "image": {
+            "full": "logo_m17_2017.png"
+        },
+        "coach": {
+            "firstName": "Shu",
+            "lastName": "Guan-Zhi",
+            "nickname": "Sucar"
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 506,
+        "key": "hkattitude",
+        "teamName": "Hong Kong Attitude",
+        "teamTag": "HKA",
+        "image": {
+            "full": "logo_hka_2017.png"
+        },
+        "coach": {
+            "firstName": "Pak Kan",
+            "lastName": "Wong",
+            "nickname": "Martin"
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    }
+]
