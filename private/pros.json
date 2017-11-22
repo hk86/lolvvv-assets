@@ -15,7 +15,7 @@
             "full": "tsm_hauntzer_2017.png"
         },
         "accounts": {
-            "NA1": [227437625, 44003758]
+            "NA1": [227437625,44003758]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -125,7 +125,8 @@
             "full": "imt_flame_2017.png"
         },
         "accounts": {
-            "NA1": [236695384]
+            "NA1": [236695384],
+			"KR": [209712909]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -213,7 +214,8 @@
             "full": "imt_olleh_2017.png"
         },
         "accounts": {
-            "NA1": [236744709]
+            "NA1": [236744709],
+			"KR": [3531497]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -455,7 +457,8 @@
             "full": "dig_ssumday_2017.png"
         },
         "accounts": {
-            "NA1": [236691073]
+            "NA1": [236691073],
+			"KR": [754508]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -563,7 +566,8 @@
             "full": "nv_seraph_2017.png"
         },
         "accounts": {
-            "NA1": [218011375]
+            "NA1": [218011375],
+			"KR": [2822431]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -1043,7 +1047,8 @@
             "full": "tl_piglet_2017.png"
         },
         "accounts": {
-            "NA1": [226056462,227437617,227437542]
+            "NA1": [226056462,227437617,227437542],
+			"KR": [5845781]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -1153,7 +1158,8 @@
             "full": "p1_arrow_2017.png"
         },
         "accounts": {
-            "NA1": [237747090,238107736,237478611]
+            "NA1": [237747090,238107736,237478611],
+			"KR": [1367961]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -1329,7 +1335,8 @@
             "full": "g2_trick_2017.png"
         },
         "accounts": {
-            "EUW1": [231474758]
+            "EUW1": [231474758],
+			"KR": [4004203]
         },
         "seriesName": "EU LCS",
         "seasonId": [9],
@@ -1505,7 +1512,8 @@
             "full": "msf_ignar_2017.png"
         },
         "accounts": {
-            "EUW1": [227871228]
+            "EUW1": [227871228],
+			"KR": [7859270]
         },
         "seriesName": "EU LCS",
         "seasonId": [9],
@@ -1615,7 +1623,8 @@
             "full": "roc_wadid_2017.png"
         },
         "accounts": {
-            "EUW1": [230981413]
+            "EUW1": [230981413],
+			"KR": [3457012]
         },
         "seriesName": "EU LCS",
         "seasonId": [9],
@@ -2296,7 +2305,7 @@
             "full": "lz_khan_2017.png"
         },
         "accounts": {
-            "KR": [3547852]
+            "KR": [3547852,209430205]
         },
         "seriesName": "LCK",
         "seasonId": [9],
@@ -2318,7 +2327,7 @@
             "full": "lz_cuzz_2017.png"
         },
         "accounts": {
-            "KR": [207354982,208955389]
+            "KR": [207354982,208955389,209430043]
         },
         "seriesName": "LCK",
         "seasonId": [9],
@@ -2428,7 +2437,7 @@
             "full": "kt_score_2017.png"
         },
         "accounts": {
-            "KR": [377501]
+            "KR": [377501,766203]
         },
         "seriesName": "LCK",
         "seasonId": [9],
@@ -2472,7 +2481,7 @@
             "full": "kt_deft_2017.png"
         },
         "accounts": {
-            "KR": [208743908,22071749,200933520]
+            "KR": [208743908,22071749,200933520,202937359]
         },
         "seriesName": "LCK",
         "seasonId": [9],
@@ -3044,7 +3053,7 @@
             "full": "rox_mightybear_2017.png"
         },
         "accounts": {
-            "KR": [23412689,224136480,40635375]
+            "KR": [23412689,224136480,40635375,2391217]
         },
         "seriesName": "LCK",
         "seasonId": [9],
@@ -3066,7 +3075,7 @@
             "full": "noimage_2017.png"
         },
         "accounts": {
-            "KR": [209176499]
+            "KR": [209176499,208770200]
         },
         "seriesName": "LCK",
         "seasonId": [9],
@@ -3373,7 +3382,9 @@
         "image": {
             "full": "edg_iboy_2017.png"
         },
-        "accounts": null,
+        "accounts": {
+			"KR": [690595]
+		},
         "seriesName": "LPL",
         "seasonId": [9],
         "active": true
@@ -4520,7 +4531,7 @@
             "full": "ahq_chawy_2017.png"
         },
         "accounts": {
-            "KR": [208752818]
+            "KR": [208752818,1946378]
         },
         "seriesName": "LMS",
         "seasonId": [9],
@@ -5048,7 +5059,7 @@
             "full": "hka_riris_2017.png"
         },
         "accounts": {
-            "NA1": [200362664,765726]
+            "KR": [200362664,765726]
         },
         "seriesName": "LMS",
         "seasonId": [9],
@@ -5070,7 +5081,7 @@
             "full": "hka_godkwai_2017.png"
         },
         "accounts": {
-            "NA1": [208752751]
+            "KR": [208752751]
         },
         "seriesName": "LMS",
         "seasonId": [9],
@@ -5092,7 +5103,7 @@
             "full": "hka_m1ssion_2017.png"
         },
         "accounts": {
-            "NA1": [208752735]
+            "KR": [208752735]
         },
         "seriesName": "LMS",
         "seasonId": [9],
@@ -5114,7 +5125,7 @@
             "full": "hka_unified_2017.png"
         },
         "accounts": {
-            "NA1": [208752731]
+            "KR": [208752731]
         },
         "seriesName": "LMS",
         "seasonId": [9],
@@ -5136,7 +5147,7 @@
             "full": "hka_kaiwing_2017.png"
         },
         "accounts": {
-            "NA1": [209036749]
+            "KR": [209036749]
         },
         "seriesName": "LMS",
         "seasonId": [9],
