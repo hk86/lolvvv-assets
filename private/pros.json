@@ -5631,5 +5631,27 @@
         "seriesName": null,
         "seasonId": null,
         "active": true
+	},
+	{
+        "proId": 990023,
+        "key": "wickd",
+        "firstName": "Mike",
+        "lastName": "Petersen",
+        "nickName": "Wickd",
+        "birthday": "04-29-1994",
+        "countryIsoCode": "dk",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "wickd_2017.png"
+        },
+        "accounts": {
+            "EUW1": [76833]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
 	}
 ]
