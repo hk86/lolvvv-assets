@@ -5306,7 +5306,7 @@
         "seriesName": null,
         "seasonId": null,
         "active": true
-	}
+	},
     {
         "proId": 990008,
         "key": "kakao",
@@ -5447,7 +5447,7 @@
         "birthday": null,
         "countryIsoCode": "kr",
         "teamId": 0,
-        "position": "TOP	",
+        "position": "TOP",
         "lane": "TOP",
         "teamOrder": 0,
         "image": {
