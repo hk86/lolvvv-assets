@@ -1557,7 +1557,7 @@
             "full": "roc_pridestalker_2017.png"
         },
         "accounts": {
-            "EUW1": [219385727,39764971]
+            "EUW1": [219385727,39764971,220065097]
         },
         "seriesName": "EU LCS",
         "seasonId": [9],
@@ -5301,7 +5301,7 @@
             "full": "str_forg1ven_2017.png"
         },
         "accounts": {
-            "EUW1": [42194958,225835982]
+            "EUW1": [42194958,225835982,32018633]
         },
         "seriesName": null,
         "seasonId": null,
@@ -5615,7 +5615,7 @@
         "key": "kiin",
         "firstName": "Kim",
         "lastName": "Gi-in",
-        "nickName": "KaKAO",
+        "nickName": "Kiin",
         "birthday": null,
         "countryIsoCode": "kr",
         "teamId": 0,
@@ -5649,6 +5649,666 @@
         },
         "accounts": {
             "EUW1": [76833]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990024,
+        "key": "avenger",
+        "firstName": "Yoo",
+        "lastName": "Seon-woo",
+        "nickName": "Avenger",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "avenger_2017.png"
+        },
+        "accounts": {
+            "KR": [1810562]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990025,
+        "key": "candy",
+        "firstName": "Kim",
+        "lastName": "Seung-ju",
+        "nickName": "Candy",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "MIDDLE",
+        "lane": "MIDDLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "candy_2017.png"
+        },
+        "accounts": {
+            "KR": [4020503]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990026,
+        "key": "winged",
+        "firstName": "Park",
+        "lastName": "Tae-jin",
+        "nickName": "Winged",
+        "birthday": "08-20-1992",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "winged_2017.png"
+        },
+        "accounts": {
+            "KR": [4356001,3005248]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990027,
+        "key": "veritas",
+        "firstName": "Kim",
+        "lastName": "Kyoung-min",
+        "nickName": "Veritas",
+        "birthday": "05-22-1995",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "veritas_2017.png"
+        },
+        "accounts": {
+            "KR": [202048648]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990028,
+        "key": "pure",
+        "firstName": "Kim",
+        "lastName": "Jin-sun",
+        "nickName": "Pure",
+        "birthday": "12-29-1995",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "SUPPORT",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "pure_2017.png"
+        },
+        "accounts": {
+            "KR": [4170045]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990029,
+        "key": "racoon",
+        "firstName": "Park",
+        "lastName": "Sung-ho",
+        "nickName": "Racoon",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "racoon_2017.png"
+        },
+        "accounts": {
+            "KR": [202021894]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990030,
+        "key": "soul",
+        "firstName": "Seo",
+        "lastName": "Hyeon-seok",
+        "nickName": "Soul",
+        "birthday": "11-26-1994",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "soul_2017.png"
+        },
+        "accounts": {
+            "KR": [201779570]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990031,
+        "key": "freeze",
+        "firstName": "Aleš",
+        "lastName": "Knežínek",
+        "nickName": "Freeze",
+        "birthday": "06-06-1994",
+        "countryIsoCode": "cz",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "freeze_2017.png"
+        },
+        "accounts": {
+            "EUW1": [44256841]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990032,
+        "key": "profit",
+        "firstName": "Kim",
+        "lastName": "Jun-hyung",
+        "nickName": "Profit",
+        "birthday": "09-15-1995",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "profit_2017.png"
+        },
+        "accounts": {
+            "KR": [1851761]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990033,
+        "key": "raise",
+        "firstName": "Oh",
+        "lastName": "Ji-hwan",
+        "nickName": "raise",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "raise_2017.png"
+        },
+        "accounts": {
+            "KR": [2140699]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990034,
+        "key": "pilot",
+        "firstName": "Na",
+        "lastName": "Woo-hyung",
+        "nickName": "Pilot",
+        "birthday": "04-12-1995",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "pilot_2017.png"
+        },
+        "accounts": {
+            "KR": [2619086]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990035,
+        "key": "ghost",
+        "firstName": "Jang",
+        "lastName": "Yong-jun",
+        "nickName": "Ghost",
+        "birthday": "03-18-1999",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "ghost_2017.png"
+        },
+        "accounts": {
+            "KR": [201009223]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990036,
+        "key": "bless",
+        "firstName": "Choi",
+        "lastName": "Hyeon-woong",
+        "nickName": "Bless",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "bless_2017.png"
+        },
+        "accounts": {
+            "KR": [205199428]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990037,
+        "key": "crazy",
+        "firstName": "Kim",
+        "lastName": "Jae-hee",
+        "nickName": "Crazy",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "crazy_2017.png"
+        },
+        "accounts": {
+            "KR": [6241698]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990038,
+        "key": "totoro",
+        "firstName": "Eun",
+        "lastName": "Jong-seop",
+        "nickName": "Totoro",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "SUPPORT",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "totoro_2017.png"
+        },
+        "accounts": {
+            "KR": [3604468]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990039,
+        "key": "mong",
+        "firstName": "Moon",
+        "lastName": "Chang-min",
+        "nickName": "mong",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "mong_2017.png"
+        },
+        "accounts": {
+            "KR": [206487982]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990040,
+        "key": "cheong",
+        "firstName": "Heo",
+        "lastName": "Cheong",
+        "nickName": "Cheong",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "MIDDLE",
+        "lane": "MIDDLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "cheong_2017.png"
+        },
+        "accounts": {
+            "KR": [6965193]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990041,
+        "key": "saymi",
+        "firstName": "Hwang",
+        "lastName": "Sang-woong",
+        "nickName": "Saymi",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "SUPPORT",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "saymi_2017.png"
+        },
+        "accounts": {
+            "KR": [2666724]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990042,
+        "key": "nuguri",
+        "firstName": "Jang",
+        "lastName": "Ha-gwon",
+        "nickName": "Nuguri",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "nuguri_2017.png"
+        },
+        "accounts": {
+            "KR": [208660746]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990043,
+        "key": "yonghun",
+        "firstName": "Song",
+        "lastName": "Yong-hoon",
+        "nickName": "Yonghun",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "yonghun_2017.png"
+        },
+        "accounts": {
+            "KR": [266599]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990044,
+        "key": "jin",
+        "firstName": "Kim",
+        "lastName": "Jin",
+        "nickName": "Jin",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "SUPPORT",
+        "lane": "SUPPORT",
+        "teamOrder": 0,
+        "image": {
+            "full": "jin_2017.png"
+        },
+        "accounts": {
+            "KR": [3706811]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990045,
+        "key": "tarzan",
+        "firstName": "Lee",
+        "lastName": "Seung-yong",
+        "nickName": "Tarzan",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "tarzan_2017.png"
+        },
+        "accounts": {
+            "KR": [204167188]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990046,
+        "key": "force",
+        "firstName": "Han",
+        "lastName": "Sang-woo",
+        "nickName": "force",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "force_2017.png"
+        },
+        "accounts": {
+            "KR": [205641227]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990047,
+        "key": "sword",
+        "firstName": "Choi",
+        "lastName": "Sung-won",
+        "nickName": "Sword",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "sword_2017.png"
+        },
+        "accounts": {
+            "KR": [204245747]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990048,
+        "key": "rather",
+        "firstName": "Shin",
+        "lastName": "Hyeong-seop",
+        "nickName": "Rather",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "MIDDLE",
+        "lane": "MIDDLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "rather_2017.png"
+        },
+        "accounts": {
+            "KR": [3863724]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990049,
+        "key": "loken",
+        "firstName": "Lee",
+        "lastName": "Dong-wook",
+        "nickName": "Loken",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "ADCARRY",
+        "teamOrder": 0,
+        "image": {
+            "full": "loken_2017.png"
+        },
+        "accounts": {
+            "KR": [6871165]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990050,
+        "key": "clid",
+        "firstName": "Kim",
+        "lastName": "Tae-min",
+        "nickName": "Clid",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "clid_2017.png"
+        },
+        "accounts": {
+            "KR": [203870735]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990051,
+        "key": "alone",
+        "firstName": "Wang",
+        "lastName": "Zi-Jun",
+        "nickName": "Alone",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "alone_2017.png"
+        },
+        "accounts": {
+            "KR": [200222990]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990052,
+        "key": "bvoy",
+        "firstName": "Ju",
+        "lastName": "Yeong-hoon",
+        "nickName": "Bvoy",
+        "birthday": null,
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "ADCARRY",
+        "lane": "BOTTOM",
+        "teamOrder": 0,
+        "image": {
+            "full": "bvoy_2017.png"
+        },
+        "accounts": {
+            "KR": [209197076,208100501]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990053,
+        "key": "clowz",
+        "firstName": "Moon",
+        "lastName": "Jun-seok",
+        "nickName": "Clowz",
+        "birthday": "09-02-1997",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "TOP",
+        "lane": "TOP",
+        "teamOrder": 0,
+        "image": {
+            "full": "clowz_2017.png"
+        },
+        "accounts": {
+            "KR": [208651164,205839418]
         },
         "seriesName": null,
         "seasonId": null,
