@@ -170,6 +170,74 @@
         "active": true
     },
     {
+        "teamId": 111,
+        "key": "goldenguardians",
+        "teamName": "Golden Guardians",
+        "teamTag": "GG",
+        "image": {
+            "full": "logo_gg_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 112,
+        "key": "opticgaming",
+        "teamName": "OpTic Gaming",
+        "teamTag": "OTG",
+        "image": {
+            "full": "logo_otg_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 113,
+        "key": "clutchgaming",
+        "teamName": "Clutch Gaming",
+        "teamTag": "CG",
+        "image": {
+            "full": "logo_cg_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 114,
+        "key": "100thieves",
+        "teamName": "100 Thieves",
+        "teamTag": "100",
+        "image": {
+            "full": "logo_100_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "NA LCS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
         "teamId": 201,
         "key": "fnatic",
         "teamName": "Fnatic",
@@ -469,6 +537,57 @@
         "coach": {
             "firstName": "Kwon",
             "lastName": "Jae-hwan",
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 309,
+        "key": "kongdoomonsters",
+        "teamName": "Kongdoo Monsters",
+        "teamTag": "KDM",
+        "image": {
+            "full": "logo_kdm_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 310,
+        "key": "bbqolivers",
+        "teamName": "BBQ Olivers",
+        "teamTag": "BBQ",
+        "image": {
+            "full": "logo_bbq_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 311,
+        "key": "ever8winners",
+        "teamName": "Ever8 Winners",
+        "teamTag": "E8W",
+        "image": {
+            "full": "logo_e8w_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
             "nickname": null
         },
         "seriesName": "LCK",
