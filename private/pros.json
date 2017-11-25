@@ -391,7 +391,8 @@
             "full": "c9_jensen_2017.png"
         },
         "accounts": {
-            "NA1": [229194245,229038635]
+            "NA1": [229194245,229038635],
+			"EUW1": [209601470]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -1668,7 +1669,8 @@
             "full": "h2k_jankos_2017.png"
         },
         "accounts": {
-            "EUW1": [24467412,207649506]
+            "EUW1": [24467412,207649506],
+			"EUN1": [200914908]
         },
         "seriesName": "EU LCS",
         "seasonId": [9],
@@ -6309,6 +6311,50 @@
         },
         "accounts": {
             "KR": [208651164,205839418]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990054,
+        "key": "ggoong",
+        "firstName": "Yu",
+        "lastName": "Byeong-jun",
+        "nickName": "Ggoong",
+        "birthday": "06-26-1993",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "MIDDLE",
+        "lane": "MIDDLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "ggoong_2017.png"
+        },
+        "accounts": {
+            "KR": [1490224,2400971,3972036]
+        },
+        "seriesName": null,
+        "seasonId": null,
+        "active": true
+	},
+	{
+        "proId": 990055,
+        "key": "nagne",
+        "firstName": "Kim",
+        "lastName": "Sang-moon",
+        "nickName": "Nagne",
+        "birthday": "04-09-1994",
+        "countryIsoCode": "kr",
+        "teamId": 0,
+        "position": "MIDDLE",
+        "lane": "MIDDLE",
+        "teamOrder": 0,
+        "image": {
+            "full": "nagne_2017.png"
+        },
+        "accounts": {
+            "KR": [1503672]
         },
         "seriesName": null,
         "seasonId": null,
