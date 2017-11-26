@@ -872,7 +872,7 @@
             "full": "fox_gate_2017.png"
         },
         "accounts": {
-            "NA1": [229855749,34815634]
+            "NA1": [229855749,34815634,239058549]
         },
         "seriesName": "NA LCS",
         "seasonId": [9],
@@ -4438,8 +4438,8 @@
         "birthday": null,
         "countryIsoCode": "hk",
         "teamId": 408,
-        "position": "TOP",
-        "lane": "TOP",
+        "position": "JUNGLE",
+        "lane": "JUNGLE",
         "teamOrder": 6,
         "image": {
             "full": "sng_avoidless_2017.png"
