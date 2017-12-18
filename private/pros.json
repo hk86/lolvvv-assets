@@ -1512,7 +1512,8 @@
     "full": "fnc_rekkles_2017.png"
   },
   "accounts": {
-    "EUW1": [23989840]
+    "EUW1": [23989840],
+	"KR": [210000067]
   },
   "seriesName": "EU LCS",
   "seasonId": [9],
@@ -1642,7 +1643,8 @@
   },
   "accounts": {
     "EUW1": [23099233,
-    23402463]
+    23402463],
+	"NA1":  [243554303]
   },
   "seriesName": "NA LCS",
   "seasonId": [9],
@@ -1670,7 +1672,8 @@
   "accounts": {
     "EUW1": [29964812,
     28074698,
-    221657540]
+    221657540],
+	"NA1": [243553955]
   },
   "seriesName": "NA LCS",
   "seasonId": [9],
