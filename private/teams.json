@@ -595,6 +595,40 @@
         "active": true
     },
     {
+        "teamId": 312,
+        "key": "ksvesports",
+        "teamName": "KSV eSports",
+        "teamTag": "KSV",
+        "image": {
+            "full": "logo_ksv_2017.png"
+        },
+        "coach": {
+            "firstName": "Choi",
+            "lastName": "Woo-beom",
+            "nickname": "Edgar"
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 313,
+        "key": "kingzonedragonx",
+        "teamName": "Kingzone DragonX",
+        "teamTag": "KZ",
+        "image": {
+            "full": "logo_kz_2017.png"
+        },
+        "coach": {
+            "firstName": "Kang",
+            "lastName": "Dong-hoon",
+            "nickname": "Hirai"
+        },
+        "seriesName": "LCK",
+        "seasonId": [9],
+        "active": true
+    },
+    {
         "teamId": 401,
         "key": "edward",
         "teamName": "Edward Gaming",
@@ -682,7 +716,7 @@
     {
         "teamId": 406,
         "key": "omg",
-        "teamName": "OMG",
+        "teamName": "Oh my god",
         "teamTag": "OMG",
         "image": {
             "full": "logo_omg_2017.png"
@@ -800,7 +834,7 @@
     },
     {
         "teamId": 505,
-        "key": "marhi17",
+        "key": "machi17",
         "teamName": "Machi17",
         "teamTag": "M17",
         "image": {
