@@ -765,6 +765,142 @@
         "active": true
     },
     {
+        "teamId": 409,
+        "key": "bilibiligaming",
+        "teamName": "Bilibili Gaming",
+        "teamTag": "BLG",
+        "image": {
+            "full": "logo_bilibili_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 410,
+        "key": "funpluspheonix",
+        "teamName": "FunPlus Pheonix",
+        "teamTag": "FPX",
+        "image": {
+            "full": "logo_funpluspheonix_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 411,
+        "key": "snakeesports",
+        "teamName": "Snake Esports",
+        "teamTag": "SS",
+        "image": {
+            "full": "logo_snakeesports_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 412,
+        "key": "vicigaming",
+        "teamName": "Vici Gaming",
+        "teamTag": "VG",
+        "image": {
+            "full": "logo_vicigaming_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 413,
+        "key": "jdgaming",
+        "teamName": "JD Gaming",
+        "teamTag": "JDG",
+        "image": {
+            "full": "logo_jdgaming_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 414,
+        "key": "roguewarriors",
+        "teamName": "Rogue Warriors",
+        "teamTag": "RW",
+        "image": {
+            "full": "logo_roguewarriors_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 415,
+        "key": "topsportsgaming",
+        "teamName": "Topsports Gaming",
+        "teamTag": "TOP",
+        "image": {
+            "full": "logo_topsportsgaming_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 416,
+        "key": "lgdgaming",
+        "teamName": "LGD Gaming",
+        "teamTag": "LGD",
+        "image": {
+            "full": "logo_lgdgaming_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LPL",
+        "seasonId": [9],
+        "active": true
+    },
+    {
         "teamId": 501,
         "key": "ahq",
         "teamName": "ahq e-Sports Club",
@@ -861,6 +997,57 @@
             "firstName": "Pak Kan",
             "lastName": "Wong",
             "nickname": "Martin"
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 507,
+        "key": "grex",
+        "teamName": "G-Rex",
+        "teamTag": "GR",
+        "image": {
+            "full": "logo_grex_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 508,
+        "key": "teamafro",
+        "teamName": "Team Afro",
+        "teamTag": "TA",
+        "image": {
+            "full": "logo_afrogaming_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
+        },
+        "seriesName": "LMS",
+        "seasonId": [9],
+        "active": true
+    },
+    {
+        "teamId": 509,
+        "key": "madteam",
+        "teamName": "Mad Team",
+        "teamTag": "MAD",
+        "image": {
+            "full": "logo_madteam_2017.png"
+        },
+        "coach": {
+            "firstName": null,
+            "lastName": null,
+            "nickname": null
         },
         "seriesName": "LMS",
         "seasonId": [9],
