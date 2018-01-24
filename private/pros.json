@@ -674,8 +674,8 @@
     "NA1": [218011375],
     "KR": [2822431]
   },
-  "seriesName": "NA LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "NA1": [56039199],
@@ -721,7 +721,7 @@
   "accounts": {
     "NA1": [238060241]
   },
-  "seriesName": "NA LCS",
+  "seriesName": "EU LCS",
   "seasonId": [9],
   "active": true,
   "summoners": {
@@ -794,8 +794,8 @@
   "accounts": {
     "NA1": [31932781]
   },
-  "seriesName": "NA LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "NA1": [19238304]
@@ -978,8 +978,8 @@
     "NA1": [230986807,
     239875745]
   },
-  "seriesName": "NA LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "NA1": [71899217,
@@ -1033,8 +1033,8 @@
     34815634,
     239058549]
   },
-  "seriesName": "NA LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "NA1": [69709179,
@@ -1060,8 +1060,8 @@
   "accounts": {
     "NA1": [236691518]
   },
-  "seriesName": "NA LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "NA1": [83039568]
@@ -1140,8 +1140,8 @@
     232211350,
     31757835]
   },
-  "seriesName": "NA LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "NA1": [22216718,
@@ -1567,8 +1567,8 @@
   "accounts": {
     "EUW1": [227723050]
   },
-  "seriesName": "EU LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "EUW1": [86777184]
@@ -1593,7 +1593,7 @@
     "EUW1": [231474758],
     "KR": [4004203]
   },
-  "seriesName": "EU LCS",
+  "seriesName": "LCK",
   "seasonId": [9],
   "active": true,
   "summoners": {
@@ -1645,8 +1645,7 @@
   },
   "accounts": {
     "EUW1": [23099233,
-    23402463],
-	
+    23402463]
   },
   "seriesName": "NA LCS",
   "seasonId": [9],
@@ -1675,8 +1674,7 @@
   "accounts": {
     "EUW1": [29964812,
     28074698,
-    221657540],
-	
+    221657540]
   },
   "seriesName": "NA LCS",
   "seasonId": [9],
@@ -1821,7 +1819,7 @@
     "EUW1": [227871228],
     "KR": [7859270]
   },
-  "seriesName": "EU LCS",
+  "seriesName": "LCK",
   "seasonId": [9],
   "active": true,
   "summoners": {
@@ -1847,8 +1845,8 @@
   "accounts": {
     "EUW1": [22789568]
   },
-  "seriesName": "EU LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "EUW1": [19898783]
@@ -2059,8 +2057,8 @@
   "accounts": {
     "EUW1": [230947871]
   },
-  "seriesName": "EU LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "EUW1": [94808591]
@@ -2084,8 +2082,8 @@
   "accounts": {
     "EUW1": [230947490]
   },
-  "seriesName": "EU LCS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "EUW1": [94418597]
@@ -3357,8 +3355,8 @@
     "KR": [2881442,
     203164246]
   },
-  "seriesName": "LCK",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [3649533,
@@ -3486,8 +3484,8 @@
     "KR": [3027126,
     200543394]
   },
-  "seriesName": "LCK",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [3787807,
@@ -3596,8 +3594,8 @@
     "KR": [207151221,
     6127074]
   },
-  "seriesName": "LCK",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [42230135,
@@ -3956,8 +3954,8 @@
     "KR": [208940152,
     209057689]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [56300137,
@@ -4008,8 +4006,8 @@
     "KR": [5597834,
     208772672]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [8361277,
@@ -4341,8 +4339,8 @@
     "KR": [208772916,
     6586517]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54980839,
@@ -4368,8 +4366,8 @@
     "KR": [207303528,
     207695964]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [42752430,
@@ -4492,8 +4490,8 @@
     "full": "im_starlight_2017.png"
   },
   "accounts": null,
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": null
 },
@@ -4742,8 +4740,8 @@
   "accounts": {
     "KR": [261640]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [1210538]
@@ -4768,8 +4766,8 @@
     "KR": [209456110,
     208812743]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [60870147,
@@ -4946,8 +4944,8 @@
   "accounts": {
     "KR": [209185256]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [57420743]
@@ -4971,8 +4969,8 @@
   "accounts": {
     "KR": [1243363]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [1730843]
@@ -4996,8 +4994,8 @@
   "accounts": {
     "KR": [856601]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [1406905]
@@ -5046,8 +5044,8 @@
   "accounts": {
     "KR": [207308569]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [43430128]
@@ -5071,8 +5069,8 @@
   "accounts": {
     "KR": [209143110]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [57430308]
@@ -5098,8 +5096,8 @@
     208772690,
     207151327]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [1872558,
@@ -5283,8 +5281,8 @@
     "KR": [6329222,
     206081798]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [9096281,
@@ -5309,8 +5307,8 @@
   "accounts": {
     "KR": [209455929]
   },
-  "seriesName": "LPL",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [60890134]
@@ -5438,8 +5436,8 @@
   "accounts": {
     "KR": [208752668]
   },
-  "seriesName": "LMS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54980690]
@@ -5513,8 +5511,8 @@
   "accounts": {
     "KR": [208752754]
   },
-  "seriesName": "LMS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54980697]
@@ -5563,8 +5561,8 @@
   "accounts": {
     "KR": [208752599]
   },
-  "seriesName": "LMS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54670674]
@@ -5588,8 +5586,8 @@
   "accounts": {
     "KR": [208752900]
   },
-  "seriesName": "LMS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54970770]
@@ -5946,8 +5944,8 @@
   "accounts": {
     "KR": [208752851]
   },
-  "seriesName": "LMS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54660770]
@@ -6025,8 +6023,8 @@
   "accounts": {
     "KR": [208752751]
   },
-  "seriesName": "LMS",
-  "seasonId": [9],
+  "seriesName": null,
+  "seasonId": null,
   "active": true,
   "summoners": {
     "KR": [54990821]
@@ -7072,8 +7070,8 @@
   "accounts": {
     "KR": [3604468]
   },
-  "seriesName": null,
-  "seasonId": null,
+  "seriesName": "EU LCS",
+  "seasonId": [9],
   "active": true,
   "summoners": {
     "KR": [4558752]
