@@ -1229,7 +1229,9 @@
   "seriesName": "NA LCS",
   "seasonId": [9],
   "active": true,
-  "summoners": [5145847]
+  "summoners": {
+	"KR": [5145847]
+  }
 },
 {
   "proId": 109004,
