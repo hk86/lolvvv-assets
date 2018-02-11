@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import requests
 from requests_oauthlib import OAuth2Session
 
@@ -37,4 +39,4 @@ class Twitch:
        requests.put(url, headers=headers, data=data)
 
    def set_live_notification(self, notification):
-       pass # TODO Implementieren wir später
+       pass # TODO Implementieren wir spï¿½ter

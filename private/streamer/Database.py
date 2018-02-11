@@ -3,25 +3,33 @@ import pymongo
 
 class Database:
 
-    def __init__(self, uri):
-        mc = pymongo.MongoClient(uri)
+    def __init__(self, uriMeteor, uriStatic):
+        mc = pymongo.MongoClient(uriMeteor)
         self.db = mc['meteor']
+        self.staticDb = pymongo.MongoClient(uriStatic)['staticdata']
         self.active_matches = self.db['fact_active_matches']
 
 
     def getTopRatedLiveMatch(self):
-        match = self.active_matches.find_one({'platformId':{'$in':['EUW1','NA1']}}, sort=[('gameLength', 1)])
+        match = self.active_matches.find_one({'$and': [{'platformId':{'$in':['EUW1','NA1']}},
+                                                       {'gameStartTime': {'$gt': 0}}]},
+                                              sort=[('gameLength', 1)])
         return match
 
-    def matchStillRunning(self, gameId):
-        if self.active_matches.find({'gameId': gameId}).count() > 0:
+    def matchStillRunning(self, gameId, platformId):
+        if self.active_matches.find({'$and': [{'gameId': gameId},
+                                              {'platformId':platformId}]}).count() > 0:
             return True
         else:
             return False
 
-    def getMatch(self, gameId):
-        return self.db['fact_matches'].find_one({'gameId':gameId})
+    def getMatch(self, gameId, platformId):
+        return self.db['fact_matches'].find_one({'$and': [{'gameId': gameId},
+                                                          {'platformId':platformId}]})
 
     def setStreamingParams(self, gameId, platformId):
-        pass
+        server_state = self.db['dim_server_state']
+        server_state.update_one({}, {'$set': {'streaming': {'platformId': platformId, 'gameId': gameId} }})
 
+    def getChampionName(self, champId):
+        return self.staticDb['static_champions'].find_one({'id':champId})['name']

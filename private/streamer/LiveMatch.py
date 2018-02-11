@@ -1,3 +1,5 @@
+# coding: utf-8
+
 import datetime
 #import pprint
 
@@ -57,7 +59,7 @@ class LiveMatch:
         }
         
         #time_s = match['gameStartTime']/1000
-        #print(time_s)
+
         #print(datetime.datetime.fromtimestamp(time_s).strftime('%Y-%m-%d %H:%M:%S.%f'))
         
         match_platform = PLATFORM[match['platformId']]
@@ -67,6 +69,7 @@ class LiveMatch:
         self._id = match['_id']
         self.platformId = match['platformId']
         self.match = match
+        print('id=' + str(self.gameId) + ' startTime=' + str(match['gameStartTime']))
     
     def getUrl(self):
         return self.url
@@ -79,14 +82,8 @@ class LiveMatch:
         
     def getPlatform(self):
         return self.platformId
-        
-    def stillRunning(self, active_matches):
-        if active_matches.find({'_id': self._id}).count() > 0:
-            return True
-        else:
-            return False
             
-    def getPros(self, staticdata):
+    def getPros(self):
         pros = []
         for player in self.match['participants']:
             if player['pro']:
@@ -119,18 +116,23 @@ class LiveMatch:
                     teamTitle += nickname
         return teamTitle
 
-    def getTitle(self):
+    def getTitle(self, db):
         blueTeamTitle = self._generateTeamTitle(100)
         redTeamTitle = self._generateTeamTitle(200)
             
-        emptyTeamTilte = ' vs the world!!!'
-            
-        if not blueTeamTitle:
-            title = redTeamTitle + emptyTeamTilte
-        elif not redTeamTitle:
-            title = blueTeamTitle + emptyTeamTilte
+        pros = self.getPros()
+        
+        if ( len(pros) == 1):
+            champName = db.getChampionName(pros[0]['championId'])
+            title = pros[0]['pro']['nickName'] + ' crushing SoloQ on ' + champName
         else:
-            title = blueTeamTitle + ' VS ' + redTeamTitle
+            emptyTeamTilte = ' vs. the world!'
+            if not blueTeamTitle:
+                title = redTeamTitle + emptyTeamTilte
+            elif not redTeamTitle:
+                title = blueTeamTitle + emptyTeamTilte
+            else:
+                title = blueTeamTitle + ' vs. ' + redTeamTitle
                 
-        return ('NOW LIVE: ' + title + ' | lolvvv.com')
+        return ('NOW LIVE: ' + title + ' - lolvvv.com')
         

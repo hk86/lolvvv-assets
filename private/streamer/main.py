@@ -17,9 +17,13 @@ from Twitch import Twitch
 
 if __name__ == "__main__":
 
-    db = Database('mongodb://root:ZTgh67gth1@10.8.0.14:27017/meteor?authSource=admin')
+    db = Database('mongodb://root:ZTgh67gth1@10.8.0.14:27017/meteor?authSource=admin',
+                  '10.8.0.1:27017')
     
     twitch = Twitch('d8kxeyceb97glconsuj9at66c9lq7zfdu7r2rdonn3u5642mwj')
+    
+    # start obs here
+
     
     while True:
         match = db.getTopRatedLiveMatch()
@@ -27,7 +31,7 @@ if __name__ == "__main__":
             live_match = LiveMatch(match)
             db.setStreamingParams(live_match.getGameId(), live_match.getPlatform())
 
-            title = live_match.getTitle()
+            title = live_match.getTitle(db)
             
             print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
             print('streaming now: ' + title)
@@ -38,27 +42,16 @@ if __name__ == "__main__":
         
             # wait for lol loaded
             time.sleep(45)
-            # modify ui
+
             LoL_modify_ui()
         
-            # start obs here
         
-            while db.matchStillRunning(live_match.getGameId()):
+            while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
                 time.sleep(10) # sleep for 10 seconds
             
-            while True:
-                time.sleep(10) # sleep for 10 seconds
-                match = db.getMatch(live_match.getGameId())
-                if match:
-                    # The match is over if it could be found in matches
-                    match_finished_time = match['gameEnding']/1000
-                    timediff_s = ( datetime.datetime.fromtimestamp(match_finished_time) - datetime.datetime.now() ).total_seconds() + 180
-                    if timediff_s > 0:
-                        time.sleep(timediff_s)
-                
-                    print('Timediff ' + str(timediff_s) + ' is over')
-                    break
-            
+            print('live_match ends at ' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
+
+            time.sleep(60) # spectator offset (180) and reserve (10)
             
             LoL_stop()
         else:
