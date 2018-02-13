@@ -11,9 +11,9 @@ class Database:
 
 
     def getTopRatedLiveMatch(self):
-        match = self.active_matches.find_one({'$and': [{'platformId':{'$in':['EUW1','NA1']}},
-                                                       {'gameStartTime': {'$gt': 0}}]},
-                                              sort=[('gameLength', 1)])
+        match = self.active_matches.find_one({'$and': [{'gameStartTime': {'$gt': 0}},
+                                                       {'gameLength':{'$gt': 0}}]},
+                                              sort=[('ranking', pymongo.DESCENDING)])
         return match
 
     def matchStillRunning(self, gameId, platformId):

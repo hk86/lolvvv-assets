@@ -69,7 +69,9 @@ class LiveMatch:
         self._id = match['_id']
         self.platformId = match['platformId']
         self.match = match
-        print('id=' + str(self.gameId) + ' startTime=' + str(match['gameStartTime']))
+        print('id=' + str(self.gameId) +
+              ' startTime=' + str(match['gameStartTime']) +
+              ' gameLength=' + str(match['gameLength']))
     
     def getUrl(self):
         return self.url
@@ -126,7 +128,7 @@ class LiveMatch:
             champName = db.getChampionName(pros[0]['championId'])
             title = pros[0]['pro']['nickName'] + ' crushing SoloQ on ' + champName
         else:
-            emptyTeamTilte = ' vs. the world!'
+            emptyTeamTilte = ' crushing SoloQ!'
             if not blueTeamTitle:
                 title = redTeamTitle + emptyTeamTilte
             elif not redTeamTitle:

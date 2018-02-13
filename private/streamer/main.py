@@ -51,7 +51,7 @@ if __name__ == "__main__":
             
             print('live_match ends at ' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
 
-            time.sleep(60) # spectator offset (180) and reserve (10)
+            time.sleep(160) # spectator offset
             
             LoL_stop()
         else:
