@@ -33,3 +33,9 @@ class Database:
 
     def getChampionName(self, champId):
         return self.staticDb['static_champions'].find_one({'id':champId})['name']
+
+    def getPro(self, proId):
+        return self.staticDb['static_pros'].find_one({'proId':proId})
+
+    def getTeamName(self, teamId):
+        return self.staticDb['static_teams'].find_one({'teamId':teamId})['teamName']

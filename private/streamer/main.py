@@ -10,6 +10,7 @@ import pyautogui
 import pymongo
 
 from LoL import *
+from OBS import *
 from Database import Database
 from LiveMatch import LiveMatch
 from Twitch import Twitch
@@ -22,8 +23,8 @@ if __name__ == "__main__":
     
     twitch = Twitch('d8kxeyceb97glconsuj9at66c9lq7zfdu7r2rdonn3u5642mwj')
     
-    # start obs here
-
+    obs = OBS()
+    obs.start()
     
     while True:
         match = db.getTopRatedLiveMatch()
@@ -44,6 +45,10 @@ if __name__ == "__main__":
             time.sleep(45)
 
             LoL_modify_ui()
+
+            obs.setPros(live_match.getPros(), db)
+            
+            obs.startDiashow(40)
         
         
             while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
@@ -53,6 +58,7 @@ if __name__ == "__main__":
 
             time.sleep(160) # spectator offset
             
+            obs.stopDiashow()
             LoL_stop()
         else:
             print('couldnt\'t find match')
