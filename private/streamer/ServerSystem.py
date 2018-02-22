@@ -8,7 +8,3 @@ class ServerSystem:
 
     def reboot(self):
         subprocess.call(['shutdown', '-t 0', '-r', '-f'])
-
-
-
-
