@@ -32,11 +32,9 @@ class LeagueOfLegends:
             self.sys.reboot()
 
     def stopPending(self, timeout_s, interval_s):
-        for ii in range(timeout_s/interval_s):
+        for ii in range(int(timeout_s/interval_s)):
             if (pyautogui.locateCenterOnScreen('Continue.png')):
-                print('end recognized')
                 break
             else:
-                print('stopPending goto sleep')
                 time.sleep(interval_s)
         self.stop()
