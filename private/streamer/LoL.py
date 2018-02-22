@@ -1,14 +1,42 @@
 import subprocess
+import time
+
+import pyautogui #pip install pyautogui
 
 from DirectInput import *
 
-def LoL_start_spectate (url, gameId, encryptionKey, platformId):
-    subprocess.call(['spectate.bat', url, str(gameId), encryptionKey, platformId])
+class LeagueOfLegends:
+    pass
 
-def LoL_modify_ui():
-    print('modify ui')
-    toggleKey(0x18) #toggle u
-    toggleKey(0x16) #toggle o
+    def __init__(self, system):
+        self.sys = system
 
-def LoL_stop():
-    subprocess.call(['kill.bat', 'League of Legends.exe'])
+    def start_spectate (self, url, gameId, encryptionKey, platformId):
+        subprocess.call(['spectate.bat', url, str(gameId), encryptionKey, platformId])
+
+    def modify_ui(self):
+        print('modify ui')
+        toggleKey(0x18) #toggle u
+        toggleKey(0x16) #toggle o
+
+    def stop(self):
+        self.sys.terminate('League of Legends.exe')
+
+    def checkRunning(self, obs):
+        if (pyautogui.locateCenterOnScreen('PendingLoL.png')):
+            print('LoL is not running')
+            obs.stop()
+            LoL_stop()
+            subprocess.call(['updateLoL.bat'])
+            time.sleep(300) # wait for updating
+            self.sys.reboot()
+
+    def stopPending(self, timeout_s, interval_s):
+        for ii in range(timeout_s/interval_s):
+            if (pyautogui.locateCenterOnScreen('Continue.png')):
+                print('end recognized')
+                break
+            else:
+                print('stopPending goto sleep')
+                time.sleep(interval_s)
+        self.stop()

@@ -16,7 +16,7 @@ import pprint
 
 class OBS():
    
-    def __init__(self, obs_path='C:\\Program Files (x86)\\obs-studio'):
+    def __init__(self, system, obs_path='C:\\Program Files (x86)\\obs-studio'):
         if platform.architecture()[0] == '64bit':
             arch='64bit'
             self.obs_exe='obs64.exe'
@@ -24,12 +24,15 @@ class OBS():
             arch='32bit'
             self.obs_exe='obs32.exe'
 
+        self._sys = system
+
         _obs_path = os.path.join(obs_path, 'bin', arch)
         subprocess.Popen([os.path.join(_obs_path, self.obs_exe)], cwd=_obs_path)
         time.sleep(3) # wait for obs launching
 
         self._ws=websocket.WebSocket()
         self._ws.connect('ws://localhost:4444')
+        self._msg_id = 0
 
         self._proTeam_props = self._getProperties('proteam_diashow')
         self._pros_settings = self._getSettings('pros_diashow')
@@ -74,9 +77,10 @@ class OBS():
             db_pro = db.getPro(player['pro']['proId'])
 
             champion = db.getChampionName(player['championId'])
-            champion.replace('\'', '')
-            champion.replace(' ', '')
-            champion.replace('.', '')
+            champion = champion.replace('\'', '')
+            champion = champion.replace(' ', '')
+            champion = champion.replace('.', '')
+            print('champ: ' + champion)
             champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion', champion +'.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
             perk1_path = self._toObsPath(os.path.join(public_dir, 'perks', str(player['perks']['perkStyle'])+'.png'))
@@ -101,7 +105,6 @@ class OBS():
         if ( len(self._pros) == 1 ):
             self._setupScene(self._pros[0])
             self._interval = None
-            print('thread will not starting')
         else:
             self._pro_index = len(self._pros) - 1
             self._interval = Interval(interval_s, self._intervalDiashow)
@@ -113,8 +116,6 @@ class OBS():
             self._interval.stop()
 
     def _intervalDiashow(self):
-        print('thread')
-        #pprint.pprint(threading.Timer(5, self._intervalDiashow).start())
         self._setupScene(self._pros[self._pro_index])
         if self._pro_index == 0:
             self._pro_index = len(self._pros) - 1
@@ -156,4 +157,4 @@ class OBS():
         self._request(req)
 
     def terminate(self):
-        subprocess.call(['kill.bat', self.obs_exe])
+        self._sys.terminate(self.obs_exe)

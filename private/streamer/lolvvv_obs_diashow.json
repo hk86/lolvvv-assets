@@ -1,0 +1,1654 @@
+{
+    "current_program_scene": "scene_ingame_720p",
+    "current_scene": "scene_ingame_720p",
+    "current_transition": "Überblenden",
+    "modules": {
+        "auto-scene-switcher": {
+            "active": true,
+            "interval": 500,
+            "non_matching_scene": "",
+            "switch_if_not_matching": false,
+            "switches": []
+        },
+        "captions": {
+            "enabled": false,
+            "lang_id": 1031,
+            "provider": "mssapi",
+            "source": ""
+        },
+        "output-timer": {
+            "autoStartRecordTimer": false,
+            "autoStartStreamTimer": false,
+            "recordTimerHours": 0,
+            "recordTimerMinutes": 0,
+            "recordTimerSeconds": 0,
+            "streamTimerHours": 0,
+            "streamTimerMinutes": 0,
+            "streamTimerSeconds": 0
+        },
+        "scripts-tool": []
+    },
+    "name": "lolvvv_obs_diashow",
+    "preview_locked": false,
+    "quick_transitions": [
+        {
+            "duration": 300,
+            "hotkeys": [],
+            "id": 3,
+            "name": "Schnitt"
+        },
+        {
+            "duration": 300,
+            "hotkeys": [],
+            "id": 4,
+            "name": "Überblenden"
+        }
+    ],
+    "saved_multiview_projectors": [
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        },
+        {
+            "saved_multiview_projectors": 0
+        }
+    ],
+    "saved_preview_projectors": [
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        },
+        {
+            "saved_preview_projectors": 0
+        }
+    ],
+    "saved_projectors": [
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        },
+        {
+            "saved_projectors": ""
+        }
+    ],
+    "saved_studio_preview_projectors": [
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        },
+        {
+            "saved_studio_preview_projectors": 0
+        }
+    ],
+    "scaling_enabled": false,
+    "scaling_level": 0,
+    "scaling_off_x": 0.0,
+    "scaling_off_y": 0.0,
+    "scene_order": [
+        {
+            "name": "scene_ingame_720p"
+        }
+    ],
+    "sources": [
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "proteam_diashow",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 15134909,
+                "file": "C:/Users/Martin/Desktop/proteam.txt",
+                "font": {
+                    "face": "Calibri",
+                    "flags": 0,
+                    "size": 16,
+                    "style": ""
+                },
+                "opacity": 100,
+                "read_from_file": true,
+                "text": ""
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "twitter_name",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "bk_opacity": 1,
+                "color": 15134909,
+                "font": {
+                    "face": "Arial",
+                    "flags": 1,
+                    "size": 28,
+                    "style": ""
+                },
+                "text": "@lolvvv_com"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "facebook_name",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 15134909,
+                "font": {
+                    "face": "Arial",
+                    "flags": 1,
+                    "size": 28,
+                    "style": ""
+                },
+                "text": "@lolvvvcom"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "facebook_img",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/facebook_logo.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "twitter_img",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/twitter_logo.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {
+                "SlideShow.NextSlide": [],
+                "SlideShow.PlayPause": [],
+                "SlideShow.PreviousSlide": [],
+                "SlideShow.Restart": [],
+                "SlideShow.Stop": []
+            },
+            "id": "slideshow",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "diashow_perks2",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "files": [
+                    {
+                        "value": "C:/Projects/LolVvv/Assets/public/perks/8300.png"
+                    }
+                ],
+                "slide_time": 40000
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {
+                "SlideShow.NextSlide": [],
+                "SlideShow.PlayPause": [],
+                "SlideShow.PreviousSlide": [],
+                "SlideShow.Restart": [],
+                "SlideShow.Stop": []
+            },
+            "id": "slideshow",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "diashow_perks1",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "files": [
+                    {
+                        "value": "C:/Projects/LolVvv/Assets/public/perks/8112.png"
+                    }
+                ],
+                "slide_time": 40000
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {
+                "SlideShow.NextSlide": [],
+                "SlideShow.PlayPause": [],
+                "SlideShow.PreviousSlide": [],
+                "SlideShow.Restart": [],
+                "SlideShow.Stop": []
+            },
+            "id": "slideshow",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "diashow_champion",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "files": [
+                    {
+                        "value": "C:/Users/Martin/Pictures/Akali.png"
+                    },
+                    {
+                        "value": "C:/Users/Martin/Pictures/Alistar.png"
+                    },
+                    {
+                        "value": "C:/Users/Martin/Pictures/Amumu.png"
+                    },
+                    {
+                        "value": "C:/Users/Martin/Pictures/Anivia.png"
+                    },
+                    {
+                        "value": "C:/Users/Martin/Pictures/LeBlancSquare.png"
+                    }
+                ],
+                "slide_time": 40000
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {
+                "SlideShow.NextSlide": [],
+                "SlideShow.PlayPause": [],
+                "SlideShow.PreviousSlide": [],
+                "SlideShow.Restart": [],
+                "SlideShow.Stop": []
+            },
+            "id": "slideshow",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "diashow_pros",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "files": [
+                    {
+                        "value": "C:/Projects/LolVvv/Assets/public/image/pros/medium/msf_powerofevil_2017.png"
+                    }
+                ],
+                "slide_time": 40000,
+                "transition": "fade",
+                "transition_speed": 700,
+                "use_custom_size": "Automatisch"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {
+                "OBSBasic.SelectScene": [],
+                "libobs.hide_scene_item.banner_links": [],
+                "libobs.hide_scene_item.banner_mitte": [],
+                "libobs.hide_scene_item.banner_rechts": [],
+                "libobs.hide_scene_item.diashow_champion": [],
+                "libobs.hide_scene_item.diashow_perks1": [],
+                "libobs.hide_scene_item.diashow_perks2": [],
+                "libobs.hide_scene_item.diashow_pros": [],
+                "libobs.hide_scene_item.facebook_img": [],
+                "libobs.hide_scene_item.facebook_name": [],
+                "libobs.hide_scene_item.leagueoflegends_game": [],
+                "libobs.hide_scene_item.lolvvv_img": [],
+                "libobs.hide_scene_item.proname_diashow": [],
+                "libobs.hide_scene_item.proteam_diashow": [],
+                "libobs.hide_scene_item.twitter_img": [],
+                "libobs.hide_scene_item.twitter_name": [],
+                "libobs.show_scene_item.banner_links": [],
+                "libobs.show_scene_item.banner_mitte": [],
+                "libobs.show_scene_item.banner_rechts": [],
+                "libobs.show_scene_item.diashow_champion": [],
+                "libobs.show_scene_item.diashow_perks1": [],
+                "libobs.show_scene_item.diashow_perks2": [],
+                "libobs.show_scene_item.diashow_pros": [],
+                "libobs.show_scene_item.facebook_img": [],
+                "libobs.show_scene_item.facebook_name": [],
+                "libobs.show_scene_item.leagueoflegends_game": [],
+                "libobs.show_scene_item.lolvvv_img": [],
+                "libobs.show_scene_item.proname_diashow": [],
+                "libobs.show_scene_item.proteam_diashow": [],
+                "libobs.show_scene_item.twitter_img": [],
+                "libobs.show_scene_item.twitter_name": []
+            },
+            "id": "scene",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "scene_ingame",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "id_counter": 63,
+                "items": [
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 2,
+                        "locked": true,
+                        "name": "leagueoflegends_game",
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 3,
+                        "locked": true,
+                        "name": "banner_rechts",
+                        "pos": {
+                            "x": 1309.0,
+                            "y": 941.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.86618006229400635,
+                            "y": 0.86666667461395264
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 5,
+                        "locked": true,
+                        "name": "banner_mitte",
+                        "pos": {
+                            "x": 288.0,
+                            "y": 942.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.81508517265319824,
+                            "y": 0.81666666269302368
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 6,
+                        "locked": true,
+                        "name": "banner_links",
+                        "pos": {
+                            "x": 0.0,
+                            "y": 966.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.70072990655899048,
+                            "y": 0.69999998807907104
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 9,
+                        "locked": true,
+                        "name": "lolvvv_img",
+                        "pos": {
+                            "x": 13.0,
+                            "y": 977.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.51599997282028198,
+                            "y": 0.51648354530334473
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 46,
+                        "locked": true,
+                        "name": "diashow_pros",
+                        "pos": {
+                            "x": 299.0,
+                            "y": 952.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 52,
+                        "locked": true,
+                        "name": "diashow_champion",
+                        "pos": {
+                            "x": 437.0,
+                            "y": 1023.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.38571429252624512,
+                            "y": 0.38571429252624512
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 53,
+                        "locked": true,
+                        "name": "diashow_perks1",
+                        "pos": {
+                            "x": 510.0,
+                            "y": 1024.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.49074074625968933,
+                            "y": 0.49074074625968933
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 54,
+                        "locked": true,
+                        "name": "diashow_perks2",
+                        "pos": {
+                            "x": 562.0,
+                            "y": 1024.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.62352943420410156,
+                            "y": 0.62352943420410156
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 56,
+                        "locked": true,
+                        "name": "proname_diashow",
+                        "pos": {
+                            "x": 436.0,
+                            "y": 981.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 59,
+                        "locked": true,
+                        "name": "twitter_img",
+                        "pos": {
+                            "x": 1362.0,
+                            "y": 964.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 60,
+                        "locked": true,
+                        "name": "facebook_img",
+                        "pos": {
+                            "x": 1363.0,
+                            "y": 1026.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 61,
+                        "locked": true,
+                        "name": "facebook_name",
+                        "pos": {
+                            "x": 1424.0,
+                            "y": 1029.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 62,
+                        "locked": true,
+                        "name": "twitter_name",
+                        "pos": {
+                            "x": 1422.0,
+                            "y": 968.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 63,
+                        "locked": true,
+                        "name": "proteam_diashow",
+                        "pos": {
+                            "x": 436.0,
+                            "y": 959.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    }
+                ]
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "window_capture",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "leagueoflegends_game",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "compatibility": false,
+                "cursor": false,
+                "priority": 0,
+                "window": "League of Legends (TM) Client:RiotWindowClass:League of Legends.exe"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "banner_rechts",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/banner_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "banner_mitte",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/banner_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "banner_links",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/banner_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "lolvvv_img",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/lolvvv_logo.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "proname_diashow",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 15134909,
+                "file": "C:/Users/Martin/Desktop/proname.txt",
+                "font": {
+                    "face": "Calibri",
+                    "flags": 1,
+                    "size": 24,
+                    "style": ""
+                },
+                "read_from_file": true,
+                "text": "PowerOfEvil"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {
+                "OBSBasic.SelectScene": [],
+                "libobs.hide_scene_item.banner_links": [],
+                "libobs.hide_scene_item.banner_mitte": [],
+                "libobs.hide_scene_item.banner_rechts": [],
+                "libobs.hide_scene_item.champion_diashow": [],
+                "libobs.hide_scene_item.facebook_img": [],
+                "libobs.hide_scene_item.facebook_name": [],
+                "libobs.hide_scene_item.leagueoflegends_game": [],
+                "libobs.hide_scene_item.lolvvv_img": [],
+                "libobs.hide_scene_item.perks1_diashow": [],
+                "libobs.hide_scene_item.perks2_diashow": [],
+                "libobs.hide_scene_item.proname_diashow": [],
+                "libobs.hide_scene_item.pros_diashow": [],
+                "libobs.hide_scene_item.proteam_diashow": [],
+                "libobs.hide_scene_item.twitter_img": [],
+                "libobs.hide_scene_item.twitter_name": [],
+                "libobs.show_scene_item.banner_links": [],
+                "libobs.show_scene_item.banner_mitte": [],
+                "libobs.show_scene_item.banner_rechts": [],
+                "libobs.show_scene_item.champion_diashow": [],
+                "libobs.show_scene_item.facebook_img": [],
+                "libobs.show_scene_item.facebook_name": [],
+                "libobs.show_scene_item.leagueoflegends_game": [],
+                "libobs.show_scene_item.lolvvv_img": [],
+                "libobs.show_scene_item.perks1_diashow": [],
+                "libobs.show_scene_item.perks2_diashow": [],
+                "libobs.show_scene_item.proname_diashow": [],
+                "libobs.show_scene_item.pros_diashow": [],
+                "libobs.show_scene_item.proteam_diashow": [],
+                "libobs.show_scene_item.twitter_img": [],
+                "libobs.show_scene_item.twitter_name": []
+            },
+            "id": "scene",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "scene_ingame_720p",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "id_counter": 22,
+                "items": [
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 1,
+                        "locked": true,
+                        "name": "leagueoflegends_game",
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 13,
+                        "locked": true,
+                        "name": "banner_rechts",
+                        "pos": {
+                            "x": 871.0,
+                            "y": 621.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.56934309005737305,
+                            "y": 0.56999999284744263
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 4,
+                        "locked": true,
+                        "name": "banner_mitte",
+                        "pos": {
+                            "x": 193.0,
+                            "y": 620.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.54744523763656616,
+                            "y": 0.54666668176651001
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 2,
+                        "locked": true,
+                        "name": "banner_links",
+                        "pos": {
+                            "x": 0.0,
+                            "y": 641.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.46958637237548828,
+                            "y": 0.4699999988079071
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 14,
+                        "locked": true,
+                        "name": "facebook_img",
+                        "pos": {
+                            "x": 898.0,
+                            "y": 640.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.64444446563720703,
+                            "y": 0.64444446563720703
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 15,
+                        "locked": true,
+                        "name": "twitter_img",
+                        "pos": {
+                            "x": 898.0,
+                            "y": 678.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.60416668653488159,
+                            "y": 0.60416668653488159
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 17,
+                        "locked": true,
+                        "name": "twitter_name",
+                        "pos": {
+                            "x": 938.0,
+                            "y": 678.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 16,
+                        "locked": true,
+                        "name": "facebook_name",
+                        "pos": {
+                            "x": 938.0,
+                            "y": 641.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 22,
+                        "locked": true,
+                        "name": "perks2_diashow",
+                        "pos": {
+                            "x": 377.0,
+                            "y": 684.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.38823530077934265,
+                            "y": 0.38823530077934265
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 21,
+                        "locked": true,
+                        "name": "perks1_diashow",
+                        "pos": {
+                            "x": 343.0,
+                            "y": 684.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.31481480598449707,
+                            "y": 0.31481480598449707
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 20,
+                        "locked": true,
+                        "name": "champion_diashow",
+                        "pos": {
+                            "x": 299.0,
+                            "y": 684.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.24285714328289032,
+                            "y": 0.24285714328289032
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 12,
+                        "locked": true,
+                        "name": "proteam_diashow",
+                        "pos": {
+                            "x": 300.0,
+                            "y": 655.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 11,
+                        "locked": true,
+                        "name": "proname_diashow",
+                        "pos": {
+                            "x": 299.0,
+                            "y": 632.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 19,
+                        "locked": true,
+                        "name": "pros_diashow",
+                        "pos": {
+                            "x": 201.0,
+                            "y": 625.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.7421875,
+                            "y": 0.7421875
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 3,
+                        "locked": true,
+                        "name": "lolvvv_img",
+                        "pos": {
+                            "x": 5.0,
+                            "y": 647.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 0.36800000071525574,
+                            "y": 0.36813187599182129
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    }
+                ]
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "pros_diashow",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/public/image/pros/medium/msf_powerofevil_2017.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "champion_diashow",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Users/Martin/Pictures/Akali.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "perks1_diashow",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/public/perks/8112.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "perks2_diashow",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/public/perks/8300.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        }
+    ],
+    "transition_duration": 300,
+    "transitions": []
+}

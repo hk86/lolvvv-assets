@@ -11,6 +11,7 @@ import pymongo
 
 from LoL import *
 from OBS import *
+from ServerSystem import *
 from Database import Database
 from LiveMatch import LiveMatch
 from Twitch import Twitch
@@ -23,8 +24,12 @@ if __name__ == "__main__":
     
     twitch = Twitch('d8kxeyceb97glconsuj9at66c9lq7zfdu7r2rdonn3u5642mwj')
     
-    obs = OBS()
+    sys = ServerSystem()
+
+    obs = OBS(sys)
     obs.start()
+
+    lol = LeagueOfLegends(sys)
     
     while True:
         match = db.getTopRatedLiveMatch()
@@ -39,31 +44,33 @@ if __name__ == "__main__":
             
             twitch.set_title(title)
         
-            LoL_start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
+            lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
             # wait for lol loaded
             time.sleep(45)
 
-            LoL_modify_ui()
+            lol.modify_ui()
 
             obs.setPros(live_match.getPros(), db)
             
             obs.startDiashow(40)
-        
+
+            time.sleep(30)
+
+            lol.checkRunning(obs)
         
             while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
                 time.sleep(10) # sleep for 10 seconds
             
             print('live_match ends at ' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
 
-            time.sleep(160) # spectator offset
+            lol.stopPending(180,5)
             
             obs.stopDiashow()
-            LoL_stop()
         else:
             print('couldnt\'t find match')
             time.sleep(10) # sleep for 10 seconds
 
 
-
+    sys.reboot()
     #subprocess.call(['shutdown', '-t 0', '-r', '-f'])
