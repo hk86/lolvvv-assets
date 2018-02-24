@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     lol = LeagueOfLegends(sys, logger)
     try:
-        for ii in range(1):
+        for ii in range(50):
             match = db.getTopRatedLiveMatch()
             if match:
                 live_match = LiveMatch(match)
