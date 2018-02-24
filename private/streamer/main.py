@@ -20,8 +20,6 @@ from Twitch import Twitch
 
 if __name__ == "__main__":
 
-    time.sleep(10) # wait for network is up after pc start
-
     logging.basicConfig(filename='streaming.log',level=logging.WARNING)
     logger = logging.getLogger('STREAM')
 
