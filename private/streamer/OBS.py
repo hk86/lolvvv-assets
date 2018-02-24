@@ -80,7 +80,6 @@ class OBS():
             champion = champion.replace('\'', '')
             champion = champion.replace(' ', '')
             champion = champion.replace('.', '')
-            print('champ: ' + champion)
             champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion', champion +'.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
             perk1_path = self._toObsPath(os.path.join(public_dir, 'perks', str(player['perks']['perkStyle'])+'.png'))
@@ -142,11 +141,6 @@ class OBS():
         req = {"request-type": "SetSceneItemProperties", "item": sourceName}
         req.update(properties)
         self._ws.send(json.dumps(req))
-
-    def test(self):
-        print('test')
-        self._proTeam_props['visible'] = False
-        self._setProperties('proteam_diashow', self._proTeam_props)
 
     def start(self):
         req = {"request-type": "StartStreaming", "message-id": "12345678"}
