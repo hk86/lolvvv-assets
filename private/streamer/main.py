@@ -4,6 +4,7 @@
 import subprocess
 import time
 import datetime
+import logging
 
 import pprint
 import pyautogui
@@ -19,6 +20,11 @@ from Twitch import Twitch
 
 if __name__ == "__main__":
 
+    time.sleep(10) # wait for network is up after pc start
+
+    logging.basicConfig(filename='streaming.log',level=logging.WARNING)
+    logger = logging.getLogger('STREAM')
+
     db = Database('mongodb://root:ZTgh67gth1@10.8.0.14:27017/meteor?authSource=admin',
                   '10.8.0.1:27017')
     
@@ -29,48 +35,46 @@ if __name__ == "__main__":
     obs = OBS(sys)
     obs.start()
 
-    lol = LeagueOfLegends(sys)
-    
-    while True:
-        match = db.getTopRatedLiveMatch()
-        if match:
-            live_match = LiveMatch(match)
-            db.setStreamingParams(live_match.getGameId(), live_match.getPlatform())
+    lol = LeagueOfLegends(sys, logger)
+    try:
+        for ii in range(1):
+            match = db.getTopRatedLiveMatch()
+            if match:
+                live_match = LiveMatch(match)
+                db.setStreamingParams(live_match.getGameId(), live_match.getPlatform())
 
-            title = live_match.getTitle(db)
+                title = live_match.getTitle(db)
             
-            print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
-            print('streaming now: ' + title)
+                logger.debug(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
+                logger.info('streaming now: ' + title)
             
-            twitch.set_title(title)
+                twitch.set_title(title)
         
-            lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
+                lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
-            # wait for lol loaded
-            time.sleep(45)
+                # wait for lol loaded
+                time.sleep(45)
 
-            lol.modify_ui()
+                lol.modify_ui()
 
-            obs.setPros(live_match.getPros(), db)
+                obs.setPros(live_match.getPros(), db)
             
-            obs.startDiashow(40)
+                obs.startDiashow(40)
 
-            time.sleep(30)
+                time.sleep(30)
 
-            lol.checkRunning(obs)
+                lol.checkRunning(obs)
         
-            while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
+                while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
+                    time.sleep(10) # sleep for 10 seconds
+            
+                lol.stopPending(180,5)
+            
+                obs.stopDiashow()
+            else:
+                logger.info('couldnt\'t find match')
                 time.sleep(10) # sleep for 10 seconds
-            
-            print('live_match ends at ' + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
-
-            lol.stopPending(180,5)
-            
-            obs.stopDiashow()
-        else:
-            print('couldnt\'t find match')
-            time.sleep(10) # sleep for 10 seconds
-
+    except Exception as e:
+        logger.critical('Exception in main.py:\n' + str(e))
 
     sys.reboot()
-    #subprocess.call(['shutdown', '-t 0', '-r', '-f'])

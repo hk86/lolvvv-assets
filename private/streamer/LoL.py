@@ -8,14 +8,14 @@ from DirectInput import *
 class LeagueOfLegends:
     pass
 
-    def __init__(self, system):
+    def __init__(self, system, logger):
         self.sys = system
+        self._logger = logger
 
     def start_spectate (self, url, gameId, encryptionKey, platformId):
         subprocess.call(['spectate.bat', url, str(gameId), encryptionKey, platformId])
 
     def modify_ui(self):
-        print('modify ui')
         toggleKey(0x18) #toggle u
         toggleKey(0x16) #toggle o
 
@@ -24,7 +24,7 @@ class LeagueOfLegends:
 
     def checkRunning(self, obs):
         if (pyautogui.locateCenterOnScreen('PendingLoL.png')):
-            print('LoL is not running')
+            self._logger.error('LoL is not running')
             obs.stop()
             LoL_stop()
             subprocess.call(['updateLoL.bat'])

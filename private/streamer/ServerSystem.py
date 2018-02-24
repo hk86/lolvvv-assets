@@ -7,4 +7,4 @@ class ServerSystem:
         subprocess.call(['kill.bat', procName])
 
     def reboot(self):
-        subprocess.call(['shutdown', '-t 0', '-r', '-f'])
+        subprocess.call(['shutdown', '-t 1', '-r', '-f']) # shutdown -t 1 -r -f

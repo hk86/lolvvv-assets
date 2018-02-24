@@ -58,10 +58,6 @@ class LiveMatch:
             }
         }
         
-        #time_s = match['gameStartTime']/1000
-
-        #print(datetime.datetime.fromtimestamp(time_s).strftime('%Y-%m-%d %H:%M:%S.%f'))
-        
         match_platform = PLATFORM[match['platformId']]
         self.url = match_platform['domain'] + ':' + match_platform['port']
         self.gameId = match['gameId']
@@ -69,9 +65,6 @@ class LiveMatch:
         self._id = match['_id']
         self.platformId = match['platformId']
         self.match = match
-        print('id=' + str(self.gameId) +
-              ' startTime=' + str(match['gameStartTime']) +
-              ' gameLength=' + str(match['gameLength']))
     
     def getUrl(self):
         return self.url
