@@ -142,7 +142,8 @@ class OBS():
 
     def _request(self, request):
         self._ws.send(json.dumps(request))
-        return json.loads(self._ws.recv())
+        response = json.loads(self._ws.recv())
+        return response
 
     def _getSettings(self, soureName):
         req = {"request-type": "GetSourceSettings", "message-id": "12345678", "sourceName": soureName}
@@ -159,7 +160,7 @@ class OBS():
     def _setProperties(self, sourceName, properties):
         req = {"request-type": "SetSceneItemProperties", "item": sourceName}
         req.update(properties)
-        self._ws.send(json.dumps(req))
+        self._request(req)
 
     def start(self):
         req = {"request-type": "StartStreaming", "message-id": "12345678"}
