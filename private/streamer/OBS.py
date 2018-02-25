@@ -160,7 +160,7 @@ class OBS():
     def _setProperties(self, sourceName, properties):
         req = {"request-type": "SetSceneItemProperties", "item": sourceName}
         req.update(properties)
-        self_request(req)
+        self._request(req)
 
     def start(self):
         req = {"request-type": "StartStreaming", "message-id": "12345678"}
