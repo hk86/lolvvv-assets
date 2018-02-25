@@ -66,7 +66,15 @@ class OBS():
             self._proTeam_props['visible'] = False
             self._setProperties('proteam_txt', self._proTeam_props)
 
+    def _setCurrentScene(self, scene_name):
+        req = {"request-type": "SetCurrentScene", "message-id": "12345678", "scene-name": scene_name}
+        self._ws.send(json.dumps(req))
 
+    def showUpcomingmatchScene(self):
+        self._setCurrentScene('lolvvv_upcomingmatch')
+
+    def showIngameScene(self):
+        self._setCurrentScene('lolvvv_ingame')
 
     def setPros(self, pros, db):
         script_dir = os.path.dirname(os.path.realpath(__file__))

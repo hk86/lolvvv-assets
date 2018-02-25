@@ -599,7 +599,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "id_counter": 16,
+                "id_counter": 25,
                 "items": [
                     {
                         "align": 5,
@@ -627,7 +627,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -655,7 +655,7 @@
                             "y": 0.69999998807907104
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -683,7 +683,7 @@
                             "y": 0.5494505763053894
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -711,7 +711,7 @@
                             "y": 0.82333332300186157
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -739,7 +739,7 @@
                             "y": 0.85000002384185791
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -767,7 +767,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -795,7 +795,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -823,7 +823,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -851,7 +851,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -879,7 +879,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -907,7 +907,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -935,7 +935,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -963,7 +963,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -991,7 +991,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     },
                     {
                         "align": 5,
@@ -1019,7 +1019,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": true
+                        "visible": false
                     }
                 ]
             },
@@ -1033,10 +1033,26 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.lolvvv": [],
-                "libobs.hide_scene_item.wallpaper": [],
-                "libobs.show_scene_item.lolvvv": [],
-                "libobs.show_scene_item.wallpaper": []
+                "libobs.hide_scene_item.backgroundfbtw_img_up": [],
+                "libobs.hide_scene_item.facebook_logo_up": [],
+                "libobs.hide_scene_item.facebook_txt_up": [],
+                "libobs.hide_scene_item.lolvvv_logo_up": [],
+                "libobs.hide_scene_item.lolvvvlink_txt_up": [],
+                "libobs.hide_scene_item.scoreboard_browser_up": [],
+                "libobs.hide_scene_item.twitter_logo_up": [],
+                "libobs.hide_scene_item.twitter_txt_up": [],
+                "libobs.hide_scene_item.upcomingmatch_txt_up": [],
+                "libobs.hide_scene_item.wallpaper_img_up": [],
+                "libobs.show_scene_item.backgroundfbtw_img_up": [],
+                "libobs.show_scene_item.facebook_logo_up": [],
+                "libobs.show_scene_item.facebook_txt_up": [],
+                "libobs.show_scene_item.lolvvv_logo_up": [],
+                "libobs.show_scene_item.lolvvvlink_txt_up": [],
+                "libobs.show_scene_item.scoreboard_browser_up": [],
+                "libobs.show_scene_item.twitter_logo_up": [],
+                "libobs.show_scene_item.twitter_txt_up": [],
+                "libobs.show_scene_item.upcomingmatch_txt_up": [],
+                "libobs.show_scene_item.wallpaper_img_up": []
             },
             "id": "scene",
             "mixers": 0,
@@ -1049,7 +1065,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "id_counter": 5,
+                "id_counter": 23,
                 "items": [
                     {
                         "align": 5,
@@ -1063,9 +1079,9 @@
                         "crop_left": 0,
                         "crop_right": 0,
                         "crop_top": 0,
-                        "id": 2,
+                        "id": 13,
                         "locked": true,
-                        "name": "wallpaper_upcomingmatch",
+                        "name": "wallpaper_img_up",
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -1091,12 +1107,236 @@
                         "crop_left": 0,
                         "crop_right": 0,
                         "crop_top": 0,
-                        "id": 1,
+                        "id": 22,
                         "locked": true,
-                        "name": "scoreboard_browser",
+                        "name": "backgroundfbtw_img_up",
                         "pos": {
-                            "x": 385.0,
-                            "y": 292.0
+                            "x": 1436.0,
+                            "y": 141.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 14,
+                        "locked": true,
+                        "name": "scoreboard_browser_up",
+                        "pos": {
+                            "x": 150.0,
+                            "y": 455.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 15,
+                        "locked": true,
+                        "name": "lolvvv_logo_up",
+                        "pos": {
+                            "x": 144.0,
+                            "y": 129.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 16,
+                        "locked": true,
+                        "name": "facebook_logo_up",
+                        "pos": {
+                            "x": 1455.0,
+                            "y": 158.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 17,
+                        "locked": true,
+                        "name": "twitter_logo_up",
+                        "pos": {
+                            "x": 1455.0,
+                            "y": 226.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 18,
+                        "locked": true,
+                        "name": "facebook_txt_up",
+                        "pos": {
+                            "x": 1518.0,
+                            "y": 159.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 19,
+                        "locked": true,
+                        "name": "lolvvvlink_txt_up",
+                        "pos": {
+                            "x": 1053.0,
+                            "y": 951.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 20,
+                        "locked": true,
+                        "name": "upcomingmatch_txt_up",
+                        "pos": {
+                            "x": 153.0,
+                            "y": 385.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 21,
+                        "locked": true,
+                        "name": "twitter_txt_up",
+                        "pos": {
+                            "x": 1518.0,
+                            "y": 226.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
@@ -1149,7 +1389,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "scoreboard_browser",
+            "name": "scoreboard_browser_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -1165,7 +1405,7 @@
                 "width": 1200
             },
             "sync": 0,
-            "volume": 0.0
+            "volume": 1.0
         },
         {
             "deinterlace_field_order": 0,
@@ -1176,15 +1416,219 @@
             "id": "image_source",
             "mixers": 0,
             "monitoring_type": 0,
-            "muted": true,
-            "name": "wallpaper_upcomingmatch",
+            "muted": false,
+            "name": "wallpaper_img_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/wallpaper_upcomingmatch.png"
+                "file": "C:/Users/Martin/Desktop/obs_lolvvv/wallpaper_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "upcomingmatch_txt_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 14869218,
+                "font": {
+                    "face": "Segoe UI",
+                    "flags": 1,
+                    "size": 60,
+                    "style": ""
+                },
+                "text": "Upcoming Match, starting in 00:00 ..."
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "lolvvv_logo_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/lolvvv_logo.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "facebook_logo_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/facebook_logo.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "twitter_logo_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/twitter_logo.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "facebook_txt_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 14869218,
+                "font": {
+                    "face": "Segoe UI",
+                    "flags": 1,
+                    "size": 48,
+                    "style": ""
+                },
+                "text": "@lolvvvcom"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "twitter_txt_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 14869218,
+                "font": {
+                    "face": "Segoe UI",
+                    "flags": 1,
+                    "size": 48,
+                    "style": ""
+                },
+                "text": "@lolvvv_com"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "lolvvvlink_txt_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 14869218,
+                "font": {
+                    "face": "Segoe UI",
+                    "flags": 0,
+                    "size": 28,
+                    "style": ""
+                },
+                "text": "https://www.lolvvv.com/live"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "backgroundfbtw_img_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/background_fbtw.png"
             },
             "sync": 0,
             "volume": 1.0
