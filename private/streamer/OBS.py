@@ -1,4 +1,3 @@
-import websocket
 import subprocess
 import collections
 import json
@@ -11,8 +10,8 @@ from Interval import *
 
 import platform
 
-# for debug
-import pprint
+import websocket
+import pprint # for debug
 
 class OBS():
    
@@ -34,13 +33,13 @@ class OBS():
         self._ws.connect('ws://localhost:4444')
         self._msg_id = 0
 
-        self._proTeam_props = self._getProperties('proteam_diashow')
-        self._pros_settings = self._getSettings('pros_diashow')
-        self._proName_settings = self._getSettings('proname_diashow')
-        self._proTeam_settings = self._getSettings('proteam_diashow')
-        self._champion_settings = self._getSettings('champion_diashow')
-        self._perk1_settings = self._getSettings('perks1_diashow')
-        self._perk2_settings = self._getSettings('perks2_diashow')
+        self._proTeam_props = self._getProperties('proteam_txt')
+        self._proTeam_settings = self._getSettings('proteam_txt')
+        self._pros_settings = self._getSettings('proplayer_img')
+        self._proName_settings = self._getSettings('proplayername_txt')
+        self._champion_settings = self._getSettings('championplayed_img')
+        self._perk1_settings = self._getSettings('perks1_img')
+        self._perk2_settings = self._getSettings('perks2_img')
     
     def _toObsPath(self, path):
         return Path(os.path.abspath(path)).as_posix()
@@ -52,20 +51,20 @@ class OBS():
         self._perk1_settings['file']=pro['perk1']
         self._perk2_settings['file']=pro['perk2']
 
-        self._setSettings('pros_diashow', self._pros_settings)
-        self._setSettings('proname_diashow', self._proName_settings)
-        self._setSettings('champion_diashow', self._champion_settings)
-        self._setSettings('perks1_diashow', self._perk1_settings)
-        self._setSettings('perks2_diashow', self._perk2_settings)
+        self._setSettings('proplayer_img', self._pros_settings)
+        self._setSettings('proplayername_txt', self._proName_settings)
+        self._setSettings('championplayed_img', self._champion_settings)
+        self._setSettings('perks1_img', self._perk1_settings)
+        self._setSettings('perks2_img', self._perk2_settings)
 
         if pro['team']:
             self._proTeam_settings['text'] = pro['team']
-            self._setSettings('proteam_diashow', self._proTeam_settings)
+            self._setSettings('proteam_txt', self._proTeam_settings)
             self._proTeam_props['visible'] = True
-            self._setProperties('proteam_diashow', self._proTeam_props)
+            self._setProperties('proteam_txt', self._proTeam_props)
         else:
             self._proTeam_props['visible'] = False
-            self._setProperties('proteam_diashow', self._proTeam_props)
+            self._setProperties('proteam_txt', self._proTeam_props)
 
 
 
@@ -80,10 +79,10 @@ class OBS():
             champion = champion.replace('\'', '')
             champion = champion.replace(' ', '')
             champion = champion.replace('.', '')
-            champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion', champion +'.png'))
+            champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion/champion_small', champion +'.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
-            perk1_path = self._toObsPath(os.path.join(public_dir, 'perks', str(player['perks']['perkStyle'])+'.png'))
-            perk2_path = self._toObsPath(os.path.join(public_dir, 'perks', str(player['perks']['perkSubStyle'])+'.png'))
+            perk1_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkStyle'])+'.png'))
+            perk2_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkSubStyle'])+'.png'))
             
             if db_pro['teamId'] == 0:
                 team = None
