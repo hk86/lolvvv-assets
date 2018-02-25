@@ -68,7 +68,7 @@ class OBS():
 
     def _setCurrentScene(self, scene_name):
         req = {"request-type": "SetCurrentScene", "message-id": "12345678", "scene-name": scene_name}
-        self._ws.send(json.dumps(req))
+        self._request(req)
 
     def showUpcomingmatchScene(self):
         self._setCurrentScene('lolvvv_upcomingmatch')
@@ -78,10 +78,12 @@ class OBS():
 
     def countdown(self, duration):
         countdown = self._getSettings('countdown_txt_up')
-        interval_time = 0.125
+        interval_time = 0.133
         for ii in range(int(duration/interval_time)):
-            s, subs = divmod((ii*interval_time), 1000)
-            countdown['text'] = '{}:{:02.0f}'.format(s, subs)
+            countdown_time = duration-(ii*interval_time)
+            s, subs = divmod(countdown_time, 1)
+            text = '{:02.0f}:{:02.0f}'.format(s, subs*100)
+            countdown['text'] = text
             self._setSettings('countdown_txt_up', countdown)
             time.sleep(interval_time)
 
