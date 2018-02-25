@@ -40,6 +40,7 @@ if __name__ == "__main__":
             if match:
                 live_match = LiveMatch(match)
                 db.setStreamingParams(live_match.getGameId(), live_match.getPlatform())
+                obs.showUpcomingmatchScene()
 
                 title = live_match.getTitle(db)
             
@@ -52,8 +53,9 @@ if __name__ == "__main__":
         
                 # wait for lol loaded
                 time.sleep(45)
-
+                
                 lol.modify_ui()
+                obs.showIngameScene()
 
                 obs.setPros(live_match.getPros(), db)
             
