@@ -5,6 +5,7 @@ import subprocess
 import time
 import datetime
 import logging
+import sys
 
 import pprint
 import pyautogui
@@ -20,8 +21,20 @@ from Twitch import Twitch
 
 if __name__ == "__main__":
 
-    logging.basicConfig(filename='streaming.log',level=logging.WARNING)
     logger = logging.getLogger('STREAM')
+    logger.setLevel(logging.DEBUG)
+
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+    fh = logging.FileHandler('streaming.log')
+    fh.setLevel(logging.WARNING)
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
+
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setLevel(logging.DEBUG)
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
 
     db = Database('mongodb://root:ZTgh67gth1@10.8.0.14:27017/meteor?authSource=admin',
                   '10.8.0.1:27017')
@@ -77,4 +90,7 @@ if __name__ == "__main__":
     except Exception as e:
         logger.critical('Exception in main.py:\n' + str(e))
 
+    for handler in logger.handlers:
+        handler.close()
+        logger.removeFilter(handler)
     sys.reboot()
