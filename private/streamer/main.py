@@ -31,10 +31,10 @@ if __name__ == "__main__":
     sys = ServerSystem()
 
     obs = OBS(sys)
-    obs.start()
 
     lol = LeagueOfLegends(sys, logger)
     try:
+        obs.start()
         for ii in range(50):
             match = db.getTopRatedLiveMatch()
             if match:
