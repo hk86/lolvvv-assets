@@ -76,6 +76,16 @@ class OBS():
     def showIngameScene(self):
         self._setCurrentScene('lolvvv_ingame')
 
+    def countdown(self, duration):
+        countdown = self._getSettings('countdown_txt_up')
+        interval_time = 0.125
+        for ii in range(int(duration/interval_time)):
+            s, subs = divmod((ii*interval_time), 1000)
+            countdown['text'] = '{}:{:02.0f}'.format(s, subs)
+            self._setSettings('countdown_txt_up', countdown)
+            time.sleep(interval_time)
+
+
     def setPros(self, pros, db):
         script_dir = os.path.dirname(os.path.realpath(__file__))
         public_dir = os.path.join(script_dir, '../../public')
