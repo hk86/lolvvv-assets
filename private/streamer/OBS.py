@@ -34,7 +34,6 @@ class OBS():
         self._msg_id = 0
 
         self.showIngameScene()
-        time.sleep(1)
         self._proTeam_props = self._getProperties('proteam_txt')
         self._proColor_settings = self._getProperties('teamcolour_img')
         self._proTeam_settings = self._getSettings('proteam_txt')
@@ -44,9 +43,8 @@ class OBS():
         self._perk1_settings = self._getSettings('perks1_img')
         self._perk2_settings = self._getSettings('perks2_img')
 
-        self.showUpcomingmatchScene()
-        time.sleep(1)
-        self._countdown_settings = self._getSettings('countdown_txt_up')
+        #self.showUpcomingmatchScene()
+        #self._countdown_settings = self._getSettings('countdown_txt_up')
     
     def _toObsPath(self, path):
         return Path(os.path.abspath(path)).as_posix()
