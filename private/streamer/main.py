@@ -24,7 +24,7 @@ if __name__ == "__main__":
     logger = logging.getLogger('STREAM')
     logger.setLevel(logging.DEBUG)
 
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(message)s')
 
     fh = logging.FileHandler('streaming.log')
     fh.setLevel(logging.WARNING)
@@ -88,10 +88,11 @@ if __name__ == "__main__":
             else:
                 logger.info('couldnt\'t find match')
                 time.sleep(10) # sleep for 10 seconds
-    except Exception as e:
-        logger.critical('Exception in main.py:\n' + str(e))
-
-    for handler in logger.handlers:
-        handler.close()
-        logger.removeFilter(handler)
-    sys.reboot()
+    except:
+        logger.exception('Exception in main.py')
+        raise
+    finally:
+        for handler in logger.handlers:
+            handler.close()
+            logger.removeFilter(handler)
+        sys.reboot()
