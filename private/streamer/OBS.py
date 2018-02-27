@@ -33,25 +33,32 @@ class OBS():
         self._ws.connect('ws://localhost:4444')
         self._msg_id = 0
 
+        self.showIngameScene()
         self._proTeam_props = self._getProperties('proteam_txt')
+        self._proColor_settings = self._getProperties('teamcolour_img')
         self._proTeam_settings = self._getSettings('proteam_txt')
         self._pros_settings = self._getSettings('proplayer_img')
         self._proName_settings = self._getSettings('proplayername_txt')
         self._champion_settings = self._getSettings('championplayed_img')
         self._perk1_settings = self._getSettings('perks1_img')
         self._perk2_settings = self._getSettings('perks2_img')
+
+        #self.showUpcomingmatchScene()
+        #self._countdown_settings = self._getSettings('countdown_txt_up')
     
     def _toObsPath(self, path):
         return Path(os.path.abspath(path)).as_posix()
 
     def _setupScene(self, pro):
         self._pros_settings['file'] = pro['pic']
+        self._proColor_settings['file']=pro['teamColor']
         self._proName_settings['text'] = pro['name']
         self._champion_settings['file']=pro['champion']
         self._perk1_settings['file']=pro['perk1']
         self._perk2_settings['file']=pro['perk2']
 
         self._setSettings('proplayer_img', self._pros_settings)
+        self._setSettings('teamcolour_img', self._proColor_settings)
         self._setSettings('proplayername_txt', self._proName_settings)
         self._setSettings('championplayed_img', self._champion_settings)
         self._setSettings('perks1_img', self._perk1_settings)
@@ -77,14 +84,13 @@ class OBS():
         self._setCurrentScene('lolvvv_ingame')
 
     def countdown(self, duration):
-        countdown = self._getSettings('countdown_txt_up')
         interval_time = 0.133
         for ii in range(int(duration/interval_time)):
             countdown_time = duration-(ii*interval_time)
             s, subs = divmod(countdown_time, 1)
             text = '{:02.0f}:{:02.0f}'.format(s, subs*100)
-            countdown['text'] = text
-            self._setSettings('countdown_txt_up', countdown)
+            self._countdown_settings['text'] = text
+            self._setSettings('countdown_txt_up', self._countdown_settings)
             time.sleep(interval_time)
 
 
@@ -100,6 +106,7 @@ class OBS():
             champion = champion.replace(' ', '')
             champion = champion.replace('.', '')
             champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion/champion_small', champion +'.png'))
+            team_color_path = self._toObsPath(os.path.join(script_dir, 'obs', 'teamcolour_' + str(player['teamId']) +'.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
             perk1_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkStyle'])+'.png'))
             perk2_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkSubStyle'])+'.png'))
@@ -111,6 +118,7 @@ class OBS():
             
             pro = {'pic':ppic_path,
                    'name':player['pro']['nickName'],
+                   'teamColor':team_color_path,
                    'team':team,
                    'champion':champ_path,
                    'perk1':perk1_path,

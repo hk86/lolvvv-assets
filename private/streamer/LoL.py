@@ -1,5 +1,6 @@
 import subprocess
 import time
+import datetime
 
 import pyautogui #pip install pyautogui
 
@@ -24,12 +25,11 @@ class LeagueOfLegends:
 
     def checkRunning(self, obs):
         if (pyautogui.locateCenterOnScreen('PendingLoL.png')):
-            self._logger.error('LoL is not running')
             obs.stop()
             LoL_stop()
             subprocess.call(['updateLoL.bat'])
             time.sleep(300) # wait for updating
-            self.sys.reboot()
+            raise Exception('Couldnt start LoL')
 
     def stopPending(self, timeout_s, interval_s):
         for ii in range(int(timeout_s/interval_s)):
@@ -37,4 +37,8 @@ class LeagueOfLegends:
                 break
             else:
                 time.sleep(interval_s)
+            if ii == int(timeout_s/interval_s):
+                cur_time = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
+                self._logger.warning('NO EXIT AT ' + cur_time)
+                pyautogui.screenshot('noExit' + cur_time + '.png')
         self.stop()
