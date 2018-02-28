@@ -22,11 +22,17 @@ class LeagueOfLegends:
 
     def stop(self):
         self.sys.terminate('League of Legends.exe')
+        
+    def _getCurrentTime(self)
+        return datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
 
     def checkRunning(self, obs):
         if (pyautogui.locateCenterOnScreen('PendingLoL.png')):
+            cur_time = self._getCurrentTime()
+            pyautogui.screenshot('notRunning' + cur_time + '.png')
+            self._logger.warning('LOL IS NOT RUNNING AT ' + cur_time)
             obs.stop()
-            LoL_stop()
+            self.stop()
             subprocess.call(['updateLoL.bat'])
             time.sleep(300) # wait for updating
             raise Exception('Couldnt start LoL')
@@ -39,7 +45,7 @@ class LeagueOfLegends:
             else:
                 time.sleep(interval_s)
                 if ii >= trys:
-                    cur_time = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
+                    cur_time = self._getCurrentTime()
                     self._logger.warning('NO EXIT AT ' + cur_time)
                     pyautogui.screenshot('noExit' + cur_time + '.png')
         self.stop()
