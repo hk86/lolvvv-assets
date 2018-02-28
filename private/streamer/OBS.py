@@ -41,8 +41,8 @@ class OBS():
         self._perk1_settings = self._getSettings('perks1_img')
         self._perk2_settings = self._getSettings('perks2_img')
 
-        #self.showUpcomingmatchScene()
-        #self._countdown_settings = self._getSettings('countdown_txt_up')
+        self.showUpcomingmatchScene()
+        self._countdown_settings = self._getSettings('countdown_txt_up')
     
     def _toObsPath(self, path):
         return Path(os.path.abspath(path)).as_posix()
