@@ -35,7 +35,6 @@ class OBS():
 
         self.showIngameScene()
         self._proTeam_props = self._getProperties('proteam_txt')
-        self._proColor_settings = self._getProperties('teamcolour_img')
         self._proTeam_settings = self._getSettings('proteam_txt')
         self._pros_settings = self._getSettings('proplayer_img')
         self._proName_settings = self._getSettings('proplayername_txt')
@@ -50,15 +49,25 @@ class OBS():
         return Path(os.path.abspath(path)).as_posix()
 
     def _setupScene(self, pro):
+        blueId = 100
+        redId = 200
+
+        blueCol = 15249462
+        redCol = 3623886
+
+        if pro['matchTeamId'] == blueId:
+            txtColor = blueCol
+        else:
+            txtColor = redCol
+
         self._pros_settings['file'] = pro['pic']
-        self._proColor_settings['file']=pro['teamColor']
         self._proName_settings['text'] = pro['name']
+        self._proName_settings['color'] = txtColor
         self._champion_settings['file']=pro['champion']
         self._perk1_settings['file']=pro['perk1']
         self._perk2_settings['file']=pro['perk2']
 
         self._setSettings('proplayer_img', self._pros_settings)
-        self._setSettings('teamcolour_img', self._proColor_settings)
         self._setSettings('proplayername_txt', self._proName_settings)
         self._setSettings('championplayed_img', self._champion_settings)
         self._setSettings('perks1_img', self._perk1_settings)
@@ -66,6 +75,7 @@ class OBS():
 
         if pro['team']:
             self._proTeam_settings['text'] = pro['team']
+            self._proTeam_settings['color'] = txtColor
             self._setSettings('proteam_txt', self._proTeam_settings)
             self._proTeam_props['visible'] = True
             self._setProperties('proteam_txt', self._proTeam_props)
@@ -106,7 +116,6 @@ class OBS():
             champion = champion.replace(' ', '')
             champion = champion.replace('.', '')
             champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion/champion_small', champion +'.png'))
-            team_color_path = self._toObsPath(os.path.join(script_dir, 'obs', 'teamcolour_' + str(player['teamId']) +'.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
             perk1_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkStyle'])+'.png'))
             perk2_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkSubStyle'])+'.png'))
@@ -118,7 +127,7 @@ class OBS():
             
             pro = {'pic':ppic_path,
                    'name':player['pro']['nickName'],
-                   'teamColor':team_color_path,
+                   'matchTeamId':player['teamId'],
                    'team':team,
                    'champion':champ_path,
                    'perk1':perk1_path,

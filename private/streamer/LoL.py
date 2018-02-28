@@ -30,7 +30,6 @@ class LeagueOfLegends:
         if (pyautogui.locateCenterOnScreen('PendingLoL.png')):
             cur_time = self._getCurrentTime()
             pyautogui.screenshot('notRunning' + cur_time + '.png')
-            self._logger.warning('LOL IS NOT RUNNING AT ' + cur_time)
             obs.stop()
             self.stop()
             subprocess.call(['updateLoL.bat'])
