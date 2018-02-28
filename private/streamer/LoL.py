@@ -23,7 +23,7 @@ class LeagueOfLegends:
     def stop(self):
         self.sys.terminate('League of Legends.exe')
         
-    def _getCurrentTime(self)
+    def _getCurrentTime(self):
         return datetime.datetime.now().strftime('%Y-%m-%d_%H%M%S')
 
     def checkRunning(self, obs):
