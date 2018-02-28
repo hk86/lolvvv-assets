@@ -31,7 +31,6 @@ class OBS():
 
         self._ws=websocket.WebSocket()
         self._ws.connect('ws://localhost:4444')
-        self._msg_id = 0
 
         self.showIngameScene()
         self._proTeam_props = self._getProperties('proteam_txt')
@@ -86,6 +85,11 @@ class OBS():
     def _setCurrentScene(self, scene_name):
         req = {"request-type": "SetCurrentScene", "message-id": "12345678", "scene-name": scene_name}
         self._request(req)
+        # workaround fuer bug in obs-websocket
+        # reconnect
+        self._ws=None
+        self._ws=websocket.WebSocket()
+        self._ws.connect('ws://localhost:4444')
 
     def showUpcomingmatchScene(self):
         self._setCurrentScene('lolvvv_upcomingmatch')
@@ -101,8 +105,10 @@ class OBS():
             text = '{:02.0f}:{:02.0f}'.format(s, subs*100)
             self._countdown_settings['text'] = text
             self._setSettings('countdown_txt_up', self._countdown_settings)
+            #txtFile = open('countdown.txt','w')
+            #txtFile.write(text)
+            #txtFile.close()
             time.sleep(interval_time)
-
 
     def setPros(self, pros, db):
         script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -179,11 +185,11 @@ class OBS():
         req.update(properties)
         self._request(req)
 
-    def start(self):
+    def startStreaming(self):
         req = {"request-type": "StartStreaming", "message-id": "12345678"}
         self._request(req)
 
-    def stop(self):
+    def stopStreaming(self):
         req = {"request-type": "StopStreaming", "message-id": "12345678"}
         self._request(req)
 

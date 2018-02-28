@@ -47,8 +47,10 @@ if __name__ == "__main__":
 
     lol = LeagueOfLegends(sys, logger)
     try:
-        obs.start()
-        for ii in range(50):
+        obs.startStreaming()
+        ii = 0
+        maxStreamingMatches = 50
+        while ii < maxStreamingMatches:
             match = db.getTopRatedLiveMatch()
             if match:
                 live_match = LiveMatch(match)
@@ -65,8 +67,8 @@ if __name__ == "__main__":
                 lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
                 # wait for lol loaded
-                time.sleep(45)
-                #obs.countdown(45)
+                #time.sleep(45)
+                obs.countdown(45)
                 
                 lol.modify_ui()
                 obs.showIngameScene()
@@ -85,9 +87,12 @@ if __name__ == "__main__":
                 lol.stopPending(180,5)
             
                 obs.stopDiashow()
+
+                ii = ii + 1
             else:
                 logger.info('couldnt\'t find match')
                 time.sleep(10) # sleep for 10 seconds
+                ii = ii + 0.0005
     except:
         logger.exception('Exception in main.py')
         raise
