@@ -98,16 +98,13 @@ class OBS():
         self._setCurrentScene('lolvvv_ingame')
 
     def countdown(self, duration):
-        interval_time = 0.133
+        interval_time = 0.1
         for ii in range(int(duration/interval_time)):
             countdown_time = duration-(ii*interval_time)
             s, subs = divmod(countdown_time, 1)
-            text = '{:02.0f}:{:02.0f}'.format(s, subs*100)
+            text = '{:02.0f}:{:01.0f}'.format(s, subs*10)
             self._countdown_settings['text'] = text
             self._setSettings('countdown_txt_up', self._countdown_settings)
-            #txtFile = open('countdown.txt','w')
-            #txtFile.write(text)
-            #txtFile.close()
             time.sleep(interval_time)
 
     def setPros(self, pros, db):

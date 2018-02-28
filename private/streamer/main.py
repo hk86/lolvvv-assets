@@ -59,7 +59,7 @@ if __name__ == "__main__":
 
                 title = live_match.getTitle(db)
             
-                logger.debug(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
+                logger.info(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
                 logger.info('streaming now: ' + title)
             
                 twitch.set_title(title)
@@ -67,8 +67,7 @@ if __name__ == "__main__":
                 lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
                 # wait for lol loaded
-                #time.sleep(45)
-                obs.countdown(45)
+                obs.countdown(35)
                 
                 lol.modify_ui()
                 obs.showIngameScene()

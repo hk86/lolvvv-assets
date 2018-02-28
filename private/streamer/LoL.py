@@ -43,7 +43,7 @@ class LeagueOfLegends:
                 break
             else:
                 time.sleep(interval_s)
-                if ii >= trys:
+                if ii == (trys-1):
                     cur_time = self._getCurrentTime()
                     self._logger.warning('NO EXIT AT ' + cur_time)
                     pyautogui.screenshot('noExit' + cur_time + '.png')
