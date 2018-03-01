@@ -103,7 +103,11 @@ class LiveMatch:
         teamTitle = None
         for player in self.match['participants']:
             if player['pro'] and player['teamId'] == teamId:
-                fullName = '[' + db.getTeamTag(db.getPro(player['pro']['proId'])['teamId']) + '] ' +  player['pro']['nickName']
+                fullName = ''
+                proTeamId = db.getPro(player['pro']['proId'])['teamId']
+                if proTeamId:
+                    fullName = '[' + db.getTeamTag(db.getPro(player['pro']['proId'])['teamId']) + '] '
+                fullName = fullName +  player['pro']['nickName']
                 if not teamTitle:
                     teamTitle = fullName
                 else:
