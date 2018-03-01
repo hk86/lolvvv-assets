@@ -70,6 +70,7 @@ if __name__ == "__main__":
                 obs.countdown(40)
                 
                 lol.modify_ui()
+                lol.startShowMoney(50, 10)
                 obs.showIngameScene()
 
                 obs.setPros(live_match.getPros(), db)
@@ -86,6 +87,7 @@ if __name__ == "__main__":
                 lol.stopPending(180,5)
             
                 obs.stopDiashow()
+                lol.stopShowMoney()
 
                 ii = ii + 1
             else:
