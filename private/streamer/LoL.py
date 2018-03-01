@@ -5,9 +5,9 @@ import datetime
 import pyautogui #pip install pyautogui
 
 from DirectInput import *
+from Interval import *
 
 class LeagueOfLegends:
-    pass
 
     def __init__(self, system, logger):
         self.sys = system
@@ -19,6 +19,20 @@ class LeagueOfLegends:
     def modify_ui(self):
         toggleKey(0x18) #toggle u
         toggleKey(0x16) #toggle o
+
+    def startShowMoney(self, interval_s, duration_s):
+        self._showMoneyDuration_s = duration_s
+        self._interval = Interval(interval_s, self._showMoney)
+        self._interval.start()
+        self._showMoney()
+
+    def stopShowMoney(self):
+        self._interval.stop()
+
+    def _showMoney(self):
+        toggleKey(0x2D) #toggle x
+        time.sleep(self._showMoneyDuration_s)
+        toggleKey(0x2D) #toggle x
 
     def stop(self):
         self.sys.terminate('League of Legends.exe')

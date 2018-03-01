@@ -67,14 +67,14 @@ if __name__ == "__main__":
                 lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
                 # wait for lol loaded
-                obs.countdown(35)
+                obs.countdown(40)
                 
                 lol.modify_ui()
                 obs.showIngameScene()
 
                 obs.setPros(live_match.getPros(), db)
             
-                obs.startDiashow(40)
+                obs.startDiashow(20)
 
                 time.sleep(30)
 

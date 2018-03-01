@@ -99,21 +99,21 @@ class LiveMatch:
     def getRedTeam(self):
         return self.getTeam(200)
 
-    def _generateTeamTitle(self, teamId):
+    def _generateTeamTitle(self, teamId, db):
         teamTitle = None
         for player in self.match['participants']:
             if player['pro'] and player['teamId'] == teamId:
-                nickname = player['pro']['nickName']
+                fullName = '[' + db.getTeamTag(db.getPro(player['pro']['proId'])['teamId']) + '] ' +  player['pro']['nickName']
                 if not teamTitle:
-                    teamTitle = nickname
+                    teamTitle = fullName
                 else:
                     teamTitle += ' & '
-                    teamTitle += nickname
+                    teamTitle += fullName
         return teamTitle
 
     def getTitle(self, db):
-        blueTeamTitle = self._generateTeamTitle(100)
-        redTeamTitle = self._generateTeamTitle(200)
+        blueTeamTitle = self._generateTeamTitle(100, db)
+        redTeamTitle = self._generateTeamTitle(200, db)
             
         pros = self.getPros()
         
@@ -129,5 +129,5 @@ class LiveMatch:
             else:
                 title = blueTeamTitle + ' vs. ' + redTeamTitle
                 
-        return ('NOW LIVE: ' + title + ' - lolvvv.com')
+        return (title + ' - lolvvv.com')
         

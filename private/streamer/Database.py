@@ -39,3 +39,6 @@ class Database:
 
     def getTeamName(self, teamId):
         return self.staticDb['static_teams'].find_one({'teamId':teamId})['teamName']
+
+    def getTeamTag(self, temaId):
+        return self.staticDb['static_teams'].find_one({'teamId':teamId})['teamTag']

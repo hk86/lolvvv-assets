@@ -93,6 +93,7 @@ class OBS():
 
     def showUpcomingmatchScene(self):
         self._setCurrentScene('lolvvv_upcomingmatch')
+        self._setMute('scoreboard_browser_up', True)
 
     def showIngameScene(self):
         self._setCurrentScene('lolvvv_ingame')
@@ -171,6 +172,10 @@ class OBS():
 
     def _setSettings(self, sourceName, settings):
         req = {"request-type": "SetSourceSettings", "message-id": "12345678", "sourceName": sourceName, 'sourceSettings':settings}
+        return self._request(req)
+
+    def _setMute(self, sourceName, mute):
+        req = {"request-type": "SetSourceSettings", "message-id": "12345678", "source": sourceName, 'mute': mute}
         return self._request(req)
 
     def _getProperties(self, sourceName):
