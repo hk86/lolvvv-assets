@@ -67,7 +67,7 @@ if __name__ == "__main__":
                 lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
                 # wait for lol loaded
-                obs.countdown(40)
+                obs.countdown(35)
                 
                 lol.modify_ui()
                 lol.startShowMoney(50, 10)
