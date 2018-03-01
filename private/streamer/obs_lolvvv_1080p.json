@@ -26,8 +26,8 @@
         "sync": 0,
         "volume": 1.0
     },
-    "current_program_scene": "lolvvv_ingame",
-    "current_scene": "lolvvv_ingame",
+    "current_program_scene": "lolvvv_upcomingmatch",
+    "current_scene": "lolvvv_upcomingmatch",
     "current_transition": "Überblenden",
     "modules": {
         "auto-scene-switcher": {
@@ -243,34 +243,6 @@
             "deinterlace_mode": 0,
             "enabled": true,
             "flags": 0,
-            "hotkeys": {
-                "libobs.mute": [],
-                "libobs.push-to-mute": [],
-                "libobs.push-to-talk": [],
-                "libobs.unmute": []
-            },
-            "id": "dshow_input",
-            "mixers": 255,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "HD60",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "last_video_device_id": "Game Capture HD60 Pro (Video) (#2201):\\\\?\\pci#22ven_12ab&dev_0380&subsys_00061cfa&rev_00#224&15a0cdcd&0&00e1#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\{6f814be9-9af6-43cf-9249-c03401000222}",
-                "video_device_id": "Game Capture HD60 Pro (Video) (#2201):\\\\?\\pci#22ven_12ab&dev_0380&subsys_00061cfa&rev_00#224&15a0cdcd&0&00e1#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\{6f814be9-9af6-43cf-9249-c03401000222}"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
             "hotkeys": {},
             "id": "image_source",
             "mixers": 0,
@@ -335,7 +307,7 @@
                     "size": 60,
                     "style": ""
                 },
-                "text": "00:18"
+                "text": "00:1"
             },
             "sync": 0,
             "volume": 1.0
@@ -386,7 +358,7 @@
                     "size": 28,
                     "style": ""
                 },
-                "text": "https://www.lolvvv.com/live"
+                "text": "www.lolvvv.com/live"
             },
             "sync": 0,
             "volume": 1.0
@@ -539,7 +511,7 @@
                     "size": 60,
                     "style": ""
                 },
-                "text": "Upcoming Match, starting in            ..."
+                "text": "Upcoming Match, starting in         ..."
             },
             "sync": 0,
             "volume": 1.0
@@ -985,7 +957,6 @@
             "flags": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.HD60": [],
                 "libobs.hide_scene_item.LoL": [],
                 "libobs.hide_scene_item.banner_left": [],
                 "libobs.hide_scene_item.banner_middle": [],
@@ -1002,7 +973,6 @@
                 "libobs.hide_scene_item.teamcolour_img": [],
                 "libobs.hide_scene_item.twitter_logo": [],
                 "libobs.hide_scene_item.twitter_txt": [],
-                "libobs.show_scene_item.HD60": [],
                 "libobs.show_scene_item.LoL": [],
                 "libobs.show_scene_item.banner_left": [],
                 "libobs.show_scene_item.banner_middle": [],
@@ -1046,7 +1016,7 @@
                         "crop_right": 0,
                         "crop_top": 0,
                         "id": 27,
-                        "locked": false,
+                        "locked": true,
                         "name": "LoL",
                         "pos": {
                             "x": 0.0,
@@ -1060,34 +1030,6 @@
                         },
                         "scale_filter": "disable",
                         "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 26,
-                        "locked": true,
-                        "name": "HD60",
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": false
                     },
                     {
                         "align": 5,
@@ -1395,7 +1337,7 @@
                             "y": 1.0
                         },
                         "scale_filter": "disable",
-                        "visible": false
+                        "visible": true
                     },
                     {
                         "align": 5,
@@ -1722,7 +1664,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/public/image/pros/medium/freeze_2017.png"
+                "file": "C:/lolvvv_com/public/image/pros/medium/msf_hanssama_2017.png"
             },
             "sync": 0,
             "volume": 1.0
@@ -1754,7 +1696,7 @@
                 },
                 "opacity": 100,
                 "read_from_file": false,
-                "text": "Freeze"
+                "text": "Hans sama"
             },
             "sync": 0,
             "volume": 1.0
@@ -1786,7 +1728,7 @@
                 },
                 "opacity": 100,
                 "read_from_file": false,
-                "text": "Team Vitality"
+                "text": "Misfits"
             },
             "sync": 0,
             "volume": 1.0
@@ -1808,7 +1750,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/champion/champion_small/Caitlyn.png"
+                "file": "C:/lolvvv_com/private/streamer/obs/champion/champion_small/Tristana.png"
             },
             "sync": 0,
             "volume": 1.0
