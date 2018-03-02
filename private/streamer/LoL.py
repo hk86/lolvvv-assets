@@ -24,7 +24,6 @@ class LeagueOfLegends:
         self._showMoneyDuration_s = duration_s
         self._interval = Interval(interval_s, self._showMoney)
         self._interval.start()
-        self._showMoney()
 
     def stopShowMoney(self):
         self._interval.stop()
