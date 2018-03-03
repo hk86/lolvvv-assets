@@ -51,8 +51,12 @@ class LeagueOfLegends:
 
     def stopPending(self, timeout_s, interval_s):
         trys = int(timeout_s/interval_s)
+        if (interval_s > 4):
+            interval_s = interval_s - 4 #time for locate on screen
         for ii in range(trys):
             if (pyautogui.locateCenterOnScreen('Continue.png')):
+                break
+            elif (pyautogui.locateCenterOnScreen('GameOver.png')):
                 break
             else:
                 time.sleep(interval_s)
