@@ -123,7 +123,12 @@ class LiveMatch:
         
         if ( len(pros) == 1):
             champName = db.getChampionName(pros[0]['championId'])
-            title = pros[0]['pro']['nickName'] + ' crushing SoloQ on ' + champName
+            if not blueTeamTitle:
+                title = redTeamTitle
+            else:
+                title = blueTeamTitle
+
+            title = title + ' crushing SoloQ on ' + champName
         else:
             emptyTeamTilte = ' crushing SoloQ!'
             if not blueTeamTitle:
