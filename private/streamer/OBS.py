@@ -101,9 +101,11 @@ class OBS():
 
     def showUpcomingmatchScene(self):
         self._setCurrentScene('lolvvv_upcomingmatch')
+        self._sys.setMute(True)
 
     def showIngameScene(self):
         self._setCurrentScene('lolvvv_ingame')
+        self._sys.setMute(False)
 
     def countdown(self, duration):
         interval_time = 0.1

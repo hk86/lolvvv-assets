@@ -5,6 +5,13 @@ import os
 class ServerSystem:
     pass
 
+    def setMute(self, mute):
+        if mute:
+            muteFlag = '1'
+        else:
+            muteFlag = '0'
+        subprocess.call(['nircmd.exe', 'mutesysvolume', muteFlag])
+
     def terminate(self, procName):
         subprocess.call(['kill.bat', procName])
 
