@@ -5,6 +5,7 @@ import os
 import time
 import threading
 from pathlib import Path
+from shutil import copyfile
 
 from Interval import *
 
@@ -25,12 +26,17 @@ class OBS():
 
         self._sys = system
 
+        # setup scene from git
+        sceneName = 'obs_lolvvv_1080p.json'
+        obs_scene = os.path.join(os.getenv('APPDATA'), 'obs-studio/basic/scenes', sceneName)
+        print(obs_scene)
+        copyfile(obs_scene, sceneName)
+
         _obs_path = os.path.join(obs_path, 'bin', arch)
         subprocess.Popen([os.path.join(_obs_path, self.obs_exe)], cwd=_obs_path)
         time.sleep(3) # wait for obs launching
 
-        self._ws=websocket.WebSocket()
-        self._ws.connect('ws://localhost:4444')
+        self._reconnectToObs()
 
         self.showIngameScene()
         self._proTeam_props = self._getProperties('proteam_txt')
@@ -51,8 +57,8 @@ class OBS():
         blueId = 100
         redId = 200
 
-        blueCol = 15249462
-        redCol = 3623886
+        blueCol = 13665569
+        redCol = 14362664
 
         if pro['matchTeamId'] == blueId:
             txtColor = blueCol
@@ -82,18 +88,19 @@ class OBS():
             self._proTeam_props['visible'] = False
             self._setProperties('proteam_txt', self._proTeam_props)
 
+    def _reconnectToObs(self, url='ws://localhost:4444'):
+        self._ws=None
+        self._ws=websocket.WebSocket()
+        self._ws.connect(url)
+
     def _setCurrentScene(self, scene_name):
         req = {"request-type": "SetCurrentScene", "message-id": "12345678", "scene-name": scene_name}
         self._request(req)
         # workaround fuer bug in obs-websocket
-        # reconnect
-        self._ws=None
-        self._ws=websocket.WebSocket()
-        self._ws.connect('ws://localhost:4444')
+        self._reconnectToObs()
 
     def showUpcomingmatchScene(self):
         self._setCurrentScene('lolvvv_upcomingmatch')
-        self._setMute('scoreboard_browser_up', True)
 
     def showIngameScene(self):
         self._setCurrentScene('lolvvv_ingame')
