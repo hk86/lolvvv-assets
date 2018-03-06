@@ -48,6 +48,10 @@ class LeagueOfLegends:
             subprocess.call(['updateLoL.bat'])
             time.sleep(300) # wait for updating
             raise Exception('Couldnt start LoL')
+        elif (pyautogui.locateCenterOnScreen('lolCrushed.png')):
+            obs.stop()
+            self.stop()
+            raise Exception('LoL Crushed')
 
     def stopPending(self, timeout_s, interval_s):
         trys = int(timeout_s/interval_s)
