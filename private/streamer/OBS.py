@@ -58,7 +58,7 @@ class OBS():
         redId = 200
 
         blueCol = 13665569
-        redCol = 14362664
+        redCol = 2631899
 
         if pro['matchTeamId'] == blueId:
             txtColor = blueCol

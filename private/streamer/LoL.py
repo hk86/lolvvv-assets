@@ -43,13 +43,13 @@ class LeagueOfLegends:
         if (pyautogui.locateCenterOnScreen('PendingLoL.png')):
             cur_time = self._getCurrentTime()
             pyautogui.screenshot('notRunning' + cur_time + '.png')
-            obs.stop()
+            obs.stopStreaming()
             self.stop()
             subprocess.call(['updateLoL.bat'])
             time.sleep(300) # wait for updating
             raise Exception('Couldnt start LoL')
-        elif (pyautogui.locateCenterOnScreen('lolCrushed.png')):
-            obs.stop()
+        elif (pyautogui.locateCenterOnScreen('lolCrashed.png')):
+            obs.stopStreaming()
             self.stop()
             raise Exception('LoL Crushed')
 
