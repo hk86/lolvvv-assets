@@ -26,8 +26,8 @@
         "sync": 0,
         "volume": 1.0
     },
-    "current_program_scene": "lolvvv_ingame",
-    "current_scene": "lolvvv_ingame",
+    "current_program_scene": "lolvvv_upcomingmatch",
+    "current_scene": "lolvvv_upcomingmatch",
     "current_transition": "Überblenden",
     "modules": {
         "auto-scene-switcher": {
@@ -560,10 +560,10 @@
                     "push-to-talk": false,
                     "push-to-talk-delay": 0,
                     "settings": {
-                        "bottom": 50,
-                        "left": 25,
-                        "right": 25,
-                        "top": 754
+                        "bottom": 694,
+                        "left": 129,
+                        "right": 127,
+                        "top": 118
                     },
                     "sync": 0,
                     "volume": 1.0
@@ -590,7 +590,7 @@
                 "restart_when_active": false,
                 "shutdown": false,
                 "url": "https://www.lolvvv.com/live?disableStream",
-                "width": 1200
+                "width": 1400
             },
             "sync": 0,
             "volume": 1.0
@@ -636,7 +636,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "id_counter": 24,
+                "id_counter": 25,
                 "items": [
                     {
                         "align": 5,
@@ -850,7 +850,7 @@
                         "locked": true,
                         "name": "lolvvvlink_txt_up",
                         "pos": {
-                            "x": 1118.0,
+                            "x": 1114.0,
                             "y": 951.0
                         },
                         "private_settings": {},
