@@ -30,7 +30,7 @@ class OBS():
         sceneName = 'obs_lolvvv_1080p.json'
         obs_scene = os.path.join(os.getenv('APPDATA'), 'obs-studio/basic/scenes', sceneName)
         print(obs_scene)
-        copyfile(obs_scene, sceneName)
+        copyfile(sceneName, obs_scene)
 
         _obs_path = os.path.join(obs_path, 'bin', arch)
         subprocess.Popen([os.path.join(_obs_path, self.obs_exe)], cwd=_obs_path)
