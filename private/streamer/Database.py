@@ -1,3 +1,6 @@
+import time
+from threading import Thread
+
 import pprint
 import pymongo
 
@@ -8,6 +11,7 @@ class Database:
         self.db = mc['meteor']
         self.staticDb = pymongo.MongoClient(uriStatic)['staticdata']
         self.active_matches = self.db['fact_active_matches']
+        self.streamed_matches = self.db['fact_streamed_matches']
 
 
     def getTopRatedLiveMatch(self):
@@ -28,8 +32,19 @@ class Database:
                                                           {'platformId':platformId}]})
 
     def setStreamingParams(self, gameId, platformId):
+        match = {'platformId':platformId,
+            'gameId': gameId,
+            'streamGameStarting':int(time.time()),
+            'streamGameEnding':0,
+            'scannedForEvents':False}
+        self.streamed_matches.insert_one(match)
         server_state = self.db['dim_server_state']
         server_state.update_one({}, {'$set': {'streaming': {'platformId': platformId, 'gameId': gameId} }})
+
+    def setStreamingMatchEnd(self, gameId, platformId):
+       self.streamed_matches.update_one({'$and': [{'gameId': gameId},
+                                              {'platformId':platformId}]}, {
+                                                '$set': {'streamGameEnding': int(time.time())}})
 
     def getChampionName(self, champId):
         return self.staticDb['static_champions'].find_one({'id':champId})['name']

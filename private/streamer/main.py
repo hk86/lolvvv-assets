@@ -47,7 +47,6 @@ if __name__ == "__main__":
 
     lol = LeagueOfLegends(sys, logger)
     try:
-        obs.startStreaming()
         ii = 0
         maxStreamingMatches = 50
         while ii < maxStreamingMatches:
@@ -56,6 +55,7 @@ if __name__ == "__main__":
                 live_match = LiveMatch(match)
                 db.setStreamingParams(live_match.getGameId(), live_match.getPlatform())
                 obs.showUpcomingmatchScene()
+                obs.startStreaming()
 
                 title = live_match.getTitle(db)
             
@@ -86,11 +86,13 @@ if __name__ == "__main__":
             
                 lol.stopPending(180,5)
             
+                db.setStreamingMatchEnd(live_match.getGameId(), live_match.getPlatform())
                 obs.stopDiashow()
                 lol.stopShowMoney()
 
                 ii = ii + 1
             else:
+                obs.stopStreaming()
                 logger.info('couldnt\'t find match')
                 time.sleep(10) # sleep for 10 seconds
                 ii = ii + 0.0005
