@@ -29,7 +29,6 @@ class OBS():
         # setup scene from git
         sceneName = 'obs_lolvvv_1080p.json'
         obs_scene = os.path.join(os.getenv('APPDATA'), 'obs-studio/basic/scenes', sceneName)
-        print(obs_scene)
         copyfile(sceneName, obs_scene)
 
         _obs_path = os.path.join(obs_path, 'bin', arch)
