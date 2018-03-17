@@ -38,7 +38,6 @@ class OBS():
 
         self._reconnectToObs()
 
-        self.showIngameScene()
         self._proTeam_props = self._getProperties('proteam_txt')
         self._proTeam_settings = self._getSettings('proteam_txt')
         self._pros_settings = self._getSettings('proplayer_img')
@@ -47,8 +46,21 @@ class OBS():
         self._perk1_settings = self._getSettings('perks1_img')
         self._perk2_settings = self._getSettings('perks2_img')
 
-        self.showUpcomingmatchScene()
         self._countdown_settings = self._getSettings('countdown_txt_up')
+
+        self._upcomingSceneProp = []
+        self._upcomingSceneProp.append(self._getProperties('backgroundfbtw_img_up'))
+        self._upcomingSceneProp.append(self._getProperties('countdown_txt_up'))
+        self._upcomingSceneProp.append(self._getProperties('facebook_logo_up'))
+        self._upcomingSceneProp.append(self._getProperties('facebook_txt_up'))
+        self._upcomingSceneProp.append(self._getProperties('lolvvv_logo_up'))
+        self._upcomingSceneProp.append(self._getProperties('lolvvvlink_txt_up'))
+        self._upcomingSceneProp.append(self._getProperties('scoreboard_browser_up'))
+        self._upcomingSceneProp.append(self._getProperties('twitter_logo_up'))
+        self._upcomingSceneProp.append(self._getProperties('twitter_txt_up'))
+        self._upcomingSceneProp.append(self._getProperties('upcomingmatch_txt_up'))
+        self._upcomingSceneProp.append(self._getProperties('wallpaper_img_up'))
+
     
     def _toObsPath(self, path):
         return Path(os.path.abspath(path)).as_posix()
@@ -83,10 +95,10 @@ class OBS():
             self._proTeam_settings['color'] = txtColor
             self._setSettings('proteam_txt', self._proTeam_settings)
             self._proTeam_props['visible'] = True
-            self._setProperties('proteam_txt', self._proTeam_props)
+            self._setProperties(self._proTeam_props)
         else:
             self._proTeam_props['visible'] = False
-            self._setProperties('proteam_txt', self._proTeam_props)
+            self._setProperties(self._proTeam_props)
 
     def _reconnectToObs(self, url='ws://localhost:4444'):
         self._ws=None
@@ -99,13 +111,15 @@ class OBS():
         # workaround fuer bug in obs-websocket
         self._reconnectToObs()
 
-    def showUpcomingmatchScene(self):
-        self._setCurrentScene('lolvvv_upcomingmatch')
-        self._sys.setMute(True)
+    def _setVisiblity(self, name, visibility):
+        prop = self._getProperties(name)
+        prop['visible'] = visibility
+        self._setProperties(prop)
 
-    def showIngameScene(self):
-        self._setCurrentScene('lolvvv_ingame')
-        self._sys.setMute(False)
+    def showUpcomingmatchScene(self, visibilitiy):
+        for prop in self._upcomingSceneProp:
+            prop['visible'] = visibilitiy
+            self._setProperties(prop)
 
     def countdown(self, duration):
         interval_time = 0.1
@@ -191,8 +205,8 @@ class OBS():
         req = {"request-type": "GetSceneItemProperties", "message-id": "12345678", "item": sourceName}
         return self._request(req)
 
-    def _setProperties(self, sourceName, properties):
-        req = {"request-type": "SetSceneItemProperties", "item": sourceName}
+    def _setProperties(self, properties):
+        req = {"request-type": "SetSceneItemProperties", "item": properties['name']}
         req.update(properties)
         self._request(req)
 

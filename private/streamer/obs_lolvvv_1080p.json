@@ -26,9 +26,9 @@
         "sync": 0,
         "volume": 1.0
     },
-    "current_program_scene": "lolvvv_upcomingmatch",
-    "current_scene": "lolvvv_upcomingmatch",
-    "current_transition": "Überblenden",
+    "current_program_scene": "lolvvv_ingame",
+    "current_scene": "lolvvv_ingame",
+    "current_transition": "Fade",
     "modules": {
         "auto-scene-switcher": {
             "active": true,
@@ -57,20 +57,7 @@
     },
     "name": "lolvvv_1080p",
     "preview_locked": false,
-    "quick_transitions": [
-        {
-            "duration": 300,
-            "hotkeys": [],
-            "id": 5,
-            "name": "Schnitt"
-        },
-        {
-            "duration": 300,
-            "hotkeys": [],
-            "id": 6,
-            "name": "Überblenden"
-        }
-    ],
+    "quick_transitions": [],
     "saved_multiview_projectors": [
         {
             "saved_multiview_projectors": 0
@@ -206,9 +193,6 @@
     "scene_order": [
         {
             "name": "lolvvv_ingame"
-        },
-        {
-            "name": "lolvvv_upcomingmatch"
         }
     ],
     "sources": [
@@ -217,23 +201,19 @@
             "deinterlace_mode": 0,
             "enabled": true,
             "flags": 0,
-            "hotkeys": {
-                "hotkey_start": [],
-                "hotkey_stop": []
-            },
-            "id": "game_capture",
+            "hotkeys": {},
+            "id": "image_source",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "LoL",
+            "name": "perks2_img",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "capture_mode": "window",
-                "window": "League of Legends (TM) Client:RiotWindowClass:League of Legends.exe"
+                "file": "C:/lolvvv_com/private/streamer/obs/perks_small/8200.png"
             },
             "sync": 0,
             "volume": 1.0
@@ -248,66 +228,14 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "teamcolour_img",
+            "name": "perks1_img",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "bounds": {
-                    "type": "OBS_BOUNDS_NONE"
-                },
-                "crop": {
-                    "bottom": 0,
-                    "left": 0,
-                    "right": 0,
-                    "top": 0
-                },
-                "file": "C:/lolvvv_com/private/streamer/obs/teamcolour_100.png",
-                "message-id": "12345678",
-                "name": "teamcolour_img",
-                "position": {
-                    "alignment": 5,
-                    "x": 440.0,
-                    "y": 1059.0
-                },
-                "rotation": 0.0,
-                "scale": {
-                    "x": 1.0,
-                    "y": 1.0
-                },
-                "status": "ok",
-                "visible": true
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
-            "id": "text_gdiplus",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "countdown_txt_up",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "color": 14869218,
-                "font": {
-                    "face": "Segoe UI",
-                    "flags": 1,
-                    "size": 60,
-                    "style": ""
-                },
-                "text": "35:0"
+                "file": "C:/lolvvv_com/private/streamer/obs/perks_small/8000.png"
             },
             "sync": 0,
             "volume": 1.0
@@ -322,14 +250,14 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "backgroundfbtw_img_up",
+            "name": "championplayed_img",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/background_fbtw.png"
+                "file": "C:/lolvvv_com/private/streamer/obs/champion/champion_small/Tristana.png"
             },
             "sync": 0,
             "volume": 1.0
@@ -344,21 +272,24 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "lolvvvlink_txt_up",
+            "name": "proteam_txt",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "color": 14869218,
+                "color": 2631899,
+                "file": "C:/Users/Martin/Desktop/proteam.txt",
                 "font": {
-                    "face": "Segoe UI",
+                    "face": "Arial",
                     "flags": 0,
-                    "size": 28,
+                    "size": 24,
                     "style": ""
                 },
-                "text": "www.lolvvv.com/live"
+                "opacity": 100,
+                "read_from_file": false,
+                "text": "Fnatic"
             },
             "sync": 0,
             "volume": 1.0
@@ -373,18 +304,72 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "twitter_txt_up",
+            "name": "proplayername_txt",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "color": 14869218,
+                "color": 2631899,
+                "file": "C:/Users/Martin/Desktop/proname.txt",
                 "font": {
-                    "face": "Segoe UI",
+                    "face": "Arial",
                     "flags": 1,
-                    "size": 48,
+                    "size": 30,
+                    "style": ""
+                },
+                "opacity": 100,
+                "read_from_file": false,
+                "text": "Rekkles"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "proplayer_img",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/lolvvv_com/public/image/pros/medium/fnc_rekkles_2017.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "twitter_txt",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 15199936,
+                "font": {
+                    "face": "Arial",
+                    "flags": 1,
+                    "size": 36,
                     "style": ""
                 },
                 "text": "@lolvvv_com"
@@ -402,20 +387,21 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "facebook_txt_up",
+            "name": "facebook_txt",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "color": 14869218,
+                "color": 15199936,
                 "font": {
-                    "face": "Segoe UI",
+                    "face": "Arial",
                     "flags": 1,
-                    "size": 48,
+                    "size": 36,
                     "style": ""
                 },
+                "opacity": 100,
                 "text": "@lolvvvcom"
             },
             "sync": 0,
@@ -431,7 +417,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "twitter_logo_up",
+            "name": "twitter_logo",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -453,7 +439,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "facebook_logo_up",
+            "name": "facebook_logo",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -475,7 +461,51 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "lolvvv_logo_up",
+            "name": "banner_right",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "banner_middle",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "lolvvv_logo",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -493,460 +523,18 @@
             "enabled": true,
             "flags": 0,
             "hotkeys": {},
-            "id": "text_gdiplus",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "upcomingmatch_txt_up",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "color": 14869218,
-                "font": {
-                    "face": "Segoe UI",
-                    "flags": 1,
-                    "size": 60,
-                    "style": ""
-                },
-                "text": "Upcoming Match, starting in         ..."
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
             "id": "image_source",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "wallpaper_img_up",
+            "name": "banner_left",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/wallpaper_clean.png"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "filters": [
-                {
-                    "deinterlace_field_order": 0,
-                    "deinterlace_mode": 0,
-                    "enabled": true,
-                    "flags": 0,
-                    "hotkeys": {},
-                    "id": "crop_filter",
-                    "mixers": 0,
-                    "monitoring_type": 0,
-                    "muted": false,
-                    "name": "zuschneiden_scoreboard",
-                    "private_settings": {},
-                    "push-to-mute": false,
-                    "push-to-mute-delay": 0,
-                    "push-to-talk": false,
-                    "push-to-talk-delay": 0,
-                    "settings": {
-                        "bottom": 694,
-                        "left": 129,
-                        "right": 127,
-                        "top": 118
-                    },
-                    "sync": 0,
-                    "volume": 1.0
-                }
-            ],
-            "flags": 0,
-            "hotkeys": {},
-            "id": "browser_source",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "scoreboard_browser_up",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "fps": 10,
-                "height": 1300,
-                "is_local_file": false,
-                "local_file": "C:/Users/Martin/Pictures/Amumu.png",
-                "pause": false,
-                "restart_when_active": false,
-                "shutdown": false,
-                "url": "https://www.lolvvv.com/live?disableStream",
-                "width": 1400
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {
-                "OBSBasic.SelectScene": [],
-                "libobs.hide_scene_item.backgroundfbtw_img_up": [],
-                "libobs.hide_scene_item.countdown_txt_up": [],
-                "libobs.hide_scene_item.facebook_logo_up": [],
-                "libobs.hide_scene_item.facebook_txt_up": [],
-                "libobs.hide_scene_item.lolvvv_logo_up": [],
-                "libobs.hide_scene_item.lolvvvlink_txt_up": [],
-                "libobs.hide_scene_item.scoreboard_browser_up": [],
-                "libobs.hide_scene_item.twitter_logo_up": [],
-                "libobs.hide_scene_item.twitter_txt_up": [],
-                "libobs.hide_scene_item.upcomingmatch_txt_up": [],
-                "libobs.hide_scene_item.wallpaper_img_up": [],
-                "libobs.show_scene_item.backgroundfbtw_img_up": [],
-                "libobs.show_scene_item.countdown_txt_up": [],
-                "libobs.show_scene_item.facebook_logo_up": [],
-                "libobs.show_scene_item.facebook_txt_up": [],
-                "libobs.show_scene_item.lolvvv_logo_up": [],
-                "libobs.show_scene_item.lolvvvlink_txt_up": [],
-                "libobs.show_scene_item.scoreboard_browser_up": [],
-                "libobs.show_scene_item.twitter_logo_up": [],
-                "libobs.show_scene_item.twitter_txt_up": [],
-                "libobs.show_scene_item.upcomingmatch_txt_up": [],
-                "libobs.show_scene_item.wallpaper_img_up": []
-            },
-            "id": "scene",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "lolvvv_upcomingmatch",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "id_counter": 25,
-                "items": [
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 13,
-                        "locked": true,
-                        "name": "wallpaper_img_up",
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 22,
-                        "locked": true,
-                        "name": "backgroundfbtw_img_up",
-                        "pos": {
-                            "x": 1436.0,
-                            "y": 141.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 14,
-                        "locked": true,
-                        "name": "scoreboard_browser_up",
-                        "pos": {
-                            "x": 150.0,
-                            "y": 455.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 15,
-                        "locked": true,
-                        "name": "lolvvv_logo_up",
-                        "pos": {
-                            "x": 144.0,
-                            "y": 129.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 16,
-                        "locked": true,
-                        "name": "facebook_logo_up",
-                        "pos": {
-                            "x": 1455.0,
-                            "y": 158.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 17,
-                        "locked": true,
-                        "name": "twitter_logo_up",
-                        "pos": {
-                            "x": 1455.0,
-                            "y": 226.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 18,
-                        "locked": true,
-                        "name": "facebook_txt_up",
-                        "pos": {
-                            "x": 1518.0,
-                            "y": 159.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 19,
-                        "locked": true,
-                        "name": "lolvvvlink_txt_up",
-                        "pos": {
-                            "x": 1114.0,
-                            "y": 951.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 20,
-                        "locked": true,
-                        "name": "upcomingmatch_txt_up",
-                        "pos": {
-                            "x": 153.0,
-                            "y": 385.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 21,
-                        "locked": true,
-                        "name": "twitter_txt_up",
-                        "pos": {
-                            "x": 1518.0,
-                            "y": 226.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 24,
-                        "locked": true,
-                        "name": "countdown_txt_up",
-                        "pos": {
-                            "x": 762.0,
-                            "y": 385.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    }
-                ]
+                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
             },
             "sync": 0,
             "volume": 1.0
@@ -959,37 +547,59 @@
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
                 "libobs.hide_scene_item.LoL": [],
+                "libobs.hide_scene_item.backgroundfbtw_img_up": [],
                 "libobs.hide_scene_item.banner_left": [],
                 "libobs.hide_scene_item.banner_middle": [],
                 "libobs.hide_scene_item.banner_right": [],
                 "libobs.hide_scene_item.championplayed_img": [],
+                "libobs.hide_scene_item.countdown_txt_up": [],
                 "libobs.hide_scene_item.facebook_logo": [],
+                "libobs.hide_scene_item.facebook_logo_up": [],
                 "libobs.hide_scene_item.facebook_txt": [],
+                "libobs.hide_scene_item.facebook_txt_up": [],
                 "libobs.hide_scene_item.lolvvv_logo": [],
+                "libobs.hide_scene_item.lolvvv_logo_up": [],
+                "libobs.hide_scene_item.lolvvvlink_txt_up": [],
                 "libobs.hide_scene_item.perks1_img": [],
                 "libobs.hide_scene_item.perks2_img": [],
                 "libobs.hide_scene_item.proplayer_img": [],
                 "libobs.hide_scene_item.proplayername_txt": [],
                 "libobs.hide_scene_item.proteam_txt": [],
+                "libobs.hide_scene_item.scoreboard_browser_up": [],
                 "libobs.hide_scene_item.teamcolour_img": [],
                 "libobs.hide_scene_item.twitter_logo": [],
+                "libobs.hide_scene_item.twitter_logo_up": [],
                 "libobs.hide_scene_item.twitter_txt": [],
+                "libobs.hide_scene_item.twitter_txt_up": [],
+                "libobs.hide_scene_item.upcomingmatch_txt_up": [],
+                "libobs.hide_scene_item.wallpaper_img_up": [],
                 "libobs.show_scene_item.LoL": [],
+                "libobs.show_scene_item.backgroundfbtw_img_up": [],
                 "libobs.show_scene_item.banner_left": [],
                 "libobs.show_scene_item.banner_middle": [],
                 "libobs.show_scene_item.banner_right": [],
                 "libobs.show_scene_item.championplayed_img": [],
+                "libobs.show_scene_item.countdown_txt_up": [],
                 "libobs.show_scene_item.facebook_logo": [],
+                "libobs.show_scene_item.facebook_logo_up": [],
                 "libobs.show_scene_item.facebook_txt": [],
+                "libobs.show_scene_item.facebook_txt_up": [],
                 "libobs.show_scene_item.lolvvv_logo": [],
+                "libobs.show_scene_item.lolvvv_logo_up": [],
+                "libobs.show_scene_item.lolvvvlink_txt_up": [],
                 "libobs.show_scene_item.perks1_img": [],
                 "libobs.show_scene_item.perks2_img": [],
                 "libobs.show_scene_item.proplayer_img": [],
                 "libobs.show_scene_item.proplayername_txt": [],
                 "libobs.show_scene_item.proteam_txt": [],
+                "libobs.show_scene_item.scoreboard_browser_up": [],
                 "libobs.show_scene_item.teamcolour_img": [],
                 "libobs.show_scene_item.twitter_logo": [],
-                "libobs.show_scene_item.twitter_txt": []
+                "libobs.show_scene_item.twitter_logo_up": [],
+                "libobs.show_scene_item.twitter_txt": [],
+                "libobs.show_scene_item.twitter_txt_up": [],
+                "libobs.show_scene_item.upcomingmatch_txt_up": [],
+                "libobs.show_scene_item.wallpaper_img_up": []
             },
             "id": "scene",
             "mixers": 0,
@@ -1002,7 +612,7 @@
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "id_counter": 27,
+                "id_counter": 38,
                 "items": [
                     {
                         "align": 5,
@@ -1451,6 +1061,314 @@
                         },
                         "scale_filter": "disable",
                         "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 32,
+                        "locked": true,
+                        "name": "wallpaper_img_up",
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 36,
+                        "locked": true,
+                        "name": "backgroundfbtw_img_up",
+                        "pos": {
+                            "x": 1436.0,
+                            "y": 141.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 33,
+                        "locked": true,
+                        "name": "twitter_txt_up",
+                        "pos": {
+                            "x": 1518.0,
+                            "y": 226.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 35,
+                        "locked": true,
+                        "name": "twitter_logo_up",
+                        "pos": {
+                            "x": 1455.0,
+                            "y": 226.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 34,
+                        "locked": true,
+                        "name": "facebook_txt_up",
+                        "pos": {
+                            "x": 1518.0,
+                            "y": 159.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 37,
+                        "locked": true,
+                        "name": "facebook_logo_up",
+                        "pos": {
+                            "x": 1455.0,
+                            "y": 158.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 31,
+                        "locked": true,
+                        "name": "lolvvvlink_txt_up",
+                        "pos": {
+                            "x": 1114.0,
+                            "y": 951.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 28,
+                        "locked": true,
+                        "name": "scoreboard_browser_up",
+                        "pos": {
+                            "x": 150.0,
+                            "y": 455.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 30,
+                        "locked": true,
+                        "name": "countdown_txt_up",
+                        "pos": {
+                            "x": 762.0,
+                            "y": 385.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 29,
+                        "locked": true,
+                        "name": "upcomingmatch_txt_up",
+                        "pos": {
+                            "x": 153.0,
+                            "y": 385.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
+                    },
+                    {
+                        "align": 5,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_align": 0,
+                        "bounds_type": 0,
+                        "crop_bottom": 0,
+                        "crop_left": 0,
+                        "crop_right": 0,
+                        "crop_top": 0,
+                        "id": 38,
+                        "locked": true,
+                        "name": "lolvvv_logo_up",
+                        "pos": {
+                            "x": 144.0,
+                            "y": 129.0
+                        },
+                        "private_settings": {},
+                        "rot": 0.0,
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_filter": "disable",
+                        "visible": true
                     }
                 ]
             },
@@ -1461,20 +1379,55 @@
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
+            "filters": [
+                {
+                    "deinterlace_field_order": 0,
+                    "deinterlace_mode": 0,
+                    "enabled": true,
+                    "flags": 0,
+                    "hotkeys": {},
+                    "id": "crop_filter",
+                    "mixers": 0,
+                    "monitoring_type": 0,
+                    "muted": false,
+                    "name": "zuschneiden_scoreboard",
+                    "private_settings": {},
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "settings": {
+                        "bottom": 694,
+                        "left": 129,
+                        "right": 127,
+                        "top": 118
+                    },
+                    "sync": 0,
+                    "volume": 1.0
+                }
+            ],
             "flags": 0,
             "hotkeys": {},
-            "id": "image_source",
+            "id": "browser_source",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "banner_left",
+            "name": "scoreboard_browser_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
+                "fps": 10,
+                "height": 1300,
+                "is_local_file": false,
+                "local_file": "C:/Users/Martin/Pictures/Amumu.png",
+                "pause": false,
+                "restart_when_active": false,
+                "shutdown": false,
+                "url": "https://www.lolvvv.com/live?disableStream",
+                "width": 1400
             },
             "sync": 0,
             "volume": 1.0
@@ -1489,7 +1442,58 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "lolvvv_logo",
+            "name": "wallpaper_img_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "file": "C:/lolvvv_com/private/streamer/obs/wallpaper_clean.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "upcomingmatch_txt_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 14869218,
+                "font": {
+                    "face": "Segoe UI",
+                    "flags": 1,
+                    "size": 60,
+                    "style": ""
+                },
+                "text": "Upcoming Match, starting in         ..."
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "image_source",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "lolvvv_logo_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -1511,51 +1515,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "banner_middle",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
-            "id": "image_source",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "banner_right",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
-            "id": "image_source",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "facebook_logo",
+            "name": "facebook_logo_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -1577,7 +1537,7 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "twitter_logo",
+            "name": "twitter_logo_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -1599,21 +1559,20 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "facebook_txt",
+            "name": "facebook_txt_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "color": 15199936,
+                "color": 14869218,
                 "font": {
-                    "face": "Arial",
+                    "face": "Segoe UI",
                     "flags": 1,
-                    "size": 36,
+                    "size": 48,
                     "style": ""
                 },
-                "opacity": 100,
                 "text": "@lolvvvcom"
             },
             "sync": 0,
@@ -1629,18 +1588,18 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "twitter_txt",
+            "name": "twitter_txt_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "color": 15199936,
+                "color": 14869218,
                 "font": {
-                    "face": "Arial",
+                    "face": "Segoe UI",
                     "flags": 1,
-                    "size": 36,
+                    "size": 48,
                     "style": ""
                 },
                 "text": "@lolvvv_com"
@@ -1654,82 +1613,25 @@
             "enabled": true,
             "flags": 0,
             "hotkeys": {},
-            "id": "image_source",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "proplayer_img",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "file": "C:/lolvvv_com/public/image/pros/medium/fnc_rekkles_2017.png"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
             "id": "text_gdiplus",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "proplayername_txt",
+            "name": "lolvvvlink_txt_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "color": 2631899,
-                "file": "C:/Users/Martin/Desktop/proname.txt",
+                "color": 14869218,
                 "font": {
-                    "face": "Arial",
-                    "flags": 1,
-                    "size": 30,
-                    "style": ""
-                },
-                "opacity": 100,
-                "read_from_file": false,
-                "text": "Rekkles"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
-            "id": "text_gdiplus",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "proteam_txt",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "color": 2631899,
-                "file": "C:/Users/Martin/Desktop/proteam.txt",
-                "font": {
-                    "face": "Arial",
+                    "face": "Segoe UI",
                     "flags": 0,
-                    "size": 24,
+                    "size": 28,
                     "style": ""
                 },
-                "opacity": 100,
-                "read_from_file": false,
-                "text": "Fnatic"
+                "text": "www.lolvvv.com/live"
             },
             "sync": 0,
             "volume": 1.0
@@ -1744,14 +1646,43 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "championplayed_img",
+            "name": "backgroundfbtw_img_up",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/champion/champion_small/Tristana.png"
+                "file": "C:/lolvvv_com/private/streamer/obs/background_fbtw.png"
+            },
+            "sync": 0,
+            "volume": 1.0
+        },
+        {
+            "deinterlace_field_order": 0,
+            "deinterlace_mode": 0,
+            "enabled": true,
+            "flags": 0,
+            "hotkeys": {},
+            "id": "text_gdiplus",
+            "mixers": 0,
+            "monitoring_type": 0,
+            "muted": false,
+            "name": "countdown_txt_up",
+            "private_settings": {},
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "settings": {
+                "color": 14869218,
+                "font": {
+                    "face": "Segoe UI",
+                    "flags": 1,
+                    "size": 60,
+                    "style": ""
+                },
+                "text": "35:0"
             },
             "sync": 0,
             "volume": 1.0
@@ -1766,14 +1697,37 @@
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "perks1_img",
+            "name": "teamcolour_img",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/perks_small/8000.png"
+                "bounds": {
+                    "type": "OBS_BOUNDS_NONE"
+                },
+                "crop": {
+                    "bottom": 0,
+                    "left": 0,
+                    "right": 0,
+                    "top": 0
+                },
+                "file": "C:/lolvvv_com/private/streamer/obs/teamcolour_100.png",
+                "message-id": "12345678",
+                "name": "teamcolour_img",
+                "position": {
+                    "alignment": 5,
+                    "x": 440.0,
+                    "y": 1059.0
+                },
+                "rotation": 0.0,
+                "scale": {
+                    "x": 1.0,
+                    "y": 1.0
+                },
+                "status": "ok",
+                "visible": true
             },
             "sync": 0,
             "volume": 1.0
@@ -1783,19 +1737,23 @@
             "deinterlace_mode": 0,
             "enabled": true,
             "flags": 0,
-            "hotkeys": {},
-            "id": "image_source",
+            "hotkeys": {
+                "hotkey_start": [],
+                "hotkey_stop": []
+            },
+            "id": "game_capture",
             "mixers": 0,
             "monitoring_type": 0,
             "muted": false,
-            "name": "perks2_img",
+            "name": "LoL",
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/perks_small/8200.png"
+                "capture_mode": "window",
+                "window": "League of Legends (TM) Client:RiotWindowClass:League of Legends.exe"
             },
             "sync": 0,
             "volume": 1.0

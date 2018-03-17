@@ -54,7 +54,7 @@ if __name__ == "__main__":
             if match:
                 live_match = LiveMatch(match)
                 db.setStreamingParams(live_match.getGameId(), live_match.getPlatform())
-                obs.showUpcomingmatchScene()
+                obs.showUpcomingmatchScene(True)
                 obs.startStreaming()
 
                 title = live_match.getTitle(db)
@@ -67,13 +67,13 @@ if __name__ == "__main__":
                 lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
         
                 # wait for lol loaded
+
+                obs.setPros(live_match.getPros(), db)
                 obs.countdown(35)
                 
                 lol.modify_ui()
                 lol.startShowMoney(50, 10)
-                obs.showIngameScene()
-
-                obs.setPros(live_match.getPros(), db)
+                obs.showUpcomingmatchScene(False)
             
                 obs.startDiashow(20)
 

@@ -51,7 +51,7 @@ class LeagueOfLegends:
         elif (pyautogui.locateCenterOnScreen('lolCrashed.png')):
             obs.stopStreaming()
             self.stop()
-            raise Exception('LoL Crushed')
+            raise Exception('LoL Crashed')
 
     def stopPending(self, timeout_s, interval_s):
         trys = int(timeout_s/interval_s)
