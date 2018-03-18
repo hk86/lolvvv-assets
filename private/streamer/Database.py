@@ -6,10 +6,9 @@ import pymongo
 
 class Database:
 
-    def __init__(self, uriMeteor, uriStatic):
+    def __init__(self, uriMeteor):
         mc = pymongo.MongoClient(uriMeteor)
         self.db = mc['meteor']
-        self.staticDb = pymongo.MongoClient(uriStatic)['staticdata']
         self.active_matches = self.db['fact_active_matches']
         self.streamed_matches = self.db['fact_streamed_matches']
 
@@ -47,13 +46,19 @@ class Database:
                                                 '$set': {'streamGameEnding': int(time.time())}})
 
     def getChampionName(self, champId):
-        return self.staticDb['static_champions'].find_one({'id':champId})['name']
+        return self.db['static_champions'].find_one({'id':champId})['name']
 
     def getPro(self, proId):
-        return self.staticDb['static_pros'].find_one({'proId':proId})
+        return self.db['static_pros'].find_one({'proId':proId})
+
+    def _getTeam(self, teamId):
+        return self.db['static_teams'].find_one({'teamId':teamId})
 
     def getTeamName(self, teamId):
-        return self.staticDb['static_teams'].find_one({'teamId':teamId})['teamName']
+        return self._getTeam['teamName']
 
     def getTeamTag(self, teamId):
-        return self.staticDb['static_teams'].find_one({'teamId':teamId})['teamTag']
+        return self._getTeam['teamTag']
+
+    def getTwitterId(self, proId):
+        return self.getPro(proId)['social']['twitter']
