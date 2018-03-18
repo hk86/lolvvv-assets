@@ -74,10 +74,11 @@ class LeagueOfLegends:
                 self.stop()
                 raise Exception('LoL Crashed')
             else:
-                time.sleep(interval_s)
                 if datetime.datetime.now() > stop_time:
                     cur_time = self._getCurrentTime()
                     self._logger.warning('NO EXIT AT ' + cur_time)
                     pyautogui.screenshot('noExit' + cur_time + '.png')
                     break
+                else:
+                    time.sleep(interval_s)
         self.stop()
