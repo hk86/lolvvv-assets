@@ -60,5 +60,15 @@ class Database:
     def getTeamTag(self, teamId):
         return self._getTeam['teamTag']
 
+    def _extractTwitterId(self, pro):
+        return pro['social']['twitter']
+
     def getTwitterId(self, proId):
-        return self.getPro(proId)['social']['twitter']
+        return self._extractTwitterId(self.getPro(proId))
+
+    def getAllTwitterIds(self):
+        twitterPros = self.db['static_pros'].find({'social.twitter':{'$ne':None}})
+        twitterIds = []
+        for pro in twitterPros:
+            twitterIds.append(self._extractTwitterId(pro))
+        return twitterIds
