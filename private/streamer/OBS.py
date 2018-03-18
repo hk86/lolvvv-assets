@@ -134,6 +134,7 @@ class OBS():
         script_dir = os.path.dirname(os.path.realpath(__file__))
         public_dir = os.path.join(script_dir, '../../public')
         self._pros = []
+        numOfTeamMaxChars = 12
         for player in pros:
             db_pro = db.getPro(player['pro']['proId'])
 
@@ -150,6 +151,7 @@ class OBS():
                 team = None
             else:
                 team = db.getTeamName(db_pro['teamId'])
+                team = (team[:(numOfTeamMaxChars-1)] + '..') if len(team) >= numOfTeamMaxChars else team
             
             pro = {'pic':ppic_path,
                    'name':player['pro']['nickName'],

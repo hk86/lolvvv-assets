@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     obs = OBS(sys)
 
-    lol = LeagueOfLegends(sys, logger)
+    lol = LeagueOfLegends(sys, logger, obs)
     try:
         ii = 0
         maxStreamingMatches = 50
@@ -79,7 +79,7 @@ if __name__ == "__main__":
 
                 time.sleep(30)
 
-                lol.checkRunning(obs)
+                lol.checkRunning()
         
                 while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
                     time.sleep(10) # sleep for 10 seconds
