@@ -55,10 +55,10 @@ class Database:
         return self.db['static_teams'].find_one({'teamId':teamId})
 
     def getTeamName(self, teamId):
-        return self._getTeam['teamName']
+        return self._getTeam(teamId)['teamName']
 
     def getTeamTag(self, teamId):
-        return self._getTeam['teamTag']
+        return self._getTeam(teamId)['teamTag']
 
     def _extractTwitterId(self, pro):
         return pro['social']['twitter']
