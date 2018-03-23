@@ -134,14 +134,11 @@ class OBS():
         script_dir = os.path.dirname(os.path.realpath(__file__))
         public_dir = os.path.join(script_dir, '../../public')
         self._pros = []
-        numOfTeamMaxChars = 12
+        numOfTeamMaxChars = 17
         for player in pros:
             db_pro = db.getPro(player['pro']['proId'])
 
-            champion = db.getChampionName(player['championId'])
-            champion = champion.replace('\'', '')
-            champion = champion.replace(' ', '')
-            champion = champion.replace('.', '')
+            champion = db.getChampionKey(player['championId'])
             champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion/champion_small', champion +'.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
             perk1_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkStyle'])+'.png'))
