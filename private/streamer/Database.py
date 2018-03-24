@@ -12,6 +12,10 @@ class Database:
         self.active_matches = self.db['fact_active_matches']
         self.streamed_matches = self.db['fact_streamed_matches']
 
+        self._cachePro = None
+        self._cacheChamp = None
+        self._cacheTeam = None
+
 
     def getTopRatedLiveMatch(self):
         match = self.active_matches.find_one({'$and': [{'gameStartTime': {'$gt': 0}},
@@ -45,14 +49,26 @@ class Database:
                                               {'platformId':platformId}]}, {
                                                 '$set': {'streamGameEnding': int(time.time())}})
 
+    def _getChampion(self, champId):
+        if (self._cacheChamp == None) or (self._cacheChamp['id'] != champId):
+            self._cacheChamp = self.db['static_champions'].find_one({'id':champId})
+
+        return self._cacheChamp
+
     def getChampionName(self, champId):
-        return self.db['static_champions'].find_one({'id':champId})['name']
+        return self._getChampion(champId)['name']
+
+    def getChampionKey(self, champId):
+        return self._getChampion(champId)['key']
 
     def getPro(self, proId):
         return self.db['static_pros'].find_one({'proId':proId})
 
     def _getTeam(self, teamId):
-        return self.db['static_teams'].find_one({'teamId':teamId})
+        if (self._cacheTeam == None) or (self._cacheTeam['teamId'] != teamId):
+            self._cacheTeam = self.db['static_teams'].find_one({'teamId':teamId})
+
+        return self._cacheTeam
 
     def getTeamName(self, teamId):
         return self._getTeam(teamId)['teamName']
@@ -65,6 +81,18 @@ class Database:
 
     def getTwitterId(self, proId):
         return self._extractTwitterId(self.getPro(proId))
+
+    def _getProByTwitterId(self, twitterId):
+        if (self._cachePro == None) or (self._cachePro['social']['twitter'] != twitterId):
+            self._cachePro = self.db['static_pros'].find_one({'social.twitter':twitterId})
+
+        return self._cachePro
+
+    def getProIdByTwitterId(self, twitterId):
+        return self._getProByTwitterId(twitterId)['proId']
+
+    def getProNicknameByTwitterId(self, twitterId):
+        return self._getProByTwitterId(twitterId)['nickName']
 
     def getAllTwitterIds(self):
         twitterPros = self.db['static_pros'].find({'social.twitter':{'$ne':None}})

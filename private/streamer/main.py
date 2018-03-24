@@ -62,8 +62,10 @@ if __name__ == "__main__":
                 logger.info('streaming now: ' + title)
             
                 twitch.set_title(title)
+                logger.debug('title')
         
                 lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
+                logger.debug('start spectate')
         
                 # wait for lol loaded
 
@@ -80,11 +82,14 @@ if __name__ == "__main__":
 
                 lol.checkRunning()
         
+                logger.debug('wait for running match')
                 while db.matchStillRunning(live_match.getGameId(), live_match.getPlatform()):
                     time.sleep(10) # sleep for 10 seconds
             
+                logger.debug('stop pending')
                 lol.stopPending(180,5)
             
+                logger.debug('stop money, diashow and ')
                 db.setStreamingMatchEnd(live_match.getGameId(), live_match.getPlatform())
                 obs.stopDiashow()
                 lol.stopShowMoney()
