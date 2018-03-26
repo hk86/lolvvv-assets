@@ -5,7 +5,7 @@ from Scoreboard import Scoreboard
 
 class Twitter:
 
-    def __init__(self, db, scoreboard):
+    def __init__(self, db):
         self._db = db
         self._scoreboard = Scoreboard()
         self._api = twitter.Api(consumer_key='yQXbcSeDzNpm41S0Zkk4SJe1E',
@@ -38,7 +38,7 @@ class Twitter:
         
 
     def tweet(self, pros):
-        self._api.PostUpdate(self._generateTweet(pros), self._scoreboard.get())
+        self._api.PostUpdate(self._generateTweet(pros), media=self._scoreboard.get())
 
 
     def follow(self, twitterId):
