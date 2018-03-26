@@ -62,7 +62,12 @@ class Database:
         return self._getChampion(champId)['key']
 
     def getPro(self, proId):
-        return self.db['static_pros'].find_one({'proId':proId})
+        if (self._cachePro == None) or (self._cachePro['proId'] != proId):
+            self._cachePro = self.db['static_pros'].find_one({'proId':proId})
+        return self._cachePro
+
+    def getProKey(self, proId):
+        return self.getPro(proId)['key']
 
     def _getTeam(self, teamId):
         if (self._cacheTeam == None) or (self._cacheTeam['teamId'] != teamId):

@@ -11,10 +11,12 @@ class Twitter:
                             access_token_secret='6SijNxsmEzgj4gqpFCoqCbbfovElo15wfHC4GmO9N2QNi')
 
 
-    def tweet(self, pros):
-        subqry = api.GetUser(905753281162600449)
-        print(subqry.screen_name)
-        #status = api.PostUpdate('@lolvvv_com this is an app test')
+    def tweet(self, msg):
+        api.PostUpdate(msg)
+
+    def picTweet(self, msg, pic):
+        api.PostUpdate(msg, pic)
+
 
     def follow(self, twitterId):
         try:

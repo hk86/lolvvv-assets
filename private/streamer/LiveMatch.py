@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import datetime
-#import pprint
+#from pprint import pprint
 
 class LiveMatch:
     
@@ -139,4 +139,29 @@ class LiveMatch:
                 title = blueTeamTitle + ' vs. ' + redTeamTitle
                 
         return (title + ' - lolvvv.com')
+
+    def generateTweet(self, db, twitter):
+        #something like this: @Faker (#Kaisa), @Rekkles (#Swain), @Cabochard (#Gangplank) NOW live on stream https://www.lolvvv.com/live #lolvvv #leagueoflegends
+
+        pros = self.getPros()
+
+        tweet = ''
+
+        for pro in pros:
+            twitterName = None
+            proId = pro['pro']['proId']
+            twitterId = db.getTwitterId(proId)
+            if twitterId:
+                twitterName = twitter.getUserName(twitterId)
+
+            if twitterName:
+                tweet += '@' + twitterName
+            else:
+                tweet += '#' + db.getProKey(proId)
+
+            tweet += ' (#' + db.getChampionKey(pro['championId']) + '), '
+
+        tweet = tweet[:-2] + ' NOW live on stream https://www.lolvvv.com/live #lolvvv #leagueoflegends #twitch'
+
+        return tweet
         
