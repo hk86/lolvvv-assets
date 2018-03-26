@@ -18,7 +18,6 @@ from Database import Database
 from LiveMatch import LiveMatch
 from Twitch import Twitch
 from Twitter import Twitter
-from Scoreboard import Scoreboard
     
 
 if __name__ == "__main__":
@@ -50,8 +49,6 @@ if __name__ == "__main__":
 
     twitter = Twitter(db)
 
-    board = Scoreboard()
-
     try:
         ii = 0
         maxStreamingMatches = 50
@@ -78,7 +75,7 @@ if __name__ == "__main__":
 
                 obs.setPros(live_match.getPros(), db)
                 obs.countdown(35)
-                twitter.picTweet(live_match.generateTweet(), board.get())
+                twitter.tweet(live_match.getPros())
                 
                 lol.modify_ui()
                 lol.startShowMoney(50, 10)
