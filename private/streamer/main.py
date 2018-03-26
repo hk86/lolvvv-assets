@@ -68,7 +68,7 @@ if __name__ == "__main__":
                 twitch.set_title(title)
                 logger.debug('title')
         
-                #lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
+                lol.start_spectate(live_match.getUrl(), live_match.getGameId(), live_match.getEncKey(), live_match.getPlatform())
                 logger.debug('start spectate')
         
                 # wait for lol loaded
