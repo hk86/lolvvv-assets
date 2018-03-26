@@ -14,6 +14,7 @@ class Scoreboard:
 
     def get(self):
         image_path = 'lolvvv_active_match.png'
+        sync(self._page.reload())
         sync(self._page.screenshot({
                     'path': image_path,
                     'clip': {'x': 7, 'y': 118, 'width': 1137, 'height': 487}
