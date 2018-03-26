@@ -78,7 +78,7 @@ if __name__ == "__main__":
 
                 obs.setPros(live_match.getPros(), db)
                 obs.countdown(35)
-                twitter.picTweet(live_match.generateTweet())
+                twitter.picTweet(live_match.generateTweet(), board.get())
                 
                 lol.modify_ui()
                 lol.startShowMoney(50, 10)
