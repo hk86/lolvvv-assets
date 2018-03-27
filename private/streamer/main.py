@@ -74,7 +74,7 @@ if __name__ == "__main__":
                 # wait for lol loaded
 
                 obs.setPros(live_match.getPros(), db)
-                twitter.tweet(live_match.getPros())
+                # twitter.tweet(live_match)
                 
                 obs.countdown(35)
                 
@@ -83,7 +83,8 @@ if __name__ == "__main__":
                 obs.showUpcomingmatchScene(False)
             
                 obs.startDiashow(20)
-
+                # workaround
+                twitter.tweeting(live_match)
                 time.sleep(30)
 
                 lol.checkRunning()
