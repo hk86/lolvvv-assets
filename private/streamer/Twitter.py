@@ -50,7 +50,7 @@ class Twitter:
         self._api.PostUpdate(self._generateTweet(live_match), media=self._scoreboard.get())
 
     def tweet(self, live_match):
-        threading.Thread(target=self.__tweeting, args=(live_match))
+        threading.Thread(target=self.__tweeting, args=([live_match])).start()
 
 
     def follow(self, twitterId):
