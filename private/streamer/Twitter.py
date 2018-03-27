@@ -39,7 +39,7 @@ class Twitter:
             else:
                 tweet += '#' + self._db.getProKey(proId)
 
-            tweet += ' as #' + self._db.getChampionKey(pro['championId']) + ' '
+            #tweet += ' as #' + self._db.getChampionKey(pro['championId']) + ' '
 
         tweet = tweet[:-1] + '\n#lolvvv #live #stream #twitch #leagueoflegends #leagueoflegend #LoL'
 
