@@ -60,7 +60,7 @@ if __name__ == "__main__":
                 obs.showUpcomingmatchScene(True)
                 obs.startStreaming()
 
-                title = live_match.getTitle(db)
+                title = live_match.getTwitchTitle(db)
             
                 logger.info(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
                 logger.info('streaming now: ' + title)
@@ -74,8 +74,9 @@ if __name__ == "__main__":
                 # wait for lol loaded
 
                 obs.setPros(live_match.getPros(), db)
-                obs.countdown(35)
                 twitter.tweet(live_match.getPros())
+                
+                obs.countdown(35)
                 
                 lol.modify_ui()
                 lol.startShowMoney(50, 10)
