@@ -8,8 +8,9 @@ from Scoreboard import Scoreboard
 
 class Twitter:
 
-    def __init__(self, db):
+    def __init__(self, db, log):
         self._db = db
+        self._log = log
         self._scoreboard = Scoreboard()
         self._api = twitter.Api(consumer_key='yQXbcSeDzNpm41S0Zkk4SJe1E',
                             consumer_secret='m3YqCoE2gdUbw5sWiT9K1JweH6B030wbgIxFnbvzjc8h1kAotV',
@@ -39,6 +40,8 @@ class Twitter:
             else:
                 tweet += '#' + self._db.getProKey(proId)
 
+            tweet += ' '
+
             #tweet += ' as #' + self._db.getChampionKey(pro['championId']) + ' '
 
         tweet = tweet[:-1] + '\n#lolvvv #live #stream #twitch #leagueoflegends #leagueoflegend #LoL'
@@ -46,7 +49,11 @@ class Twitter:
         return tweet
         
     def tweeting(self, live_match):
-        self._api.PostUpdate(self._generateTweet(live_match), media=self._scoreboard.get())
+        msg = self._generateTweet(live_match)
+        try:
+            self._api.PostUpdate(msg, media=self._scoreboard.get())
+        except twitter.error.TwitterError:
+            self._log.warning('Error while posting msg:\n' + msg)
 
     def tweet(self, live_match):
         # That doesn't work currently

@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     lol = LeagueOfLegends(sys, logger, obs)
 
-    twitter = Twitter(db)
+    twitter = Twitter(db, logger)
 
     try:
         ii = 0
