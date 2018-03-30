@@ -8,10 +8,10 @@ from Scoreboard import Scoreboard
 
 class Twitter:
 
-    def __init__(self, db, log):
+    def __init__(self, db, log, scoreboard):
         self._db = db
         self._log = log
-        self._scoreboard = Scoreboard()
+        self._scoreboard = scoreboard
         self._api = twitter.Api(consumer_key='yQXbcSeDzNpm41S0Zkk4SJe1E',
                             consumer_secret='m3YqCoE2gdUbw5sWiT9K1JweH6B030wbgIxFnbvzjc8h1kAotV',
                             access_token_key='975016856946991104-sRp0vNiAJos4jnQJUdSZDyrYLS5I0Kz',

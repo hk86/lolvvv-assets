@@ -18,6 +18,7 @@ from Database import Database
 from LiveMatch import LiveMatch
 from Twitch import Twitch
 from Twitter import Twitter
+from Instagram import Instagram
     
 
 if __name__ == "__main__":
@@ -47,7 +48,10 @@ if __name__ == "__main__":
 
     lol = LeagueOfLegends(sys, logger, obs)
 
-    twitter = Twitter(db, logger)
+    scoreboard = Scoreboard()
+
+    twitter = Twitter(db, logger, scoreboard)
+    insta = Instagram(db, scoreboard)
 
     try:
         ii = 0
@@ -85,6 +89,7 @@ if __name__ == "__main__":
                 obs.startDiashow(20)
                 # workaround
                 twitter.tweeting(live_match)
+                insta.generateArticle(live_match)
                 time.sleep(30)
 
                 lol.checkRunning()
