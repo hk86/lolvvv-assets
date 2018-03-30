@@ -31,7 +31,7 @@ class Scoreboard:
         sync(self._pageForInsta.reload())
         sync(self._pageForInsta.screenshot({
                     'path': image_path,
-                    'clip': {'x': 439, 'y': 58, 'width': 722, 'height': 722}
+                    'clip': {'x': 443, 'y': 65, 'width': 714, 'height': 714}
                     }))
         return image_path
 
