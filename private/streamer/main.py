@@ -17,6 +17,7 @@ from ServerSystem import ServerSystem
 from Database import Database
 from LiveMatch import LiveMatch
 from Twitch import Twitch
+from Scoreboard import Scoreboard
 from Twitter import Twitter
 from Instagram import Instagram
     

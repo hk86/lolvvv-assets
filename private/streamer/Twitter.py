@@ -4,8 +4,6 @@ import twitter #pip install python-twitter
 import threading
 from time import sleep
 
-from Scoreboard import Scoreboard
-
 class Twitter:
 
     def __init__(self, db, log, scoreboard):
