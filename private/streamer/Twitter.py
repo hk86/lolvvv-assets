@@ -26,7 +26,7 @@ class Twitter:
         # #lolvvv #live #stream #twitch #leagueoflegends #leagueoflegend #LoL
 
         tweet = live_match.getTitle(self._db) + ' NOW live on stream\n' + 'https://www.lolvvv.com/live\n'
-        tweet += '------------------------------\n'
+        tweet += '-----\n'
 
         for pro in live_match.getPros():
             twitterName = None
@@ -44,7 +44,7 @@ class Twitter:
 
             #tweet += ' as #' + self._db.getChampionKey(pro['championId']) + ' '
 
-        tweet = tweet[:-1] + '\n#lolvvv #live #stream #twitch #leagueoflegends #leagueoflegend #LoL'
+        tweet = tweet[:-1] + '\n#lolvvv #live #stream #twitch #leagueoflegends #LoL'
 
         return tweet
         
