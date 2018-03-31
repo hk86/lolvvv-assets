@@ -13,7 +13,7 @@ class Instagram:
     def generateArticle(self, live_match):
         photo_path = self._scoreboard.getForInsta()
         title = live_match.getTitle(self._db) + '!\n'
-        std_hashes = '#leagueoflegends #lolesports #riotgames #lolvvv '
+        std_hashes = '#leagueoflegends #lolesports #riotgames #lolvvv #twitch #stream '
 
         pro_hashes = ''
         champ_hashes = ''
