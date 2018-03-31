@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     scoreboard = Scoreboard()
 
-    twitter = Twitter(db, logger, scoreboard)
+    twitter = Twitter(db, logger)
     insta = Instagram(db, scoreboard)
 
     try:
@@ -89,7 +89,7 @@ if __name__ == "__main__":
             
                 obs.startDiashow(20)
                 # workaround
-                twitter.tweeting(live_match)
+                twitter.tweeting(live_match, scoreboard)
                 insta.generateArticle(live_match)
                 time.sleep(30)
 

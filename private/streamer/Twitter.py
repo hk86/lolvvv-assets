@@ -1,19 +1,20 @@
 import twitter #pip install python-twitter
 #from pprint import pprint
 
+import json
 import threading
 from time import sleep
 
 class Twitter:
 
-    def __init__(self, db, log, scoreboard):
+    def __init__(self, db, log):
         self._db = db
         self._log = log
-        self._scoreboard = scoreboard
-        self._api = twitter.Api(consumer_key='yQXbcSeDzNpm41S0Zkk4SJe1E',
-                            consumer_secret='m3YqCoE2gdUbw5sWiT9K1JweH6B030wbgIxFnbvzjc8h1kAotV',
-                            access_token_key='975016856946991104-sRp0vNiAJos4jnQJUdSZDyrYLS5I0Kz',
-                            access_token_secret='6SijNxsmEzgj4gqpFCoqCbbfovElo15wfHC4GmO9N2QNi')
+        access_data = json.load(open('Twitter.json'))
+        self._api = twitter.Api(consumer_key=access_data['consumer_key'],
+                            consumer_secret=access_data['consumer_secret'],
+                            access_token_key=access_data['access_token_key'],
+                            access_token_secret=access_data['access_token_secret'])
 
     def _generateTweet(self, live_match):
         #something like this:
@@ -46,10 +47,10 @@ class Twitter:
 
         return tweet
         
-    def tweeting(self, live_match):
+    def tweeting(self, live_match, scoreboard):
         msg = self._generateTweet(live_match)
         try:
-            self._api.PostUpdate(msg, media=self._scoreboard.get())
+            self._api.PostUpdate(msg, media=scoreboard.get())
         except twitter.error.TwitterError:
             self._log.warning('Error while posting msg:\n' + msg)
 
