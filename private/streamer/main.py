@@ -89,8 +89,8 @@ if __name__ == "__main__":
             
                 obs.startDiashow(20)
                 # workaround
-                twitter.tweeting(live_match, scoreboard)
-                insta.generateArticle(live_match)
+                # twitter.tweeting(live_match, scoreboard)
+                # insta.generateArticle(live_match)
                 time.sleep(30)
 
                 lol.checkRunning()
