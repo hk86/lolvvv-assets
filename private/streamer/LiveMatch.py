@@ -141,5 +141,5 @@ class LiveMatch:
         return title
 
     def getTwitchTitle(self, db):
-        return (self.getTitle(db) + ' - lolvvv.com')
+        return ('MSI bootcamp: ' + self.getTitle(db) + ' - lolvvv.com')
         
