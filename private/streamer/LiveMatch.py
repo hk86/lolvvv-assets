@@ -128,7 +128,7 @@ class LiveMatch:
             else:
                 title = blueTeamTitle
 
-            title = title + ' crushing SoloQ on ' + champName
+            title = title + ' crushing SoloQ with ' + champName
         else:
             emptyTeamTilte = ' crushing SoloQ!'
             if not blueTeamTitle:
