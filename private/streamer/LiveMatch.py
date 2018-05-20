@@ -128,9 +128,9 @@ class LiveMatch:
             else:
                 title = blueTeamTitle
 
-            title = title + ' crushing SoloQ with ' + champName
+            title = title + ' with ' + champName
         else:
-            emptyTeamTilte = ' crushing SoloQ!'
+            emptyTeamTilte = ''
             if not blueTeamTitle:
                 title = redTeamTitle + emptyTeamTilte
             elif not redTeamTitle:
@@ -141,5 +141,5 @@ class LiveMatch:
         return title
 
     def getTwitchTitle(self, db):
-        return ('MSI bootcamp: ' + self.getTitle(db) + ' - lolvvv.com')
+        return ('Pros: ' + self.getTitle(db) + ' - lolvvv.com')
         
