@@ -560,7 +560,6 @@
                 "libobs.hide_scene_item.lolvvv_logo": [],
                 "libobs.hide_scene_item.lolvvv_logo_up": [],
                 "libobs.hide_scene_item.lolvvvlink_txt_up": [],
-                "libobs.hide_scene_item.msi_event_img": [],
                 "libobs.hide_scene_item.perks1_img": [],
                 "libobs.hide_scene_item.perks2_img": [],
                 "libobs.hide_scene_item.proplayer_img": [],
@@ -588,7 +587,6 @@
                 "libobs.show_scene_item.lolvvv_logo": [],
                 "libobs.show_scene_item.lolvvv_logo_up": [],
                 "libobs.show_scene_item.lolvvvlink_txt_up": [],
-                "libobs.show_scene_item.msi_event_img": [],
                 "libobs.show_scene_item.perks1_img": [],
                 "libobs.show_scene_item.perks2_img": [],
                 "libobs.show_scene_item.proplayer_img": [],
@@ -634,34 +632,6 @@
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
-                        },
-                        "private_settings": {},
-                        "rot": 0.0,
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_filter": "disable",
-                        "visible": true
-                    },
-                    {
-                        "align": 5,
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_align": 0,
-                        "bounds_type": 0,
-                        "crop_bottom": 0,
-                        "crop_left": 0,
-                        "crop_right": 0,
-                        "crop_top": 0,
-                        "id": 39,
-                        "locked": true,
-                        "name": "msi_event_img",
-                        "pos": {
-                            "x": 1614.0,
-                            "y": 62.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
@@ -1784,28 +1754,6 @@
             "settings": {
                 "capture_mode": "window",
                 "window": "League of Legends (TM) Client:RiotWindowClass:League of Legends.exe"
-            },
-            "sync": 0,
-            "volume": 1.0
-        },
-        {
-            "deinterlace_field_order": 0,
-            "deinterlace_mode": 0,
-            "enabled": true,
-            "flags": 0,
-            "hotkeys": {},
-            "id": "image_source",
-            "mixers": 0,
-            "monitoring_type": 0,
-            "muted": false,
-            "name": "msi_event_img",
-            "private_settings": {},
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/msi_2018.png"
             },
             "sync": 0,
             "volume": 1.0
