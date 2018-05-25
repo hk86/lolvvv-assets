@@ -138,8 +138,13 @@ class LiveMatch:
             else:
                 title = blueTeamTitle + ' vs. ' + redTeamTitle
                 
+        if self.match['gameQueueConfigId'] == 700:
+            title = 'Clash Live! {}'.format(title)
+        else:
+            title = 'Pros: {}'.format(title)
+                
         return title
 
     def getTwitchTitle(self, db):
-        return ('Pros: ' + self.getTitle(db) + ' - lolvvv.com')
+        return (self.getTitle(db) + ' - lolvvv.com')
         
