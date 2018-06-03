@@ -141,8 +141,15 @@ class LiveMatch:
         if self.match['gameQueueConfigId'] == 700:
             title = 'Clash Live! {}'.format(title)
         else:
-            #title = 'Pros: {}'.format(title)
-            title = 'Pros playing Pyke: {}'.format(title)
+            pyke_ingame = False
+            PYKE_CHAMPION_ID = 555
+            for player in self.match['participants']:
+                if player['championId'] == PYKE_CHAMPION_ID:
+                    pyke_ingame = True
+            if pyke_ingame:
+                title = 'Pros playing Pyke: {}'.format(title)
+            else:
+                title = 'Pros: {}'.format(title)
                 
         return title
 
