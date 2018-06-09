@@ -39,7 +39,7 @@ if __name__ == "__main__":
     ch.setFormatter(formatter)
     logger.addHandler(ch)
 
-    db = Database('mongodb://root:ZTgh67gth1@10.8.0.6:27017/meteor?authSource=admin')
+    db = Database('mongodb://root:ZTgh67gth1@10.8.0.10:27017/meteor?authSource=admin')
     
     twitch = Twitch('d8kxeyceb97glconsuj9at66c9lq7zfdu7r2rdonn3u5642mwj')
     
