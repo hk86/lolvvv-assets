@@ -3,12 +3,15 @@ import requests
 import shutil
 from match import Match
 
+import logging
+
 class SpectateClient:
 
     def __init__(self, live_match:Match):
         self._live_match = live_match
         self._URL_PREFIX = r'http://{}/observer-mode/rest/consumer/'.format(
             self._live_match.url)
+        logging.getLogger("requests").setLevel(logging.WARNING)
 
     def get_game_meta_data(self):
         url = self._prepare_token_req('getGameMetaData', 0)
