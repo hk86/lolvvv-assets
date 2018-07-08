@@ -18,7 +18,7 @@ class Replay(Match, Thread):
         self._replay_db = replay_db
         self._metas = None
         logging.basicConfig(
-            level=logging.DEBUG,
+            level=logging.WARN,
             format='(%(threadName)-10s) %(message)s',
         )
 
@@ -28,11 +28,17 @@ class Replay(Match, Thread):
     def run(self):
         logging.debug('running')
         self._replay_db.init_replay(self)
-        downloader = ReplayDownloader(self)
-        self._set_state('downloading')
-        downloader.download()
-        state = downloader.state()
-        logging.debug('STATE: ' + state)
+        try:
+            downloader = ReplayDownloader(self)
+            self._set_state('downloading')
+            downloader.download()
+            state = downloader.state()
+        except Exception as err:
+            logging.warning('Error: {}'.format(err), exc_info=True)
+            self._replay_db.delete_replay(self)
+            state = 'failed'
+        logging.debug('id: {} plat_id: {} STATE: {}'.format(
+            self.game_id, self.platform_id, state))
         self._set_state(state)
 
     def add_key_frame(self, key_frame_id, key_frame):

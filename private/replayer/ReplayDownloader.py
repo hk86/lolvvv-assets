@@ -1,10 +1,10 @@
 from datetime import datetime
 from time import sleep
 import json
+import logging
 
 from SpectateClient import SpectateClient
 
-import logging
 
 class ReplayDownloader():
 
@@ -17,11 +17,10 @@ class ReplayDownloader():
         self._last_key_frame_id = 0
         self._metas = None
         self._first_val_chunk_id = 0
-        self._RETRIES_LIMIT = 5
+        self._RETRIES_LIMIT = 15
         self._SLEEP_TIME_S = 1
         # Max 2 minutes in the past * 2 chunks/minute
         self._PAST_CHUNKS_LIMIT = 2*2
-        logging.getLogger("requests").setLevel(logging.WARNING)
 
 
     def download(self):
@@ -74,18 +73,18 @@ class ReplayDownloader():
         last_info = self._spectate_client.get_chunk_info(chunk_id)
         # validate Info
         if ((not last_info['chunkId']) or (last_info['chunkId'] == 0)):
-            if (not last_info['chunkId']):
+            if (last_info['chunkId']):
                 self._add_download_retry()
             else:
                 if (tries > 10):
                     raise Exception('The game is not started')
                 logging.info('Couldn\'t get last chunk info.'\
                    + 'Going for sleep for 30 s')
-                sleep(25) # 25 + 5 below
-            sleep(5)
-            return self._get_last_chunk_infos(chunk_id, tries)
+                sleep(30)
+            return self._get_last_chunk_infos(chunk_id, tries+1)
         self._reset_download_retry()
         self._last_chunk_info = last_info
+        logging.info(last_info)
         return last_info
 
     def _download_key_frames(self):
@@ -99,6 +98,7 @@ class ReplayDownloader():
             self._download_key_frame(ii)
 
     def _download_key_frame(self, key_frame_id):
+        logging.info('_download_key_frame {}'.format(key_frame_id))
         key_frame = self._spectate_client.get_key_frame(key_frame_id)
         if key_frame:
             now = datetime.utcnow().strftime('%b %d, %Y %I:%M:%S %p')
@@ -112,25 +112,23 @@ class ReplayDownloader():
             self._last_key_frame_id = key_frame_id
             logging.info('key_frame_id ' + str(key_frame_id) + ' downloaded')
         else:
-            if self._add_download_retry():
-                logging.info('Couldn\'t get key_frame. Going for sleep for {}s'
-                      .format(self._SLEEP_TIME_S))
-                sleep(self._SLEEP_TIME_S)
+            try:
+                self._add_download_retry()
                 return self._download_key_frame(key_frame_id)
-            else:
-                logging.info('_download_key_frame invalid key_frame_id '
-                      + str(key_frame_id))
+            except RuntimeError:
+                logging.warning('_download_key_frame({}) invalid key_frame_id'
+                                .format(str(key_frame_id)))
         self._reset_download_retry()
-        
 
     def _download_current_data(self):
+        logging.info('_download_current_data')
         last_info = self._get_last_chunk_infos(self._last_chunk_id)
         if ((last_info['endGameChunkId'] != 0) and
             (last_info['endGameChunkId'] <= self._last_chunk_id)):
             logging.info('_download_current_data end stats')
             # end stats
             return
-        if last_info['chunkId'] > self._last_chunk_id :
+        if last_info['chunkId'] > self._last_chunk_id:
             downloadable_last_chunk_id = self._last_chunk_id + 1
             self._download_chunk(downloadable_last_chunk_id)
         if last_info['keyFrameId'] > self._last_key_frame_id :
@@ -138,10 +136,11 @@ class ReplayDownloader():
             self._download_key_frame(downloadable_last_key_frame_id)
         if ((last_info['chunkId'] > self._last_chunk_id) or
             (last_info['keyFrameId'] > self._last_key_frame_id)):
+            logging.debug('still pending chunk or key frame')
             return self._download_current_data()
         # nextAvailableChunk is in milliseconds
         seconds = (last_info['nextAvailableChunk'] + 500)/1000
-        logging.info('waiting for next available chunk '\
+        logging.debug('waiting for next available chunk '\
             + 'going to sleep for ' + str(seconds) + 's')
         sleep(seconds)
         self._download_current_data()
@@ -211,6 +210,7 @@ class ReplayDownloader():
         return chunk_id
 
     def _download_chunk(self, chunk_id):
+        logging.info('_download_chunk {}'.format(chunk_id))
         chunk_data = self._spectate_client.get_chunk_data(chunk_id)
         num_last_chunk_infos = len(self._metas['pendingAvailableChunkInfo'])
         if chunk_data:
@@ -226,17 +226,15 @@ class ReplayDownloader():
                 'duration': duration,
                 'id': chunk_id,
                 'receivedTime':now.strftime('%b %d, %Y %I:%M:%S %p')})
-            self._last_chunk_id = chunk_id
             logging.info('_download_chunk(' + str(chunk_id) + ') downloaded')
         else:
-            if self._add_download_retry():
-                logging.info('Couldn\'t get chunk. Going for sleep for {}s'
-                      .format(self._SLEEP_TIME_S))
-                sleep(self._SLEEP_TIME_S)
+            try:
+                self._add_download_retry()
                 return self._download_chunk(chunk_id)
-            else:
-                logging.info('_download_chunk(' + str(chunk_id) + ') invalid chunk_id')
+            except RuntimeError:
+                logging.warning('_download_chunk(' + str(chunk_id) + ') invalid chunk_id')
         self._reset_download_retry()
+        self._last_chunk_id = chunk_id
 
     def _update_metas(self):
         end_metas = self._spectate_client.get_game_meta_data()
@@ -255,7 +253,11 @@ class ReplayDownloader():
 
     def _add_download_retry(self):
         self._download_retries = self._download_retries + 1
-        return (self._download_retries <= self._RETRIES_LIMIT)
+        if self._download_retries > self._RETRIES_LIMIT:
+            raise RuntimeError('Too much download trys')
+        logging.info('Going for sleep for {} s'
+                      .format(self._SLEEP_TIME_S))
+        sleep(self._SLEEP_TIME_S)
 
     def _reset_download_retry(self):
         self._download_retries = 0
