@@ -1,7 +1,7 @@
 import json
 import requests
 import shutil
-from match import Match
+from match.match import Match
 
 import logging
 
@@ -26,17 +26,17 @@ class SpectateClient:
     
     def get_chunk_data(self, chunk_id):
         url = self._prepare_token_req('getGameDataChunk', chunk_id)
-        return self._request(url, True)
+        return self._request_data(url)
 
     def get_key_frame(self, key_frame_id):
         url = self._prepare_token_req('getKeyFrame', key_frame_id)
-        return self._request(url, True)
+        return self._request_data(url)
 
     def get_end_stats(self):
         url = r'endOfGameStats/{}/{}/null'.format(
             self._live_match.platform_id,
             self._live_match.game_id)
-        return self._request_media_data(url)
+        return self._request_data(url)
 
     def _request(self, req_parameters, stream=False):
         url = self._URL_PREFIX + req_parameters
@@ -52,14 +52,13 @@ class SpectateClient:
             return r.json()
         else:
             return None
-
-    def _request_media_data(self, req_parameters):
+        
+    def _request_data(self, req_parameters):
         r = self._request(req_parameters, True)
         if r:
             return r.content
         else:
             return None
-        
     
     def _prepare_token_req(self, kind, _id):
         url = r'{}/{}/{}/{}/token'.format(
