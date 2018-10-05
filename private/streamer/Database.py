@@ -1,7 +1,10 @@
 import time
+from datetime import datetime,timedelta,timezone
 from threading import Thread
+from LiveMatch import LiveMatch
+from ClashLiveMatch import ClashLiveMatch
 
-import pprint
+from pprint import pprint
 import pymongo
 
 class Database:
@@ -12,17 +15,41 @@ class Database:
         self.active_matches = self.db['fact_active_matches']
         self.streamed_matches = self.db['fact_streamed_matches']
         self._server_state = self.db['dim_server_state']
-
+        self._fact_replays = self.db['fact_replays']
         self._cachePro = None
         self._cacheChamp = None
         self._cacheTeam = None
 
+    def get_new_live_matches(self, younger_then:timedelta):
+        found_matches = self.active_matches.find({'$and': [
+            {'gameLength':{'$lt':int(younger_then.total_seconds())}},
+            #{'marked': {'$exists': False}}
+            ]})
+        matches = []
+        for match in found_matches:
+            matches.append(self._generate_live_match(match))
+            self.active_matches.update_one({'$and':
+                [{'gameId': match['gameId']},{'platformId':match['platformId']}]},
+                                           {'$set': {'marked': True}})
+        return matches
+
+    def _generate_live_match(self, match):
+        platform_id = match['platformId']
+        game_id = match['gameId']
+        encryption_key = match['observers']['encryptionKey']
+        if match['gameQueueConfigId'] == 700:
+            return ClashLiveMatch(platform_id,game_id,encryption_key, self)
+        else:
+            return LiveMatch(platform_id, game_id, encryption_key, self)
 
     def getTopRatedLiveMatch(self):
         match = self.active_matches.find_one({'$and': [{'gameStartTime': {'$gt': 0}},
                                                        {'gameLength':{'$gt': 0}}]},
                                               sort=[('ranking', pymongo.DESCENDING), ('gameLength', pymongo.ASCENDING)])
-        return match
+        if match:
+            return self._generate_live_match(match)
+        else:
+            return None
 
     def matchStillRunning(self, gameId, platformId):
         if self.active_matches.find({'$and': [{'gameId': gameId},
@@ -35,6 +62,30 @@ class Database:
         return self.db['fact_matches'].find_one({'$and': [{'gameId': gameId},
                                                           {'platformId':platformId}]})
 
+    def getStreaimedMatchesByTime(self, timeStart, timeStop):
+        spectatorOffset=timedelta(minutes=3)
+        tmpMatches = self.streamed_matches.find({'$and': [{'streamGameStarting': {'$gte':int((timeStart-spectatorOffset).timestamp())}},
+                                             {'streamGameStarting': {'$lt':int(timeStop.timestamp())}},
+                                             {'streamGameEnding': {'$gt': 0}}]})
+        matches = []
+        for match in tmpMatches:
+            matches.append({
+                'gameId': match['gameId'],
+                'platformId': match['platformId']})
+
+        return matches
+
+    def getStreamedMatchTime(self, gameId, platformId):
+        match = self.getStreamedMatch(gameId, platformId)
+        return ({
+            'start': datetime.fromtimestamp(match['streamGameStarting'], timezone.utc),
+            'stop': datetime.fromtimestamp(match['streamGameEnding'], timezone.utc)
+            })
+
+    def getStreamedMatch(self, gameId, platformId):
+        return self.streamed_matches.find_one({'$and': [{'gameId': gameId},
+                                                {'platformId':platformId}]})
+    
     def setStreamingParams(self, gameId, platformId):
         match = {'platformId':platformId,
             'gameId': gameId,
@@ -169,3 +220,33 @@ class Database:
     def getMostShownProLast24Hours(self, limit=3):
         criteria = self._createLast24hCriteria()
         return self._getMostShownProsOnStream(criteria, limit)
+
+    def set_replay_status(self, match, status:str):
+        game_id = match._get_game_id()
+        platform_id = match._get_platform_id()
+        encryption_key = match._get_encryption_key()
+        replay_match = self._fact_replays.find_one(
+            {'$and': [{'gameId': game_id},{'platformId':platform_id}]})
+        if replay_match:
+            self._fact_replays.update_one(
+                {'$and': [{'gameId': game_id},{'platformId':platform_id}]},
+                                          {'$set':  {'status': status}})
+        else:
+            replay_match = {
+                'gameId': game_id,
+                'platformId':platform_id,
+                'status': status,
+                'encryptionKey': encryption_key}
+            self._fact_replays.insert_one(replay_match)
+
+    def set_replay_game_version(self, match, game_version):
+        game_id = match._get_game_id()
+        platform_id = match._get_platform_id()
+        encryption_key = match._get_encryption_key()
+        replay_match = self._fact_replays.find_one(
+            {'$and': [{'gameId': game_id},{'platformId':platform_id}]})
+        if replay_match:
+            self._fact_replays.update_one(
+                {'$and': [{'gameId': game_id},{'platformId':platform_id}]},
+                                          {'$set':  {'gameVersion': game_version}})
+            
