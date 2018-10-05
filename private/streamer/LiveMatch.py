@@ -89,16 +89,7 @@ class LiveMatch:
 
     def getTitle(self):
         title = self._generate_match_title()
-        pyke_ingame = False
-        PYKE_CHAMPION_ID = 555
-        for player in self.summoners:
-            if player['championId'] == PYKE_CHAMPION_ID:
-                pyke_ingame = True
-        if pyke_ingame:
-            title = 'Pros playing Pyke: {}'.format(title)
-        else:
-            title = 'Pros: {}'.format(title)
-        return title
+        return 'Pros: {}'.format(title)
 
     def getTwitchTitle(self):
         return (self._generate_match_title() + ' - lolvvv.com')
