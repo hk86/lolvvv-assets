@@ -1,4 +1,5 @@
 from .match import Match
+from kill_row import KillInRow
 
 class Replay(Match):
     def __init__(self, live_match):

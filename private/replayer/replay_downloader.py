@@ -54,7 +54,11 @@ class ReplayDownloader(Thread):
             self._download_key_frames()
             self._download_current_data()
             self._replay_service.set_metas(self._replay, self._update_metas())
-            # ToDo: join or kill all threads
+            for thread in self._threads:
+                thread.join(timeout=30)
+                if thread.is_alive():
+                    logging.warning('Thread {} couldn\'t exit'.
+                                    format(thread.name))
             state = self.state()
         except Exception as err:
             logging.warning('Error: {}'.format(err), exc_info=True)
