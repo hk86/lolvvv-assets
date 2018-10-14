@@ -1,8 +1,11 @@
 from .database import Database
+from .static_pro import StaticPro
 from match.live_match import LiveMatch
 from match.replay import Replay
 
 from datetime import timedelta
+
+from pprint import pprint
 
 class Meteor(Database):
 
@@ -11,6 +14,11 @@ class Meteor(Database):
         self._meteor = self._db['meteor']
         self._fact_replays = self._meteor['fact_replays']
         self._active_matches = self._meteor['fact_active_matches']
+        pro_cursor = self._meteor['static_pros'].find(
+            {'accounts': {'$exists': True, '$nin': [None]}})
+        self._cached_pros = []
+        for pro in pro_cursor:
+            self._cached_pros.append(pro)
 
     def get_new_live_matches(self, younger_then:timedelta):
         found_matches = self._active_matches.find({'$and': [
@@ -66,6 +74,15 @@ class Meteor(Database):
     def get_all_replays(self):
         return self._fact_replays.find({})
 
+    def get_pro(self, account_id, platform_id):
+        platform_pros = list(
+            filter(lambda x: ((platform_id in x['accounts'])),
+            self._cached_pros)
+            )
+        for pro in platform_pros:
+            for pro_id in pro['accounts'][platform_id]:
+                    if pro_id == account_id:
+                        return StaticPro(pro)
 
     def _generate_live_match(self, db_match):
         platform_id = db_match['platformId']

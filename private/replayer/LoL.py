@@ -55,8 +55,9 @@ class LoLDriver:
         toggle_key(DirectKey.u)
 
     def toggle_time_jump_back(self):
+        print('toggle_time_jump_back')
         toggle_key(DirectKey.BACK)
-        sleep(0.1)
+        sleep(0.5)
 
     def set_time_speed(self, speed: LoLTimeSpeed):
         toggle_key(DirectKey.NUM_0)
@@ -110,11 +111,8 @@ class LeagueOfLegends(LoLDriver):
 
     def wait_for_replay_start(self):
         self.wait_for_spectate_start()
-        print('start phase is over')
         sleep(self._SERVER_FOLLOWUP_TIME_S)
-        print('follow up time is over')
         sleep(self._REPLAY_DATA_LOAD_TIME_S)
-        print('load time is over')
 
     def wait_for_update(self):
         sleep(self._APPRECIATED_UPDATE_TIME_S)
@@ -156,17 +154,20 @@ class LeagueOfLegends(LoLDriver):
     def stop_toggle_items(self):
         self._show_items_interval.stop()
 
-    # works only with a proper backjump time
-    def replay_time_jump(self, replay_time_s, backjump_time_min=2):
-        count_back_jumps = int(backjump_time_min / 0.25) # 15 seconds per jump
-        for x in range(0, count_back_jumps):
-            self.toggle_time_jump_back()
-        STOP_TIME_BEFORE_S = 5
-        fast_forward_time_s = (replay_time_s-STOP_TIME_BEFORE_S) / 8
-        self.set_time_speed(LoLTimeSpeed.TIMESPEED_X8)
-        CONTROLLING_OVERHEAD_S = 0.1
-        sleep(fast_forward_time_s-CONTROLLING_OVERHEAD_S)
-        self.set_time_speed(LoLTimeSpeed.TIMESPEED_X1)
+    def specate_timeshift(self, time: timedelta):
+        time_s = time.total_seconds()
+        print('specate_timeshift for {} seconds'.format(time_s))
+        if time_s < 0:
+            count_back_jumps = int(time_s / (-15))
+            # 15 seconds per jump
+            print('specate_timeshift count_back_jumps={}'.format(count_back_jumps))
+            for x in range(0, count_back_jumps):
+                self.toggle_time_jump_back()
+        else:
+            fast_forward_time_s = time_s/8
+            self.set_time_speed(LoLTimeSpeed.TIMESPEED_X8)
+            sleep(fast_forward_time_s)
+            self.set_time_speed(LoLTimeSpeed.TIMESPEED_X1)
 
     def _show_items(self):
         self.toggle_scoreboard_items()

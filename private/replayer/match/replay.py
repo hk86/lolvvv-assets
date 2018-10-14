@@ -1,9 +1,8 @@
-from .match import Match
-from kill_row import KillInRow
+from .spectate_match import SpectateMatch
 
-class Replay(Match):
+class Replay(SpectateMatch):
     def __init__(self, live_match):
-        Match.__init__(self,
+        SpectateMatch.__init__(self,
                        live_match.platform_id,
                        live_match.game_id,
                        live_match.encryption_key)

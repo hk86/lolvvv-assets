@@ -16,9 +16,11 @@ class KillRow:
         return self._kill_row[0].timestamp
 
     def kill_row_time(self):
-        row_length = self.get_length()
+        row_length = len(self._kill_row)
         last_kill_time = self._kill_row[row_length-1].timestamp
         return (last_kill_time-self.first_kill_ingame_time())
 
     def killer(self):
         return self._kill_row[0].killer
+
+    #first_kill_ingame_time = property(fget=_get_first_kill_ingame_time)

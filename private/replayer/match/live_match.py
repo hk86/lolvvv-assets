@@ -2,14 +2,14 @@
 
 import datetime
 import json
-from .match import Match
-from match.replay import Replay
+from .spectate_match import SpectateMatch
+from .replay import Replay
 #from pprint import pprint
 
-class LiveMatch(Match):
+class LiveMatch(SpectateMatch):
     
     def __init__(self, platform_id, game_id, encryption_key, meteor_db):
-        Match.__init__(
+        SpectateMatch.__init__(
             self, platform_id,
             game_id, encryption_key)
         self._db = meteor_db

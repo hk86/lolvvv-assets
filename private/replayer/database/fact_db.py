@@ -1,7 +1,10 @@
 from datetime import datetime, timedelta, timezone
 
+from pprint import pprint
+
 from database.database import Database
 from database.kill import Kill
+from match.fact_match import FactMatch
 
 class FactDataDb(Database):
 
@@ -10,21 +13,15 @@ class FactDataDb(Database):
         self._fact_matches = self._db['factdata']['matches']
         self._match_cached = None
 
-    def _match_factdata(self, gameId, platformId):
+    def get_fact_match(self, game_id, platform_id):
         if ((self._match_cached == None) or
-            (self._match_cached['gameId'] != gameId) or
-            (self._match_cached['platformId'] != platformId)):
-            self._match_cached = self._fact_matches.find_one(
-                {'$and': [{'gameId': gameId},
-                {'platformId':platformId}]})
+            (self._match_cached.game_id != game_id) or
+            (self._match_cached.platform_id != platform_id)):
+            fact_data = self._fact_matches.find_one(
+                {'$and': [{'gameId': game_id},
+                {'platformId':platform_id}]})
+            if fact_data:
+                self._match_cached = FactMatch(platform_id, game_id, fact_data)
+            else:
+                return None
         return self._match_cached
-
-    def get_match_kills(self, gameId, platformId):
-        matchFactdata = self._match_factdata(gameId, platformId)
-        kills = []
-        for frame in matchFactdata['timeline']['frames']:
-            for event in frame['events']:
-                if event['type'] == 'CHAMPION_KILL':
-                    print(event)
-                    kills.append(Kill(event))
-        return kills
