@@ -7,7 +7,7 @@ import threading
 from pathlib import Path
 from shutil import copyfile
 
-from Interval import *
+from Interval import Interval
 
 import platform
 
@@ -97,7 +97,7 @@ class ObsDriver:
         self._request(req)
 
     def terminate(self):
-        run('taskkill /F /IM {}'.format(self.obs_exe))
+        run('taskkill /F /IM {}'.format(self._obs_exe))
 
     def _setCurrentScene(self, scene_name):
         req = {"request-type": "SetCurrentScene", "message-id": "12345678", "scene-name": scene_name}
@@ -181,7 +181,7 @@ class Obs(ObsDriver):
 
     def showUpcomingmatchScene(self, visibilitiy):
         for prop in self._upcomingSceneProp:
-            self._setVisiblity(prop['name'])
+            self._setVisiblity(prop['name'], visibilitiy)
 
     def countdown(self, duration):
         interval_time = 0.1
@@ -191,7 +191,7 @@ class Obs(ObsDriver):
             text = '{:02.0f}:{:01.0f}'.format(s, subs*10)
             self._countdown_settings['text'] = text
             self._setSettings('countdown_txt_up', self._countdown_settings)
-            time.sleep(interval_time)
+            sleep(interval_time)
 
     def setPros(self, pros, db):
         script_dir = os.path.dirname(os.path.realpath(__file__))

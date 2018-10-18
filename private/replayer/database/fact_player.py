@@ -1,4 +1,4 @@
-from database.player import Player
+from database.player import Player, MatchTeam
 
 class FactPlayer(Player):
 
@@ -10,5 +10,10 @@ class FactPlayer(Player):
             fact_player['currentAccountId'],
             fact_player['currentPlatformId'],
             fact_participant['teamId'])
+        self._inteam_idx = fact_participant['teamId']
+        if self._get_team() == MatchTeam.RED:
+            self._inteam_idx -= 5
 
+    def get_inteam_idx(self):
+        return self._inteam_idx
     

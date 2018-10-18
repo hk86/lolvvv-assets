@@ -56,6 +56,7 @@ class DirectKey:
     SUBSTRACT = 0x4A
     NUM_MINUS = SUBSTRACT
     SPACE = 0x01
+    d = 0x20
 
 # Actuals Functions
 # Keyboard Scan Hex Codes:

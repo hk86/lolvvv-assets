@@ -4,9 +4,11 @@ from os import path, walk, getcwd
 from subprocess import run
 from datetime import datetime, timedelta
 from time import sleep
+from array import array
 
-from DirectInput import *
-from Interval import *
+from DirectInput import DirectKey, toggle_key, press_key, release_key
+from Interval import Interval
+from database.player import MatchTeam
 
 from pyautogui import locateCenterOnScreen, screenshot #pip install pyautogui
 
@@ -24,6 +26,21 @@ class LoLTimeSpeed:
     TIMESPEED_X8 = 3
 
 class LoLDriver:
+    _BLUE_FOCUS_KEYS = array('B', [
+        DirectKey.NUMERAL_1
+        , DirectKey.NUMERAL_2
+        , DirectKey.NUMERAL_3
+        , DirectKey.NUMERAL_4
+        , DirectKey.NUMERAL_5
+    ])
+    
+    _RED_FOCUS_KEYS = array('B', [
+        DirectKey.q
+        , DirectKey.w
+        , DirectKey.e
+        , DirectKey.r
+        , DirectKey.t
+    ])
 
     def __init__(self, lol_path=r'C:\Riot Games\League of Legends'):
         releases_path = path.join(lol_path, 'RADS','solutions',
@@ -59,6 +76,19 @@ class LoLDriver:
         toggle_key(DirectKey.BACK)
         sleep(0.5)
 
+    def toggle_player(self, match_team: MatchTeam, player_idx: int):
+        if match_team == MatchTeam.BLUE:
+            toggle_key(self._BLUE_FOCUS_KEYS[player_idx])
+        else:
+            toggle_key(self._RED_FOCUS_KEYS[player_idx])
+
+    def center_player(self):
+        press_key(DirectKey.SPACE)
+
+    def autocam(self):
+        release_key(DirectKey.SPACE)
+        toggle_key(DirectKey.d)
+
     def set_time_speed(self, speed: LoLTimeSpeed):
         toggle_key(DirectKey.NUM_0)
         for x in range(0, speed):
@@ -74,9 +104,9 @@ class LoLDriver:
             return LoLState.CRASHED
         elif (locateCenterOnScreen('images/dataUnavailable.png')):
             return LoLState.DATA_UNAVAILBLE
-        elif ((pyautogui.locateCenterOnScreen('images/Continue.png'))
+        elif ((locateCenterOnScreen('images/Continue.png'))
               or
-              (pyautogui.locateCenterOnScreen('images/GameOver.png'))):
+              (locateCenterOnScreen('images/GameOver.png'))):
             return LoLState.FINISHED
         else:
             return LoLState.UNKNOWN
@@ -100,7 +130,7 @@ class LeagueOfLegends(LoLDriver):
     _SECURE_TIMEOUT = 5
 
     def __init__(self, lol_path = 'C:\\Riot Games\\League of Legends'):
-        return super().__init__(lol_path)
+        super().__init__(lol_path)
 
     def _time_string(self): # should be in sw_tools or something like this.
         return datetime.now().strftime('%Y-%m-%d_%H%M%S')
@@ -122,7 +152,6 @@ class LeagueOfLegends(LoLDriver):
         if ((state == LoLState.PENDING) or
             (state == LoLState.CRASHED)):
             screenshot('notRunning' + self._time_string() + '.png')
-            self.stop_lol()
         return state
 
     def stop_pending(self, timeout_s, check_interval_s):
@@ -154,13 +183,30 @@ class LeagueOfLegends(LoLDriver):
     def stop_toggle_items(self):
         self._show_items_interval.stop()
 
+    def focus_player(self, team_id: MatchTeam, inteam_idx: int):
+        self._focus_team = team_id
+        self._focus_player_idx = team_id - 1
+        TOGGLE_INTERVAL_S = 1
+        self._focus_player()
+        self.center_player()
+        self._focus_interval = Interval(TOGGLE_INTERVAL_S,
+                                        self._focus_interval)
+        self._focus_interval.start()
+
+    def unfocus_player(self):
+        self._focus_interval.stop()
+        self.autocam()
+
+    def _focus_player(self):
+        self.toggle_player(self._focus_team, self._focus_player_idx)
+
     def specate_timeshift(self, time: timedelta):
         time_s = time.total_seconds()
         print('specate_timeshift for {} seconds'.format(time_s))
         if time_s < 0:
             count_back_jumps = int(time_s / (-15))
             # 15 seconds per jump
-            print('specate_timeshift count_back_jumps={}'.format(count_back_jumps))
+            time = count_back_jumps * timedelta(seconds=-15)
             for x in range(0, count_back_jumps):
                 self.toggle_time_jump_back()
         else:
@@ -168,6 +214,7 @@ class LeagueOfLegends(LoLDriver):
             self.set_time_speed(LoLTimeSpeed.TIMESPEED_X8)
             sleep(fast_forward_time_s)
             self.set_time_speed(LoLTimeSpeed.TIMESPEED_X1)
+        return time
 
     def _show_items(self):
         self.toggle_scoreboard_items()
