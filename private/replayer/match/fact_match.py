@@ -1,6 +1,9 @@
 from .match import Match
-
 from database.kill import Kill
+
+from json import dump
+
+from pprint import pprint
 
 class FactMatch(Match):
     def __init__(self, platform_id, game_id, fact_data):
@@ -30,6 +33,11 @@ class FactMatch(Match):
                 ==
                 participant_id):
                 return participant_identity['player']
+        print('error! no participant [{}] found!'.format(participant_id))
+        dbg_file=r'fact_match.json'
+        with open(dbg_file, 'w') as output_file:
+            pprint(self._MATCH_DATA, output_file)
+        print('dbg json file wrote')
 
     def get_participant(self, participant_id):
         for participant in self._MATCH_DATA['participants']:

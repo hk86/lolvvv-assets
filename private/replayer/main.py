@@ -9,45 +9,23 @@ from database.fact_db import FactDataDb
 from database.player import MatchTeam
 from kill_row import KillRow
 from LoL import LeagueOfLegends, LoLState
-from obs import Obs
+#from obs import Obs
+from clip import Clip
+from event import Event, generate_events
 from tools import get_valid_filename
-
-def get_kill_rows(kills, min_kills_in_row):
-    rows = []
-    kills_in_row = []
-    last_kill = None
-    timeout = timedelta(seconds=10)
-    kills.sort(key=lambda x: x.timestamp)
-    for kill in kills:
-        if last_kill:
-            if ((last_kill.killer != kill.killer) or
-                ((kill.timestamp - last_kill.timestamp) > timeout)
-                ):
-                if (len(kills_in_row) >= min_kills_in_row):
-                    rows.append(KillRow(kills_in_row))
-                kills_in_row = []
-        kills_in_row.append(kill)
-        last_kill = kill
-    return rows
 
 if __name__ == "__main__":
     fact_db = FactDataDb('mongodb://10.8.0.1:27017')
     lol = LeagueOfLegends()
-    obs = Obs()
+    #obs = Obs()
     main_video_folder = r'./replays/clips'
     game_id = 3370687081
     platform_id = 'KR'
     encryption_key = 'hS3uz9iDyOAzTdjU9leQDYHmjVtveXg4'
     url = '127.0.0.1:1337'
     match = fact_db.get_fact_match(game_id, platform_id)
-    kills = match.get_kills()
-    blue_kills = list(filter(lambda x: x.killer.team == MatchTeam.BLUE, kills))
-    red_kills = list(filter(lambda x: x.killer.team == MatchTeam.RED, kills))
-    min_kills_in_row = KillRow.DOUBLE_KILL
-    rows = (get_kill_rows(blue_kills, min_kills_in_row) +
-            get_kill_rows(red_kills, min_kills_in_row))
-    rows.sort(key=lambda x: x.first_kill_ingame_time())
-    if (len(rows) > 0):
+    events = generate_events(match)
+    if (len(events) > 0):
         match_video_path = path.join(
             main_video_folder,
             platform_id,
@@ -66,23 +44,30 @@ if __name__ == "__main__":
         lol.modify_ui()
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)
-        for row in rows:
-            timeshift = row.first_kill_ingame_time() - ingame_time
+        for idx, event in enumerate(events):
+            event_num = idx + 1
+            timeshift = event.start_time - ingame_time
             ingame_time += lol.specate_timeshift(timeshift)
             ingame_time += lol.specate_timeshift(timedelta(seconds=-15))
             start_record = datetime.now()
-            clip_path = path.join(match_video_path,
-                                get_valid_filename(str(row.first_kill_ingame_time())))
-            Path(clip_path).mkdir(parents=True, exist_ok=True)
-            obs.set_recording_folder(clip_path)
-            killer = row.killer()
+            clip_folder = path.join(match_video_path,
+                                get_valid_filename(str(event_num)))
+            Path(clip_folder).mkdir(parents=True, exist_ok=True)
+            #obs.set_recording_folder(clip_folder)
+            killer = event.main_pro
             lol.focus_player(killer.team, killer.get_inteam_idx)
-            obs.start_recording()
+            #obs.start_recording()
             RECORDING_OVERTIME_S = 25
-            sleep(row.kill_row_time().total_seconds() +
+            sleep(event.start_time.total_seconds() +
                 RECORDING_OVERTIME_S)
-            obs.stop_recording()
-            clip = glob(path.join(clip_path, '*.*'))[0]
+            #obs.stop_recording()
+            clip_path = glob(path.join(clip_folder, '*.*'))[0]
+            clip = Clip()
+            clip.platform_id = match.platform_id
+            clip.game_id = match.game_id
+            clip.clip_path = clip_path
+            clip.ingame_event_num = event_num
+            clip.event = event
             #start video upload to s3
             ingame_time += (datetime.now() - start_record)
         lol.stop_lol()

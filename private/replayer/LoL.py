@@ -8,7 +8,7 @@ from array import array
 
 from DirectInput import DirectKey, toggle_key, press_key, release_key
 from Interval import Interval
-from database.player import MatchTeam
+from database.fact_team import FactTeamId
 
 from pyautogui import locateCenterOnScreen, screenshot #pip install pyautogui
 
@@ -72,12 +72,11 @@ class LoLDriver:
         toggle_key(DirectKey.u)
 
     def toggle_time_jump_back(self):
-        print('toggle_time_jump_back')
         toggle_key(DirectKey.BACK)
         sleep(0.5)
 
-    def toggle_player(self, match_team: MatchTeam, player_idx: int):
-        if match_team == MatchTeam.BLUE:
+    def toggle_player(self, match_team: FactTeamId, player_idx: int):
+        if match_team == FactTeamId.BLUE:
             toggle_key(self._BLUE_FOCUS_KEYS[player_idx])
         else:
             toggle_key(self._RED_FOCUS_KEYS[player_idx])

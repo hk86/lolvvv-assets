@@ -5,7 +5,7 @@ import json
 import logging
 
 from SpectateClient import SpectateClient
-from match.replay import Replay
+from match.live_match import LiveMatch
 from database.replay_service import ReplayService
 
 class ReplayDownloader(Thread):
@@ -13,7 +13,7 @@ class ReplayDownloader(Thread):
     def __init__(self, replay_service:ReplayService):
         Thread.__init__(self)
         logging.basicConfig(
-            level=logging.INFO,
+            level=logging.WARN,
             format='(%(threadName)-10s) %(message)s',
         )
         self._replay_service = replay_service
@@ -32,13 +32,13 @@ class ReplayDownloader(Thread):
         # Max 2 minutes in the past * 2 chunks/minute
         self._PAST_CHUNKS_LIMIT = 2*2
 
-    def download(self, replay:Replay):
-        self._spectate_client = SpectateClient(replay)
-        self._replay = replay
+    def download(self, match:LiveMatch):
+        self._spectate_client = SpectateClient(match)
+        self._replay = match
         self.start()
 
     def run(self):
-        logging.info('game_id: {} plat_id: {} download starting'.format(
+        logging.warn('game_id: {} plat_id: {} download starting'.format(
             self._replay.game_id, self._replay.platform_id))
         logging.info('encryption_key: {}'.format(
             self._replay.encryption_key))
@@ -59,12 +59,11 @@ class ReplayDownloader(Thread):
                 if thread.is_alive():
                     logging.warning('Thread {} couldn\'t exit'.
                                     format(thread.name))
-            state = self.state()
         except Exception as err:
             logging.warning('Error: {}'.format(err), exc_info=True)
             self._replay_service.delete_replay(self._replay)
-            state = 'failed'
-        self._replay.state = state
+        logging.warn('game_id: {} plat_id: {} state: "{}" download finished'.format(
+            self._replay.game_id, self._replay.platform_id, self.state()))
 
     def state(self):
         last_info = self._last_chunk_info

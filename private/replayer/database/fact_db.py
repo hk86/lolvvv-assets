@@ -1,9 +1,6 @@
-from datetime import datetime, timedelta, timezone
-
-from pprint import pprint
+from collections import OrderedDict
 
 from database.database import Database
-from database.kill import Kill
 from match.fact_match import FactMatch
 
 class FactDataDb(Database):
@@ -13,13 +10,16 @@ class FactDataDb(Database):
         self._fact_matches = self._db['factdata']['matches']
         self._match_cached = None
 
-    def get_fact_match(self, game_id, platform_id):
+    def get_fact_match(self, platform_id: str, game_id: int):
         if ((self._match_cached == None) or
             (self._match_cached.game_id != game_id) or
             (self._match_cached.platform_id != platform_id)):
             fact_data = self._fact_matches.find_one(
-                {'$and': [{'gameId': game_id},
-                {'platformId':platform_id}]})
+                OrderedDict([
+                    ('platformId', platform_id),
+                    ('gameId', game_id),
+                ])
+            )
             if fact_data:
                 self._match_cached = FactMatch(platform_id, game_id, fact_data)
             else:

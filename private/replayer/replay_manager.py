@@ -3,9 +3,10 @@ from glob import glob
 from json import load as json_load
 from shutil import rmtree
 
-from match.spectate_match import SpectateMatch
+from match.replay import Replay
 
 class ReplayManager:
+    _URL = '127.0.0.1:1337'
     _PLATFORM_IDS = {
         'KR'
         , 'NA1'
@@ -32,10 +33,11 @@ class ReplayManager:
                                         )
                     if path.exists(metas_path):
                         metas = json_load(open(metas_path))
-                        match = SpectateMatch(
+                        match = Replay(
                             platform,
-                            game_id,
-                            metas['encryptionKey'])
+                            int(game_id),
+                            metas['encryptionKey'],
+                            self._URL)
                         replays.append(match)
         return replays
 

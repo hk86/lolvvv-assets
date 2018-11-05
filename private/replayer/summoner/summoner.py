@@ -3,12 +3,21 @@ class Summoner:
     def __init__(self, account_id, platform_id):
         self._ACCOUNT_ID = account_id
         self._PLATFORM_ID = platform_id
+        self._PRO = None
 
     def __eq__(self, other):
-        return self.__dict__ == other.__dict__
+        return (
+            (self._ACCOUNT_ID == other.account_id)
+            and
+            (self._PLATFORM_ID == other.platform_id)
+        )
 
     def __ne__(self, other):
-        return self.__dict__ != other.__dict__
+        return (
+            (self._ACCOUNT_ID != other.account_id)
+            or
+            (self._PLATFORM_ID != other.platform_id)
+        )
         
     def _get_platform_id(self):
         return self._PLATFORM_ID

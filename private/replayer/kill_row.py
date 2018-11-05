@@ -1,10 +1,5 @@
 
 class KillRow:
-    SINGLE_KILL = 1
-    DOUBLE_KILL = 2
-    TRIPPLE_KILL = 3
-    QUADRA_KILL = 4
-    PENTA_KILL = 5
 
     def __init__(self, row: list):
         self._kill_row = row

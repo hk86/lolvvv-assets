@@ -14,6 +14,9 @@ class LiveMatch(SpectateMatch):
             game_id, encryption_key)
         self._db = meteor_db
         self.summoners = []
+        PLATFORMS = json.load(open(r'../json/LolPlatforms.json'))
+        match_platform = PLATFORMS[self._PLATFORM_ID]
+        self._url = (match_platform['domain'] + ':' + match_platform['port'])
             
     def getPros(self):
         pros = []
@@ -75,15 +78,7 @@ class LiveMatch(SpectateMatch):
 
     def getTitle(self):
         title = self._generate_match_title()
-        pyke_ingame = False
-        PYKE_CHAMPION_ID = 555
-        for player in self.summoners:
-            if player['championId'] == PYKE_CHAMPION_ID:
-                pyke_ingame = True
-        if pyke_ingame:
-            title = 'Pros playing Pyke: {}'.format(title)
-        else:
-            title = 'Pros: {}'.format(title)
+        title = 'Pros: {}'.format(title)
         return title
 
     def getTwitchTitle(self):
@@ -92,4 +87,8 @@ class LiveMatch(SpectateMatch):
     def _get_db(self):
         return self._db
 
+    def _get_url(self):
+        return self._url
+
     meteor_db = property(fget=_get_db)
+    url = property(fget=_get_url)
