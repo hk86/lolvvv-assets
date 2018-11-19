@@ -7,6 +7,7 @@ require('console-stamp')(console, '[HH:MM:ss.l]');
 const SESSION_TIMEOUT_MS = 5 * 60 * 1000;
 const CLEARING_INTERVAL_MS = 1 * 60 * 1000;
 
+const RELATIVE_REPLAYS_FOLDER = 'replays'
 const SERVER_VERSION = '1.82.156';
 var metaData;
 var sessions = [];
@@ -89,7 +90,7 @@ function responseError(response, request) {
 }
 
 function generatePath(kind, platformId, gameId, file) {
-    return path.resolve('..', platformId, gameId, kind, file);
+    return path.resolve(RELATIVE_REPLAYS_FOLDER, platformId, gameId, kind, file);
 }
 
 function getFileContent(filePath) {
