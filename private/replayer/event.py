@@ -6,8 +6,6 @@ from database.kill import Kill
 from pprint import pprint
 
 def get_kill_rows(kills):
-    last_kill = None
-    timeout = timedelta(seconds=10)
     kills.sort(key=lambda x: x.timestamp)
     last_kill = None
     rows = []
@@ -15,11 +13,22 @@ def get_kill_rows(kills):
         rows.append([kills[0]])
         for kill in kills:
             if last_kill:
+                current_row = rows[-1]
+                # "The act of killing several
+                # champions within 10 seconds
+                # of each other (30 seconds to
+                # Penta Kill after a Quadra Kill
+                # if no enemy respawns)."
+                if len(current_row) == 4:
+                    timeout = timedelta(seconds=30)
+                else:
+                    timeout = timedelta(seconds=10)
                 if (((kill.timestamp - last_kill.timestamp) < timeout)
                     and
                     (kill.killer == last_kill.killer)):
-                    rows[-1].append(kill)
+                    current_row.append(kill)
                 else:
+                    # create new row
                     rows.append([kill])
             last_kill = kill
     return rows
@@ -29,44 +38,45 @@ def generate_events(fact_match:FactMatch):
     kills = list(filter(lambda x: x.killer, kills))
     blue_kills = list(filter(lambda x: x.killer.team == FactTeamId.BLUE, kills))
     red_kills = list(filter(lambda x: x.killer.team == FactTeamId.RED, kills))
-    min_kills_in_row = EventType.TRIPPLE_KILL
     rows = (get_kill_rows(blue_kills) + get_kill_rows(red_kills))
-    rows = list(filter(lambda x: len(x) >= min_kills_in_row, rows))
     rows.sort(key=lambda x: x[0].timestamp)
+    event_kill_row_classes = [EventTripleKill,
+        EventQuadraKill, EventPentaKill]
     events = []
     for row in rows:
-        event = Event()
-        event.ev_type = len(row)
-        event.start_time = row[0].timestamp
-        event.length = row[-1].timestamp - row[0].timestamp
-        event.main_summoner = row[0].killer
-        for kill in row:
-            event.participants += kill.participants
-            event.victims.append(kill.victim)
-        event.participants = list(set(event.participants))
-        events.append(event)
+        for event_kill_row_class in event_kill_row_classes:
+            if len(row) == event_kill_row_class.kills_in_row:
+                events.append(event_kill_row_class(row))
     return events
 
-class EventType:
-    UNKOWN = 0
-    SINGLE_KILL = 1
-    DOUBLE_KILL = 2
-    TRIPPLE_KILL = 3
-    QUADRA_KILL = 4
-    PENTA_KILL = 5
-    STRING = [
-        None
-        , 'SINGLEKILL'
-        , 'DOUBLEKILL'
-        , 'TRIPLEKILL'
-        , 'QUADRAKILL'
-        , 'PENTAKILL'
-    ]
-
 class Event:
-    ev_type = EventType.UNKOWN
+    ev_type = ''
     start_time = timedelta()
     length = timedelta()
     main_summoner = None
     participants = []
     victims = []
+
+class EventKillRow(Event):
+    kills_in_row = 0
+
+    def __init__(self, kill_row):
+        self.start_time = kill_row[0].timestamp
+        self.length = kill_row[-1].timestamp - kill_row[0].timestamp
+        self.main_summoner = kill_row[0].killer
+        for kill in kill_row:
+            self.participants += kill.participants
+            self.victims.append(kill.victim)
+        self.participants = list(set(self.participants))
+
+class EventTripleKill(EventKillRow):
+    kills_in_row = 3
+    ev_type = 'TRIPLEKILL'
+
+class EventQuadraKill(EventKillRow):
+    kills_in_row = 4
+    ev_type = 'QUADRAKILL'
+    
+class EventPentaKill(EventKillRow):
+    kills_in_row = 5
+    ev_type = 'PENTAKILL'

@@ -1,6 +1,6 @@
 from database.meteor import Meteor
 from clip import Clip
-from event import EventType
+from event import EventKillRow
 
 class ClipStoreService:
     def __init__(self, meteor_db):
@@ -16,7 +16,7 @@ class ClipStoreService:
         clip_entry = {
             'platformId': clip.platform_id,
             'gameId': clip.game_id,
-            'eventType': EventType.STRING[clip.event.ev_type],
+            'eventType': clip.event.ev_type,
             'mainProIds': [clip.main_pro.id],
             'assistingProIds': participant_ids,
             'opponentProIds': victim_ids,

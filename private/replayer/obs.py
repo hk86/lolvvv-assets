@@ -287,6 +287,7 @@ class ObsClips(Obs):
             self._setVisiblity(element, visibility)
 
     def set_event(self, event: Event):
+        self._set_txt('event_txt', event.ev_type)
 
 class ObsStreamer(Obs):
     _SCENE_PATH = r'../json/obs_lolvvv_1080p.json'

@@ -10,7 +10,7 @@ from database.pro_team_db import ProTeamDb
 from summoner.static_pro import StaticPro
 from summoner.fact_perks import FactPerks
 from replay_manager import ReplayManager
-from event import Event, generate_events, EventType
+from event import Event, generate_events
 from clip import Clip
 from obs import ObsClips
 
