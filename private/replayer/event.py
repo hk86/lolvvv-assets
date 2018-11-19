@@ -56,11 +56,11 @@ class EventType:
     PENTA_KILL = 5
     STRING = [
         None
-        , 'SINGLE_KILL'
-        , 'DOUBLE_KILL'
-        , 'TRIPLE_KILL'
-        , 'QUADRA_KILL'
-        , 'PENTA_KILL'
+        , 'SINGLEKILL'
+        , 'DOUBLEKILL'
+        , 'TRIPLEKILL'
+        , 'QUADRAKILL'
+        , 'PENTAKILL'
     ]
 
 class Event:
