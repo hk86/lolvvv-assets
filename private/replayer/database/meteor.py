@@ -11,6 +11,11 @@ class Meteor(Database):
         self._meteor = self._db['meteor']
         self._fact_replays = self._meteor['fact_replays']
         self._active_matches = self._meteor['fact_active_matches']
+        self._fact_clips = self._meteor['fact_clips']
+        self._static_champs = self._meteor['static_champions']
+        self._static_teams = self._meteor['static_teams']
+        self._cache_champ = None
+        self._cache_team = None
         pro_cursor = self._meteor['static_pros'].find(
             {'accounts': {'$exists': True, '$nin': [None]}})
         self._cached_pros = []
@@ -29,6 +34,18 @@ class Meteor(Database):
                 [{'gameId': db_match['gameId']},{'platformId':db_match['platformId']}]},
                                            {'$set': {'marked': True}})
         return matches
+
+    def get_db_champ(self, champ_id):
+        if ((self._cache_champ == None)
+            or
+            (self._cache_champ['id']!=champ_id)):
+            self._cache_champ = self._static_champs.find_one({'id': champ_id})
+        return self._cache_champ
+
+    def get_db_team(self, team_id):
+        if (self._cache_team == None) or (self._cache_team['teamId'] != team_id):
+            self._cache_team = self._static_teams.find_one({'teamId':team_id})
+        return self._cache_team
 
     def get_db_match(self, platform_id: str, game_id: int):
         return self._fact_replays.find_one(
@@ -75,6 +92,4 @@ class Meteor(Database):
                         return pro
 
     def store_clip_entry(self, clip_entry):
-        pprint(clip_entry)
-        # ToDo: in die Datenbank schreiben
-        # self._fact_clips.insert_one(clip_entry)
+        self._fact_clips.insert_one(clip_entry)

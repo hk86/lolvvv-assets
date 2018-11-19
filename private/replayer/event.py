@@ -2,25 +2,26 @@ from datetime import timedelta
 
 from match.fact_match import FactMatch
 from summoner.fact_team import FactTeamId
-from kill_row import KillRow
+from database.kill import Kill
 from pprint import pprint
 
-def get_kill_rows(kills, min_kills_in_row):
-    rows = []
-    kills_in_row = []
+def get_kill_rows(kills):
     last_kill = None
     timeout = timedelta(seconds=10)
     kills.sort(key=lambda x: x.timestamp)
-    for kill in kills:
-        if last_kill:
-            if (((kill.timestamp - last_kill.timestamp) > timeout)
-                or
-                (last_kill.killer != kill.killer)):
-                if (len(kills_in_row) >= min_kills_in_row):
-                    rows.append(KillRow(kills_in_row))
-                kills_in_row = []
-        kills_in_row.append(kill)
-        last_kill = kill
+    last_kill = None
+    rows = []
+    if len(kills) > 0:
+        rows.append([kills[0]])
+        for kill in kills:
+            if last_kill:
+                if (((kill.timestamp - last_kill.timestamp) < timeout)
+                    and
+                    (kill.killer == last_kill.killer)):
+                    rows[-1].append(kill)
+                else:
+                    rows.append([kill])
+            last_kill = kill
     return rows
 
 def generate_events(fact_match:FactMatch):
@@ -29,16 +30,20 @@ def generate_events(fact_match:FactMatch):
     blue_kills = list(filter(lambda x: x.killer.team == FactTeamId.BLUE, kills))
     red_kills = list(filter(lambda x: x.killer.team == FactTeamId.RED, kills))
     min_kills_in_row = EventType.TRIPPLE_KILL
-    rows = (get_kill_rows(blue_kills, min_kills_in_row) +
-        get_kill_rows(red_kills, min_kills_in_row))
-    rows.sort(key=lambda x: x.first_kill_ingame_time())
+    rows = (get_kill_rows(blue_kills) + get_kill_rows(red_kills))
+    rows = list(filter(lambda x: len(x) >= min_kills_in_row, rows))
+    rows.sort(key=lambda x: x[0].timestamp)
     events = []
     for row in rows:
         event = Event()
-        event.ev_type = row.row_length()
-        event.start_time = row.first_kill_ingame_time()
-        event.length = row.kill_row_time()
-        event.main_summoner = row.killer()
+        event.ev_type = len(row)
+        event.start_time = row[0].timestamp
+        event.length = row[-1].timestamp - row[0].timestamp
+        event.main_summoner = row[0].killer
+        for kill in row:
+            event.participants += kill.participants
+            event.victims.append(kill.victim)
+        event.participants = list(set(event.participants))
         events.append(event)
     return events
 
@@ -64,3 +69,4 @@ class Event:
     length = timedelta()
     main_summoner = None
     participants = []
+    victims = []

@@ -13,11 +13,10 @@ class Summoner:
         )
 
     def __ne__(self, other):
-        return (
-            (self._ACCOUNT_ID != other.account_id)
-            or
-            (self._PLATFORM_ID != other.platform_id)
-        )
+        return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash((self._ACCOUNT_ID, self._PLATFORM_ID))
         
     def _get_platform_id(self):
         return self._PLATFORM_ID

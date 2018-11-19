@@ -8,14 +8,22 @@ from pathlib import Path
 from shutil import copyfile
 
 from Interval import Interval
+from event import Event
+from summoner.fact_perks import FactPerks
+from summoner.static_pro import StaticPro
+from summoner.fact_team import FactTeamId
+from database.pro_team import ProTeam
 
 import platform
 
+# pip install websocket-client
 import websocket
 from pprint import pprint # for debug
 
 class ObsDriver:
-    def __init__(self, obs_path=r'C:\Program Files (x86)\obs-studio'):
+    _message_id = 1
+
+    def __init__(self, obs_path):
         self._obs_path = obs_path
 
     def setup_scene(self, scene_path):
@@ -34,8 +42,9 @@ class ObsDriver:
             arch='32bit'
             self._obs_exe='obs32.exe'
         _obs_path = os.path.join(self._obs_path, 'bin', arch)
+        obs_full_path = os.path.join(_obs_path, self._obs_exe)
         Popen(
-            [os.path.join(_obs_path, self._obs_exe)],
+            [obs_full_path],
             cwd=_obs_path
             )
 
@@ -45,25 +54,34 @@ class ObsDriver:
         self._ws.connect(url)
 
     def _request(self, request):
-        self._ws.send(json.dumps(request))
-        response = json.loads(self._ws.recv())
+        for tries in range(0, 5): #workaround for some issues in websocket communication
+            self._message_id += 1
+            request['message-id'] = str(self._message_id)
+            self._ws.send(json.dumps(request))
+            response = json.loads(self._ws.recv())
+            if 'error' not in response:
+                break
         return response
 
     def _getSettings(self, soureName):
-        req = {"request-type": "GetSourceSettings", "message-id": "12345678", "sourceName": soureName}
+        req = {"request-type": "GetSourceSettings", "sourceName": soureName}
         return self._request(req)['sourceSettings']
 
     def _setSettings(self, sourceName, settings):
-        req = {"request-type": "SetSourceSettings", "message-id": "12345678", "sourceName": sourceName, 'sourceSettings':settings}
+        req = {"request-type": "SetSourceSettings", "sourceName": sourceName, 'sourceSettings':settings}
         return self._request(req)
 
     def _setMute(self, sourceName, mute):
-        req = {"request-type": "SetSourceSettings", "message-id": "12345678", "source": sourceName, 'mute': mute}
+        req = {"request-type": "SetSourceSettings", "source": sourceName, 'mute': mute}
         return self._request(req)
 
     def _getProperties(self, sourceName):
-        req = {"request-type": "GetSceneItemProperties", "message-id": "12345678", "item": sourceName}
-        return self._request(req)
+        req = {"request-type": "GetSceneItemProperties", "item": sourceName}
+        for tries in range(0, 5): #workaround for some issues in websocket communication
+            response = self._request(req)
+            if 'bounds' in response:
+                break
+        return response
 
     def _setProperties(self, properties):
         req = {"request-type": "SetSceneItemProperties", "item": properties['name']}
@@ -71,28 +89,27 @@ class ObsDriver:
         self._request(req)
 
     def startStreaming(self):
-        req = {"request-type": "StartStreaming", "message-id": "12345678"}
+        req = {"request-type": "StartStreaming"}
         self._request(req)
 
     def stopStreaming(self):
-        req = {"request-type": "StopStreaming", "message-id": "12345678"}
+        req = {"request-type": "StopStreaming"}
         self._request(req)
 
     def start_recording(self):
-        req = {"request-type": "StartRecording", "message-id": "12345678"}
+        req = {"request-type": "StartRecording"}
         self._request(req)
 
     def stop_recording(self):
-        req = {"request-type": "StopRecording", "message-id": "12345678"}
+        req = {"request-type": "StopRecording"}
         self._request(req)
 
     def get_recording_folder(self):
-        req = {"request-type": "GetRecordingFolder", "message-id": "12345678"}
+        req = {"request-type": "GetRecordingFolder"}
         return self._request(req)['rec-folder']
 
     def set_recording_folder(self, path):
         req = {"request-type": "SetRecordingFolder",
-               "message-id": "12345678",
                "rec-folder": os.path.abspath(path)}
         self._request(req)
 
@@ -100,25 +117,182 @@ class ObsDriver:
         run('taskkill /F /IM {}'.format(self._obs_exe))
 
     def _setCurrentScene(self, scene_name):
-        req = {"request-type": "SetCurrentScene", "message-id": "12345678", "scene-name": scene_name}
+        req = {"request-type": "SetCurrentScene", "scene-name": scene_name}
         self._request(req)
         # workaround fuer bug in obs-websocket
         self._reconnect_obs_ws()
 
     def _setVisiblity(self, name, visibility):
-        prop = self._getProperties(name)
-        prop['visible'] = visibility
+        prop = {"visible": visibility, "name": name}
         self._setProperties(prop)
 
 class Obs(ObsDriver):
+    _SCENE_PATH = r''
+    _PUBLIC_IMG_PATH = r'../../public/image'
+    _SPECIAL_IMG_PATH = r'../streamer/obs'
    
-    def __init__(self, obs_path='C:\\Program Files (x86)\\obs-studio'):
+    def __init__(self, obs_path):
         super().__init__(obs_path)
-        self.setup_scene(r'../json/obs_lolvvv_1080p.json')
+        self.setup_scene(self._SCENE_PATH)
         self.obs_start()
         OBS_LOAD_TIME_S = 3
         sleep(OBS_LOAD_TIME_S)
         self._reconnect_obs_ws()
+
+    def _set_img_file(self, name, file_path):
+        settings = {"file": self._toObsPath(file_path)}
+        return self._setSettings(name, settings)
+
+    def _set_txt(self, name, text:str):
+        settings = {"text": text}
+        self._setSettings(name, settings)
+
+    def _set_txt_color(self, name:str, color:int):
+        settings = {"color": color}
+        self._setSettings(name, settings)
+
+    def _toObsPath(self, path):
+        return Path(os.path.abspath(path)).as_posix()
+
+class ObsClips(Obs):
+    _SCENE_PATH = r'../json/lolvvv_1080p_clips.json'
+    _MAX_CHARS_PROTEAM_TXT = 17
+    _BLUE_COLOR = 13665569
+    _RED_COLOR = 2631899
+
+    def __init__(self, obs_path=r'C:\Program Files\obs-studio'):
+        super().__init__(obs_path)
+        backgrounds = ['banner_event_png', 'banner_runes1_png',
+            'banner_runes2_png', 'banner_proplayer_png']
+        for name in backgrounds:
+            self._set_img_file(name, os.path.join(
+                self._SPECIAL_IMG_PATH,
+                'hintergrund_schrift.png'
+                )
+            )
+        banners = ['banner_left', 'banner_middle']
+        for name in banners:
+            self._set_img_file(name, os.path.join(
+                self._SPECIAL_IMG_PATH,
+                'banner_clean.png'
+                )
+            )
+        logos = ['lolvvv_logo', 'lolvvv_png']
+        for lolvvv_logo in logos:
+            self._set_img_file(lolvvv_logo, os.path.join(
+                self._SPECIAL_IMG_PATH,
+                'lolvvv_logo.png'
+                )
+            )
+        self._set_img_file('overview_wallpaper_png', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'wallpaper_clips.jpg'
+            )
+        )
+        self._set_img_file('twitch_logo', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'twitch_logo.png'
+            )
+        )
+
+    def show_pregame_overlay(self, visibilitiy):
+        self._setVisiblity('pregame_overlay', visibilitiy)
+        self._setVisiblity('ingame_clips', not visibilitiy)
+
+    def set_champion(self, champion_key):
+        self._set_img_file('championplayed_img', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'champion',
+            'champion_small',
+            '{}.png'.format(champion_key)
+        ))
+        self._set_img_file('champion_png', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'champion_banner',
+            '{}.jpg'.format(champion_key)
+        ))
+
+    def _set_perk(self, name, perk_id:int):
+        self._set_img_file(name, os.path.join(
+            self._PUBLIC_IMG_PATH,
+            'perks',
+            '{}.png'.format(perk_id)
+        ))
+
+    def set_perks(self, perks:FactPerks):
+        print('WARNING: because of debugging set_perks is currently deactivated')
+        return
+        self._set_perk('rune1.0_png', perks.rune1_0)
+        self._set_perk('rune1.1_png', perks.rune1_1)
+        self._set_perk('rune1.2_png', perks.rune1_2)
+        self._set_perk('rune1.3_png', perks.rune1_3)
+        self._set_perk('rune1.4_png', perks.rune1_4)
+        self._set_perk('rune2.0_png', perks.rune2_0)
+        self._set_perk('rune2.1_png', perks.rune2_1)
+        self._set_perk('rune2.2_png', perks.rune2_2)
+        self._set_img_file('perks1_img', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'perks_small',
+            '{}.png'.format({perks.rune1_0})
+        ))
+        self._set_img_file('perks2_img', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'perks_small',
+            '{}.png'.format(perks.rune2_0)
+        ))
+
+    def set_main_pro(self, main_pro: StaticPro):
+        nickname = main_pro.nickname
+        self._set_txt('proplayername_txt', nickname)
+        self._set_txt('proplayer_txt', nickname)
+        self._set_img_file('proplayer_img', os.path.join(
+            self._PUBLIC_IMG_PATH,
+            'pros',
+            'medium',
+            main_pro.image
+        ))
+
+    def set_fact_team(self, fact_team_id: FactTeamId):
+        self._set_img_file('teamcolour_img', os.path.join(
+            self._SPECIAL_IMG_PATH,
+            'teamcolour_{}.png'.format(fact_team_id)
+        ))
+        color_code = 0
+        if fact_team_id == FactTeamId.BLUE:
+            color_code = self._BLUE_COLOR
+        else:
+            color_code = self._RED_COLOR
+        self._set_txt_color('proplayername_txt', color_code)
+        self._set_txt_color('proteam_txt', color_code)
+
+    def set_pro_team(self, pro_team: ProTeam):
+        if pro_team:
+            fitted_name = pro_team.name
+            if len(fitted_name) >= self._MAX_CHARS_PROTEAM_TXT:
+                fitted_name = (fitted_name
+                    [:self._MAX_CHARS_PROTEAM_TXT-1] + '..')
+            self._set_txt('proteam_txt', fitted_name)
+            self._set_txt('team_txt', pro_team.name)
+            self._set_img_file('team_logo_png', os.path.join(
+                self._PUBLIC_IMG_PATH,
+                'teams',
+                'medium',
+                pro_team.image
+            ))
+            visibility = True
+        else:
+            visibility = False
+        team_elements = ['proteam_txt', 'team_txt', 'team_logo_png']
+        for element in team_elements:
+            self._setVisiblity(element, visibility)
+
+    def set_event(self, event: Event):
+
+class ObsStreamer(Obs):
+    _SCENE_PATH = r'../json/obs_lolvvv_1080p.json'
+
+    def __init__(self, obs_path=r'C:\Program Files\obs-studio'):
+        super().__init__(obs_path)
         self._proTeam_props = self._getProperties('proteam_txt')
         self._proTeam_settings = self._getSettings('proteam_txt')
         self._pros_settings = self._getSettings('proplayer_img')
@@ -139,10 +313,6 @@ class Obs(ObsDriver):
         self._upcomingSceneProp.append(self._getProperties('twitter_txt_up'))
         self._upcomingSceneProp.append(self._getProperties('upcomingmatch_txt_up'))
         self._upcomingSceneProp.append(self._getProperties('wallpaper_img_up'))
-
-    
-    def _toObsPath(self, path):
-        return Path(os.path.abspath(path)).as_posix()
 
     def _setupScene(self, pro):
         blueId = 100
@@ -242,3 +412,7 @@ class Obs(ObsDriver):
             self._pro_index = len(self._pros) - 1
         else:
             self._pro_index = self._pro_index - 1
+
+
+
+

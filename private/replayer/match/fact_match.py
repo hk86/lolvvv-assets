@@ -14,7 +14,9 @@ class FactMatch(Match):
         kills = []
         for frame in self._MATCH_DATA['timeline']['frames']:
             for event in frame['events']:
-                if event['type'] == 'CHAMPION_KILL':
+                if ((event['type'] == 'CHAMPION_KILL')
+                    and
+                    (event['killerId'] != 0)):
                     kills.append(Kill(event, self))
         return kills
 
@@ -43,3 +45,4 @@ class FactMatch(Match):
         for participant in self._MATCH_DATA['participants']:
             if participant['participantId'] == participant_id:
                 return participant
+

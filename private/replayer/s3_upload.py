@@ -44,6 +44,7 @@ class S3Upload:
     def _cleanup_requests(self):
         for idx, node in enumerate(self._upload_nodes):
             if node.request.done():
+                print('s3 cleanup state: {}'.format(node.request.result()))
                 if node.callback_func:
                     node.callback_func(node.callback_arg)
                 self._upload_nodes.pop(idx)

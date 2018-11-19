@@ -7,3 +7,4 @@ class Clip:
     event = None
     main_pro = None
     participant_pros = []
+    victim_pros = []
