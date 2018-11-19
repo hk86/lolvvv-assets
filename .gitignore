@@ -1,2 +1,5 @@
 private/replayer/__pycache__
 private/.vscode/settings.json
+/private/replayer/testFirstMissing.py
+/private/replayer/.ipynb_checkpoints/*.ipynb
+__pycache__
