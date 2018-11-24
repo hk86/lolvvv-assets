@@ -272,7 +272,7 @@ class ObsClips(Obs):
                 fitted_name = (fitted_name
                     [:self._MAX_CHARS_PROTEAM_TXT-1] + '..')
             self._set_txt('proteam_txt', fitted_name)
-            self._set_txt('team_txt', pro_team.name)
+            self._set_txt('team_txt', fitted_name)
             self._set_img_file('team_logo_png', os.path.join(
                 self._PUBLIC_IMG_PATH,
                 'teams',

@@ -24,7 +24,7 @@ class S3ClipUpload(ClipUploadService):
             resized_video_name = '{}_{}_{}_{}p.mp4'.format(
                 clip.platform_id,
                 clip.game_id,
-                clip.ingame_event_num,
+                clip.ingame_clip_num,
                 new_height
             )
             resized_video_path = path.join(
@@ -42,7 +42,7 @@ class S3ClipUpload(ClipUploadService):
         clip_s3_name = '{}_{}_{}_1080p.mp4'.format(
                 clip.platform_id
                 , clip.game_id
-                , clip.ingame_event_num
+                , clip.ingame_clip_num
                 )
         clip.clip_uri = ('https://s3.amazonaws.com/lolvvvclips/'
             + clip_s3_name

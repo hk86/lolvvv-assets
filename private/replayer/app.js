@@ -2,8 +2,6 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-require('console-stamp')(console, '[HH:MM:ss.l]');
-
 const SESSION_TIMEOUT_MS = 5 * 60 * 1000;
 const CLEARING_INTERVAL_MS = 1 * 60 * 1000;
 

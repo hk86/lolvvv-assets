@@ -4,6 +4,7 @@ from json import load as json_load
 from shutil import rmtree
 
 from match.replay import Replay
+from replay_server import ReplayServer
 
 class ReplayManager:
     _URL = '127.0.0.1:1337'
@@ -15,6 +16,8 @@ class ReplayManager:
 
     def __init__(self, replays_path='replays'):
         self._REPLAY_PATH = replays_path
+        self._server = ReplayServer()
+        self._server.start()
 
     def get_pending_replays(self):
         replays = []
@@ -50,3 +53,5 @@ class ReplayManager:
         if path.exists(replay_path):
             rmtree(replay_path)
 
+    def __del__(self):
+        self._server.stop()

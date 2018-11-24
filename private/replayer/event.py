@@ -50,12 +50,21 @@ def generate_events(fact_match:FactMatch):
     return events
 
 class Event:
+    platform_id = ''
+    game_id = 0
     ev_type = ''
     start_time = timedelta()
     length = timedelta()
     main_summoner = None
     participants = []
     victims = []
+
+    def __hash__(self):
+        return hash((
+            self.platform_id,
+            self.game_id,
+            self.event.ev_type,
+            self.event.start_time.total_seconds()))
 
 class EventKillRow(Event):
     kills_in_row = 0
