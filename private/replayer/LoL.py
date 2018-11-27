@@ -8,7 +8,7 @@ from array import array
 
 from DirectInput import DirectKey, toggle_key, press_key, release_key
 from Interval import Interval
-from database.fact_team import FactTeamId
+from summoner.fact_team import FactTeamId
 
 from pyautogui import locateCenterOnScreen, screenshot #pip install pyautogui
 
@@ -26,6 +26,8 @@ class LoLTimeSpeed:
     TIMESPEED_X8 = 3
 
 class LoLDriver:
+    UPDATE_PLATFORM = 'EUW1'
+
     _BLUE_FOCUS_KEYS = array('B', [
         DirectKey.NUMERAL_1
         , DirectKey.NUMERAL_2
@@ -182,7 +184,7 @@ class LeagueOfLegends(LoLDriver):
     def stop_toggle_items(self):
         self._show_items_interval.stop()
 
-    def focus_player(self, team_id: MatchTeam, inteam_idx: int):
+    def focus_player(self, team_id: int, inteam_idx: int):
         self._focus_team = team_id
         self._focus_player_idx = team_id - 1
         TOGGLE_INTERVAL_S = 1

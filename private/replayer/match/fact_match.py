@@ -46,3 +46,8 @@ class FactMatch(Match):
             if participant['participantId'] == participant_id:
                 return participant
 
+    def _get_version(self):
+        return self._MATCH_DATA['gameVersion']
+
+    version = property(fget=_get_version)
+

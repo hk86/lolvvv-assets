@@ -15,6 +15,7 @@ class ReplayHoover(Thread):
         Thread.__init__(self)
         self._stop_event = Event()
         self._meteor_db = meteor_db
+        self._downloads = []
 
     def stop(self):
         self._stop_event.set()
@@ -22,19 +23,25 @@ class ReplayHoover(Thread):
     def run(self):
         live_match_service = LiveMatchGenerator(self._meteor_db)
         replay_service = ReplayFiles()
-        downloads = []
         while not self._stop_event.is_set():
             new_live_matches = live_match_service.get_new_live_matches(
             timedelta(minutes=self.YOUNGER_THAN_MIN))
             for live_match in new_live_matches:
                 downloader = ReplayDownloader(replay_service)
                 downloader.download(live_match)
-                downloads.append(downloader)
-            for idx, download in enumerate(downloads):
-                if not download.isAlive():
-                    downloads.pop(idx)
+                self._downloads.append(downloader)
+            self._cleanup_downloads()
             sleep(10)
         print('waiting for current downloads finished')
-        for download in downloads:
+        for download in self._downloads:
             download.join()
         print('all downloads finished')
+
+    def get_num_downloads_in_progress(self):
+        self._cleanup_downloads()
+        return len(self._downloads)
+    
+    def _cleanup_downloads(self):
+        for idx, download in enumerate(self._downloads):
+                if not download.is_alive():
+                    self._downloads.pop(idx)

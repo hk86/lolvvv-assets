@@ -9,11 +9,12 @@ class Meteor(Database):
     def __init__(self, uri_meteor_db):
         Database.__init__(self, uri_meteor_db)
         self._meteor = self._db['meteor']
-        self._fact_replays = self._meteor['fact_replays']
+        self._fact_replays = self._meteor['fact_matches']
         self._active_matches = self._meteor['fact_active_matches']
         self._fact_clips = self._meteor['fact_clips']
         self._static_champs = self._meteor['static_champions']
         self._static_teams = self._meteor['static_teams']
+        self._dim_patches = self._meteor['dim_patches']
         self._cache_champ = None
         self._cache_team = None
         pro_cursor = self._meteor['static_pros'].find(
@@ -93,3 +94,20 @@ class Meteor(Database):
 
     def store_clip_entry(self, clip_entry):
         self._fact_clips.insert_one(clip_entry)
+
+    def get_current_server_patch(self, platform_id: str):
+        state = self._meteor['dim_server_state'].find_one({})
+        return state['gameVersions']['platforms'][platform_id]
+
+    def get_patch_verion(self, client_version):
+        matching_version = self._dim_patches.find_one(
+            {'clientVersion': client_version})
+        if matching_version:
+            return matching_version['serverVersion']
+
+    def set_patch_version(self, client_version, server_version):
+        matching_version = {
+            'clientVersion': client_version,
+            'serverVersion': server_version
+        }
+        self._dim_patches.insert_one(matching_version)
