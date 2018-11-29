@@ -13,6 +13,7 @@ from summoner.fact_perks import FactPerks
 from summoner.static_pro import StaticPro
 from summoner.fact_team import FactTeamId
 from database.pro_team import ProTeam
+from image_service import ImageService
 
 import platform
 
@@ -128,8 +129,6 @@ class ObsDriver:
 
 class Obs(ObsDriver):
     _SCENE_PATH = r''
-    _PUBLIC_IMG_PATH = r'../../public/image'
-    _SPECIAL_IMG_PATH = r'../streamer/obs'
    
     def __init__(self, obs_path):
         super().__init__(obs_path)
@@ -162,37 +161,25 @@ class ObsClips(Obs):
 
     def __init__(self, obs_path=r'C:\Program Files\obs-studio'):
         super().__init__(obs_path)
+        self._images = ImageService()
         backgrounds = ['banner_event_png', 'banner_runes1_png',
             'banner_runes2_png', 'banner_proplayer_png']
         for name in backgrounds:
-            self._set_img_file(name, os.path.join(
-                self._SPECIAL_IMG_PATH,
-                'hintergrund_schrift.png'
-                )
-            )
+            self._set_img_file(name,
+            self._images.background_img_path())
         banners = ['banner_left', 'banner_middle']
         for name in banners:
-            self._set_img_file(name, os.path.join(
-                self._SPECIAL_IMG_PATH,
-                'banner_clean.png'
-                )
-            )
+            self._set_img_file(name, self._images.banner_img_path())
         logos = ['lolvvv_logo', 'lolvvv_png']
         for lolvvv_logo in logos:
-            self._set_img_file(lolvvv_logo, os.path.join(
-                self._SPECIAL_IMG_PATH,
-                'lolvvv_logo.png'
-                )
+            self._set_img_file(lolvvv_logo,
+                self._images.logo_img_path()
             )
-        self._set_img_file('overview_wallpaper_png', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'wallpaper_clips.jpg'
-            )
+        self._set_img_file('overview_wallpaper_png', 
+            self._images.wallpaper_img_path()
         )
-        self._set_img_file('twitch_logo', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'twitch_logo.png'
-            )
+        self._set_img_file('twitch_logo', 
+            self._images.twitch_img_path()
         )
 
     def show_pregame_overlay(self, visibilitiy):
@@ -200,24 +187,15 @@ class ObsClips(Obs):
         self._setVisiblity('ingame_clips', not visibilitiy)
 
     def set_champion(self, champion_key):
-        self._set_img_file('championplayed_img', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'champion',
-            'champion_small',
-            '{}.png'.format(champion_key)
-        ))
-        self._set_img_file('champion_png', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'champion_banner',
-            '{}.jpg'.format(champion_key)
-        ))
+        self._set_img_file('championplayed_img', 
+            self._images.champ_small_img_path(champion_key)
+        )
+        self._set_img_file('champion_png', 
+            self._images.champbanner_img_path(champion_key)
+        )
 
     def _set_perk(self, name, perk_id:int):
-        self._set_img_file(name, os.path.join(
-            self._PUBLIC_IMG_PATH,
-            'perks',
-            '{}.png'.format(perk_id)
-        ))
+        self._set_img_file(name, self._images.perk_img_path(perk_id))
 
     def set_perks(self, perks:FactPerks):
         print('WARNING: because of debugging set_perks is currently deactivated')
@@ -230,33 +208,23 @@ class ObsClips(Obs):
         self._set_perk('rune2.0_png', perks.rune2_0)
         self._set_perk('rune2.1_png', perks.rune2_1)
         self._set_perk('rune2.2_png', perks.rune2_2)
-        self._set_img_file('perks1_img', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'perks_small',
-            '{}.png'.format({perks.rune1_0})
-        ))
-        self._set_img_file('perks2_img', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'perks_small',
-            '{}.png'.format(perks.rune2_0)
-        ))
+        self._set_img_file('perks1_img',
+            self._images.perk_small_img_path(perks.rune1_0)
+        )
+        self._set_img_file('perks2_img',
+            self._images.perk_small_img_path(perks.rune2_0)
+        )
 
     def set_main_pro(self, main_pro: StaticPro):
         nickname = main_pro.nickname
         self._set_txt('proplayername_txt', nickname)
         self._set_txt('proplayer_txt', nickname)
-        self._set_img_file('proplayer_img', os.path.join(
-            self._PUBLIC_IMG_PATH,
-            'pros',
-            'medium',
-            main_pro.image
-        ))
+        self._set_img_file('proplayer_img',
+            self._images.pro_med_img_path(main_pro.image)
+        )
 
     def set_fact_team(self, fact_team_id: FactTeamId):
-        self._set_img_file('teamcolour_img', os.path.join(
-            self._SPECIAL_IMG_PATH,
-            'teamcolour_{}.png'.format(fact_team_id)
-        ))
+        # set teamcolour_img ?
         color_code = 0
         if fact_team_id == FactTeamId.BLUE:
             color_code = self._BLUE_COLOR
@@ -273,12 +241,8 @@ class ObsClips(Obs):
                     [:self._MAX_CHARS_PROTEAM_TXT-1] + '..')
             self._set_txt('proteam_txt', fitted_name)
             self._set_txt('team_txt', fitted_name)
-            self._set_img_file('team_logo_png', os.path.join(
-                self._PUBLIC_IMG_PATH,
-                'teams',
-                'medium',
-                pro_team.image
-            ))
+            self._set_img_file('team_logo_png',
+                self._images.team_med_img_path(pro_team.image))
             visibility = True
         else:
             visibility = False

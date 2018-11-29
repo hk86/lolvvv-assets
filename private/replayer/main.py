@@ -29,7 +29,6 @@ if __name__ == '__main__':
     #init
     logger = Logger('clipper')
     logger.warn('start')
-    exit()
     start_time = datetime.now()
     fact_db = FactDataDb('mongodb://10.8.0.1:27017')
     meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
@@ -75,7 +74,7 @@ if __name__ == '__main__':
                             match.game_id
                         )
                         """
-            if ((len(patch_matches) > 0)
+            if (len(patch_matches) > 0):
                 for match in patch_matches:
                     events = generate_events(match)
                     clips = recorder.record_clips(events, replay)

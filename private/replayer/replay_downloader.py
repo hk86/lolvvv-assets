@@ -261,7 +261,6 @@ class ReplayDownloader(Thread):
         self._threads.append(t)
         self._last_chunk_id = chunk_id
 
-
     def _download_chunk_worker(self, chunk_id):
         spectate_client = SpectateClient(self._replay)
         #logging.info('_download_chunk {}'.format(chunk_id))
