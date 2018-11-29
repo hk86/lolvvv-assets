@@ -119,6 +119,7 @@ class LoLDriver:
     def stop_update(self):
         run('taskkill /F /IM "LeagueClientUx.exe"')
 
+    @property
     def version(self):
         return self._version
 

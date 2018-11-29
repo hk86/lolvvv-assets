@@ -2,6 +2,7 @@ from os import path, system
 from datetime import datetime, timedelta
 from pprint import pprint
 from time import sleep
+import logging
 
 from database.fact_db import FactDataDb
 from database.meteor import Meteor
@@ -17,17 +18,21 @@ from patch_version import PatchVersion
 from s3_clip_upload import S3ClipUpload
 from logger import Logger
 
+logger = None
+
 def upgrade_lol(lol: LeagueOfLegends, meteor_db:Meteor):
+    logger.debug('upgrade lol')
     lol.start_update()
     lol.wait_for_update()
     lol.stop_update()
     lol = LeagueOfLegends()
-    meteor_db.set_patch_version(lol.version(),
+    meteor_db.set_patch_version(lol.version,
         meteor_db.get_current_server_patch(lol.UPDATE_PLATFORM))
+    logger.debug('upgrade finished new version = ' + lol.version)
 
 if __name__ == '__main__':
     #init
-    logger = Logger('clipper')
+    logger = Logger('clipper', logging.DEBUG)
     logger.warn('start')
     start_time = datetime.now()
     fact_db = FactDataDb('mongodb://10.8.0.1:27017')
@@ -49,6 +54,7 @@ if __name__ == '__main__':
     try:
         while True:
             replays = replay_manager.get_pending_replays()
+            logger.debug('pending matches = {}'.format(len(replays)))
             fact_matches = []
             for replay in replays:
                 fact_match = fact_db.get_fact_match(
@@ -57,6 +63,7 @@ if __name__ == '__main__':
                 )
                 if fact_match:
                     fact_matches.append(fact_match)
+            logger.debug('fuct matches = {}'.format(len(fact_matches)))
             patch_matches = []
             for idx, match in enumerate(fact_matches):
                 match_patch = patch_version.version_to_patch(match.version)
@@ -74,23 +81,24 @@ if __name__ == '__main__':
                             match.game_id
                         )
                         """
-            if (len(patch_matches) > 0):
-                for match in patch_matches:
-                    events = generate_events(match)
-                    clips = recorder.record_clips(events, replay)
-                    for clip in clips:
-                        store_service.upload(clip)
-                    """
-                    replay_manager.mark_as_handled_rep(
-                        replay.platform_id,
-                        replay.game_id
-                    )
-                    """
-            elif ((len(fact_matches) > 0) 
+            logger.debug('patch matches = {}'.format(len(patch_matches)))
+            for match in patch_matches:
+                events = generate_events(match)
+                clips = recorder.record_clips(events, replay)
+                for clip in clips:
+                    store_service.upload(clip)
+                """
+                replay_manager.mark_as_handled_rep(
+                    replay.platform_id,
+                    replay.game_id
+                )
+                """
+            if ((len(fact_matches) > 0) 
+                and (len(patch_matches) > 0)
                 and (patch_version.version_to_patch(
                     meteor_db.get_current_server_patch(
                         lol.UPDATE_PLATFORM)
-                    )
+                    ) > patch_version.client_patch(lol.version)
                 )):
                 upgrade_lol(lol, meteor_db)
                 playable_patch = patch_version.client_patch(lol.version)

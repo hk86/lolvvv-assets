@@ -109,7 +109,7 @@ class ClipRecorder:
     def _summoners_to_pros(self, summoners):
         pros = []
         for summoner in summoners:
-            pro = self._static_pro_db(
+            pro = self._static_pro_db.get_static_pro(
                 summoner.account_id,
                 summoner.platform_id
             )
