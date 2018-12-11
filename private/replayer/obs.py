@@ -198,8 +198,6 @@ class ObsClips(Obs):
         self._set_img_file(name, self._images.perk_img_path(perk_id))
 
     def set_perks(self, perks:FactPerks):
-        print('WARNING: because of debugging set_perks is currently deactivated')
-        return
         self._set_perk('rune1.0_png', perks.rune1_0)
         self._set_perk('rune1.1_png', perks.rune1_1)
         self._set_perk('rune1.2_png', perks.rune1_2)
