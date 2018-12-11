@@ -51,37 +51,40 @@ if __name__ == '__main__':
     replay_hover = ReplayHoover(meteor_db)
     replay_hover.start()
     MIN_RUNTIME = timedelta(hours=8)
+    MAX_MATCHES_PER_SCAN = 50
     try:
         while True:
             replays = replay_manager.get_pending_replays()
             logger.debug('pending matches = {}'.format(len(replays)))
-            fact_matches = []
+            num_fuct_matches = 0
+            num_patch_matches = 0
+            patch_matches = []
             for replay in replays:
                 fact_match = fact_db.get_fact_match(
                     replay.game_id,
                     replay.platform_id
                 )
                 if fact_match:
-                    fact_matches.append(fact_match)
-            logger.debug('fuct matches = {}'.format(len(fact_matches)))
-            patch_matches = []
-            for idx, match in enumerate(fact_matches):
-                match_patch = patch_version.version_to_patch(match.version)
-                if (match_patch
-                    ==
-                    playable_patch):
-                    patch_matches.append(fact_match)
-                else:
-                    # na hoffentlich klappt das so
-                    if match_patch < playable_patch:
-                        fact_matches.pop(idx)
-                        """
-                        replay_manager.mark_as_handled_rep(
-                            match.platform_id,
-                            match.game_id
-                        )
-                        """
-            logger.debug('patch matches = {}'.format(len(patch_matches)))
+                    num_fuct_matches += 1
+                    match_patch = patch_version.version_to_patch(fact_match.version)
+                    if (match_patch
+                        ==
+                        playable_patch):
+                        num_patch_matches += 1
+                        patch_matches.append(fact_match)
+                    else:
+                        # na hoffentlich klappt das so
+                        if match_patch < playable_patch:
+                            print('WARNING: mark as handled replay currently deactivated')
+                            """
+                            replay_manager.mark_as_handled_rep(
+                                fact_match.platform_id,
+                                fact_match.game_id
+                            )
+                            """
+                    if (num_patch_matches >= MAX_MATCHES_PER_SCAN):
+                        break
+            logger.debug('patch matches = {}'.format(num_patch_matches))
             for match in patch_matches:
                 events = generate_events(match)
                 clips = recorder.record_clips(events, replay)
@@ -93,8 +96,8 @@ if __name__ == '__main__':
                     replay.game_id
                 )
                 """
-            if ((len(fact_matches) > 0) 
-                and (len(patch_matches) > 0)
+            if ((num_fuct_matches > 0) 
+                and (num_patch_matches == 0)
                 and (patch_version.version_to_patch(
                     meteor_db.get_current_server_patch(
                         lol.UPDATE_PLATFORM)
