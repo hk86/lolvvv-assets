@@ -134,7 +134,7 @@ class Obs(ObsDriver):
         super().__init__(obs_path)
         self.setup_scene(self._SCENE_PATH)
         self.obs_start()
-        OBS_LOAD_TIME_S = 3
+        OBS_LOAD_TIME_S = 5
         sleep(OBS_LOAD_TIME_S)
         self._reconnect_obs_ws()
 

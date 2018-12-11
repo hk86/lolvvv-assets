@@ -3,9 +3,9 @@ import sys
 
 class Logger:
 
-    def __new__(self, appName):
+    def __new__(self, appName, debug_level=logging.WARN):
         self = logging.getLogger(appName)
-        self.setLevel(logging.DEBUG)
+        self.setLevel(debug_level)
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(message)s')
 
         fh = logging.FileHandler(appName + '.log')
