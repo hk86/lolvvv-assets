@@ -43,8 +43,6 @@ class ClipRecorder:
                     event.victims
                 )
                 clips.append(clip)
-        print('WARNING: breaks in clip recorder after {} clips found'.format(len(clips)))
-        return
         if len(clips) > 0:
             match_video_path = path.join(
                 self._MAIN_VIDEO_FOLDER,
@@ -54,6 +52,9 @@ class ClipRecorder:
             START_TRIES = 3
             lol = self._lol
             for x in range(0, START_TRIES):
+                print('url: {}'.format(match.url))
+                print('game: {} plat: {}'.format(match.game_id, match.platform_id))
+                print('enc: {}'.format(match.encryption_key))
                 lol.start_spectate(
                     match.url,
                     match.game_id,

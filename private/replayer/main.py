@@ -33,7 +33,7 @@ def upgrade_lol(lol: LeagueOfLegends, meteor_db:Meteor):
 if __name__ == '__main__':
     #init
     logger = Logger('clipper', logging.DEBUG)
-    logger.warn('start')
+    logger.warning('start')
     start_time = datetime.now()
     fact_db = FactDataDb('mongodb://10.8.0.1:27017')
     meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
@@ -46,6 +46,7 @@ if __name__ == '__main__':
     if not playable_patch:
         upgrade_lol(lol, meteor_db)
         playable_patch = patch_version.client_patch(lol.version)
+    logger.warning('playable match: {}'.format(playable_patch))
     recorder = ClipRecorder(meteor_db, lol)
     store_service = S3ClipUpload(meteor_db)
     replay_hover = ReplayHoover(meteor_db)
@@ -61,28 +62,26 @@ if __name__ == '__main__':
             patch_matches = []
             for replay in replays:
                 fact_match = fact_db.get_fact_match(
-                    replay.game_id,
-                    replay.platform_id
+                    replay.platform_id,
+                    replay.game_id
                 )
                 if fact_match:
                     num_fuct_matches += 1
                     match_patch = patch_version.version_to_patch(fact_match.version)
-                    if (match_patch
-                        ==
-                        playable_patch):
+                    if (match_patch == playable_patch):
                         num_patch_matches += 1
                         patch_matches.append(fact_match)
                     else:
                         if match_patch < playable_patch:
-                            logger.warn('old replay found'+
+                            logger.warning('old replay found'+
                                 ' match patch: {}'.format(match_patch))
-                            logger.warn('playable patch: {}'.format(playable_patch))
+                            logger.warning('playable patch: {}'.format(playable_patch))
                             replay_manager.mark_as_handled_rep(
                                 fact_match.platform_id,
                                 fact_match.game_id
                             )
                         else:
-                            logger.warn('new match found {}/{}'
+                            logger.warning('new match found {}/{}'
                                 .format(fact_match.platform_id,
                                     fact_match.game_id))
                 if (num_patch_matches >= MAX_MATCHES_PER_SCAN):

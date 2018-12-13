@@ -53,7 +53,7 @@ class LoLDriver:
         self._version = installed_releases[0]
         self._deploy_path = path.join(releases_path, self._version, 'deploy')
 
-    def start_spectate(self, url, game_id, platform_id, encryption_key):
+    def start_spectate(self, url:str, game_id:int, platform_id:str, encryption_key:str):
         cmd = [path.join(getcwd(), 'spectate.bat'),
                url,
                str(game_id),

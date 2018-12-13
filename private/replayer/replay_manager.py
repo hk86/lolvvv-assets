@@ -2,6 +2,7 @@ from os import path
 from glob import glob
 from json import load as json_load
 from shutil import rmtree
+from random import getrandbits
 
 from match.replay import Replay
 from replay_server import ReplayServer
@@ -10,14 +11,12 @@ class ReplayManager:
     _URL = '127.0.0.1:1337'
     _PLATFORM_IDS = {
         'KR'
-        , 'NA1'
-        , 'EUW1'
+        #, 'NA1'
+        #, 'EUW1'
     }
 
     def __init__(self, replays_path='replays'):
         self._REPLAY_PATH = replays_path
-        self._server = ReplayServer()
-        self._server.start()
 
     def get_pending_replays(self):
         replays = []
@@ -37,10 +36,10 @@ class ReplayManager:
                     if path.exists(metas_path):
                         metas = json_load(open(metas_path))
                         match = Replay(
-                            platform,
                             int(game_id),
+                            platform,
                             metas['encryptionKey'],
-                            self._URL)
+                            self._URL + '-' + str(getrandbits(32)))
                         replays.append(match)
         return replays
 
@@ -52,6 +51,3 @@ class ReplayManager:
                             )
         if path.exists(replay_path):
             rmtree(replay_path)
-
-    def __del__(self):
-        self._server.stop()
