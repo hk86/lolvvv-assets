@@ -3,3 +3,11 @@ private/.vscode/settings.json
 /private/replayer/testFirstMissing.py
 /private/replayer/.ipynb_checkpoints/*.ipynb
 __pycache__
+/private/replayer/*.log
+/private/replayer/.vscode
+/private/replayer/img/champion/8.23.1/css/view.css
+/private/replayer/fact_match.json
+/private/replayer/test_hoover.py
+/private/replayer/test_obs.py
+/private/replayer/test_s3_clip_upload.py
+private/replayer/test_db.py

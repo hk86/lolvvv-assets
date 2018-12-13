@@ -73,17 +73,20 @@ if __name__ == '__main__':
                         num_patch_matches += 1
                         patch_matches.append(fact_match)
                     else:
-                        # na hoffentlich klappt das so
                         if match_patch < playable_patch:
-                            print('WARNING: mark as handled replay currently deactivated')
-                            """
+                            logger.warn('old replay found'+
+                                ' match patch: {}'.format(match_patch))
+                            logger.warn('playable patch: {}'.format(playable_patch))
                             replay_manager.mark_as_handled_rep(
                                 fact_match.platform_id,
                                 fact_match.game_id
                             )
-                            """
-                    if (num_patch_matches >= MAX_MATCHES_PER_SCAN):
-                        break
+                        else:
+                            logger.warn('new match found {}/{}'
+                                .format(fact_match.platform_id,
+                                    fact_match.game_id))
+                if (num_patch_matches >= MAX_MATCHES_PER_SCAN):
+                    break
             logger.debug('patch matches = {}'.format(num_patch_matches))
             for match in patch_matches:
                 events = generate_events(match)

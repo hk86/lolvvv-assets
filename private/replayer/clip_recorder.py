@@ -43,6 +43,8 @@ class ClipRecorder:
                     event.victims
                 )
                 clips.append(clip)
+        print('WARNING: breaks in clip recorder after {} clips found'.format(len(clips)))
+        return
         if len(clips) > 0:
             match_video_path = path.join(
                 self._MAIN_VIDEO_FOLDER,
