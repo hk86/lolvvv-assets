@@ -9,14 +9,14 @@ from .replay import Replay
 class LiveMatch(SpectateMatch):
     
     def __init__(self, platform_id, game_id, encryption_key, meteor_db):
-        SpectateMatch.__init__(
-            self, platform_id,
-            game_id, encryption_key)
         self._db = meteor_db
         self.summoners = []
         PLATFORMS = json.load(open(r'../json/LolPlatforms.json'))
         match_platform = PLATFORMS[self._PLATFORM_ID]
-        self._url = (match_platform['domain'] + ':' + match_platform['port'])
+        url = (match_platform['domain'] + ':' + match_platform['port'])
+        SpectateMatch.__init__(
+            self, platform_id,
+            game_id, encryption_key, url)
             
     def getPros(self):
         pros = []
@@ -87,8 +87,4 @@ class LiveMatch(SpectateMatch):
     def _get_db(self):
         return self._db
 
-    def _get_url(self):
-        return self._url
-
     meteor_db = property(fget=_get_db)
-    url = property(fget=_get_url)

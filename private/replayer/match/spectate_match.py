@@ -1,19 +1,8 @@
-from abc import ABC, abstractmethod
-
 from .match import Match
+from .spectate import Spectate
 
-class SpectateMatch(Match, ABC):
+class SpectateMatch(Match, Spectate):
 
-    def __init__(self, platform_id, game_id, encryption_key):
+    def __init__(self, platform_id, game_id, encryption_key, url):
         Match.__init__(self, platform_id, game_id)
-        self._ENCRYPTION_KEY = encryption_key
-
-    def _get_encryption_key(self):
-        return self._ENCRYPTION_KEY
-
-    @abstractmethod
-    def _get_url(self):
-        pass
-
-    encryption_key = property(fget=_get_encryption_key)
-    url = property(fget=_get_url)
+        Spectate.__init__(self, encryption_key, url)
