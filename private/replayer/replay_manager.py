@@ -28,9 +28,9 @@ class ReplayManager:
                 for game_path in game_paths:
                     game_ids.append(path.basename(game_path))
                 for game_id in game_ids:
+                    match_path = path.join(platform_path, game_id)
                     metas_path = path.join(
-                                        platform_path
-                                        , game_id
+                                        match_path
                                         , 'metas.json'
                                         )
                     if path.exists(metas_path):
@@ -40,6 +40,20 @@ class ReplayManager:
                             platform,
                             metas['encryptionKey'],
                             self._URL + '-' + str(getrandbits(32)))
+                        # from here debug
+                        chunks_path = path.join(match_path, 'gameDataChunk', '*')
+                        num_chunks = len(glob(chunks_path))
+                        end_chunk_id = metas['endGameChunkId']
+                        state = 'unknown'
+                        if (num_chunks < end_chunk_id):
+                            state = 'incomplete'
+                        elif (num_chunks == end_chunk_id):
+                            state = 'complete'
+                        else:
+                            state = 'failure'
+                        print('plat {} game {} state {}'.format(match.platform_id, match.game_id, state))
+                        print('num chunks {} end chunk {}'.format(num_chunks, end_chunk_id))
+                        # to here
                         replays.append(match)
         return replays
 

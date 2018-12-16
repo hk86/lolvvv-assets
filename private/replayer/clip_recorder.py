@@ -62,12 +62,12 @@ class ClipRecorder:
                     match.encryption_key
                 )
                 lol.wait_for_replay_start()
-                if (lol.check_running() == LoLState.UNKNOWN):
+                if (lol.check_running() == LoLState.RUNNING):
                     break
                 lol.stop_lol()
                 if (x == START_TRIES-1):
-                    # ToDo: was soll hier geschehen?
-                    pass
+                    print('warning couldn\'t start match {}/{}'.format(match.platform_id, match.game_id))
+                    return []
             lol.modify_ui()
             lol.specate_timeshift(timedelta(minutes=-1))
             ingame_time = timedelta(seconds=0)

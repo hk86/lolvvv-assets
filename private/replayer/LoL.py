@@ -18,6 +18,7 @@ class LoLState:
     CRASHED = 2
     DATA_UNAVAILBLE = 3
     FINISHED = 4
+    RUNNING = 5
 
 class LoLTimeSpeed:
     TIMESPEED_X1 = 0
@@ -109,6 +110,8 @@ class LoLDriver:
               or
               (locateCenterOnScreen('images/GameOver.png'))):
             return LoLState.FINISHED
+        elif ((locateCenterOnScreen('images/running.png'))):
+            return LoLState.RUNNING
         else:
             return LoLState.UNKNOWN
 
