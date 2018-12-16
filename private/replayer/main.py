@@ -28,7 +28,7 @@ class Clipper:
 
     def __init__(self, meteor_db: Meteor):
         self._logger = Logger('clipper', logging.DEBUG)
-        self._logger.warning('start')
+        self._logger.warn('start')
         self._start_time = datetime.now()
         self._fact_db = FactDataDb('mongodb://10.8.0.1:27017')
         self._meteor_db = meteor_db
@@ -39,10 +39,11 @@ class Clipper:
         self._lol = LeagueOfLegends()
         self._playable_patch = self._patch_version.client_patch(self._lol.version)
         if not self._playable_patch:
-            self._upgrade_lol()
+            self.upgrade_lol()
         self._logger.warning('playable match: {}'.format(self._playable_patch))
         self._recorder = ClipRecorder(self._meteor_db, self._lol)
         self._store_service = S3ClipUpload(self._meteor_db)
+        self._replay_hoover = ReplayHoover(meteor_db)
 
     def upgrade_lol(self):
         self._logger.debug('upgrade lol')
@@ -92,7 +93,7 @@ class Clipper:
                 self._logger.debug('new match found {}/{}'
                     .format(fact_match.platform_id,
                         fact_match.game_id))
-        logger.debug('patch matches = {}'.format(len(patch_matches)))
+        self._logger.debug('patch matches = {}'.format(len(patch_matches)))
         return patch_matches
 
     @property
@@ -116,6 +117,26 @@ class Clipper:
             match.platform_id,
             match.game_id)
 
+    def start_downloads(self):
+        self._replay_hoover.start()
+
+    def stop_downloads(self):
+        self._replay_hoover.stop()
+
+    def is_downloading(self):
+        return (self._replay_hoover.get_num_downloads_in_progress() > 0)
+
+    def log_error(self, msg: str, error):
+        self._logger.error('Error: {}'.format(error), exc_info=True)
+
+    @property
+    def logger(self):
+        return self._logger
+
+    def __del__(self):
+        if self.is_downloading():
+            self.stop_downloads()
+
 
 if __name__ == '__main__':
     #init
@@ -123,8 +144,8 @@ if __name__ == '__main__':
     start_time = datetime.now()
     meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
     clipper = Clipper(meteor_db)
-    replay_hover = ReplayHoover(meteor_db)
-    replay_hover.start()
+    #clipper.start_downloads()
+    clipper.logger.warning('hoover not started')
     try:
         while True:
             num_fuct_matches = 0
@@ -148,18 +169,13 @@ if __name__ == '__main__':
                 clipper.generate_clips(clips, match)
                 clipper.match_rdy(match)
             if (datetime.now()-start_time) > MIN_RUNTIME:
-                if replay_hover.get_num_downloads_in_progress() == 0:
+                if (not clipper.is_downloading()):
                     break
             sleep(60)
     except Exception as err:
-        logger.error('Error: {}'.format(err), exc_info=True)
-    finally:
-        for handler in logger.handlers:
-            handler.close()
-            logger.removeFilter(handler)
-        replay_hover.stop()
-        # reboot
-        #system('shutdown -t 1 -r -f')
+        clipper.logger.error('Error: {}'.format(err), exc_info=True)
+    # reboot
+    #system('shutdown -t 1 -r -f')
 
 
     
