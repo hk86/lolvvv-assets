@@ -18,11 +18,14 @@ class FactPlayer(Player):
         if self._get_team() == FactTeamId.RED:
             self._inteam_idx -= 5
 
-    def get_champ_id(self):
+    @property
+    def champ_id(self):
         return self._fact_data['championId']
 
-    def get_inteam_idx(self):
+    @property
+    def inteam_idx(self):
         return self._inteam_idx
 
-    def get_fact_stats(self):
+    @property
+    def fact_stats(self):
         return self._fact_data['stats']

@@ -79,6 +79,7 @@ class LoLDriver:
         sleep(0.5)
 
     def toggle_player(self, match_team: FactTeamId, player_idx: int):
+        print('toggle focus team: {} player: {}'.format(match_team, player_idx))
         if match_team == FactTeamId.BLUE:
             toggle_key(self._BLUE_FOCUS_KEYS[player_idx])
         else:
@@ -190,12 +191,12 @@ class LeagueOfLegends(LoLDriver):
 
     def focus_player(self, team_id: int, inteam_idx: int):
         self._focus_team = team_id
-        self._focus_player_idx = team_id - 1
+        self._focus_player_idx = inteam_idx - 1
         TOGGLE_INTERVAL_S = 1
         self._focus_player()
         self.center_player()
         self._focus_interval = Interval(TOGGLE_INTERVAL_S,
-                                        self._focus_interval)
+                                        self._focus_player)
         self._focus_interval.start()
 
     def unfocus_player(self):
@@ -225,3 +226,7 @@ class LeagueOfLegends(LoLDriver):
         self.toggle_scoreboard_items()
         sleep(self._show_items_duration_s)
         self.toggle_scoreboard_items()
+
+    def __del__(self):
+        if self._focus_interval:
+            self._focus_interval.stop()

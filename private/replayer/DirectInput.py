@@ -55,7 +55,7 @@ class DirectKey:
     NUM_PLUS = ADD
     SUBSTRACT = 0x4A
     NUM_MINUS = SUBSTRACT
-    SPACE = 0x01
+    SPACE = 0x39
     d = 0x20
 
 # Actuals Functions

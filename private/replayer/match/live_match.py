@@ -3,7 +3,6 @@
 import datetime
 import json
 from .spectate_match import SpectateMatch
-from .replay import Replay
 #from pprint import pprint
 
 class LiveMatch(SpectateMatch):

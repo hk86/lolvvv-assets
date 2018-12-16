@@ -63,8 +63,8 @@ class Event:
         return hash((
             self.platform_id,
             self.game_id,
-            self.event.ev_type,
-            self.event.start_time.total_seconds()))
+            self.ev_type,
+            self.start_time.total_seconds()))
 
 class EventKillRow(Event):
     kills_in_row = 0

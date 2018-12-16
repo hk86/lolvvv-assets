@@ -25,6 +25,7 @@ from logger import Logger
 class Clipper:
     _MIN_RUNTIME = timedelta(hours=8)
     _MAX_MATCHES_PER_SCAN = 50
+    _OBS_FILE_HANDLE_WAIT_TIME = 10
 
     def __init__(self, meteor_db: Meteor):
         self._logger = Logger('clipper', logging.DEBUG)
@@ -109,6 +110,8 @@ class Clipper:
 
     def generate_clips(self, clips:[Clip], replay:SpectateMatch):
         clips = self._recorder.record_clips(clips, replay)
+        if len(clips) > 0:
+            sleep(self._OBS_FILE_HANDLE_WAIT_TIME)
         for clip in clips:
             self._store_service.upload(clip)
 

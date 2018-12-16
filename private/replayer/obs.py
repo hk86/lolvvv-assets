@@ -136,7 +136,13 @@ class Obs(ObsDriver):
         self.obs_start()
         OBS_LOAD_TIME_S = 5
         sleep(OBS_LOAD_TIME_S)
-        self._reconnect_obs_ws()
+        START_TRIES = 3
+        for x in range(0, START_TRIES):
+            try:
+                self._reconnect_obs_ws()
+                break
+            except ConnectionRefusedError:
+                pass
 
     def _set_img_file(self, name, file_path):
         settings = {"file": self._toObsPath(file_path)}
@@ -167,7 +173,7 @@ class ObsClips(Obs):
         for name in backgrounds:
             self._set_img_file(name,
             self._images.background_img_path())
-        banners = ['banner_left', 'banner_middle']
+        banners = ['banner_left', 'banner_middle', 'banner_right']
         for name in banners:
             self._set_img_file(name, self._images.banner_img_path())
         logos = ['lolvvv_logo', 'lolvvv_png']

@@ -75,6 +75,7 @@ class ImageService:
     def perk_img_path(self, perk_id: int):
         return path.join(
             self._PUBLIC_IMG_PATH,
+            '..',
             'perks',
             '{}.png'.format(perk_id)
         )
@@ -99,6 +100,6 @@ class ImageService:
             self._PUBLIC_IMG_PATH,
             'teams',
             'medium',
-            pro_team.image
+            image_name
         )
 

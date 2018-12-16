@@ -63,7 +63,7 @@ class ClipRecorder:
                 match.encryption_key
             )
             lol.wait_for_replay_start()
-            if (lol.check_running() == LoLState.UNKNOWN):
+            if (lol.check_running() == LoLState.RUNNING):
                 break
             lol.stop_lol()
             if (x == START_TRIES-1):
@@ -81,11 +81,9 @@ class ClipRecorder:
             self._obs.set_recording_folder(clip_folder)
             self._obs.show_pregame_overlay(True)
             killer_summoner = clip.event.main_summoner
-            killer_stats = (killer_summoner.get_fact_stats())
-            self._obs.set_perks(FactPerks(killer_stats))
+            self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
             self._obs.set_champion(self._static_champ_db
-                .get_champ_key(
-                    killer_summoner.get_champ_id()))
+                .get_champ_key(killer_summoner.champ_id))
             self._obs.set_main_pro(clip.main_pro)
             pro_team = self._pro_team_db.get_pro_team(
                 clip.main_pro.team_id)
@@ -95,15 +93,20 @@ class ClipRecorder:
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
+            """
+            ToDo: currently not working
             lol.focus_player(
                 killer_summoner.team,
-                killer_summoner.get_inteam_idx)
+                killer_summoner.inteam_idx)
+            """
             self._obs.show_pregame_overlay(False)
-            sleep(clip.event.length + self._RECORDING_OVERTIME_S - self._PREGAME_TIME_S)
+            sleep(clip.event.length.total_seconds()
+                + self._RECORDING_OVERTIME_S
+                - self._PREGAME_TIME_S)
             self._obs.stop_recording()
             ingame_time += (datetime.now() - start_record)
             clip.clip_path = glob(path.join(clip_folder, '*.*'))[0]
-        lol.stop()
+        lol.stop_lol()
         return clips
 
 
