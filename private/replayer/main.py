@@ -8,6 +8,10 @@ from database.fact_db import FactDataDb
 from database.meteor import Meteor
 from database.static_pro_db import StaticProDb
 from database.clip_store_service import ClipStoreService
+from match.match import Match
+from match.fact_match import FactMatch
+from match.spectate_match import SpectateMatch
+from match.fact_replay import FactReplay
 from replay_manager import ReplayManager
 from replay_hoover import ReplayHoover
 from event import Event, generate_events
@@ -18,108 +22,160 @@ from patch_version import PatchVersion
 from s3_clip_upload import S3ClipUpload
 from logger import Logger
 
-logger = None
+class Clipper:
+    _MIN_RUNTIME = timedelta(hours=8)
+    _MAX_MATCHES_PER_SCAN = 50
 
-def upgrade_lol(lol: LeagueOfLegends, meteor_db:Meteor):
-    logger.debug('upgrade lol')
-    lol.start_update()
-    lol.wait_for_update()
-    lol.stop_update()
-    lol = LeagueOfLegends()
-    meteor_db.set_patch_version(lol.version,
-        meteor_db.get_current_server_patch(lol.UPDATE_PLATFORM))
-    logger.debug('upgrade finished new version = ' + lol.version)
+    def __init__(self, meteor_db: Meteor):
+        self._logger = Logger('clipper', logging.DEBUG)
+        self._logger.warn('start')
+        self._start_time = datetime.now()
+        self._fact_db = FactDataDb('mongodb://10.8.0.1:27017')
+        self._meteor_db = meteor_db
+        self._clip_store = ClipStoreService(self._meteor_db)
+        self._static_pro_db = StaticProDb(self._meteor_db)
+        self._patch_version = PatchVersion(self._meteor_db)
+        self._replay_manager = ReplayManager()
+        self._lol = LeagueOfLegends()
+        self._playable_patch = self._patch_version.client_patch(self._lol.version)
+        if not self._playable_patch:
+            self.upgrade_lol()
+        self._logger.warning('playable match: {}'.format(self._playable_patch))
+        self._recorder = ClipRecorder(self._meteor_db, self._lol)
+        self._store_service = S3ClipUpload(self._meteor_db)
+        self._replay_hoover = ReplayHoover(meteor_db)
+
+    def upgrade_lol(self):
+        self._logger.debug('upgrade lol')
+        self._lol.start_update()
+        self._lol.wait_for_update()
+        self._lol.stop_update()
+        self._lol = LeagueOfLegends()
+        server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
+        self._meteor_db.set_patch_version(self._lol.version, server_patch)
+        self._playable_patch = self._patch_version.client_patch(self._lol.version)
+        self._logger.debug('upgrade finished new version = ' + self._lol.version)
+
+    def get_pending_replays(self):
+        replays = self._replay_manager.get_pending_replays()
+        self._logger.debug('pending matches = {}'.format(len(replays)))
+        return replays
+
+    def replays_to_fact_replays(self, replays:[SpectateMatch]):
+        fact_matches = []
+        for replay in replays:
+            fact_match = self._fact_db.get_fact_match(
+                replay.platform_id,
+                replay.game_id
+            )
+            if not fact_match:
+                continue
+            fact_matches.append(FactReplay(fact_match, replay))
+            if (len(fact_matches) >= self._MAX_MATCHES_PER_SCAN):
+                break
+        return fact_matches
+
+    def fact_to_patch_matches(self, fact_matches:[FactMatch]):
+        patch_matches = []
+        for fact_match in fact_matches:
+            match_patch = self._patch_version.version_to_patch(fact_match.version)
+            if (match_patch == self._playable_patch):
+                patch_matches.append(fact_match)
+            elif match_patch < self._playable_patch:
+                self._logger.warning('old replay found'+
+                    ' match patch: {}'.format(match_patch))
+                self._logger.warning('playable patch: {}'.format(self._playable_patch))
+                self._replay_manager.mark_as_handled_rep(
+                    fact_match.platform_id,
+                    fact_match.game_id
+                )
+            else:
+                self._logger.debug('new match found {}/{}'
+                    .format(fact_match.platform_id,
+                        fact_match.game_id))
+        self._logger.debug('patch matches = {}'.format(len(patch_matches)))
+        return patch_matches
+
+    @property
+    def pending_patch(self):
+        platform_patch = self._patch_version.version_to_patch(
+                self._lol.UPDATE_PLATFORM)
+        client_patch = self._patch_version.client_patch(self._lol.version)
+        return (platform_patch != client_patch)
+
+    def prepare_clips(self, match:FactMatch):
+        events = generate_events(match)
+        return self._recorder.prepare_clips(events)
+
+    def generate_clips(self, clips:[Clip], replay:SpectateMatch):
+        clips = self._recorder.record_clips(clips, replay)
+        for clip in clips:
+            self._store_service.upload(clip)
+
+    def match_rdy(self, match: Match):
+        self._replay_manager.mark_as_handled_rep(
+            match.platform_id,
+            match.game_id)
+
+    def start_downloads(self):
+        self._replay_hoover.start()
+
+    def stop_downloads(self):
+        self._replay_hoover.stop()
+
+    def is_downloading(self):
+        return (self._replay_hoover.get_num_downloads_in_progress() > 0)
+
+    def log_error(self, msg: str, error):
+        self._logger.error('Error: {}'.format(error), exc_info=True)
+
+    @property
+    def logger(self):
+        return self._logger
+
+    def __del__(self):
+        if self.is_downloading():
+            self.stop_downloads()
+
 
 if __name__ == '__main__':
     #init
-    logger = Logger('clipper', logging.DEBUG)
-    logger.warning('start')
-    start_time = datetime.now()
-    fact_db = FactDataDb('mongodb://10.8.0.1:27017')
-    meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
-    clip_store = ClipStoreService(meteor_db)
-    static_pro_db = StaticProDb(meteor_db)
-    patch_version = PatchVersion(meteor_db)
-    replay_manager = ReplayManager()
-    lol = LeagueOfLegends()
-    playable_patch = patch_version.client_patch(lol.version)
-    if not playable_patch:
-        upgrade_lol(lol, meteor_db)
-        playable_patch = patch_version.client_patch(lol.version)
-    logger.warning('playable match: {}'.format(playable_patch))
-    recorder = ClipRecorder(meteor_db, lol)
-    store_service = S3ClipUpload(meteor_db)
-    replay_hover = ReplayHoover(meteor_db)
-    replay_hover.start()
     MIN_RUNTIME = timedelta(hours=8)
-    MAX_MATCHES_PER_SCAN = 50
+    start_time = datetime.now()
+    meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
+    clipper = Clipper(meteor_db)
+    #clipper.start_downloads()
+    clipper.logger.warning('hoover not started')
     try:
         while True:
-            replays = replay_manager.get_pending_replays()
-            logger.debug('pending matches = {}'.format(len(replays)))
             num_fuct_matches = 0
-            num_patch_matches = 0
             patch_matches = []
-            for replay in replays:
-                fact_match = fact_db.get_fact_match(
-                    replay.platform_id,
-                    replay.game_id
-                )
-                if fact_match:
-                    num_fuct_matches += 1
-                    match_patch = patch_version.version_to_patch(fact_match.version)
-                    if (match_patch == playable_patch):
-                        num_patch_matches += 1
-                        patch_matches.append(fact_match)
-                    else:
-                        if match_patch < playable_patch:
-                            logger.warning('old replay found'+
-                                ' match patch: {}'.format(match_patch))
-                            logger.warning('playable patch: {}'.format(playable_patch))
-                            replay_manager.mark_as_handled_rep(
-                                fact_match.platform_id,
-                                fact_match.game_id
-                            )
-                        else:
-                            logger.warning('new match found {}/{}'
-                                .format(fact_match.platform_id,
-                                    fact_match.game_id))
-                if (num_patch_matches >= MAX_MATCHES_PER_SCAN):
+            while len(patch_matches) < clipper._MAX_MATCHES_PER_SCAN:
+                replays = clipper.get_pending_replays()
+                fact_matches = clipper.replays_to_fact_replays(replays)
+                if (len(fact_matches) == 0):
                     break
-            logger.debug('patch matches = {}'.format(num_patch_matches))
+                num_fuct_matches += len(fact_matches)
+                patch_matches += clipper.fact_to_patch_matches(fact_matches)
+            if ((num_fuct_matches > 0)
+                    and (len(patch_matches) == 0)
+                    and clipper.pending_patch):
+                clipper.upgrade_lol()
+                continue
             for match in patch_matches:
-                events = generate_events(match)
-                clips = recorder.record_clips(events, replay)
-                for clip in clips:
-                    store_service.upload(clip)
-                """
-                replay_manager.mark_as_handled_rep(
-                    replay.platform_id,
-                    replay.game_id
-                )
-                """
-            if ((num_fuct_matches > 0) 
-                and (num_patch_matches == 0)
-                and (patch_version.version_to_patch(
-                    meteor_db.get_current_server_patch(
-                        lol.UPDATE_PLATFORM)
-                    ) > patch_version.client_patch(lol.version)
-                )):
-                upgrade_lol(lol, meteor_db)
-                playable_patch = patch_version.client_patch(lol.version)
+                clips = clipper.prepare_clips(match)
+                if len(clips) == 0:
+                    continue
+                clipper.generate_clips(clips, match)
+                clipper.match_rdy(match)
             if (datetime.now()-start_time) > MIN_RUNTIME:
-                if replay_hover.get_num_downloads_in_progress() == 0:
+                if (not clipper.is_downloading()):
                     break
             sleep(60)
     except Exception as err:
-        logger.error('Error: {}'.format(err), exc_info=True)
-    finally:
-        for handler in logger.handlers:
-            handler.close()
-            logger.removeFilter(handler)
-        replay_hover.stop()
-        # reboot
-        #system('shutdown -t 1 -r -f')
+        clipper.logger.error('Error: {}'.format(err), exc_info=True)
+    # reboot
+    #system('shutdown -t 1 -r -f')
 
 
     

@@ -1,7 +1,7 @@
 ﻿import logging
 import sys
 
-class Logger:
+class Logger(logging.Logger):
 
     def __new__(self, appName, debug_level=logging.WARN):
         self = logging.getLogger(appName)
@@ -19,7 +19,7 @@ class Logger:
         self.addHandler(ch)
         return self
 
-    def __exit__(self):
+    def __del__(self):
         for handler in self.handlers:
             handler.close()
             self.removeFilter(handler)
