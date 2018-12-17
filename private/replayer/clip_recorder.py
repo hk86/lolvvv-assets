@@ -30,11 +30,14 @@ class ClipRecorder:
 
     def prepare_clips(self, events:[Event]):
         clips = []
+        ingame_clip_num = 0
         for event in events:
             main_pro = self._summoners_to_pros([event.main_summoner])
             if len(main_pro) == 0:
                 continue
+            ingame_clip_num += 1
             clip = Clip()
+            clip.ingame_clip_num = ingame_clip_num
             clip.event = event
             clip.main_pro = main_pro[0]
             clip.participant_pros = self._summoners_to_pros(
@@ -71,12 +74,12 @@ class ClipRecorder:
         lol.modify_ui()
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)
-        for idx, clip in enumerate(clips):
+        for clip in clips:
             timeshift = clip.event.start_time - ingame_time
             ingame_time += lol.specate_timeshift(timeshift)
             ingame_time += lol.specate_timeshift(timedelta(seconds=-15))
             clip_folder = path.join(match_video_path,
-                            str(idx+1))
+                            str(clip.ingame_clip_num))
             Path(clip_folder).mkdir(parents=True, exist_ok=True)
             self._obs.set_recording_folder(clip_folder)
             self._obs.show_pregame_overlay(True)
@@ -93,12 +96,9 @@ class ClipRecorder:
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
-            """
-            ToDo: currently not working
             lol.focus_player(
                 killer_summoner.team,
                 killer_summoner.inteam_idx)
-            """
             self._obs.show_pregame_overlay(False)
             sleep(clip.event.length.total_seconds()
                 + self._RECORDING_OVERTIME_S

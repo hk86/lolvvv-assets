@@ -14,8 +14,8 @@ class ClipStoreService:
         for victim_pro in clip.victim_pros:
             victim_ids.append(victim_pro.id)
         clip_entry = {
-            'platformId': clip.platform_id,
-            'gameId': clip.game_id,
+            'platformId': clip.event.platform_id,
+            'gameId': clip.event.game_id,
             'eventType': clip.event.ev_type,
             'mainProIds': [clip.main_pro.id],
             'assistingProIds': participant_ids,

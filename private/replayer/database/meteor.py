@@ -99,7 +99,7 @@ class Meteor(Database):
         state = self._meteor['dim_server_state'].find_one({})
         return state['gameVersions']['platforms'][platform_id]
 
-    def get_patch_verion(self, client_version):
+    def get_patch_version(self, client_version):
         matching_version = self._dim_patches.find_one(
             {'clientVersion': client_version})
         if matching_version:

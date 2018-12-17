@@ -9,7 +9,7 @@ class PatchVersion:
         return ('{}.{}'.format(granulate[0], granulate[1]))
 
     def client_patch(self, client_version:str):
-        matching_version = self._meteor_db.get_patch_verion(
+        matching_version = self._meteor_db.get_patch_version(
             client_version)
         if matching_version:
             return self.version_to_patch(matching_version)

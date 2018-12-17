@@ -44,19 +44,6 @@ class ReplayManager:
                     int(game_id),
                     metas['encryptionKey'],
                     self._URL + '-' + str(getrandbits(32)))
-                # from here debug
-                chunks_path = path.join(match_path, 'gameDataChunk', '*')
-                num_chunks = len(glob(chunks_path))
-                end_chunk_id = metas['endGameChunkId']
-                state = 'unknown'
-                if (num_chunks < end_chunk_id):
-                    state = 'incomplete'
-                elif (num_chunks == end_chunk_id):
-                    state = 'complete'
-                else:
-                    state = 'failure'
-                print('plat {} game {} state {}'.format(match.platform_id, match.game_id, state))
-                # to here
                 replays.append(match)
         return replays
 

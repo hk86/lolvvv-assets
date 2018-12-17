@@ -1,6 +1,7 @@
 #this is the refactoring class to ../streamer/LoL.py
 
 from os import path, walk, getcwd
+from shutil import copyfile
 from subprocess import run
 from datetime import datetime, timedelta
 from time import sleep
@@ -53,6 +54,11 @@ class LoLDriver:
         self._lol_path = lol_path
         self._version = installed_releases[0]
         self._deploy_path = path.join(releases_path, self._version, 'deploy')
+
+    def setup_settings(self, settings_path:str):
+        persistant_settings = path.join(self._lol_path, 'Config',
+            'PersistedSettings.json')
+        copyfile(settings_path, persistant_settings)
 
     def start_spectate(self, url:str, game_id:int, platform_id:str, encryption_key:str):
         cmd = [path.join(getcwd(), 'spectate.bat'),
@@ -134,9 +140,11 @@ class LeagueOfLegends(LoLDriver):
     _SERVER_FOLLOWUP_TIME_S = 15
     _REPLAY_DATA_LOAD_TIME_S = 5
     _SECURE_TIMEOUT = 5
+    _SETTINGS_PATH = r'../json/lol_settings.json'
 
     def __init__(self, lol_path = 'C:\\Riot Games\\League of Legends'):
         super().__init__(lol_path)
+        self.setup_settings(self._SETTINGS_PATH)
 
     def _time_string(self): # should be in sw_tools or something like this.
         return datetime.now().strftime('%Y-%m-%d_%H%M%S')
@@ -228,5 +236,7 @@ class LeagueOfLegends(LoLDriver):
         self.toggle_scoreboard_items()
 
     def __del__(self):
-        if self._focus_interval:
+        try:
             self._focus_interval.stop()
+        except AttributeError:
+            pass

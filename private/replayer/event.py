@@ -46,7 +46,10 @@ def generate_events(fact_match:FactMatch):
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
             if len(row) == event_kill_row_class.kills_in_row:
-                events.append(event_kill_row_class(row))
+                event = event_kill_row_class(row)
+                event.platform_id = fact_match.platform_id
+                event.game_id = fact_match.game_id
+                events.append(event)
     return events
 
 class Event:

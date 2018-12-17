@@ -13,7 +13,7 @@ class FactPlayer(Player):
             fact_player['currentAccountId'],
             fact_player['currentPlatformId'],
             fact_participant['teamId'])
-        self._inteam_idx = participant_id
+        self._inteam_idx = 11 - participant_id
         self._fact_data = fact_participant
         if self._get_team() == FactTeamId.RED:
             self._inteam_idx -= 5

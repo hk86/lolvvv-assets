@@ -134,7 +134,7 @@ class Obs(ObsDriver):
         super().__init__(obs_path)
         self.setup_scene(self._SCENE_PATH)
         self.obs_start()
-        OBS_LOAD_TIME_S = 5
+        OBS_LOAD_TIME_S = 10
         sleep(OBS_LOAD_TIME_S)
         START_TRIES = 3
         for x in range(0, START_TRIES):
@@ -223,9 +223,11 @@ class ObsClips(Obs):
         nickname = main_pro.nickname
         self._set_txt('proplayername_txt', nickname)
         self._set_txt('proplayer_txt', nickname)
-        self._set_img_file('proplayer_img',
-            self._images.pro_med_img_path(main_pro.image)
-        )
+        pro_imgs = ['proplayer_img', 'proplayer_png']
+        for element in pro_imgs:
+            self._set_img_file(element,
+                self._images.pro_med_img_path(main_pro.image)
+            )
 
     def set_fact_team(self, fact_team_id: FactTeamId):
         # set teamcolour_img ?

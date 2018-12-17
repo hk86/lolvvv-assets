@@ -43,11 +43,13 @@ class Clipper:
             self.upgrade_lol()
         self._logger.warning('playable match: {}'.format(self._playable_patch))
         self._recorder = ClipRecorder(self._meteor_db, self._lol)
-        self._store_service = S3ClipUpload(self._meteor_db)
-        self._replay_hoover = ReplayHoover(meteor_db)
+        self._store_service = S3ClipUpload(self._clip_store)
+        self._replay_hoover = ReplayHoover(self._meteor_db)
 
     def upgrade_lol(self):
-        self._logger.debug('upgrade lol')
+        self._logger.warning('upgrade currently not in use')
+        exit()
+        self._logger.warning('upgrade lol')
         self._lol.start_update()
         self._lol.wait_for_update()
         self._lol.stop_update()
@@ -55,7 +57,7 @@ class Clipper:
         server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
         self._meteor_db.set_patch_version(self._lol.version, server_patch)
         self._playable_patch = self._patch_version.client_patch(self._lol.version)
-        self._logger.debug('upgrade finished new version = ' + self._lol.version)
+        self._logger.warning('upgrade finished new version = ' + self._lol.version)
 
     def get_pending_replays(self):
         replays = self._replay_manager.get_pending_replays()
@@ -100,9 +102,11 @@ class Clipper:
     @property
     def pending_patch(self):
         platform_patch = self._patch_version.version_to_patch(
-                self._lol.UPDATE_PLATFORM)
-        client_patch = self._patch_version.client_patch(self._lol.version)
-        return (platform_patch != client_patch)
+            self._meteor_db.get_current_server_patch(
+                self._lol.UPDATE_PLATFORM))
+        self._logger.debug('pending_patch: {}'.format(platform_patch))
+        self._logger.debug('playable patch: {}'.format(self._playable_patch))
+        return (platform_patch != self._playable_patch)
 
     def prepare_clips(self, match:FactMatch):
         events = generate_events(match)
@@ -151,6 +155,7 @@ if __name__ == '__main__':
     clipper.logger.warning('hoover not started')
     try:
         while True:
+            clipper.logger.debug('run')
             num_fuct_matches = 0
             patch_matches = []
             while len(patch_matches) < clipper._MAX_MATCHES_PER_SCAN:
@@ -160,6 +165,9 @@ if __name__ == '__main__':
                     break
                 num_fuct_matches += len(fact_matches)
                 patch_matches += clipper.fact_to_patch_matches(fact_matches)
+            clipper.logger.debug('num fact matches: {}'.format(num_fuct_matches))
+            clipper.logger.debug('num patch matches: {}'.format(len(patch_matches)))
+            clipper.logger.debug('pending: {}'.format(clipper.pending_patch))
             if ((num_fuct_matches > 0)
                     and (len(patch_matches) == 0)
                     and clipper.pending_patch):
@@ -167,9 +175,8 @@ if __name__ == '__main__':
                 continue
             for match in patch_matches:
                 clips = clipper.prepare_clips(match)
-                if len(clips) == 0:
-                    continue
-                clipper.generate_clips(clips, match)
+                if len(clips) > 0:
+                    clipper.generate_clips(clips, match)
                 clipper.match_rdy(match)
             if (datetime.now()-start_time) > MIN_RUNTIME:
                 if (not clipper.is_downloading()):
