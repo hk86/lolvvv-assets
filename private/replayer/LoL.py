@@ -28,6 +28,7 @@ class LoLTimeSpeed:
     TIMESPEED_X8 = 3
 
 class LoLDriver:
+    _EXEC_TRIES = 3
     UPDATE_PLATFORM = 'EUW1'
 
     _BLUE_FOCUS_KEYS = array('B', [
@@ -66,10 +67,21 @@ class LoLDriver:
                str(game_id),
                encryption_key,
                platform_id]
-        run(cmd, cwd=self._deploy_path)
+        self._exec_os_cmd(cmd, self._deploy_path)
 
     def stop_lol(self):
-        run('taskkill /F /IM "League of Legends.exe"')
+        self._exec_os_cmd('taskkill /F /IM "League of Legends.exe"')
+
+    def _exec_os_cmd(self, cmd, cwd=None):
+        for tries in range(0, self._EXEC_TRIES):
+            try:
+                if cwd:
+                    run(cmd, cwd=cwd)
+                else:
+                    run(cmd)
+                break
+            except OSError:
+                pass
 
     def toggle_scoreboard(self):
         toggle_key(DirectKey.o)
@@ -124,10 +136,10 @@ class LoLDriver:
 
     def start_update(self):
         update_cmd = path.join(self._lol_path, 'LeagueClient.exe')
-        run(update_cmd, cwd=self._lol_path)
+        self._exec_os_cmd(update_cmd, self._lol_path)
 
     def stop_update(self):
-        run('taskkill /F /IM "LeagueClientUx.exe"')
+        self._exec_os_cmd('taskkill /F /IM "LeagueClientUx.exe"')
 
     @property
     def version(self):

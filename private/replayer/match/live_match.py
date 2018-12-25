@@ -11,7 +11,7 @@ class LiveMatch(SpectateMatch):
         self._db = meteor_db
         self.summoners = []
         PLATFORMS = json.load(open(r'../json/LolPlatforms.json'))
-        match_platform = PLATFORMS[self._PLATFORM_ID]
+        match_platform = PLATFORMS[platform_id]
         url = (match_platform['domain'] + ':' + match_platform['port'])
         SpectateMatch.__init__(
             self, platform_id,

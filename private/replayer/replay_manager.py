@@ -11,8 +11,8 @@ class ReplayManager:
     _URL = '127.0.0.1:1337'
     _PLATFORM_IDS = {
         'KR'
-        #, 'NA1'
-        #, 'EUW1'
+        , 'NA1'
+        , 'EUW1'
     }
 
     def __init__(self, replays_path='replays'):

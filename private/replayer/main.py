@@ -47,13 +47,13 @@ class Clipper:
         self._replay_hoover = ReplayHoover(self._meteor_db)
 
     def upgrade_lol(self):
-        self._logger.warning('upgrade currently not in use')
-        exit()
         self._logger.warning('upgrade lol')
         self._lol.start_update()
         self._lol.wait_for_update()
         self._lol.stop_update()
+        del self._lol
         self._lol = LeagueOfLegends()
+        # ToDo: hier trennen und erstmal abfragen ob die neue version auf dem Server bereits bekannt ist.
         server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
         self._meteor_db.set_patch_version(self._lol.version, server_patch)
         self._playable_patch = self._patch_version.client_patch(self._lol.version)
@@ -104,8 +104,6 @@ class Clipper:
         platform_patch = self._patch_version.version_to_patch(
             self._meteor_db.get_current_server_patch(
                 self._lol.UPDATE_PLATFORM))
-        self._logger.debug('pending_patch: {}'.format(platform_patch))
-        self._logger.debug('playable patch: {}'.format(self._playable_patch))
         return (platform_patch != self._playable_patch)
 
     def prepare_clips(self, match:FactMatch):
@@ -151,23 +149,31 @@ if __name__ == '__main__':
     start_time = datetime.now()
     meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
     clipper = Clipper(meteor_db)
-    #clipper.start_downloads()
+    clipper.start_downloads()
     clipper.logger.warning('hoover not started')
+    clipper.logger.debug('run')
     try:
         while True:
-            clipper.logger.debug('run')
             num_fuct_matches = 0
             patch_matches = []
-            while len(patch_matches) < clipper._MAX_MATCHES_PER_SCAN:
-                replays = clipper.get_pending_replays()
-                fact_matches = clipper.replays_to_fact_replays(replays)
-                if (len(fact_matches) == 0):
-                    break
+            replays = clipper.get_pending_replays()
+            clipper.logger.debug('num replays: {}'.format(len(replays)))
+            replays_idx = 0
+            replays_cutouts = []
+            for ii in range(clipper._MAX_MATCHES_PER_SCAN, len(replays), clipper._MAX_MATCHES_PER_SCAN):
+                cutout = replays[replays_idx:ii-1]
+                print('cutout len {}'.format(len(cutout)))
+                replays_cutouts.append(cutout)
+                replays_idx = ii
+            rest = replays[replays_idx:-1]
+            replays_cutouts.append(rest)
+            print('rest len: {}'.format(len(rest)))
+            for replays_cutout in replays_cutouts:
+                fact_matches = clipper.replays_to_fact_replays(replays_cutout)
                 num_fuct_matches += len(fact_matches)
                 patch_matches += clipper.fact_to_patch_matches(fact_matches)
-            clipper.logger.debug('num fact matches: {}'.format(num_fuct_matches))
-            clipper.logger.debug('num patch matches: {}'.format(len(patch_matches)))
-            clipper.logger.debug('pending: {}'.format(clipper.pending_patch))
+                if len(patch_matches) >= clipper._MAX_MATCHES_PER_SCAN:
+                    break
             if ((num_fuct_matches > 0)
                     and (len(patch_matches) == 0)
                     and clipper.pending_patch):
@@ -184,6 +190,8 @@ if __name__ == '__main__':
             sleep(60)
     except Exception as err:
         clipper.logger.error('Error: {}'.format(err), exc_info=True)
+    finally:
+        del clipper
     # reboot
     #system('shutdown -t 1 -r -f')
 

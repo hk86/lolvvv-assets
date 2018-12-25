@@ -18,7 +18,8 @@ class S3Upload:
         self._connection = Pool(S3_ACCESS_KEY
                                       ,S3_SECRET_KEY
                                       ,tls=True
-                                      ,default_bucket='lolvvvclips')
+                                      ,default_bucket='lolvvvclips'
+                                      ,size=21)
         self._upload_nodes = []
         self._interval = Interval(60, self._cleanup_requests)
         self._interval.start()
@@ -45,6 +46,13 @@ class S3Upload:
         for idx, node in enumerate(self._upload_nodes):
             if node.request.done():
                 print('s3 cleanup state: {}'.format(node.request.result()))
-                if node.callback_func:
-                    node.callback_func(node.callback_arg)
+                callback = node.callback_func
+                callback_arg = node.callback_arg
+                # delete request to close file handle
+                del node.request
                 self._upload_nodes.pop(idx)
+                if callback:
+                    callback(callback_arg)
+
+    def __del__(self):
+        self._interval.stop()

@@ -111,3 +111,6 @@ class Meteor(Database):
             'serverVersion': server_version
         }
         self._dim_patches.insert_one(matching_version)
+
+    def get_all_clips(self):
+        return list(self._fact_clips.find({}))

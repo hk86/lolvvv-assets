@@ -24,8 +24,8 @@ class ReplayHoover(Thread):
         live_match_service = LiveMatchGenerator(self._meteor_db)
         replay_service = ReplayFiles()
         while not self._stop_event.is_set():
-            new_live_matches = live_match_service.get_new_live_matches(
-            timedelta(minutes=self.YOUNGER_THAN_MIN))
+            new_live_matches = live_match_service.get_new_live_matches\
+                (timedelta(minutes=self.YOUNGER_THAN_MIN))
             for live_match in new_live_matches:
                 downloader = ReplayDownloader(replay_service)
                 downloader.download(live_match)

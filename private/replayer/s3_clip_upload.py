@@ -7,6 +7,7 @@ from clip import Clip
 # pip install moviepy
 from moviepy import editor as mp
 
+from time import sleep
 from pathlib import PurePath
 from os import path
 from shutil import rmtree
@@ -20,7 +21,16 @@ class S3ClipUpload(ClipUploadService):
 
     def upload(self, clip: Clip):
         clip_video_path = PurePath(clip.clip_path)
-        clip_video = mp.VideoFileClip(clip.clip_path)
+        MAX_TRIES = 3
+        for tries in range(MAX_TRIES):
+            try:
+                clip_video = mp.VideoFileClip(clip.clip_path)
+                break
+            except OSError:
+                print('couldn\'t access file {}'.format(clip.clip_path))
+                if tries == MAX_TRIES-1:
+                    raise
+            sleep(1)
         for new_height in self._RESOLUTION_HEIGHTS:
             resized_video_name = '{}_{}_{}_{}p.mp4'.format(
                 clip.event.platform_id,
@@ -32,8 +42,15 @@ class S3ClipUpload(ClipUploadService):
                 *clip_video_path.parts[:-1],
                 resized_video_name
             )
-            resized_video = clip_video.resize(height=new_height)
-            resized_video.write_videofile(resized_video_path)
+            for tries in range(MAX_TRIES):
+                try:
+                    resized_video = clip_video.resize(height=new_height)
+                    resized_video.write_videofile(resized_video_path)
+                    break
+                except OSError:
+                    if tries == MAX_TRIES-1:
+                        raise
+                sleep(1)
             self._upload_service.upload(
                 resized_video_path,
                 None,
@@ -58,3 +75,4 @@ class S3ClipUpload(ClipUploadService):
     def _upload_finished(self, clip: Clip):
         self._store_service.store(clip)
         rmtree(path.dirname(clip.clip_path))
+        # ToDo: remove game_id dir if empty

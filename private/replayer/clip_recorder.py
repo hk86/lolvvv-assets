@@ -20,6 +20,7 @@ class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
     _RECORDING_OVERTIME_S = 25
     _PREGAME_TIME_S = 5
+    _RELEASE_HANDLE_TIME_S = 3
 
     def __init__(self, meteor_db: Meteor, lol: LeagueOfLegends):
         self._static_pro_db = StaticProDb(meteor_db)
@@ -96,14 +97,17 @@ class ClipRecorder:
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
+            """
             lol.focus_player(
                 killer_summoner.team,
                 killer_summoner.inteam_idx)
+            """
             self._obs.show_pregame_overlay(False)
             sleep(clip.event.length.total_seconds()
                 + self._RECORDING_OVERTIME_S
                 - self._PREGAME_TIME_S)
             self._obs.stop_recording()
+            sleep(self._RELEASE_HANDLE_TIME_S)
             ingame_time += (datetime.now() - start_record)
             clip.clip_path = glob(path.join(clip_folder, '*.*'))[0]
         lol.stop_lol()
