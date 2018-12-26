@@ -59,21 +59,8 @@ class Event:
     start_time = timedelta()
     length = timedelta()
     main_summoner = None
-    main_pros = []
     participants = []
     victims = []
-
-    @property
-    def id(self):
-        return self.__hash__()
-
-    def __hash__(self):
-        return hash((
-            self.platform_id,
-            self.game_id,
-            self.ev_type,
-            self.main_summoner,
-            self.start_time.total_seconds()))
 
 class EventKillRow(Event):
     kills_in_row = 0

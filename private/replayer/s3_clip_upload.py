@@ -7,6 +7,7 @@ from clip import Clip
 # pip install moviepy
 from moviepy import editor as mp
 
+from datetime import timedelta
 from time import sleep
 from pathlib import PurePath
 from os import path

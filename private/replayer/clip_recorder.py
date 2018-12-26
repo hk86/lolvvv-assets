@@ -7,7 +7,6 @@ from match.spectate_match import SpectateMatch
 from event import Event
 from clip import Clip
 from obs import ObsClips
-from kill_row import KillRow
 from LoL import LeagueOfLegends, LoLState
 
 from os import path
@@ -40,7 +39,7 @@ class ClipRecorder:
             clip = Clip()
             clip.ingame_clip_num = ingame_clip_num
             clip.event = event
-            clip.event.main_pros = main_pros
+            clip.main_pros = main_pros
             clip.participant_pros = self._summoners_to_pros(
                 event.participants)
             clip.victim_pros = self._summoners_to_pros(
@@ -88,9 +87,9 @@ class ClipRecorder:
             self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
             self._obs.set_champion(self._static_champ_db
                 .get_champ_key(killer_summoner.champ_id))
-            self._obs.set_main_pro(clip.event.main_pros[0])
+            self._obs.set_main_pro(clip.main_pros[0])
             pro_team = self._pro_team_db.get_pro_team(
-                clip.event.main_pros[0].team_id)
+                clip.main_pros[0].team_id)
             self._obs.set_pro_team(pro_team)
             self._obs.set_fact_team(killer_summoner.team)
             self._obs.set_event(clip.event)

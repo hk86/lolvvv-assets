@@ -1,3 +1,5 @@
+from hashlib import sha1
+
 from datetime import timedelta
 
 class Clip:
@@ -12,13 +14,10 @@ class Clip:
 
     @property
     def id(self):
-        return self.__hash__()
-
-    def __hash__(self):
-        if self.event:
-            return hash((
-                self.event.platform_id,
-                self.event.game_id,
-                self.event.ev_type,
-                self.main_pros,
-                self.event.start_time.total_seconds()))
+        id = sha1()
+        id.update(self.event.platform_id.encode())
+        id.update(str(self.event.game_id).encode())
+        for pro in self.main_pros:
+            id.update(str(pro.id).encode())
+        id.update(str(self.event.start_time.total_seconds()).encode())
+        return id.hexdigest()
