@@ -31,6 +31,7 @@ class S3ClipUpload(ClipUploadService):
                 if tries == MAX_TRIES-1:
                     raise
             sleep(1)
+        clip.length = timedelta(seconds=clip_video.duration)
         for new_height in self._RESOLUTION_HEIGHTS:
             resized_video_name = '{}_{}_{}_{}p.mp4'.format(
                 clip.event.platform_id,
