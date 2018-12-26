@@ -45,3 +45,18 @@ class ReplayHoover(Thread):
         for idx, download in enumerate(self._downloads):
                 if not download.is_alive():
                     self._downloads.pop(idx)
+
+if __name__ == "__main__":
+    print('start')
+    meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
+    hoover = ReplayHoover(meteor_db)
+    hoover.start()
+    try:
+        while True:
+            sleep(10)
+    except KeyboardInterrupt:
+        hoover.stop()
+        print('stop initialized')
+    finally:
+        hoover.join()
+        print('finished')
