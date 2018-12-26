@@ -108,7 +108,9 @@ class ClipRecorder:
                 - self._PREGAME_TIME_S)
             self._obs.stop_recording()
             sleep(self._RELEASE_HANDLE_TIME_S)
-            ingame_time += (datetime.now() - start_record)
+            clip_length = (datetime.now() - start_record)
+            ingame_time += clip_length
+            clip.length = clip_length.total_seconds()
             clip.clip_path = glob(path.join(clip_folder, '*.*'))[0]
         lol.stop_lol()
         return clips
