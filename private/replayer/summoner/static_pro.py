@@ -17,6 +17,9 @@ class StaticPro:
     def _get_team_id(self):
         return self._static_data['teamId']
 
+    def __hash__(self):
+        return hash(self._get_id())
+
     id = property(fget=_get_id)
     nickname = property(fget=_get_nickname)
     image = property(fget=_get_image)

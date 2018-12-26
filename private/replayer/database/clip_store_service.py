@@ -13,14 +13,20 @@ class ClipStoreService:
         victim_ids = []
         for victim_pro in clip.victim_pros:
             victim_ids.append(victim_pro.id)
+        main_pro_ids = []
+        for main_pro in clip.event.main_pros:
+            main_pro_ids.append(main_pro.id)
         clip_entry = {
+            'Id': clip.event.id
             'platformId': clip.event.platform_id,
             'gameId': clip.event.game_id,
             'eventType': clip.event.ev_type,
-            'mainProIds': [clip.main_pro.id],
+            'mainProIds': main_pro_ids,
             'assistingProIds': participant_ids,
             'opponentProIds': victim_ids,
+            'eventsLength': clip.event.length.total_seconds(),
+            'clipLength': clip.length.total_seconds(),
+            'ingameStartTime': clip.event.start_time.total_seconds(),
             'uri': clip.clip_uri,
-            'length': clip.event.length.total_seconds()
         }
         self._meteor_db.store_clip_entry(clip_entry)

@@ -59,27 +59,60 @@ class Event:
     start_time = timedelta()
     length = timedelta()
     main_summoner = None
+    main_pros = []
     participants = []
     victims = []
+
+    @property
+    def id(self):
+        return self.__hash__()
 
     def __hash__(self):
         return hash((
             self.platform_id,
             self.game_id,
             self.ev_type,
+            self.main_summoner,
             self.start_time.total_seconds()))
 
 class EventKillRow(Event):
     kills_in_row = 0
 
     def __init__(self, kill_row):
-        self.start_time = kill_row[0].timestamp
-        self.length = kill_row[-1].timestamp - kill_row[0].timestamp
-        self.main_summoner = kill_row[0].killer
-        for kill in kill_row:
-            self.participants += kill.participants
-            self.victims.append(kill.victim)
-        self.participants = list(set(self.participants))
+        self._events = kill_row
+
+    @property
+    def length(self):
+        return self._events[-1].timestamp - self._events[0].timestamp
+
+    @property
+    def start_time(self):
+        return self._events[0].timestamp
+
+    @property
+    def main_summoner(self):
+        return self._events[0].killer
+
+    @property
+    def victims(self):
+        victims = []
+        for kill in self._events:
+            victims.append(kill.victim)
+        return victims
+
+    @property
+    def participants(self):
+        participants = []
+        for kill in self._events:
+            participants += kill.participants
+        return list(set(participants))
+
+    @property
+    def events(self):
+        events = []
+        for kill in self._events:
+            events.append(kill.event)
+        return events
 
 class EventTripleKill(EventKillRow):
     kills_in_row = 3

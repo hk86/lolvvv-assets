@@ -33,14 +33,14 @@ class ClipRecorder:
         clips = []
         ingame_clip_num = 0
         for event in events:
-            main_pro = self._summoners_to_pros([event.main_summoner])
-            if len(main_pro) == 0:
+            main_pros = self._summoners_to_pros([event.main_summoner])
+            if len(main_pros) == 0:
                 continue
             ingame_clip_num += 1
             clip = Clip()
             clip.ingame_clip_num = ingame_clip_num
             clip.event = event
-            clip.main_pro = main_pro[0]
+            clip.event.main_pros = main_pros
             clip.participant_pros = self._summoners_to_pros(
                 event.participants)
             clip.victim_pros = self._summoners_to_pros(
@@ -88,9 +88,9 @@ class ClipRecorder:
             self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
             self._obs.set_champion(self._static_champ_db
                 .get_champ_key(killer_summoner.champ_id))
-            self._obs.set_main_pro(clip.main_pro)
+            self._obs.set_main_pro(clip.event.main_pros[0])
             pro_team = self._pro_team_db.get_pro_team(
-                clip.main_pro.team_id)
+                clip.event.main_pros[0].team_id)
             self._obs.set_pro_team(pro_team)
             self._obs.set_fact_team(killer_summoner.team)
             self._obs.set_event(clip.event)

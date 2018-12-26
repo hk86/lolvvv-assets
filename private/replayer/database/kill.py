@@ -6,13 +6,11 @@ from summoner.fact_player import FactPlayer
 
 class Kill:
     def __init__(self, fact_event, fact_match):
-        self._ingame_timestamp = timedelta(
-            seconds=fact_event['timestamp']/1000)
         self._fact_event = fact_event
         self._fact_match = fact_match
         
     def _get_timestamp(self):
-        return self._ingame_timestamp
+        return timedelta(seconds=self._fact_event['timestamp']/1000)
 
     def _get_killer(self):
         if self._fact_event['killerId'] > 0:
@@ -33,6 +31,10 @@ class Kill:
                 participant
             ))
         return participants
+
+    @property
+    def event(self):
+        return self._fact_event
 
     timestamp = property(fget=_get_timestamp)
     killer = property(fget=_get_killer)
