@@ -137,12 +137,14 @@ class Obs(ObsDriver):
         OBS_LOAD_TIME_S = 10
         sleep(OBS_LOAD_TIME_S)
         START_TRIES = 3
-        for x in range(0, START_TRIES):
+        for tries in range(START_TRIES):
             try:
                 self._reconnect_obs_ws()
                 break
             except ConnectionRefusedError:
-                pass
+                if (tries == START_TRIES-1):
+                    raise
+            sleep(2)
 
     def _set_img_file(self, name, file_path):
         settings = {"file": self._toObsPath(file_path)}
