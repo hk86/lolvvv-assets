@@ -66,8 +66,9 @@ class ClipRecorder:
                 match.encryption_key
             )
             lol.wait_for_replay_start()
-            if (lol.check_running() == LoLState.RUNNING):
+            if (lol.state == LoLState.RUNNING):
                 break
+            lol.screenshot('notStarted')
             lol.stop_lol()
             if (x == START_TRIES-1):
                 return []

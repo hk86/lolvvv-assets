@@ -116,6 +116,7 @@ class LoLDriver:
             toggle_key(DirectKey.NUM_PLUS)
             sleep(0.1)
         
+    @property
     def state(self):
         if (locateCenterOnScreen('images/PendingLoL.png')):
             return LoLState.PENDING
@@ -173,12 +174,8 @@ class LeagueOfLegends(LoLDriver):
     def wait_for_update(self):
         sleep(self._APPRECIATED_UPDATE_TIME_S)
 
-    def check_running(self):
-        state = self.state()
-        if ((state == LoLState.PENDING) or
-            (state == LoLState.CRASHED)):
-            screenshot('notRunning' + self._time_string() + '.png')
-        return state
+    def screenshot(self, title):
+        screenshot(title + self._time_string() + '.png')
 
     def stop_pending(self, timeout_s, check_interval_s):
         if (check_interval_s > 4):
@@ -186,7 +183,7 @@ class LeagueOfLegends(LoLDriver):
         stop_time = (datetime.now() +
                      timedelta(seconds=check_interval_s))
         while (datetime.now() < stop_time):
-            state = self.state()
+            state = self.state
             if (state == LoLState.UNKNOWN):
                 sleep(check_interval_s)
             else:

@@ -149,7 +149,7 @@ if __name__ == '__main__':
     start_time = datetime.now()
     meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
     clipper = Clipper(meteor_db)
-    clipper.start_downloads()
+    #clipper.start_downloads()
     clipper.logger.warning('hoover not started')
     clipper.logger.debug('run')
     try:
