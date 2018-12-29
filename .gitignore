@@ -11,3 +11,5 @@ __pycache__
 /private/replayer/test_obs.py
 /private/replayer/test_s3_clip_upload.py
 private/replayer/test_db.py
+private/replayer/patch_length.py
+private/replayer/test.mp4

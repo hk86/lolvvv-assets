@@ -1,0 +1,54 @@
+# pip install ez_setup (optional)
+# pip install moviepy
+from moviepy.editor import VideoFileClip
+
+from time import sleep
+from datetime import timedelta
+
+class Video:
+
+    def __init__(self, video_path=str):
+        self._path = video_path
+        
+    def resize(self, resolution_h: int, resized_vid_path: str):
+        src_video = self._open_video()
+        dst_video = src_video.resize(height=resolution_h)
+        dst_video.write_videofile(resized_vid_path)
+        self._close_video(src_video)
+    
+    @property
+    def path(self):
+        return self._path
+
+    @property
+    def duration(self):
+        vid = self._open_video()
+        duration = vid.duration
+        self._close_video(vid)
+        return timedelta(seconds=duration)
+
+    @property
+    def resolution_height(self):
+        vid = self._open_video()
+        height = vid.h
+        self._close_video(vid)
+        return height
+
+    def _open_video(self):
+        MAX_TRIES = 3
+        for tries in range(MAX_TRIES):
+            try:
+                clip_video = VideoFileClip(self._path)
+                break
+            except OSError:
+                if tries == MAX_TRIES-1:
+                    print('couldn\'t access file {}'.format(self._path))
+                    raise
+            sleep(1)
+        return clip_video
+
+    def _close_video(self, video):
+        video.reader.close()
+        video.audio.reader.close_proc()
+        video.close()
+        del video

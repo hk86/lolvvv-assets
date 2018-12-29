@@ -43,8 +43,8 @@ class ReplayHoover(Thread):
     
     def _cleanup_downloads(self):
         for idx, download in enumerate(self._downloads):
-                if not download.is_alive():
-                    self._downloads.pop(idx)
+            if not download.is_alive():
+                self._downloads.pop(idx)
 
 if __name__ == "__main__":
     print('start')

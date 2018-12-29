@@ -3,7 +3,6 @@ class Summoner:
     def __init__(self, account_id, platform_id):
         self._ACCOUNT_ID = account_id
         self._PLATFORM_ID = platform_id
-        self._PRO = None
 
     def __eq__(self, other):
         return (
