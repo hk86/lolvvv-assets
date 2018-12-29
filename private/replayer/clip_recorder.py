@@ -3,9 +3,11 @@ from database.static_pro_db import StaticProDb
 from database.static_champ_db import StaticChampDb
 from database.pro_team_db import ProTeamDb
 from summoner.fact_perks import FactPerks
+from summoner.ingame_pro import IngamePro
 from match.spectate_match import SpectateMatch
 from event import Event
 from clip import Clip
+from video import Video
 from obs import ObsClips
 from LoL import LeagueOfLegends, LoLState
 
@@ -110,8 +112,7 @@ class ClipRecorder:
             sleep(self._RELEASE_HANDLE_TIME_S)
             clip_length = (datetime.now() - start_record)
             ingame_time += clip_length
-            clip.length = clip_length
-            clip.clip_path = glob(path.join(clip_folder, '*.*'))[0]
+            clip.video = Video(glob(path.join(clip_folder, '*.*'))[0])
         lol.stop_lol()
         return clips
 
@@ -124,7 +125,7 @@ class ClipRecorder:
                 summoner.platform_id
             )
             if pro:
-                pros.append(pro)
+                pros.append(IngamePro(pro, summoner))
         return pros
     
 

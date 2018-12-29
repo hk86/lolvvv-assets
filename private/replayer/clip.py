@@ -1,20 +1,19 @@
-from hashlib import sha1
+from hashlib import blake2b
 
 from datetime import timedelta
 
 class Clip:
-    clip_path = ''
     clip_uri = ''
-    length = timedelta()
     ingame_clip_num = 0
     event = None
     main_pros = []
     participant_pros = []
     victim_pros = []
+    video = None
 
     @property
-    def id(self):
-        id = sha1()
+    def id(self, len_id=16):
+        id = blake2b(digest_size=int(len_id/2))
         id.update(self.event.platform_id.encode())
         id.update(str(self.event.game_id).encode())
         for pro in self.main_pros:
