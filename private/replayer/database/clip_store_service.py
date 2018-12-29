@@ -3,6 +3,7 @@ from summoner.ingame_pro import IngamePro
 from clip import Clip
 from event import EventKillRow
 
+from datetime import timedelta
 import time
 
 class ClipStoreService:
@@ -18,18 +19,26 @@ class ClipStoreService:
             'mainPros': self._prepare_ingame_pros(clip.main_pros),
             'assistingPros': self._prepare_ingame_pros(clip.participant_pros),
             'opponentPros': self._prepare_ingame_pros(clip.victim_pros),
-            'eventsLength': clip.event.length.total_seconds(),
-            'clipLength': clip.video.duration.total_seconds(),
-            'ingameStartTime': clip.event.start_time.total_seconds(),
+            'eventsLength': self._get_ts(clip.event.length),
+            'clipLength': self._get_ts(clip.video.duration),
+            'ingameStartTime': self._get_ts(clip.event.start_time),
+            'clipAdded': self._get_ts(),
             'events': clip.event.events,
             'uri': clip.clip_uri,
-            'clipAdded': int(time.time()),
+            'matchPatch': '.'.join(clip.event.match_patch.split('.')[:2]),
             'count': {
                 'view': 0,
                 'upVotes': 0,
                 'downVotes': 0,
             }
         })
+
+    def _get_ts(self, timestamp=None):
+        if timestamp:
+            ts_seconds = timestamp.total_seconds()
+        else:
+            ts_seconds = time.time()
+        return int(ts_seconds*1000)
 
     def _prepare_ingame_pros(self, ingame_pros:[IngamePro]):
         pros = []

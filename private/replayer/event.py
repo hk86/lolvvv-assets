@@ -49,12 +49,14 @@ def generate_events(fact_match:FactMatch):
                 event = event_kill_row_class(row)
                 event.platform_id = fact_match.platform_id
                 event.game_id = fact_match.game_id
+                event.match_patch = fact_match.version
                 events.append(event)
     return events
 
 class Event:
     platform_id = ''
     game_id = 0
+    match_patch = ''
     ev_type = ''
     start_time = timedelta()
     length = timedelta()

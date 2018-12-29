@@ -20,7 +20,7 @@ from glob import glob
 class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
     _RECORDING_OVERTIME_S = 25
-    _PREGAME_TIME_S = 4
+    _PREGAME_TIME_S = 3
     _RELEASE_HANDLE_TIME_S = 3
 
     def __init__(self, meteor_db: Meteor, lol: LeagueOfLegends):

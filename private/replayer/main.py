@@ -161,7 +161,7 @@ if __name__ == '__main__':
             replays_idx = 0
             replays_cutouts = []
             for ii in range(clipper._MAX_MATCHES_PER_SCAN, len(replays), clipper._MAX_MATCHES_PER_SCAN):
-                cutout = replays[replays_idx:ii-1]
+                cutout = replays[replays_idx:ii]
                 print('cutout len {}'.format(len(cutout)))
                 replays_cutouts.append(cutout)
                 replays_idx = ii
