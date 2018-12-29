@@ -21,10 +21,8 @@ class S3ClipUpload(ClipUploadService):
     def upload(self, clip: Clip):
         video = clip.video
         for required_height in self._RESOLUTION_HEIGHTS:
-            resolution_video_name = '{}_{}_{}_{}p.mp4'.format(
-                clip.event.platform_id,
-                clip.event.game_id,
-                clip.ingame_clip_num,
+            resolution_video_name = '{}_{}p.mp4'.format(
+                clip.id,
                 required_height
             )
             if required_height == video.resolution_height:

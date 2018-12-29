@@ -36,6 +36,6 @@ class ClipStoreService:
         for ingame_pro in ingame_pros:
             pros.append({
                 'proId': ingame_pro.id,
-                'champId': ingame_pro.champ_id,
+                'championId': ingame_pro.champ_id,
             })
         return pros
