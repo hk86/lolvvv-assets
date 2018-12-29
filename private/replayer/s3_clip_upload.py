@@ -8,7 +8,7 @@ from clip import Clip
 from datetime import timedelta
 from time import sleep
 from pathlib import PurePath
-from os import path
+from os import path, listdir
 from shutil import rmtree
 
 class S3ClipUpload(ClipUploadService):
@@ -50,5 +50,9 @@ class S3ClipUpload(ClipUploadService):
 
     def _upload_finished(self, clip: Clip):
         self._store_service.store(clip)
-        rmtree(path.dirname(clip.clip_path))
-        # ToDo: remove game_id dir if empty
+        clip_path = path.dirname(clip.video.path)
+        rmtree(clip_path)
+        match_path = path.split(clip_path)[0]
+        # remove match folder if folder is empty
+        if len(listdir(match_path)) == 0:
+            rmtree(match_path)

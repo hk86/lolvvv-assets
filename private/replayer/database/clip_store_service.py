@@ -3,6 +3,8 @@ from summoner.ingame_pro import IngamePro
 from clip import Clip
 from event import EventKillRow
 
+import time
+
 class ClipStoreService:
     def __init__(self, meteor_db):
         self._meteor_db = meteor_db
@@ -21,6 +23,7 @@ class ClipStoreService:
             'ingameStartTime': clip.event.start_time.total_seconds(),
             'events': clip.event.events,
             'uri': clip.clip_uri,
+            'clipAdded': int(time.time()),
             'count': {
                 'view': 0,
                 'upVotes': 0,
