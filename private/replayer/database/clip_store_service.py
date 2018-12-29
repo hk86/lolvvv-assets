@@ -17,7 +17,7 @@ class ClipStoreService:
             'assistingPros': self._prepare_ingame_pros(clip.participant_pros),
             'opponentPros': self._prepare_ingame_pros(clip.victim_pros),
             'eventsLength': clip.event.length.total_seconds(),
-            'clipLength': clip.video.length.total_seconds(),
+            'clipLength': clip.video.duration.total_seconds(),
             'ingameStartTime': clip.event.start_time.total_seconds(),
             'events': clip.event.events,
             'uri': clip.clip_uri,
