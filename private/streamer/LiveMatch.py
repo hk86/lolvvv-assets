@@ -1,44 +1,93 @@
 # coding: utf-8
 
 import datetime
-import json
-from Replay import Replay
 #from pprint import pprint
 
 class LiveMatch:
     
-    def __init__(self, platform_id, game_id, encryption_key, db):
-        PLATFORMS = json.load(open(r'../json/LolPlatforms.json'))
-        match_platform = PLATFORMS[platform_id]
-        self._db = db
-        self._URL = match_platform['domain'] + ':' + match_platform['port']
-        self._GAME_ID = game_id
-        self._ENCRYPTION_KEY = encryption_key
-        self._PLATFORM_ID = platform_id
-        self.summoners = []
+    def __init__(self, match):
+        
+        PLATFORM = {
+            'NA1': {
+                'domain': 'spectator.na.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'EUW1': {
+                'domain': 'spectator.euw1.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'EUN1': {
+                'domain': 'spectator.eu.lol.riotgames.com',
+                'port': '8088'
+            } ,
+            'JP1': {
+                'domain': 'spectator.jp1.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'KR': {
+                'domain': 'spectator.kr.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'OC1': {
+                'domain': 'spectator.oc1.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'BR1': {
+                'domain': 'spectator.br.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'LA1': {
+                'domain': 'spectator.la1.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'LA2': {
+                'domain': 'spectator.la2.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'RU': {
+                'domain': 'spectator.ru.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'TR1': {
+                'domain': 'spectator.tr.lol.riotgames.com',
+                'port': '80'
+            } ,
+            'PBE1': {
+                'domain': 'spectator.pbe1.lol.riotgames.com',
+                'port': '8088'
+            }
+        }
+        
+        match_platform = PLATFORM[match['platformId']]
+        self.url = match_platform['domain'] + ':' + match_platform['port']
+        self.gameId = match['gameId']
+        self.encryptionKey = match['observers']['encryptionKey']
+        self._id = match['_id']
+        self.platformId = match['platformId']
+        self.match = match
+    
+    def getUrl(self):
+        return self.url
 
-    def _get_platform_id(self):
-        return self._PLATFORM_ID
-
-    def _get_game_id(self):
-        return self._GAME_ID
-
-    def _get_encryption_key(self):
-        return self._ENCRYPTION_KEY
-
-    def _get_url(self):
-        return self._URL
+    def getGameId(self):
+        return self.gameId
+        
+    def getEncKey(self):
+        return self.encryptionKey
+        
+    def getPlatform(self):
+        return self.platformId
             
     def getPros(self):
         pros = []
-        for player in self.summoners:
+        for player in self.match['participants']:
             if player['pro']:
                 pros.append(player)
         return pros
         
     def getTeam(self, teamId):
         team = []
-        for player in self.summoners:
+        for player in self.match['participants']:
             if player['teamId'] == teamId:
                 team.append(player)
         
@@ -50,14 +99,14 @@ class LiveMatch:
     def getRedTeam(self):
         return self.getTeam(200)
 
-    def _generateTeamTitle(self, teamId):
+    def _generateTeamTitle(self, teamId, db):
         teamTitle = None
-        for player in self.summoners:
+        for player in self.match['participants']:
             if player['pro'] and player['teamId'] == teamId:
                 fullName = ''
-                proTeamId = self._db.getPro(player['pro']['proId'])['teamId']
+                proTeamId = db.getPro(player['pro']['proId'])['teamId']
                 if proTeamId:
-                    fullName = '[' + self._db.getTeamTag(self._db.getPro(player['pro']['proId'])['teamId']) + '] '
+                    fullName = '[' + db.getTeamTag(db.getPro(player['pro']['proId'])['teamId']) + '] '
                 fullName = fullName +  player['pro']['nickName']
                 if not teamTitle:
                     teamTitle = fullName
@@ -66,16 +115,19 @@ class LiveMatch:
                     teamTitle += fullName
         return teamTitle
 
-    def _generate_match_title(self):
-        blueTeamTitle = self._generateTeamTitle(100)
-        redTeamTitle = self._generateTeamTitle(200)
+    def getTitle(self, db):
+        blueTeamTitle = self._generateTeamTitle(100, db)
+        redTeamTitle = self._generateTeamTitle(200, db)
+            
         pros = self.getPros()
+        
         if ( len(pros) == 1):
-            champName = self._db.getChampionName(pros[0]['championId'])
+            champName = db.getChampionName(pros[0]['championId'])
             if not blueTeamTitle:
                 title = redTeamTitle
             else:
                 title = blueTeamTitle
+
             title = title + ' with ' + champName
         else:
             emptyTeamTilte = ''
@@ -85,23 +137,14 @@ class LiveMatch:
                 title = blueTeamTitle + emptyTeamTilte
             else:
                 title = blueTeamTitle + ' vs. ' + redTeamTitle
+                
+        if self.match['gameQueueConfigId'] == 700:
+            title = 'Clash Live! {}'.format(title)
+        else:
+            title = 'Pros: {}'.format(title)
+                
         return title
 
-    def getTitle(self):
-        title = self._generate_match_title()
-        return 'Pros: {}'.format(title)
-
-    def getTwitchTitle(self):
-        return (self._generate_match_title() + ' - lolvvv.com')
-
-    def generate_replay(self):
-        return Replay(self)
-
-    def _get_db(self):
-        return self._db
-
-    meteor_db = property(fget=_get_db)
-    platform_id = property(fget=_get_platform_id)
-    game_id = property(fget=_get_game_id)
-    encryption_key = property(fget=_get_encryption_key)
-    url = property(fget=_get_url)
+    def getTwitchTitle(self, db):
+        return (self.getTitle(db) + ' - lolvvv.com')
+        
