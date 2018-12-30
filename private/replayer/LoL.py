@@ -11,6 +11,8 @@ from DirectInput import DirectKey, toggle_key, press_key, release_key
 from Interval import Interval
 from summoner.fact_team import FactTeamId
 
+from win32api import GetKeyState #pip install pywin32
+from win32con import VK_NUMLOCK
 from pyautogui import locateCenterOnScreen, screenshot #pip install pyautogui
 
 class LoLState:
@@ -94,7 +96,7 @@ class LoLDriver:
 
     def toggle_time_jump_back(self):
         toggle_key(DirectKey.BACK)
-        sleep(0.5)
+        sleep(1)
 
     def toggle_player(self, match_team: FactTeamId, player_idx: int):
         print('toggle focus team: {} player: {}'.format(match_team, player_idx))
@@ -111,6 +113,8 @@ class LoLDriver:
         toggle_key(DirectKey.d)
 
     def set_time_speed(self, speed: LoLTimeSpeed):
+        if GetKeyState(VK_NUMLOCK) == 0:
+            toggle_key(DirectKey.NUMLOCK)
         toggle_key(DirectKey.NUM_0)
         for x in range(0, speed):
             toggle_key(DirectKey.NUM_PLUS)

@@ -57,6 +57,7 @@ class DirectKey:
     NUM_MINUS = SUBSTRACT
     SPACE = 0x39
     d = 0x20
+    NUMLOCK = 0x45
 
 # Actuals Functions
 # Keyboard Scan Hex Codes:
@@ -77,7 +78,7 @@ def release_key(hexKeyCode):
 
 def toggle_key(hexKeyCode):
     press_key(hexKeyCode)
-    sleep(0.01)
+    sleep(0.05)
     release_key(hexKeyCode)
-    sleep(0.01)
+    sleep(0.05)
     
