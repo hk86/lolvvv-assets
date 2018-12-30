@@ -186,8 +186,8 @@ class ObsClips(Obs):
         self._set_img_file('overview_wallpaper_png', 
             self._images.wallpaper_img_path()
         )
-        self._set_img_file('twitch_logo', 
-            self._images.twitch_img_path()
+        self._set_img_file('vvv_logo', 
+            self._images.vvv_logo_path()
         )
 
     def show_pregame_overlay(self, visibilitiy):

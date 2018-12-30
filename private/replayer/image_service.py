@@ -57,6 +57,12 @@ class ImageService:
             'twitch_logo.png'
         )
 
+    def vvv_logo_path(self):
+        return path.join(
+            self._SPECIAL_IMG_PATH,
+            'vvv_logo.jpeg'
+        )
+
     def champ_small_img_path(self, champ_key: str):
         return path.join(
             self._SPECIAL_IMG_PATH,
