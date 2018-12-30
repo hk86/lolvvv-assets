@@ -215,7 +215,7 @@ class ObsClips(Obs):
         self._set_perk('rune2.1_png', perks.rune2_1)
         self._set_perk('rune2.2_png', perks.rune2_2)
         self._set_img_file('perks1_img',
-            self._images.perk_small_img_path(perks.rune1_0)
+            self._images.perk_small_img_path(perks.rune1_1)
         )
         self._set_img_file('perks2_img',
             self._images.perk_small_img_path(perks.rune2_0)
