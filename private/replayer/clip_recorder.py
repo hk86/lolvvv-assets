@@ -69,9 +69,9 @@ class ClipRecorder:
             )
             lol.wait_for_replay_start()
             state = lol.state
-            if ((state == LoLState.UNKNOWN)
-                or (state == LoLState.RUNNING)):
-                break
+            #if ((state == LoLState.UNKNOWN)
+            #    or (state == LoLState.RUNNING)):
+            break
             print('couldn\'t start lol state {}'.format(state))
             lol.screenshot('notStarted')
             lol.stop_lol()
