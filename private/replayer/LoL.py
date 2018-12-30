@@ -176,7 +176,6 @@ class LeagueOfLegends(LoLDriver):
 
     def screenshot(self, title):
         screenshot(title + self._time_string() + '.png')
-        sleep(1)
 
     def stop_pending(self, timeout_s, check_interval_s):
         if (check_interval_s > 4):

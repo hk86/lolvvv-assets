@@ -27,7 +27,7 @@ class ClipStoreService:
             'uri': clip.clip_uri,
             'matchPatch': '.'.join(clip.event.match_patch.split('.')[:2]),
             'count': {
-                'view': 0,
+                'views': 0,
                 'upVotes': 0,
                 'downVotes': 0,
             }
