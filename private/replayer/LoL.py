@@ -113,7 +113,7 @@ class LoLDriver:
         toggle_key(DirectKey.d)
 
     def set_time_speed(self, speed: LoLTimeSpeed):
-        if GetKeyState(VK_NUMLOCK) == 0:
+        if GetKeyState(VK_NUMLOCK) == 1:
             toggle_key(DirectKey.NUMLOCK)
         toggle_key(DirectKey.NUM_0)
         for x in range(0, speed):
