@@ -165,7 +165,7 @@ if __name__ == '__main__':
                 print('cutout len {}'.format(len(cutout)))
                 replays_cutouts.append(cutout)
                 replays_idx = ii
-            rest = replays[replays_idx:-1]
+            rest = replays[replays_idx:]
             replays_cutouts.append(rest)
             print('rest len: {}'.format(len(rest)))
             for replays_cutout in replays_cutouts:
