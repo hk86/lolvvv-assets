@@ -187,7 +187,7 @@ if __name__ == '__main__':
             if (datetime.now()-start_time) > MIN_RUNTIME:
                 if (not clipper.is_downloading()):
                     break
-            sleep(60)
+            sleep(10)
     except Exception as err:
         clipper.logger.error('Error: {}'.format(err), exc_info=True)
     finally:
