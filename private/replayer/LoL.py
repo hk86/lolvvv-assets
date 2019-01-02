@@ -233,10 +233,9 @@ class LeagueOfLegends(LoLDriver):
             for x in range(0, count_back_jumps):
                 self.toggle_time_jump_back()
         else:
-            REACTING_TIME = 1.2 # hope for magic correction factor
             fast_forward_time_s = time_s/8
             self.set_time_speed(LoLTimeSpeed.TIMESPEED_X8)
-            sleep(fast_forward_time_s-REACTING_TIME)
+            sleep(fast_forward_time_s)
             self.set_time_speed(LoLTimeSpeed.TIMESPEED_X1)
         return time
 

@@ -81,7 +81,7 @@ class ClipRecorder:
         ingame_time = timedelta(seconds=0)
         for clip in clips:
             timeshift = clip.event.start_time - ingame_time \
-                - timedelta(seconds=-15)
+                - timedelta(seconds=15)
             ingame_time += lol.specate_timeshift(timeshift)
             clip_folder = path.join(match_video_path,
                             str(clip.ingame_clip_num))
