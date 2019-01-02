@@ -35,16 +35,16 @@ class Video:
         return height
 
     def _open_video(self):
-        MAX_TRIES = 3
+        MAX_TRIES = 5
         for tries in range(MAX_TRIES):
             try:
                 clip_video = VideoFileClip(self._path)
                 break
-            except OSError:
+            except (OSError, KeyError):
                 if tries == MAX_TRIES-1:
                     print('couldn\'t access file {}'.format(self._path))
                     raise
-            sleep(1)
+            sleep(2)
         return clip_video
 
     def _close_video(self, video):
