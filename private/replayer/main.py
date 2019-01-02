@@ -38,7 +38,7 @@ class Clipper:
         self._patch_version = PatchVersion(self._meteor_db)
         self._replay_manager = ReplayManager()
         self._lol = LeagueOfLegends()
-        self._playable_patch = self._patch_version.client_patch(self._lol.version)
+        self._playable_patch = self._lol_patch()
         if not self._playable_patch:
             self.upgrade_lol()
         self._logger.warning('playable match: {}'.format(self._playable_patch))
@@ -53,11 +53,16 @@ class Clipper:
         self._lol.stop_update()
         del self._lol
         self._lol = LeagueOfLegends()
-        # ToDo: hier trennen und erstmal abfragen ob die neue version auf dem Server bereits bekannt ist.
-        server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
-        self._meteor_db.set_patch_version(self._lol.version, server_patch)
-        self._playable_patch = self._patch_version.client_patch(self._lol.version)
+        self._playable_patch = self._lol_patch()
+        if not self._playable_patch:
+            # if this lol version is currently not known in db, save the current lol version
+            # related to the current server patch version
+            server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
+            self._meteor_db.set_patch_version(self._lol.version, server_patch)
         self._logger.warning('upgrade finished new version = ' + self._lol.version)
+
+    def _lol_patch(self):
+        return self._patch_version.client_patch(self._lol.version)
 
     def get_pending_replays(self):
         replays = self._replay_manager.get_pending_replays()

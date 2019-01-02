@@ -20,11 +20,9 @@ class ReplaysData(Database, ReplayService):
         self._matches.insert_one(match)
 
     def add_data_chunk(self, replay:Replay, chunk_id, data_chunk):
-        # ToDo: save the chunk_id
         self._push_binary_data(replay, 'gameDataChunks', data_chunk)
         
     def add_key_frame(self, replay:Replay, key_frame_id, key_frame):
-        # ToDo: save the key_frame_id
         self._push_binary_data(replay, 'keyFrames', key_frame)
 
     def set_metas(self, replay:Replay, metas):
