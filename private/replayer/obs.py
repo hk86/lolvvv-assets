@@ -190,9 +190,12 @@ class ObsClips(Obs):
             self._images.vvv_logo_path()
         )
 
-    def show_pregame_overlay(self, visibilitiy):
-        self._setVisiblity('pregame_overlay', visibilitiy)
-        self._setVisiblity('ingame_clips', not visibilitiy)
+    def show_pregame_overlay(self, visibilitiy: bool):
+        if visibilitiy:
+            scene_name = 'clips_pregame'
+        else:
+            scene_name = 'clips_ingame'
+        self._setCurrentScene(scene_name)
 
     def set_champion(self, champion_key):
         self._set_img_file('championplayed_img', 
