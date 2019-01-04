@@ -136,6 +136,9 @@ class Clipper:
     def is_downloading(self):
         return (self._replay_hoover.get_num_downloads_in_progress() > 0)
 
+    def hoover_running(self):
+        return (self._replay_hoover.is_alive())
+
     def log_error(self, msg: str, error):
         self._logger.error('Error: {}'.format(error), exc_info=True)
 
@@ -192,6 +195,9 @@ if __name__ == '__main__':
             if (datetime.now()-start_time) > MIN_RUNTIME:
                 if (not clipper.is_downloading()):
                     break
+            if (not clipper.hoover_running()):
+                clipper.logger.warning("hoover stoped working!")
+                break
             sleep(10)
     except Exception as err:
         clipper.logger.error('Error: {}'.format(err), exc_info=True)
