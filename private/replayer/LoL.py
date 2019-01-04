@@ -83,6 +83,9 @@ class LoLDriver:
             except OSError:
                 pass
 
+    def toggle_pause_play(self):
+        toggle_key(DirectKey.p)
+
     def toggle_scoreboard(self):
         toggle_key(DirectKey.o)
 
