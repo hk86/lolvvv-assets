@@ -196,15 +196,16 @@ if __name__ == '__main__':
                 if (not clipper.is_downloading()):
                     break
             if (not clipper.hoover_running()):
-                clipper.logger.warning("hoover stoped working!")
-                break
+                raise RuntimeError("hoover stoped working!")
             sleep(10)
     except Exception as err:
         clipper.logger.error('Error: {}'.format(err), exc_info=True)
-    finally:
+    try:
+        clipper.logger.warning('going for reboot')
         del clipper
-    # reboot
-    #system('shutdown -t 1 -r -f')
+    finally:
+        # reboot
+        system('shutdown -t 1 -r -f')
 
 
     
