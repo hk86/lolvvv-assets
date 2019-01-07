@@ -235,7 +235,6 @@ class ObsClips(Obs):
             )
 
     def set_fact_team(self, fact_team_id: FactTeamId):
-        # set teamcolour_img ?
         color_code = 0
         if fact_team_id == FactTeamId.BLUE:
             color_code = self._BLUE_COLOR
@@ -256,6 +255,10 @@ class ObsClips(Obs):
                 self._images.team_med_img_path(pro_team.image))
             visibility = True
         else:
+            """
+            Can't set proteam_txt to not visible when overlay is active.
+            """
+            self._set_txt('proteam_txt', '')
             visibility = False
         team_elements = ['proteam_txt', 'team_txt', 'team_logo_png']
         for element in team_elements:

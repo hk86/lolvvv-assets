@@ -63,6 +63,8 @@ class Event:
     main_summoner = None
     participants = []
     victims = []
+    companion_events = []
+    raw_events = []
 
 class EventKillRow(Event):
     kills_in_row = 0
@@ -97,11 +99,19 @@ class EventKillRow(Event):
         return list(set(participants))
 
     @property
-    def events(self):
+    def raw_events(self):
         events = []
         for kill in self._events:
             events.append(kill.event)
         return events
+
+    @property
+    def companion_ids(self):
+        companion_ids = []
+        for kill in self.raw_events:
+            companion_ids.append(kill['victimId'])
+            companion_ids.extend(kill['assistingParticipantIds'])
+        return list(set(companion_ids))
 
 class EventTripleKill(EventKillRow):
     kills_in_row = 3

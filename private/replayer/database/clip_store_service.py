@@ -23,7 +23,7 @@ class ClipStoreService:
             'clipLength': self._get_ts(clip.video.duration),
             'ingameStartTime': self._get_ts(clip.event.start_time),
             'clipAdded': self._get_ts(),
-            'events': clip.event.events,
+            'events': clip.event.raw_events,
             'uri': clip.clip_uri,
             'matchPatch': '.'.join(clip.event.match_patch.split('.')[:2]),
             'counts': {
