@@ -99,6 +99,9 @@ class LoLDriver:
         toggle_key(DirectKey.BACK)
         sleep(1)
 
+    def toggle_battle_mode(self):
+        toggle_key(DirectKey.a)
+
     def toggle_player(self, match_team: FactTeamId, player_idx: int):
         print('toggle focus team: {} player: {}'.format(match_team, player_idx))
         if match_team == FactTeamId.BLUE:
@@ -246,6 +249,10 @@ class LeagueOfLegends(LoLDriver):
         self.toggle_scoreboard_items()
         sleep(self._show_items_duration_s)
         self.toggle_scoreboard_items()
+
+    def cleanup_event_list(self):
+        self.toggle_battle_mode()
+        self.toggle_battle_mode()
 
     def __del__(self):
         try:

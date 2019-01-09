@@ -21,7 +21,6 @@ class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
     _RECORDING_OVERTIME_S = 25
     _PREGAME_TIME_S = 3
-    _CLEANUP_EVENT_LIST_S = 10
     _RELEASE_HANDLE_TIME_S = 3
 
     def __init__(self, meteor_db: Meteor, lol: LeagueOfLegends):
@@ -100,7 +99,7 @@ class ClipRecorder:
             self._obs.set_pro_team(pro_team)
             self._obs.set_fact_team(killer_summoner.team)
             self._obs.set_event(clip.event)
-            sleep(self._CLEANUP_EVENT_LIST_S - self._PREGAME_TIME_S)
+            lol.cleanup_event_list()
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
