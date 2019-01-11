@@ -19,7 +19,7 @@ from glob import glob
 
 class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
-    _RECORDING_OVERTIME_S = 30
+    _RECORDING_OVERTIME_S = 25
     _PREGAME_TIME_S = 3
     _RELEASE_HANDLE_TIME_S = 3
 
@@ -111,8 +111,7 @@ class ClipRecorder:
             """
             self._obs.show_pregame_overlay(False)
             sleep(clip.event.length.total_seconds()
-                + self._RECORDING_OVERTIME_S
-                - self._PREGAME_TIME_S)
+                + self._RECORDING_OVERTIME_S)
             self._obs.stop_recording()
             sleep(self._RELEASE_HANDLE_TIME_S)
             clip_length = (datetime.now() - start_record)
