@@ -76,7 +76,6 @@ class ClipRecorder:
             lol.stop_lol()
             if (x == START_TRIES-1):
                 return []
-        lol.modify_ui()
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)
         for clip in clips:
@@ -100,6 +99,7 @@ class ClipRecorder:
             self._obs.set_fact_team(killer_summoner.team)
             self._obs.set_event(clip.event)
             lol.cleanup_event_list()
+            lol.modify_ui()
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
