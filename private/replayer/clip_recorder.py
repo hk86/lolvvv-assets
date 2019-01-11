@@ -19,7 +19,7 @@ from glob import glob
 
 class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
-    _RECORDING_OVERTIME_S = 25
+    _RECORDING_OVERTIME_S = 15
     _PREGAME_TIME_S = 3
     _RELEASE_HANDLE_TIME_S = 3
 
@@ -81,7 +81,7 @@ class ClipRecorder:
         ingame_time = timedelta(seconds=0)
         for clip in clips:
             timeshift = clip.event.start_time - ingame_time \
-                - timedelta(seconds=10)
+                - timedelta(seconds=20)
             ingame_time += lol.specate_timeshift(timeshift)
             lol.toggle_pause_play()
             clip_folder = path.join(match_video_path,
