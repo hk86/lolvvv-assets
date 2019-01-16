@@ -4,6 +4,20 @@ from match.fact_match import FactMatch
 from summoner.fact_team import FactTeamId
 from database.kill import Kill
 from pprint import pprint
+from json import dumps
+
+# a thing for sw_tool.py or so
+def lazy_property(fn):
+    '''Decorator that makes a property lazy-evaluated.
+    '''
+    attr_name = '_lazy_' + fn.__name__
+
+    @property
+    def _lazy_property(self):
+        if not hasattr(self, attr_name):
+            setattr(self, attr_name, fn(self))
+        return getattr(self, attr_name)
+    return _lazy_property
 
 def get_kill_rows(kills):
     kills.sort(key=lambda x: x.timestamp)
@@ -33,6 +47,11 @@ def get_kill_rows(kills):
             last_kill = kill
     return rows
 
+def get_kill_index(kill, kills):
+    for index, s_kill in enumerate(kills):
+        if s_kill == kill:
+            return index 
+
 def generate_events(fact_match:FactMatch):
     kills = fact_match.get_kills()
     kills = list(filter(lambda x: x.killer, kills))
@@ -51,6 +70,44 @@ def generate_events(fact_match:FactMatch):
                 event.game_id = fact_match.game_id
                 event.match_patch = fact_match.version
                 events.append(event)
+    _PREPEND_TIMEOUT = timedelta(seconds=5)
+    _POSTPEND_TIMEOUT = timedelta(seconds=10)
+    for event in events:
+        companion_ids = event.companion_ids
+        ## pre
+        current_idx = get_kill_index(event.first_kill, kills)
+        kill_time_base = kills[current_idx].timestamp
+        companion_kills_pre = []
+        while current_idx > 0:
+            current_idx = current_idx-1
+            candidate = kills[current_idx]
+            time_distance = (kill_time_base - candidate.timestamp)
+            if time_distance <= _PREPEND_TIMEOUT:
+                for comp_id in candidate.companion_ids:
+                    if comp_id in companion_ids:
+                        companion_kills_pre.insert(0, candidate)
+                        kill_time_base = candidate.timestamp
+                        break
+            else:
+                break
+        event.companion_kills_pre = companion_kills_pre
+        ## post
+        current_idx = get_kill_index(event.last_kill, kills)
+        kill_time_base = kills[current_idx].timestamp
+        companion_kills_post = []
+        while current_idx < (len(kills)-1):
+            current_idx = current_idx+1
+            candidate = kills[current_idx]
+            time_distance = (candidate.timestamp - kill_time_base)
+            if time_distance <= _POSTPEND_TIMEOUT:
+                for comp_id in candidate.companion_ids:
+                    if comp_id in companion_ids:
+                        companion_kills_post.append(candidate)
+                        kill_time_base = candidate.timestamp
+                        break
+            else:
+                break
+        event.companion_kills_post = companion_kills_post
     return events
 
 class Event:
@@ -63,7 +120,8 @@ class Event:
     main_summoner = None
     participants = []
     victims = []
-    companion_events = []
+    companion_kills_pre = []
+    companion_kills_post = []
     raw_events = []
 
 class EventKillRow(Event):
@@ -73,25 +131,43 @@ class EventKillRow(Event):
         self._events = kill_row
 
     @property
-    def length(self):
-        return self._events[-1].timestamp - self._events[0].timestamp
+    def first_kill(self):
+        return self._events[0]
 
     @property
+    def last_kill(self):
+        return self._events[-1]
+
+    @lazy_property
+    def length(self):
+        return self.end_time - self.start_time
+
+    @lazy_property
     def start_time(self):
-        return self._events[0].timestamp
+        if len(self.companion_kills_pre) == 0:
+            return self.first_kill.timestamp
+        else:
+            return self.companion_kills_pre[0].timestamp
+
+    @lazy_property
+    def end_time(self):
+        if len(self.companion_kills_post) == 0:
+            return self.last_kill.timestamp
+        else:
+            return self.companion_kills_post[-1].timestamp
 
     @property
     def main_summoner(self):
-        return self._events[0].killer
+        return self.first_kill.killer
 
-    @property
+    @lazy_property
     def victims(self):
         victims = []
         for kill in self._events:
             victims.append(kill.victim)
         return victims
 
-    @property
+    @lazy_property
     def participants(self):
         participants = []
         for kill in self._events:
@@ -105,12 +181,11 @@ class EventKillRow(Event):
             events.append(kill.event)
         return events
 
-    @property
+    @lazy_property
     def companion_ids(self):
         companion_ids = []
-        for kill in self.raw_events:
-            companion_ids.append(kill['victimId'])
-            companion_ids.extend(kill['assistingParticipantIds'])
+        for kill in self._events:
+            companion_ids.extend(kill.companion_ids)
         return list(set(companion_ids))
 
 class EventTripleKill(EventKillRow):

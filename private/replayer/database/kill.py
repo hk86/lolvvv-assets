@@ -1,4 +1,5 @@
 from datetime import timedelta
+from json import dumps
 
 from pprint import pprint
 
@@ -9,21 +10,32 @@ class Kill:
         self._fact_event = fact_event
         self._fact_match = fact_match
         
-    def _get_timestamp(self):
+    @property
+    def companion_ids(self):
+        companion_ids = [self._fact_event['killerId']]
+        companion_ids.append(self._fact_event['victimId'])
+        companion_ids.extend(self._fact_event['assistingParticipantIds'])
+        return companion_ids
+
+    @property
+    def timestamp(self):
         return timedelta(seconds=self._fact_event['timestamp']/1000)
 
-    def _get_killer(self):
+    @property
+    def killer(self):
         if self._fact_event['killerId'] > 0:
             return FactPlayer(
                 self._fact_match,
                 self._fact_event['killerId'])
 
-    def _get_victim(self):
+    @property
+    def victim(self):
         return FactPlayer(
             self._fact_match,
             self._fact_event['victimId'])
 
-    def _get_participants(self):
+    @property
+    def participants(self):
         participants = []
         for participant in self._fact_event['assistingParticipantIds']:
             participants.append(FactPlayer(
@@ -36,7 +48,11 @@ class Kill:
     def event(self):
         return self._fact_event
 
-    timestamp = property(fget=_get_timestamp)
-    killer = property(fget=_get_killer)
-    victim = property(fget=_get_victim)
-    participants = property(fget=_get_participants)
+    def __hash__(self):
+        return hash(dumps(self._fact_event))
+
+    def __eq__(self, other):
+        return hash(self) == hash(other)
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
