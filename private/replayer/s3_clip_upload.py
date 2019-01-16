@@ -32,7 +32,7 @@ class S3ClipUpload(ClipUploadService):
                     resolution_video_name)
                 video.resize(required_height, clip_res_path)
             if required_height is self._RESOLUTION_HEIGHTS[-1]:
-                clip.clip_uri = ('https://s3.amazonaws.com/lolvvvclips/'
+                clip.clip_uri = ('https://d1jo2ofi91zpb5.cloudfront.net/'
                     + resolution_video_name)
                 callback_func = self._upload_finished
                 callback_arg = clip
