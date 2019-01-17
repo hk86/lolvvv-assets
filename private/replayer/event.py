@@ -37,7 +37,7 @@ def get_kill_rows(kills):
                     timeout = timedelta(seconds=30)
                 else:
                     timeout = timedelta(seconds=10)
-                if (((kill.timestamp - last_kill.timestamp) < timeout)
+                if (((kill.timestamp - last_kill.timestamp) <= timeout)
                     and
                     (kill.killer == last_kill.killer)):
                     current_row.append(kill)

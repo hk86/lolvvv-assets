@@ -103,13 +103,14 @@ class ClipRecorder:
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
-            lol.toggle_pause_play()
             """
             lol.focus_player(
                 killer_summoner.team,
                 killer_summoner.inteam_idx)
             """
             self._obs.show_pregame_overlay(False)
+            lol.autocam()
+            lol.toggle_pause_play()
             sleep(clip.event.length.total_seconds()
                 + self._RECORDING_OVERTIME_S)
             self._obs.stop_recording()

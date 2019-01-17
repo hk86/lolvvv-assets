@@ -158,7 +158,7 @@ function getLastChunkInfo(platformId, gameId, sessionId) {
     
     if (timeSinceMeta < START_TIME_MS) {
         // start condition
-        const CHUNK_ID = metaData.endStartupChunkId + 1;
+        var CHUNK_ID = metaData.endStartupChunkId + 1;
         info = {
             chunkId: CHUNK_ID,
             availableSince: timeSinceMeta,
@@ -174,7 +174,7 @@ function getLastChunkInfo(platformId, gameId, sessionId) {
     else if (timeSinceMeta < FOLLOW_UP_TIME_MS) {
         // followup condition
         const AVAILABLE_SINCE = timeSinceMeta - START_TIME_MS;
-        const CHUNK_ID = metaData.startGameChunkId;
+        var CHUNK_ID = metaData.startGameChunkId;
         info = {
             chunkId: CHUNK_ID,
             availableSince: AVAILABLE_SINCE,
