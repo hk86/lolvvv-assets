@@ -9,11 +9,11 @@
                     "settings": [
                         {
                             "name": "ChatX",
-                            "value": "0"
+                            "value": "52"
                         },
                         {
                             "name": "ChatY",
-                            "value": "0"
+                            "value": "262"
                         },
                         {
                             "name": "EnableChatFilter",
@@ -130,6 +130,18 @@
                             "value": "1"
                         },
                         {
+                            "name": "PracticeToolDPS_Enabled",
+                            "value": "1"
+                        },
+                        {
+                            "name": "PracticeToolLastHit_Enabled",
+                            "value": "1"
+                        },
+                        {
+                            "name": "PracticeToolTotal_Enabled",
+                            "value": "1"
+                        },
+                        {
                             "name": "QuestComplete_Enabled",
                             "value": "0"
                         },
@@ -138,7 +150,23 @@
                             "value": "0"
                         },
                         {
+                            "name": "ScoreDarkStar_Enabled",
+                            "value": "1"
+                        },
+                        {
+                            "name": "ScoreProject0_Enabled",
+                            "value": "1"
+                        },
+                        {
+                            "name": "ScoreProject1_Enabled",
+                            "value": "1"
+                        },
+                        {
                             "name": "Score_Enabled",
+                            "value": "1"
+                        },
+                        {
+                            "name": "ShieldBonusDamage_Enabled",
                             "value": "1"
                         },
                         {
@@ -199,6 +227,10 @@
                             "value": "0"
                         },
                         {
+                            "name": "TargetChampionsOnlyAsToggle",
+                            "value": "0"
+                        },
+                        {
                             "name": "ThemeMusic",
                             "value": "1"
                         }
@@ -230,6 +262,10 @@
                         {
                             "name": "DrawHealthBars",
                             "value": "1"
+                        },
+                        {
+                            "name": "EmotePopupUIDisplayMode",
+                            "value": "0"
                         },
                         {
                             "name": "EnableLineMissileVis",
@@ -428,6 +464,19 @@
                         {
                             "name": "EnableHUDAnimations",
                             "value": "0"
+                        }
+                    ]
+                },
+                {
+                    "name": "Voice",
+                    "settings": [
+                        {
+                            "name": "ShowVoiceChatHalos",
+                            "value": "1"
+                        },
+                        {
+                            "name": "ShowVoicePanelWithScoreboard",
+                            "value": "1"
                         }
                     ]
                 },
