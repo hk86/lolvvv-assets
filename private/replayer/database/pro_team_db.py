@@ -6,6 +6,6 @@ class ProTeamDb:
         self._meteor_db = meteor_db
 
     def get_pro_team(self, team_id: int):
-        if team_id > 0:
+        if (team_id and (team_id > 0)):
             static_data = self._meteor_db.get_db_team(team_id)
             return ProTeam(static_data)
