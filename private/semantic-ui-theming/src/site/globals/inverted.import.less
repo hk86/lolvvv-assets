@@ -1,0 +1,526 @@
+
+.ui.main.inverted {
+  background: #222222;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted tspan {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted a.invertable {
+  color: @lightPrimaryColor;
+}
+
+.ui.inverted .bg-header {
+  background-color: #393939;
+}
+
+.ui.inverted .bg-footer {
+  background-color: #393939;
+}
+
+.ui.inverted .bg-neutral {
+  background-color: #303030;
+}
+
+.ui.inverted .ui.table {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .secondary.text {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.ui.inverted .ui.table tr.disabled td .secondary.text,
+.ui.inverted .ui.table tr td.disabled .secondary.text {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* Text Color */
+.ui.inverted .ui.table {
+  background: #303030;
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid rgba(175, 175, 175, 0.30);
+}
+
+.ui.inverted .ui.striped.table > tr:nth-child(2n),
+.ui.inverted .ui.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.ui.inverted .ui.selectable.table tbody tr:hover,
+.ui.inverted .ui.table tbody tr td.selectable:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.table thead th {
+  background-color: @veryStrongTransparentBlack;
+  border-color: rgba(175, 175, 175, 0.30);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.sortable.table thead th {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.sortable.table thead th.sorted {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ui.inverted .ui.sortable.table thead th.sorted:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted.table tr td {
+  border-color: rgba(175, 175, 175, 0.30) !important;
+}
+
+.ui.inverted .ui.table tr.disabled td,
+.ui.inverted .ui.table tr td.disabled,
+.ui.inverted .ui.table tr.disabled:hover td,
+.ui.inverted .ui.table tr:hover td.disabled {
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ui.inverted .ui.selectable.table tr.active:hover,
+.ui.inverted .ui.table tr td.selectable.active:hover,
+.ui.inverted .ui.selectable.table tr:hover td.active {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.basic.table {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.ui.inverted .ui.table tr.active,
+.ui.inverted .ui.table td.active {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .bg-team-blue, .ui.inverted .bg-team-win,
+.ui.inverted .ui.basic.table td.bg-team-blue {
+  background-color: #162228;
+}
+
+.ui.inverted.bg-team-blue.selectable, .ui.inverted .bg-team-win.selectable,
+.ui.inverted .bg-team-red.selectable, .ui.inverted .bg-team-loss.selectable {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .bg-team-blue.selectable:hover,
+.ui.inverted .bg-team-win.selectable:hover {
+    background-color: lighten(#162228, 7%);
+}
+
+.ui.inverted .bg-team-red.selectable:hover,
+.ui.inverted .bg-team-loss.selectable:hover {
+    background-color: lighten(#270C0C, 7%);
+}
+
+.ui.inverted .bg-team-blue.selected {
+    background-color: lighten(#162228, 7%);
+}
+
+.ui.inverted .bg-team-red, .ui.inverted .bg-team-loss,
+.ui.inverted .ui.basic.table td.bg-team-red {
+  background-color: #270C0C;
+}
+
+.ui.inverted .bg-team-red.selected {
+  background-color: lighten(#270C0C, 7%);
+}
+
+.ui.inverted .scoreboard-player {
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.opaque.label {
+  background-color: rgba(33, 33, 33, 0.8);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .bg-light-primary {
+  background-color: #142437;
+}
+
+div.ui.block-neutral {
+  border-top: 3px solid rgba(175, 175, 175, 0.30);
+  border-bottom: 1px solid rgba(175, 175, 175, 0.30);
+}
+
+div.ui.block-neutral-thin {
+  border-top: 1px solid rgba(175, 175, 175, 0.30);
+  border-bottom: 1px solid rgba(175, 175, 175, 0.30);
+}
+
+.ui.inverted .ui.table tr.positive,
+.ui.inverted .ui.table td.positive {
+  background: #303030 !important; // TODO
+}
+
+.ui.inverted .ui.table tr.negative,
+.ui.inverted .ui.table td.negative {
+  background: #303030 !important; // TODO
+}
+
+.ui.inverted .ui.secondary.pointing.menu .item {
+  color: rgba(255, 255, 255, 0.87);
+}
+.ui.inverted .ui.secondary.pointing.menu .item.active {
+  color: @primaryColor;
+}
+
+.ui.inverted .ui.secondary.pointing.menu {
+  border-bottom: 2px solid rgba(175, 175, 175, 0.30);
+}
+
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(175, 175, 175, 0.30);
+}
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .column:first-child,
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+  box-shadow: none;
+}
+
+.ui.inverted .ui.grid > .divided.row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(175, 175, 175, 0.30);
+}
+.ui.inverted .ui.grid > .divided.row > .column:first-child {
+  box-shadow: none;
+}
+
+
+.ui.inverted .ui.basic.table t.ui.main tr {
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.table thead th {
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.table tr td {
+  border-top: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.celled.table tr th:first-child,
+.ui.inverted .ui.celled.table tr td:first-child {
+  border-left: none;
+}
+
+.ui.inverted .ui.celled.table tr th,
+.ui.inverted .ui.celled.table tr td {
+  border-left: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.table tr:first-child td {
+  border-top: none;
+}
+
+.ui.inverted .ui.table tr.disabled td, .ui.inverted .ui.table tr td.disabled,
+.ui.inverted .ui.table tr.disabled:hover, .ui.inverted .ui.table tr:hover td.disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ui.inverted .ui.divider {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.form .field > label {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .rc-slider-mark-text-active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ui.inverted .rc-slider-rail {
+  background-color: @grey;
+}
+
+.ui.inverted .rc-slider-dot {
+  border-color: @grey;
+  background-color: @black;
+}
+
+.ui.inverted .rc-slider-dot-active {
+  border-color: @primaryColor;
+}
+
+.ui.inverted .rc-slider-handle {
+  background-color: @black;
+}
+
+.ui.inverted .rc-slider-disabled {
+    background-color: #454545;;
+}
+
+.ui.inverted .ui.basic.blue.buttons .button,
+.ui.inverted .ui.basic.blue.button,
+.ui.inverted .ui.basic.blue.buttons .button,
+.ui.inverted .ui.basic.blue.button {
+    background-color: @black !important;
+}
+
+.ui.inverted .ui.cards > .card, .ui.inverted.ui.card {
+  background: rgb(68, 68, 68);
+  box-shadow: 0px 1px 3px 0px @grey, 0px 0px 0px 1px @grey;
+}
+
+.ui.inverted .ui.cards > .card:hover, .ui.inverted .ui.card:hover {
+  box-shadow: 0px 1px 3px 0px @grey, 0px 0px 0px 1px @grey;
+}
+
+.ui.inverted .ui.cards a.card:hover, .ui.inverted .ui.link.cards .card:hover,
+.ui.inverted a.ui.card:hover, .ui.inverted .ui.link.card:hover {
+  background: rgb(68, 68, 68);
+}
+
+.ui.inverted .ui.cards > .card > .extra, .ui.inverted .ui.card > .extra {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ui.inverted .ui.cards > .card > .content {
+  background-color: #303030;
+}
+
+
+.ui.inverted .ui.cards > .card > .content > .header,
+.ui.inverted .ui.card > .content > .header {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.cards > .card .meta, .ui.inverted .ui.card .meta {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ui.inverted .ui.search.invertable > .results .result.active,
+.ui.inverted .ui.category.search.invertable > .results .category .result.active {
+  border-left-color: rgba(235, 235, 235, 0.1);
+  background: @greyActive;
+}
+
+.ui.inverted .ui.search.invertable > .results {
+  border-color: @grey;
+}
+
+.ui.inverted .ui.search.invertable > .results .result.title > div {
+  background-color: #454545;
+}
+
+.ui.inverted .ui.search.invertable > .results .result {
+  border-top: 1px solid rgba(235, 235, 235, 0.2);
+}
+
+.ui.inverted .ui.search.invertable a {
+  color: @lightPrimaryColor;
+}
+
+.ui.inverted .ui.search.invertable > .results .result:hover {
+  background: @greyActive;
+}
+
+.ui.inverted .ui.search.invertable > .results > .message .header {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/*--- Buttons ---*/
+/*--- Grey ---*/
+.ui.inverted .ui.buttons.invertable .button,
+.ui.inverted .ui.button.invertable,
+.ui.inverted .ui.search.invertable .ui.button {
+  background-color: #717171;
+  color: rgba(255, 255, 255, 0.87);
+}
+.ui.inverted .ui.buttons.invertable .button:hover,
+.ui.inverted .ui.button.invertable:hover,
+.ui.inverted .ui.search.invertable .ui.button:hover {
+  background-color: @greyHover;
+  color: rgba(255, 255, 255, 0.87);
+}
+.ui.inverted .ui.buttons.invertable .button:focus,
+.ui.inverted .ui.button.invertable:focus,
+.ui.inverted .ui.search.invertable .ui.button:focus {
+  background-color: @greyFocus;
+  color: rgba(255, 255, 255, 0.87);
+}
+.ui.inverted .ui.buttons.invertable .button:active,
+.ui.inverted .ui.button.invertable:active,
+.ui.inverted .ui.search.invertable .ui.button:active {
+  background-color: @greyActive;
+  color: rgba(255, 255, 255, 0.87);
+}
+.ui.inverted .ui.buttons.invertable .active.button,
+.ui.inverted .ui.buttons.invertable .active.button:active,
+.ui.inverted .ui.active.button.invertable,
+.ui.inverted .ui.button.invertable .active.button:active {
+  background-color: #656565;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.search.invertable > .results {
+  background-color: #515151;
+}
+
+.ui.inverted .ui.search.invertable > .results .result {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/*--- Label ---*/
+/*--- Grey ---*/
+.ui.inverted .ui.labels.invertable .label,
+.ui.inverted .ui.label.invertable {
+  background-color: @grey !important;
+  border-color: @grey !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+/* Link */
+.ui.inverted a.ui.labels.invertable .label:hover,
+.ui.inverted a.ui.label.invertable:hover{
+  background-color: @greyHover !important;
+  border-color: @greyHover !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+/* Corner */
+.ui.inverted .ui.corner.label.invertable,
+.ui.inverted .ui.corner.label.invertable:hover {
+  background-color: transparent !important;
+}
+
+
+/*--- Input ---*/
+.ui.inverted .ui.input.invertable,
+.ui.inverted .ui.search.invertable .input {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.input.invertable input,
+.ui.inverted .ui.button.dropdown.invertable input,
+.ui.inverted .ui.search.invertable input, {
+  background-color: #515151;
+  color: rgba(255, 255, 255, 0.87);
+  border-color: @grey;
+}
+
+.ui.inverted .ui.input.invertable input:hover,
+.ui.inverted .ui.search.invertable input:hover {
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.input.invertable.focus input,
+.ui.inverted .ui.input.invertable input:focus,
+.ui.inverted .ui.search.invertable input:focus {
+  border-color: @primaryColor;
+}
+
+.ui.inverted .ui.dropdown.invertable .menu {
+  background-color: #515151;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.selection.dropdown .menu > .item {
+    border-top: none;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.form input:not([type]):hover, .ui.inverted .ui.form input[type="date"]:hover,
+.ui.inverted .ui.form input[type="datetime-local"]:hover, .ui.inverted .ui.form input[type="email"]:hover,
+.ui.inverted .ui.form input[type="number"]:hover, .ui.inverted .ui.form input[type="password"]:hover,
+.ui.inverted .ui.form input[type="search"]:hover, .ui.inverted .ui.form input[type="tel"]:hover,
+.ui.inverted .ui.form input[type="time"]:hover, .ui.inverted .ui.form input[type="text"]:hover,
+.ui.inverted .ui.form input[type="file"]:hover, .ui.inverted .ui.form input[type="url"]:hover,
+.ui.inverted .ui.form textarea:hover {
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.form input:not([type]):focus, .ui.inverted .ui.form input[type="date"]:focus,
+.ui.inverted .ui.form input[type="datetime-local"]:focus, .ui.inverted .ui.form input[type="email"]:focus,
+.ui.inverted .ui.form input[type="number"]:focus, .ui.inverted .ui.form input[type="password"]:focus,
+.ui.inverted .ui.form input[type="search"]:focus, .ui.inverted .ui.form input[type="tel"]:focus,
+.ui.inverted .ui.form input[type="time"]:focus, .ui.inverted .ui.form input[type="text"]:focus,
+.ui.inverted .ui.form input[type="file"]:focus, .ui.inverted .ui.form input[type="url"]:focus,
+.ui.inverted .ui.form textarea:focus {
+  border-color: @primaryColor;
+}
+
+.ui.inverted .ui.form input:not([type]), .ui.inverted .ui.form input[type="date"],
+.ui.inverted .ui.form input[type="datetime-local"], .ui.inverted .ui.form input[type="email"],
+.ui.inverted .ui.form input[type="number"], .ui.inverted .ui.form input[type="password"],
+.ui.inverted .ui.form input[type="search"], .ui.inverted .ui.form input[type="tel"],
+.ui.inverted .ui.form input[type="time"], .ui.inverted .ui.form input[type="text"],
+.ui.inverted .ui.form input[type="file"], .ui.inverted .ui.form input[type="url"],
+.ui.inverted .ui.form textarea {
+  background-color: #515151;
+  color: rgba(255, 255, 255, 0.87);
+  border-color: @grey;
+}
+
+.ui.inverted .ui.dropdown > .text > .description,
+.ui.inverted .ui.dropdown .menu > .item > .description {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+.ui.inverted .ui.selection.dropdown {
+  background-color: #515151;
+  border-color: @grey;
+}
+
+.ui.inverted .ui.selection.dropdown:hover {
+  background-color: #656565;
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.selection.dropdown.active,
+.ui.inverted .ui.selection.dropdown.active:hover {
+  background-color: #656565;
+  border-color:  @primaryColor;
+}
+
+.ui.inverted .ui.selection.dropdown.active input {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.selection.dropdown:hover {
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.dropdown .menu > .message:not(.ui) {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ui.inverted .ui.dropdown .menu {
+  background-color: #515151;
+}
+
+.ui.inverted .ui.dropdown .menu > .item {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.dropdown.selected,
+.ui.inverted .ui.dropdown .menu .selected.item,
+.ui.inverted .ui.dropdown .menu > .item:hover {
+  background-color: #656565;
+}
+
+.ui.inverted .ui.menu .ui.dropdown .menu > .active.item {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.menu .ui.dropdown .menu > .item {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.statistic > .value,
+.ui.inverted .ui.statistic > .label {
+  color: rgba(255, 255, 255, 0.87);
+}

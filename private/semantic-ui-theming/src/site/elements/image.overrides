@@ -1,0 +1,20 @@
+/*******************************
+         Site Overrides
+
+*******************************/
+/*--------------
+    Bordered
+---------------*/
+
+div.ui.bordered.image {
+  border: @imageBorder;
+}
+
+
+.ui.image.data {
+  background-clip: padding-box;
+}
+
+.ui.image.data:hover {
+  opacity: 0.9;
+}

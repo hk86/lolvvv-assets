@@ -1,0 +1,55 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.image.label div.ui.label {
+  margin: @imageLabelImageMargin;
+  border-radius: @imageLabelImageBorderRadius;
+}
+
+.ui.image.label[class*="right aligned"] {
+  padding: @imageLabelRightPadding;
+}
+
+.ui.image.label[class*="right aligned"] img,
+.ui.image.label[class*="right aligned"] div.ui.label {
+  margin: @imageLabelRightImageMargin;
+  border-radius: @imageLabelRightImageBorderRadius;
+}
+
+.ui.opaque.labels .label,
+.ui.opaque.label {
+  background-color: fade(@backgroundColor, 80%);
+}
+
+.ui.transparent.label {
+  background-color: transparent;
+}
+
+.ui.opaque.red.labels .label,
+.ui.opaque.red.label {
+  background-color: fade(@red, 60%) !important;
+}
+
+.ui.opaque.blue.labels .label,
+.ui.opaque.blue.label {
+  background-color: fade(@blue, 60%) !important;
+}
+
+.ui.opaque.yellow.labels .label,
+.ui.opaque.yellow.label {
+  background-color: fade(@yellow, 60%) !important;
+}
+
+.ui.opaque.green.labels .label,
+.ui.opaque.green.label {
+  background-color: rgba(@green, 0.8) !important;
+}
+
+.ui.attached.tight.label {
+  padding: 0.2em 0.4em;
+}
+
+.ui.label > img.inside {
+  height: 16px !important;
+}

@@ -1,0 +1,34 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+
+/*******************************
+            Grid
+*******************************/
+
+@gutterWidth: 1rem;
+@rowSpacing: 1rem;
+
+/*******************************
+           Variations
+*******************************/
+
+/*--------------
+     Relaxed
+---------------*/
+
+@relaxedGutterWidth: 2rem;
+@veryRelaxedGutterWidth: 4rem;
+
+/*--------------
+    Celled
+---------------*/
+
+@celledMargin: 0.5em 0em;
+@celledWidth: 1px;
+@celledBorderColor: @solidBorderColor;
+
+@celledPadding: 0.5em;
+@celledRelaxedPadding: 1em;
+@celledVeryRelaxedPadding: 1.5em;

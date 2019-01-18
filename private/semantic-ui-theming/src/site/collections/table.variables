@@ -1,0 +1,21 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+/*--------------
+     Parts
+---------------*/
+
+/* Table Cell */
+@cellVerticalPadding: 0.5em;
+@cellHorizontalPadding: 0.5em;
+
+/* Table Header */
+@headerVerticalPadding: @cellVerticalPadding;
+@headerHorizontalPadding: @cellHorizontalPadding;
+
+/* Table Footer */
+@footerVerticalPadding: @cellVerticalPadding;
+@footerHorizontalPadding: @cellHorizontalPadding;
+
+
+@activeBackgroundColor: rgba(0, 0, 0, 0.05);

@@ -1,0 +1,8 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@itemLineHeight: 0.5em;
+@selectionVisibleBorderColor: @primaryColor;
+@selectionFocusBorderColor: @primaryColor;
+@selectionActiveHoverBorderColor: @primaryColor;

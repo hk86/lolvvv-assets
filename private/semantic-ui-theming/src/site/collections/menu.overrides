@@ -1,0 +1,38 @@
+/*******************************
+         Site Overrides
+*******************************/
+/*---------------------
+   Secondary Pointing
+-----------------------*/
+
+.ui.secondary.pointing.menu {
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  border-bottom: @secondaryPointingBorderWidth solid @secondaryPointingBorderColor;
+}
+
+/*--------------
+     Search
+---------------*/
+
+.ui.menu .item > .ui.search > .input {
+  width: 100%;
+}
+.ui.menu:not(.vertical) .item > .ui.search > .input {
+  position: relative;
+  top: @inputOffset;
+  margin: @inputVerticalMargin 0em;
+}
+.ui.menu .item > .ui.search > .input input {
+  font-size: @inputSize;
+  padding-top: @inputVerticalPadding;
+  padding-bottom: @inputVerticalPadding;
+}
+
+.ui[class*="top fixed"].menu {
+  border-bottom: 1px solid #454545;
+}
+
+.ui.inverted.vertical.segment {
+  border-top: 1px solid #454545;
+}
