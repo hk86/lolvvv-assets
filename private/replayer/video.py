@@ -13,7 +13,13 @@ class Video:
     def resize(self, resolution_h: int, resized_vid_path: str):
         src_video = self._open_video()
         dst_video = src_video.resize(height=resolution_h)
-        dst_video.write_videofile(resized_vid_path)
+        new_width = dst_video.w
+        if (new_width%2 != 0):
+            new_width -= 1
+            dst_video = src_video.resize((new_width, resolution_h))
+        dst_video.write_videofile(resized_vid_path,
+            audio_codec='aac', codec='libx264',
+            ffmpeg_params=['-pix_fmt', 'yuv420p'])
         self._close_video(src_video)
     
     @property
