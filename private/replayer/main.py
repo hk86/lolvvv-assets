@@ -14,7 +14,7 @@ from match.spectate_match import SpectateMatch
 from match.fact_replay import FactReplay
 from replay_manager import ReplayManager
 from replay_hoover import ReplayHoover
-from event import Event, generate_events
+from event import Event, generate_events, EventTripleKill
 from clip_recorder import ClipRecorder
 from clip import Clip
 from LoL import LeagueOfLegends
@@ -115,7 +115,7 @@ class Clipper:
     def prepare_clips(self, match: FactMatch):
         events = generate_events(match)
         triple_timeout = timedelta(seconds=15)
-        events = list(filter(lambda x: ((x.__class__.__name__ != 'EventTripleKill')
+        events = list(filter(lambda x: ((x.kills_in_row <= EventTripleKill.kills_in_row)
                                         or (match.duration - x.end_time >= triple_timeout)), events))
         return self._recorder.prepare_clips(events)
 

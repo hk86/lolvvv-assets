@@ -50,7 +50,8 @@ def generate_events(fact_match: FactMatch):
     rows = (get_kill_rows(blue_kills) + get_kill_rows(red_kills))
     rows.sort(key=lambda x: x[0].timestamp)
     event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
-                              EventAloneDoubleKill, EventAloneTripleKill]
+                              EventAloneDoubleKill, EventAloneTripleKill,
+                              EventAloneQuadraKill, EventAlonePentaKill]
     events = []
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
@@ -60,6 +61,7 @@ def generate_events(fact_match: FactMatch):
                 event.game_id = fact_match.game_id
                 event.match_patch = fact_match.version
                 events.append(event)
+                break
     _PREPEND_TIMEOUT = timedelta(seconds=5)
     _POSTPEND_TIMEOUT = timedelta(seconds=10)
     for event in events:
@@ -222,3 +224,11 @@ class EventAloneDoubleKill(EventAloneKillRow):
 
 class EventAloneTripleKill(EventTripleKill, EventAloneKillRow):
     ev_type = '1VS3'
+
+
+class EventAloneQuadraKill(EventTripleKill, EventAloneKillRow):
+    ev_type = '1VS4'
+
+
+class EventAlonePentaKill(EventPentaKill, EventAloneKillRow):
+    ev_type = '1VS5'
