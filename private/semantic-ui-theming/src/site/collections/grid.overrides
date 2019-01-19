@@ -1,0 +1,43 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.grid.spaced {
+  justify-content: space-between;
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.ui.grid.spaced > * {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.ui.grid.condensed {
+  margin: 0;
+}
+
+.ui.grid > .condensed.column {
+    padding: 0;
+}
+
+.ui.grid.condensed > .column {
+    padding: 0;
+}
+
+.ui.grid.condensed + .grid {
+  margin-top: 0;
+}
+
+.ui.grid:not(.condensed) + .grid.condensed {
+  margin-top: 0.5rem;
+}
+
+.ui.grid.condensed > .column > .grid {
+  margin: 0;
+}
+
+h1 + div.ui.grid, h2 + div.ui.grid, h3 + div.ui.grid,
+h4 + div.ui.grid, h5 + div.ui.grid, h6 + div.ui.grid {
+    margin-top: 0px;
+}

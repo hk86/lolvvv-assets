@@ -1,0 +1,52 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@pageFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+@importGoogleFonts: false;
+
+@pageBackground: #f9f9f9;
+
+@primaryColor: @blue;
+@secondaryColor: #546e7a;
+
+@lightPrimaryColor: #bbdefb;
+@lightSecondaryColor: #c1d5e0;
+
+@headerFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@headerFontWeight: 600;
+@headerBottomMargin: 0.5rem;
+
+
+/*-------------------
+     Breakpoints
+--------------------*/
+
+@mobileBreakpoint            : 320px;
+@tabletBreakpoint            : 1200px;
+@computerBreakpoint          : 1200px;
+@largeMonitorBreakpoint      : 1200px;
+@widescreenMonitorBreakpoint : 1920px;
+
+/*-------------------
+        Active
+--------------------*/
+
+/*---  Dark Tones  ---*/
+@greyActive            : darken(@grey, 10);
+
+
+/*-------------------
+     Brand Colors
+--------------------*/
+@twitchColor        : #4B357A;
+@twitchHoverColor   : saturate(darken(@twitchColor, 5), 10, relative);
+@twitchFocusColor   : saturate(darken(@twitchColor, 8), 20, relative);
+@twitchDownColor    : darken(@twitchColor, 10);
+@twitchActiveColor  : saturate(darken(@twitchColor, 5), 15, relative);
+@redditColor        : #FF4500;
+@redditHoverColor   : saturate(darken(@redditColor, 5), 10, relative);
+@redditFocusColor   : saturate(darken(@redditColor, 8), 20, relative);
+@redditDownColor    : darken(@redditColor, 10);
+@redditActiveColor  : saturate(darken(@redditColor, 5), 15, relative);

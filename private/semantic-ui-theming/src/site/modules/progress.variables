@@ -1,0 +1,5 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@barTransitionDuration: 1s;

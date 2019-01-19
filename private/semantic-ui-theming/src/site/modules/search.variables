@@ -1,0 +1,22 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+@promptBorderRadius: @defaultBorderRadius;
+@resultPadding: 0;
+@resultPaddingA: @relative8px @relativeMini;
+
+@resultsWidth: 100%;
+@resultsBoxShadow: 0px 2px 3px 0px @borderColor;
+
+@resultImageBorderRadius: 0;
+@resultImageWidth: 24px;
+@resultImageHeight: 24px;
+@resultImageFloat: none;
+@resultImageBackground: none;
+
+@messageVerticalPadding: @relativeMini;
+@messageHorizontalPadding: @relativeMini;
+
+@messageHeaderFontSize: none;
+@messageDescriptionFontSize: none;

@@ -1,0 +1,7 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+/* Floated */
+@floatedHorizontalMargin: 0.5em;
+@floatedVerticalMargin: 0.5em;

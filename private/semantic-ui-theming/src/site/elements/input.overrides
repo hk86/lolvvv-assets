@@ -1,0 +1,29 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+
+/*--------------------
+        Action
+---------------------*/
+
+/* Button on Right */
+.ui.action.input:not([class*="left action"]) > div > input {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-right-color: transparent !important;
+}
+
+/* Input Focus */
+.ui.action.input:not([class*="left action"]) > div > input:focus {
+  border-right-color: @focusBorderColor !important;
+}
+
+/*--------------------
+        Hover
+---------------------*/
+
+.ui.input.hover input:not(:focus),
+.ui.input input:hover:not(:focus)  {
+  border-color: @selectedBorderColor;
+}

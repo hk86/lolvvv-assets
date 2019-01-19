@@ -13,3 +13,5 @@ __pycache__
 private/replayer/test_db.py
 private/replayer/patch_length.py
 private/replayer/test.mp4
+private/semantic-ui-theming/dist
+private/semantic-ui-theming/node_modules

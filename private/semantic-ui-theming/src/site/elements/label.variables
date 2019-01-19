@@ -1,0 +1,12 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@imageLabelRightPadding: @imageLabelVerticalPadding @imageLabelTextDistance @imageLabelVerticalPadding @imageLabelHorizontalPadding;
+@imageLabelRightImageMargin: -@verticalPadding -@imageLabelTextDistance -@verticalPadding @imageLabelTextDistance;
+
+@imageLabelRightImageBorderRadius: 0em @imageLabelBorderRadius @imageLabelBorderRadius 0em;
+@imageLabelLeftImageBorderRadius: @imageLabelBorderRadius 0em 0em @imageLabelBorderRadius;
+
+@attachedVerticalPadding: @verticalPadding;
+@attachedHorizontalPadding: @horizontalPadding;

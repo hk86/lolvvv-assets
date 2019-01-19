@@ -1,0 +1,118 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+
+.ui.button:disabled, .ui.buttons .disabled.button,
+.ui.disabled.active.button, .ui.disabled.button, .ui.disabled.button:hover {
+  cursor: not-allowed;
+}
+
+.ui.button img {
+  display: inline-block;
+  vertical-align: top;
+
+  margin: -0.5833em;
+}
+
+.ui.button img.floated {
+  display: inline-block;
+  vertical-align: top;
+
+  margin: -0.5833em;
+}
+
+
+@strongBorderColorInverted: rgba(221, 219, 217, 0.22);
+
+/* Singular */
+.grid + .ui.attached.button {
+  margin: 0.5rem -0.5rem;
+  border-bottom: 1px solid @strongBorderColor;
+  border-top: 1px solid @strongBorderColor;
+}
+.ui.inverted .grid + .ui.attached.button {
+  margin: 0.5rem -0.5rem;
+  border-bottom: 1px solid @strongBorderColorInverted;
+  border-top: 1px solid @strongBorderColorInverted;
+}
+
+/* Plural */
+.grid + .ui.attached.buttons {
+  margin: -0.5rem -0.5rem 0.5rem;
+}
+.grid + .ui.attached.buttons > .button {
+  border-bottom: 1px solid @strongBorderColor;
+  border-top: 1px solid @strongBorderColor;
+}
+.ui.inverted .grid + .ui.attached.buttons {
+  margin: -0.5rem -0.5rem 0.5rem;
+}
+.ui.inverted .grid + .ui.attached.buttons > .button {
+  border-bottom: 1px solid @strongBorderColorInverted;
+  border-top: 1px solid @strongBorderColorInverted;
+}
+
+
+/* Twitch */
+.ui.twitch.button {
+  background-color: @twitchColor;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+  background-image: @coloredBackgroundImage;
+  box-shadow: @coloredBoxShadow;
+}
+.ui.twitch.button:hover {
+  background-color: @twitchHoverColor;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+}
+.ui.twitch.button:active {
+  background-color: @twitchDownColor;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+}
+
+/* reddit */
+.ui.reddit.button {
+  background-color: @redditColor;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+  background-image: @coloredBackgroundImage;
+  box-shadow: @coloredBoxShadow;
+}
+.ui.reddit.button:hover {
+  background-color: @redditHoverColor;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+}
+.ui.reddit.button:active {
+  background-color: @redditDownColor;
+  color: @invertedTextColor;
+  text-shadow: @invertedTextShadow;
+}
+
+
+.ui.labeled.icon.buttons > .button > .icons,
+.ui.labeled.icon.button > .icons {
+  position: absolute;
+  height: 100%;
+  line-height: 1;
+  border-radius: 0px;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  text-align: center;
+
+  margin: @labeledIconMargin;
+  width: @labeledIconWidth;
+  background-color: @labeledIconBackgroundColor;
+  color: @labeledIconColor;
+  box-shadow: @labeledIconLeftShadow;
+}
+
+/* Left Labeled */
+.ui.labeled.icon.buttons > .button > .icons,
+.ui.labeled.icon.button > .icons {
+  top: 0em;
+  left: 0em;
+}

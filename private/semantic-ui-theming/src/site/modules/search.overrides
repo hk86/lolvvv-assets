@@ -1,0 +1,67 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.search > .results .result {
+  cursor: auto;
+}
+
+.ui.search > .results .result {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.ui.search > .results .result.title > div {
+  flex-grow: 1;
+  background: @categoryActiveBackground;
+  font-weight: bold;
+  padding: @resultPaddingA;
+}
+
+.ui.search > .results .result > a {
+  flex-grow: 1;
+  padding: @resultPaddingA;
+}
+
+.ui.search > .results .result > i {
+  padding: @relativeMini;
+}
+
+.ui.search > .results .result > i.icon {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.ui.search .action:hover {
+  background: none;
+}
+
+.ui.fluid.search > div {
+  width: 100%;
+}
+
+.ui.fluid.search > div > div {
+  width: 100%;
+}
+
+
+.ui.search > .results .result {
+  border-bottom: none;
+  border-top: @resultDivider;
+}
+.ui.search > .results .result:last-child {
+  border-bottom: none !important;
+}
+.ui.search > .results .result:first-child {
+  border-top: @resultLastDivider !important;
+}
+
+.result.champion + .result.pro {
+  border-top: 1px solid rgba(34, 36, 38, 0.4);
+}
+
+.ui.search.main > .results {
+  margin-top: 0em;
+}

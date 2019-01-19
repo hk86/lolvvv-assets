@@ -1,0 +1,20 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.progress.right {
+  text-align: right;
+}
+
+.ui.progress.right .bar {
+  margin: 0 0 0 auto;
+}
+
+.ui.progress.right .bar > .progress {
+  right: @progressLeft;
+  left: @progressRight;
+}
+
+.ui.active.progress.right .bar::after {
+  left: auto;
+}
