@@ -117,10 +117,6 @@ class Clipper:
         triple_timeout = timedelta(seconds=15)
         events = list(filter(lambda x: ((x.__class__.__name__ != 'EventTripleKill')
                                         or (match.duration - x.end_time >= triple_timeout)), events))
-        for idx, event in enumerate(events):
-            if ((event.__class__.__name__ == 'EventTripleKill')
-                    and ((match.duration - event.end_time) < triple_timeout)):
-                events.pop(idx)
         return self._recorder.prepare_clips(events)
 
     def generate_clips(self, clips: [Clip], replay: SpectateMatch):

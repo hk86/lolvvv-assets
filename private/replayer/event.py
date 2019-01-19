@@ -1,5 +1,7 @@
 from datetime import timedelta
+from typing import overload
 
+from database.kill import Kill
 from match.fact_match import FactMatch
 from summoner.fact_team import FactTeamId
 from tools import lazy_property
@@ -47,13 +49,13 @@ def generate_events(fact_match: FactMatch):
     red_kills = list(filter(lambda x: x.killer.team == FactTeamId.RED, kills))
     rows = (get_kill_rows(blue_kills) + get_kill_rows(red_kills))
     rows.sort(key=lambda x: x[0].timestamp)
-    event_kill_row_classes = [EventTripleKill,
-                              EventQuadraKill, EventPentaKill]
+    event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
+                              EventAloneDoubleKill, EventAloneTripleKill]
     events = []
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
-            if len(row) == event_kill_row_class.kills_in_row:
-                event = event_kill_row_class(row)
+            event = event_kill_row_class(row)
+            if event.is_valid:
                 event.platform_id = fact_match.platform_id
                 event.game_id = fact_match.game_id
                 event.match_patch = fact_match.version
@@ -121,10 +123,18 @@ class EventKillRow(Event):
         self._events = kill_row
 
     @property
+    def is_valid(self):
+        if len(self._events) != self.kills_in_row:
+            return False
+        if len(self.participants) == 0:
+            return False
+        return True
+
+    @lazy_property
     def first_kill(self):
         return self._events[0]
 
-    @property
+    @lazy_property
     def last_kill(self):
         return self._events[-1]
 
@@ -192,3 +202,23 @@ class EventQuadraKill(EventKillRow):
 class EventPentaKill(EventKillRow):
     kills_in_row = 5
     ev_type = 'PENTAKILL'
+
+
+class EventAloneKillRow(EventKillRow):
+
+    @property
+    def is_valid(self):
+        if len(self._events) != self.kills_in_row:
+            return False
+        if len(self.participants) > 0:
+            return False
+        return True
+
+
+class EventAloneDoubleKill(EventAloneKillRow):
+    kills_in_row = 2
+    ev_type = '1VS2'
+
+
+class EventAloneTripleKill(EventTripleKill, EventAloneKillRow):
+    ev_type = '1VS3'
