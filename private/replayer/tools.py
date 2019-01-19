@@ -1,5 +1,6 @@
 import re
 
+
 def get_valid_filename(s):
     """
     Return the given string converted to a string that can be used for a clean
@@ -11,3 +12,18 @@ def get_valid_filename(s):
     """
     s = str(s).strip().replace(' ', '_')
     return re.sub(r'(?u)[^-\w.]', '', s)
+
+
+def lazy_property(fn):
+    """
+    Decorator that makes a property lazy-evaluated.
+    """
+    attr_name = '_lazy_' + fn.__name__
+
+    @property
+    def _lazy_property(self):
+        if not hasattr(self, attr_name):
+            setattr(self, attr_name, fn(self))
+        return getattr(self, attr_name)
+
+    return _lazy_property

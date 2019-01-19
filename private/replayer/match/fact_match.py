@@ -1,9 +1,11 @@
+from datetime import timedelta
+
+from tools import lazy_property
 from .match import Match
 from database.kill import Kill
 
-from json import dump
-
 from pprint import pprint
+
 
 class FactMatch(Match):
     def __init__(self, platform_id, game_id, fact_data):
@@ -15,8 +17,8 @@ class FactMatch(Match):
         for frame in self._MATCH_DATA['timeline']['frames']:
             for event in frame['events']:
                 if ((event['type'] == 'CHAMPION_KILL')
-                    and
-                    (event['killerId'] != 0)):
+                        and
+                        (event['killerId'] != 0)):
                     kills.append(Kill(event, self))
         return kills
 
@@ -24,19 +26,19 @@ class FactMatch(Match):
         kills = self.get_kills()
         kills_for_team = []
         for kill in kills:
-            if (kill.killer.team == team_id):
+            if kill.killer.team == team_id:
                 kills_for_team.append(kill)
         return kills_for_team
 
     def get_fact_player(self, participant_id):
         for participant_identity in (
-            self._MATCH_DATA['participantIdentities']):
+                self._MATCH_DATA['participantIdentities']):
             if (participant_identity['participantId']
-                ==
-                participant_id):
+                    ==
+                    participant_id):
                 return participant_identity['player']
         print('error! no participant [{}] found!'.format(participant_id))
-        dbg_file=r'fact_match.json'
+        dbg_file = r'fact_match.json'
         with open(dbg_file, 'w') as output_file:
             pprint(self._MATCH_DATA, output_file)
         print('dbg json file wrote')
@@ -46,8 +48,12 @@ class FactMatch(Match):
             if participant['participantId'] == participant_id:
                 return participant
 
+    @lazy_property
+    def duration(self):
+        duration_s = self._MATCH_DATA['gameDuration']
+        return timedelta(seconds=duration_s)
+
     def _get_version(self):
         return self._MATCH_DATA['gameVersion']
 
     version = property(fget=_get_version)
-

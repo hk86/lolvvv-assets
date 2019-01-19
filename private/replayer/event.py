@@ -2,22 +2,8 @@ from datetime import timedelta
 
 from match.fact_match import FactMatch
 from summoner.fact_team import FactTeamId
-from database.kill import Kill
-from pprint import pprint
-from json import dumps
+from tools import lazy_property
 
-# a thing for sw_tool.py or so
-def lazy_property(fn):
-    '''Decorator that makes a property lazy-evaluated.
-    '''
-    attr_name = '_lazy_' + fn.__name__
-
-    @property
-    def _lazy_property(self):
-        if not hasattr(self, attr_name):
-            setattr(self, attr_name, fn(self))
-        return getattr(self, attr_name)
-    return _lazy_property
 
 def get_kill_rows(kills):
     kills.sort(key=lambda x: x.timestamp)
@@ -38,8 +24,8 @@ def get_kill_rows(kills):
                 else:
                     timeout = timedelta(seconds=10)
                 if (((kill.timestamp - last_kill.timestamp) <= timeout)
-                    and
-                    (kill.killer == last_kill.killer)):
+                        and
+                        (kill.killer == last_kill.killer)):
                     current_row.append(kill)
                 else:
                     # create new row
@@ -47,12 +33,14 @@ def get_kill_rows(kills):
             last_kill = kill
     return rows
 
+
 def get_kill_index(kill, kills):
     for index, s_kill in enumerate(kills):
         if s_kill == kill:
-            return index 
+            return index
 
-def generate_events(fact_match:FactMatch):
+
+def generate_events(fact_match: FactMatch):
     kills = fact_match.get_kills()
     kills = list(filter(lambda x: x.killer, kills))
     blue_kills = list(filter(lambda x: x.killer.team == FactTeamId.BLUE, kills))
@@ -60,7 +48,7 @@ def generate_events(fact_match:FactMatch):
     rows = (get_kill_rows(blue_kills) + get_kill_rows(red_kills))
     rows.sort(key=lambda x: x[0].timestamp)
     event_kill_row_classes = [EventTripleKill,
-        EventQuadraKill, EventPentaKill]
+                              EventQuadraKill, EventPentaKill]
     events = []
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
@@ -79,7 +67,7 @@ def generate_events(fact_match:FactMatch):
         kill_time_base = kills[current_idx].timestamp
         companion_kills_pre = []
         while current_idx > 0:
-            current_idx = current_idx-1
+            current_idx = current_idx - 1
             candidate = kills[current_idx]
             time_distance = (kill_time_base - candidate.timestamp)
             if time_distance <= _PREPEND_TIMEOUT:
@@ -95,8 +83,8 @@ def generate_events(fact_match:FactMatch):
         current_idx = get_kill_index(event.last_kill, kills)
         kill_time_base = kills[current_idx].timestamp
         companion_kills_post = []
-        while current_idx < (len(kills)-1):
-            current_idx = current_idx+1
+        while current_idx < (len(kills) - 1):
+            current_idx = current_idx + 1
             candidate = kills[current_idx]
             time_distance = (candidate.timestamp - kill_time_base)
             if time_distance <= _POSTPEND_TIMEOUT:
@@ -109,6 +97,7 @@ def generate_events(fact_match:FactMatch):
                 break
         event.companion_kills_post = companion_kills_post
     return events
+
 
 class Event:
     platform_id = ''
@@ -123,6 +112,7 @@ class Event:
     companion_kills_pre = []
     companion_kills_post = []
     raw_events = []
+
 
 class EventKillRow(Event):
     kills_in_row = 0
@@ -188,14 +178,17 @@ class EventKillRow(Event):
             companion_ids.extend(kill.companion_ids)
         return list(set(companion_ids))
 
+
 class EventTripleKill(EventKillRow):
     kills_in_row = 3
     ev_type = 'TRIPLEKILL'
 
+
 class EventQuadraKill(EventKillRow):
     kills_in_row = 4
     ev_type = 'QUADRAKILL'
-    
+
+
 class EventPentaKill(EventKillRow):
     kills_in_row = 5
     ev_type = 'PENTAKILL'
