@@ -1,6 +1,7 @@
 from datetime import timedelta
 from typing import overload
 
+from companion_finder import CompanionPreFinder, CompanionPostFinder
 from database.kill import Kill
 from match.fact_match import FactMatch
 from summoner.fact_team import FactTeamId
@@ -62,44 +63,12 @@ def generate_events(fact_match: FactMatch):
                 event.match_patch = fact_match.version
                 events.append(event)
                 break
-    _PREPEND_TIMEOUT = timedelta(seconds=5)
-    _POSTPEND_TIMEOUT = timedelta(seconds=10)
     for event in events:
         companion_ids = event.companion_ids
-        ## pre
-        current_idx = get_kill_index(event.first_kill, kills)
-        kill_time_base = kills[current_idx].timestamp
-        companion_kills_pre = []
-        while current_idx > 0:
-            current_idx = current_idx - 1
-            candidate = kills[current_idx]
-            time_distance = (kill_time_base - candidate.timestamp)
-            if time_distance <= _PREPEND_TIMEOUT:
-                for comp_id in candidate.companion_ids:
-                    if comp_id in companion_ids:
-                        companion_kills_pre.insert(0, candidate)
-                        kill_time_base = candidate.timestamp
-                        break
-            else:
-                break
-        event.companion_kills_pre = companion_kills_pre
-        ## post
-        current_idx = get_kill_index(event.last_kill, kills)
-        kill_time_base = kills[current_idx].timestamp
-        companion_kills_post = []
-        while current_idx < (len(kills) - 1):
-            current_idx = current_idx + 1
-            candidate = kills[current_idx]
-            time_distance = (candidate.timestamp - kill_time_base)
-            if time_distance <= _POSTPEND_TIMEOUT:
-                for comp_id in candidate.companion_ids:
-                    if comp_id in companion_ids:
-                        companion_kills_post.append(candidate)
-                        kill_time_base = candidate.timestamp
-                        break
-            else:
-                break
-        event.companion_kills_post = companion_kills_post
+        event.companion_kills_pre = CompanionPreFinder(kills)\
+            .find_companions(event.first_kill, companion_ids)
+        event.companion_kills_post = CompanionPostFinder(kills)\
+            .find_companions(event.last_kill, companion_ids)
     return events
 
 
@@ -144,7 +113,7 @@ class EventKillRow(Event):
     def length(self):
         return self.end_time - self.start_time
 
-    @lazy_property
+    @property
     def start_time(self):
         if len(self.companion_kills_pre) == 0:
             return self.first_kill.timestamp

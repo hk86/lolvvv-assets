@@ -12,8 +12,7 @@ class Kill:
         
     @property
     def companion_ids(self):
-        companion_ids = [self._fact_event['killerId']]
-        companion_ids.append(self._fact_event['victimId'])
+        companion_ids = [self._fact_event['killerId'], self._fact_event['victimId']]
         companion_ids.extend(self._fact_event['assistingParticipantIds'])
         return companion_ids
 
