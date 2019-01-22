@@ -17,9 +17,10 @@ from datetime import timedelta, datetime
 from time import sleep
 from glob import glob
 
+
 class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
-    _RECORDING_OVERTIME_S = 25
+    _RECORDING_OVERTIME_S = 15
     _PREGAME_TIME_S = 3
     _RELEASE_HANDLE_TIME_S = 3
 
@@ -30,7 +31,7 @@ class ClipRecorder:
         self._obs = ObsClips()
         self._lol = lol
 
-    def prepare_clips(self, events:[Event]):
+    def prepare_clips(self, events: [Event]):
         clips = []
         ingame_clip_num = 0
         for event in events:
@@ -49,15 +50,15 @@ class ClipRecorder:
             clips.append(clip)
         return clips
 
-    def record_clips(self, clips:[Clip], match:SpectateMatch):
+    def record_clips(self, clips: [Clip], match: SpectateMatch):
         match_video_path = path.join(
             self._MAIN_VIDEO_FOLDER,
             clips[0].event.platform_id,
             str(clips[0].event.game_id)
         )
-        START_TRIES = 3
+        start_tries = 3
         lol = self._lol
-        for x in range(0, START_TRIES):
+        for x in range(0, start_tries):
             print('url: {}'.format(match.url))
             print('game: {} plat: {}'.format(match.game_id, match.platform_id))
             print('enc: {}'.format(match.encryption_key))
@@ -70,28 +71,28 @@ class ClipRecorder:
             lol.wait_for_replay_start()
             state = lol.state
             print('lol state {}'.format(state))
-            if (state == LoLState.RUNNING):
+            if state == LoLState.RUNNING:
                 break
             lol.screenshot('notStarted')
             lol.stop_lol()
-            if (x == START_TRIES-1):
+            if x == start_tries - 1:
                 return []
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)
         for clip in clips:
             timeshift = clip.event.start_time - ingame_time \
-                - timedelta(seconds=20)
+                        - timedelta(seconds=20)
             ingame_time += lol.specate_timeshift(timeshift)
             lol.toggle_pause_play()
             clip_folder = path.join(match_video_path,
-                            str(clip.ingame_clip_num))
+                                    str(clip.ingame_clip_num))
             Path(clip_folder).mkdir(parents=True, exist_ok=True)
             self._obs.set_recording_folder(clip_folder)
             self._obs.show_pregame_overlay(True)
             killer_summoner = clip.event.main_summoner
             self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
             self._obs.set_champion(self._static_champ_db
-                .get_champ_key(killer_summoner.champ_id))
+                                   .get_champ_key(killer_summoner.champ_id))
             self._obs.set_main_pro(clip.main_pros[0])
             pro_team = self._pro_team_db.get_pro_team(
                 clip.main_pros[0].team_id)
@@ -112,7 +113,8 @@ class ClipRecorder:
             lol.autocam()
             lol.toggle_pause_play()
             sleep(clip.event.length.total_seconds()
-                + self._RECORDING_OVERTIME_S)
+                  + self._RECORDING_OVERTIME_S
+                  + clip.event.event_based_rec_overtime_s)
             self._obs.stop_recording()
             sleep(self._RELEASE_HANDLE_TIME_S)
             clip_length = (datetime.now() - start_record)
@@ -120,7 +122,6 @@ class ClipRecorder:
             clip.video = Video(glob(path.join(clip_folder, '*.*'))[0])
         lol.stop_lol()
         return clips
-
 
     def _summoners_to_pros(self, summoners):
         pros = []
@@ -132,6 +133,3 @@ class ClipRecorder:
             if pro:
                 pros.append(IngamePro(pro, summoner))
         return pros
-    
-
-    

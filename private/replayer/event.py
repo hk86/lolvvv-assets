@@ -74,6 +74,7 @@ class Event:
     game_id = 0
     match_patch = ''
     ev_type = ''
+    event_based_rec_overtime_s = 0
     start_time = timedelta()
     length = timedelta()
     main_summoner = None
@@ -85,6 +86,7 @@ class Event:
 
 
 class EventKillRow(Event):
+    event_based_rec_overtime_s = 10
     kills_in_row = 0
 
     def __init__(self, kill_row):
@@ -173,6 +175,7 @@ class EventPentaKill(EventKillRow):
 
 
 class EventAloneKillRow(EventKillRow):
+    event_based_rec_overtime_s = 5
 
     @property
     def is_valid(self):
