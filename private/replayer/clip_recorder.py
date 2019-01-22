@@ -101,6 +101,7 @@ class ClipRecorder:
             self._obs.set_event(clip.event)
             lol.cleanup_event_list()
             lol.modify_ui()
+            lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
             self._obs.start_recording()
             start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
