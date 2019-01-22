@@ -1,14 +1,12 @@
 from datetime import timedelta
-from typing import overload
 
 from companion_finder import CompanionPreFinder, CompanionPostFinder
 from database.kill import Kill
 from match.fact_match import FactMatch
-from summoner.fact_team import FactTeamId
 from tools import lazy_property
 
 
-def get_kill_rows(kills):
+def get_kill_rows(kills: [Kill]):
     kills.sort(key=lambda x: x.timestamp)
     last_kill = None
     rows = []
@@ -26,9 +24,7 @@ def get_kill_rows(kills):
                     timeout = timedelta(seconds=30)
                 else:
                     timeout = timedelta(seconds=10)
-                if (((kill.timestamp - last_kill.timestamp) <= timeout)
-                        and
-                        (kill.killer == last_kill.killer)):
+                if (kill.timestamp - last_kill.timestamp) <= timeout:
                     current_row.append(kill)
                 else:
                     # create new row
@@ -46,10 +42,10 @@ def get_kill_index(kill, kills):
 def generate_events(fact_match: FactMatch):
     kills = fact_match.get_kills()
     kills = list(filter(lambda x: x.killer, kills))
-    blue_kills = list(filter(lambda x: x.killer.team == FactTeamId.BLUE, kills))
-    red_kills = list(filter(lambda x: x.killer.team == FactTeamId.RED, kills))
-    rows = (get_kill_rows(blue_kills) + get_kill_rows(red_kills))
-    rows.sort(key=lambda x: x[0].timestamp)
+    rows = []
+    for p_id in range(1, 11):  # participant id
+        participant_kills = list(filter(lambda x: x.killer_p_id == p_id, kills))
+        rows.extend(get_kill_rows(participant_kills))
     event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
                               EventAloneDoubleKill, EventAloneTripleKill,
                               EventAloneQuadraKill, EventAlonePentaKill]
@@ -65,10 +61,11 @@ def generate_events(fact_match: FactMatch):
                 break
     for event in events:
         companion_ids = event.companion_ids
-        event.companion_kills_pre = CompanionPreFinder(kills)\
+        event.companion_kills_pre = CompanionPreFinder(kills) \
             .find_companions(event.first_kill, companion_ids)
-        event.companion_kills_post = CompanionPostFinder(kills)\
+        event.companion_kills_post = CompanionPostFinder(kills) \
             .find_companions(event.last_kill, companion_ids)
+    events.sort(key=lambda x: x.start_time)
     return events
 
 
