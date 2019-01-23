@@ -24,14 +24,14 @@ class Kill:
     def killer_p_id(self):  # participant id
         return self._fact_event['killerId']
 
-    @property
+    @lazy_property
     def killer(self):
         if self.killer_p_id > 0:
             return FactPlayer(
                 self._fact_match,
                 self._fact_event['killerId'])
 
-    @property
+    @lazy_property
     def victim(self):
         return FactPlayer(
             self._fact_match,

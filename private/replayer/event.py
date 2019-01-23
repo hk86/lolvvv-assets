@@ -53,18 +53,17 @@ def generate_events(fact_match: FactMatch):
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
             event = event_kill_row_class(row)
+            companion_ids = event.companion_ids
+            event.companion_kills_pre = CompanionPreFinder(kills) \
+                .find_companions(event.first_kill, companion_ids)
+            event.companion_kills_post = CompanionPostFinder(kills) \
+                .find_companions(event.last_kill, companion_ids)
             if event.is_valid:
                 event.platform_id = fact_match.platform_id
                 event.game_id = fact_match.game_id
                 event.match_patch = fact_match.version
                 events.append(event)
                 break
-    for event in events:
-        companion_ids = event.companion_ids
-        event.companion_kills_pre = CompanionPreFinder(kills) \
-            .find_companions(event.first_kill, companion_ids)
-        event.companion_kills_post = CompanionPostFinder(kills) \
-            .find_companions(event.last_kill, companion_ids)
     events.sort(key=lambda x: x.start_time)
     return events
 
@@ -176,9 +175,15 @@ class EventPentaKill(EventKillRow):
 
 class EventAloneKillRow(EventKillRow):
     event_based_rec_overtime_s = 5
+    extended_timeout = timedelta(seconds=5)
 
     @property
     def is_valid(self):
+        if len(self._events) < EventAloneDoubleKill.kills_in_row:
+            return False
+        for kill_idx, comp_kill in enumerate(self.companion_kills_post):
+            if comp_kill.victim == self.main_summoner:
+                self._events.append(self.companion_kills_post.pop(kill_idx))
         if len(self._events) != self.kills_in_row:
             return False
         if len(self.participants) > 0:
