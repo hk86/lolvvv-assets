@@ -49,6 +49,9 @@ def generate_events(fact_match: FactMatch):
     event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
                               EventAloneDoubleKill, EventAloneTripleKill,
                               EventAloneQuadraKill, EventAlonePentaKill]
+    #event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
+    #                          EventAloneDoubleKill, EventAloneTripleKill,
+    #                          EventAloneQuadraKill, EventAlonePentaKill]
     events = []
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
