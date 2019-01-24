@@ -102,16 +102,16 @@ class ClipRecorder:
             lol.cleanup_event_list()
             lol.modify_ui()
             self._obs.start_recording()
-            start_record = datetime.now()
             sleep(self._PREGAME_TIME_S)
+            lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
             """
             lol.focus_player(
                 killer_summoner.team,
                 killer_summoner.inteam_idx)
             """
             self._obs.show_pregame_overlay(False)
-            lol.autocam()
             lol.toggle_pause_play()
+            start_record = datetime.now()
             sleep(clip.event.length.total_seconds()
                   + self._RECORDING_OVERTIME_S
                   + clip.event.event_based_rec_overtime_s)
