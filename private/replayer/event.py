@@ -46,9 +46,7 @@ def generate_events(fact_match: FactMatch):
     for p_id in range(1, 11):  # participant id
         participant_kills = list(filter(lambda x: x.killer_p_id == p_id, kills))
         rows.extend(get_kill_rows(participant_kills))
-    event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
-                              EventAloneDoubleKill, EventAloneTripleKill,
-                              EventAloneQuadraKill, EventAlonePentaKill]
+    event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill]
     #event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
     #                          EventAloneDoubleKill, EventAloneTripleKill,
     #                          EventAloneQuadraKill, EventAlonePentaKill]
