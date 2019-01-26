@@ -4,6 +4,7 @@ from pathlib import Path as pathlib
 from tarfile import open as taropen
 from shutil import rmtree
 
+
 class ImageService:
     _PUBLIC_IMG_PATH = r'../../public/image'
     _SPECIAL_IMG_PATH = r'../streamer/obs'
@@ -25,7 +26,6 @@ class ImageService:
         tar.close()
         raise NotImplementedError
         rmtree(upgrade_folder)
-
 
     def background_img_path(self):
         return path.join(
@@ -93,7 +93,7 @@ class ImageService:
             '{}.png'.format(perk_id)
         )
 
-    def pro_med_img_path(self, image_name:str):
+    def pro_med_img_path(self, image_name: str):
         return path.join(
             self._PUBLIC_IMG_PATH,
             'pros',
@@ -101,11 +101,10 @@ class ImageService:
             image_name
         )
 
-    def team_med_img_path(self, image_name:str):
+    def team_med_img_path(self, image_name: str):
         return path.join(
             self._PUBLIC_IMG_PATH,
             'teams',
             'medium',
             image_name
         )
-
