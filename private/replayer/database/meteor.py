@@ -17,7 +17,7 @@ class Meteor(Database):
         self._cache_champ = None
         self._cache_team = None
         pro_cursor = self._meteor['static_pros'].find(
-            {'accounts': {'$exists': True, '$nin': [None]}})
+            {'encryptedAccountIds': {'$exists': True, '$nin': [None]}})
         self._cached_pros = []
         for pro in pro_cursor:
             self._cached_pros.append(pro)
@@ -84,11 +84,11 @@ class Meteor(Database):
 
     def get_pro(self, account_id: int, platform_id: str):
         platform_pros = list(
-            filter(lambda x: ((platform_id in x['accounts'])),
+            filter(lambda x: ((platform_id in x['encryptedAccountIds'])),
                    self._cached_pros)
         )
         for pro in platform_pros:
-            for pro_id in pro['accounts'][platform_id]:
+            for pro_id in pro['encryptedAccountIds'][platform_id]:
                 if pro_id == account_id:
                     return pro
 
