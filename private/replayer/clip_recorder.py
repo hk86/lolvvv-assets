@@ -77,6 +77,11 @@ class ClipRecorder:
             lol.stop_lol()
             if x == start_tries - 1:
                 return []
+        # preparing for image recognition
+        lol.modify_ui()
+        sleep(2)
+        lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
+        # end
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)
         for clip in clips:
@@ -103,7 +108,6 @@ class ClipRecorder:
             lol.modify_ui()
             self._obs.start_recording()
             sleep(self._PREGAME_TIME_S)
-            lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
             """
             lol.focus_player(
                 killer_summoner.team,
