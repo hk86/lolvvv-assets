@@ -16,11 +16,8 @@ class Meteor(Database):
         self._dim_patches = self._meteor['dim_patches']
         self._cache_champ = None
         self._cache_team = None
-        pro_cursor = self._meteor['static_pros'].find(
-            {'encryptedAccountIds': {'$exists': True, '$nin': [None]}})
-        self._cached_pros = []
-        for pro in pro_cursor:
-            self._cached_pros.append(pro)
+        self._cached_pros = list(self._meteor['static_pros'].find(
+            {'encryptedAccountIds': {'$exists': True, '$nin': [None]}}))
 
     def get_new_live_matches(self, younger_then: timedelta):
         found_matches = self._active_matches.find({'$and': [
@@ -37,14 +34,14 @@ class Meteor(Database):
         return matches
 
     def get_db_champ(self, champ_id):
-        if ((self._cache_champ == None)
+        if ((self._cache_champ is None)
                 or
                 (self._cache_champ['id'] != champ_id)):
             self._cache_champ = self._static_champs.find_one({'id': champ_id})
         return self._cache_champ
 
     def get_db_team(self, team_id):
-        if (self._cache_team == None) or (self._cache_team['teamId'] != team_id):
+        if (self._cache_team is None) or (self._cache_team['teamId'] != team_id):
             self._cache_team = self._static_teams.find_one({'teamId': team_id})
         return self._cache_team
 
@@ -84,7 +81,7 @@ class Meteor(Database):
 
     def get_pro(self, account_id: int, platform_id: str):
         platform_pros = list(
-            filter(lambda x: ((platform_id in x['encryptedAccountIds'])),
+            filter(lambda x: (platform_id in x['encryptedAccountIds']),
                    self._cached_pros)
         )
         for pro in platform_pros:
