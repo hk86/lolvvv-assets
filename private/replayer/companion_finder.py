@@ -24,8 +24,8 @@ class CompanionFinderBase(ABC):
                         companion_kills.append(candidate)
                         kill_time_base = candidate.timestamp
                         break
-                    else:
-                        break
+            else:
+                break
         companion_kills.sort(key=lambda x: x.timestamp)
         return companion_kills
 
