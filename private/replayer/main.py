@@ -60,6 +60,7 @@ class Clipper:
             # related to the current server patch version
             server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
             self._meteor_db.set_patch_version(self._lol.version, server_patch)
+            self._playable_patch = self._lol_patch()
         self._logger.warning('upgrade finished new version = ' + self._lol.version)
 
     def _lol_patch(self):
