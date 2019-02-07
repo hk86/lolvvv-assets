@@ -44,8 +44,16 @@ class S3Upload:
 
     def _cleanup_requests(self):
         for idx, node in enumerate(self._upload_nodes):
-            if node.request.done():
-                print('s3 cleanup state: {}'.format(node.request.result()))
+            done = True
+            result = "Not Ready"
+            # noinspection PyBroadException
+            try:
+                done = node.request.done()
+                result = node.request.result()
+            except Exception:
+                pass
+            if done:
+                print('s3 cleanup state: {}'.format(result))
                 callback = node.callback_func
                 callback_arg = node.callback_arg
                 # delete request to close file handle
@@ -56,3 +64,12 @@ class S3Upload:
 
     def __del__(self):
         self._interval.stop()
+        requests = []
+        for node in enumerate(self._upload_nodes):
+            requests.append(node.request)
+        self._connection.all_completed(requests)
+        # noinspection PyBroadException
+        try:
+            self._cleanup_requests()
+        except Exception:
+            pass

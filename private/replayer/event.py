@@ -46,10 +46,13 @@ def generate_events(fact_match: FactMatch):
     for p_id in range(1, 11):  # participant id
         participant_kills = list(filter(lambda x: x.killer_p_id == p_id, kills))
         rows.extend(get_kill_rows(participant_kills))
-    event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill]
-    #event_kill_row_classes = [EventTripleKill, EventQuadraKill, EventPentaKill,
-    #                          EventAloneDoubleKill, EventAloneTripleKill,
-    #                          EventAloneQuadraKill, EventAlonePentaKill]
+    event_kill_row_classes = [EventTripleKill,
+                              EventQuadraKill,
+                              # EventAloneDoubleKill,
+                              EventAlonePentaKill,
+                              EventAloneTripleKill,
+                              EventAloneQuadraKill,
+                              EventPentaKill]
     events = []
     for row in rows:
         for event_kill_row_class in event_kill_row_classes:
@@ -100,11 +103,11 @@ class EventKillRow(Event):
             return False
         return True
 
-    @lazy_property
+    @property
     def first_kill(self):
         return self._events[0]
 
-    @lazy_property
+    @property
     def last_kill(self):
         return self._events[-1]
 
@@ -180,14 +183,15 @@ class EventAloneKillRow(EventKillRow):
 
     @property
     def is_valid(self):
-        if len(self._events) < EventAloneDoubleKill.kills_in_row:
+        if len(self.participants) > 0:
+            return False
+        if len(self._events) < EventAloneTripleKill.kills_in_row:
             return False
         for kill_idx, comp_kill in enumerate(self.companion_kills_post):
-            if comp_kill.victim == self.main_summoner:
+            if ((comp_kill.victim == self.main_summoner) and
+                    not (comp_kill.killer in self.victims)):
                 self._events.append(self.companion_kills_post.pop(kill_idx))
         if len(self._events) != self.kills_in_row:
-            return False
-        if len(self.participants) > 0:
             return False
         return True
 
