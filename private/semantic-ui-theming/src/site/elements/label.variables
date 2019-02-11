@@ -10,3 +10,34 @@
 
 @attachedVerticalPadding: @verticalPadding;
 @attachedHorizontalPadding: @horizontalPadding;
+
+
+
+/* Colors */
+@redTextColor: rgba(255, 255, 255, 0.9);
+@orangeTextColor: rgba(255, 255, 255, 0.9);
+@yellowTextColor: rgba(255, 255, 255, 0.9);
+@oliveTextColor: rgba(255, 255, 255, 0.9);
+@greenTextColor: rgba(255, 255, 255, 0.9);
+@tealTextColor: rgba(255, 255, 255, 0.9);
+@blueTextColor: rgba(255, 255, 255, 0.9);
+@violetTextColor: rgba(255, 255, 255, 0.9);
+@purpleTextColor: rgba(255, 255, 255, 0.9);
+@pinkTextColor: rgba(255, 255, 255, 0.9);
+@brownTextColor: rgba(255, 255, 255, 0.9);
+@greyTextColor: rgba(255, 255, 255, 0.9);
+@blackTextColor: rgba(255, 255, 255, 0.9);
+
+@redHoverTextColor: rgba(255, 255, 255, 0.9);
+@orangeHoverTextColor: rgba(255, 255, 255, 0.9);
+@yellowHoverTextColor: rgba(255, 255, 255, 0.9);
+@oliveHoverTextColor: rgba(255, 255, 255, 0.9);
+@greenHoverTextColor: rgba(255, 255, 255, 0.9);
+@tealHoverTextColor: rgba(255, 255, 255, 0.9);
+@blueHoverTextColor: rgba(255, 255, 255, 0.9);
+@violetHoverTextColor: rgba(255, 255, 255, 0.9);
+@purpleHoverTextColor: rgba(255, 255, 255, 0.9);
+@pinkHoverTextColor: rgba(255, 255, 255, 0.9);
+@brownHoverTextColor: rgba(255, 255, 255, 0.9);
+@greyHoverTextColor: rgba(255, 255, 255, 0.9);
+@blackHoverTextColor: rgba(255, 255, 255, 0.9);

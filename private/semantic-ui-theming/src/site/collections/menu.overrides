@@ -36,3 +36,8 @@
 .ui.inverted.vertical.segment {
   border-top: 1px solid #454545;
 }
+
+
+.ui.secondary.menu {
+  overflow-x: initial;
+}

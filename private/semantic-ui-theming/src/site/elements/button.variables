@@ -10,3 +10,5 @@
 @basicFontWeight: bold;
 
 @labeledIconBackgroundColor: rgba(0, 0, 0, 0.1);
+
+@horizontalPadding: 1em;

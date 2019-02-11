@@ -5,3 +5,9 @@
 @secondaryPointingActiveBorderColor: @blue;
 @secondaryPointingActiveTextColor: @blue;
 @secondaryPointingHoverTextColor: @blue;
+
+
+@invertedSubMenuColor: inherit;
+@subMenuTextColor: inherit;
+@subMenuFontSize: inherit;
+@subMenuHorizontalPadding: @itemHorizontalPadding;

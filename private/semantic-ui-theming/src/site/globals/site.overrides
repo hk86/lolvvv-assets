@@ -37,6 +37,26 @@ div#root {
   margin-top: 4.75em;
 }
 
+
+.ui.main:after {
+  position: fixed;
+  top: 0;
+  right: 0;
+  content: '';
+  background-color: rgba(0, 0, 0, .4);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 200ms;
+  will-change: opacity;
+  z-index: 1000;
+}
+
+.ui.main.dimmed:after {
+  width: 100%!important;
+  height: 100%!important;
+  opacity: 1!important;
+}
+
 .ui.inverted.vertical.segment.footer {
   margin: 3em 0em 0em -50vw;
   padding: 2em 0em;
@@ -57,6 +77,37 @@ div#root {
 
 .ui.top.fixed.menu {
   transition:all 200ms ease-in;
+  box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+
+// Mobile/Tablet Menu Left
+
+.ui.left.fixed.menu {
+  width: 20em;
+  margin: 0 0 0 -20em;
+  transition:all 200ms ease-in;
+  overflow-y: auto;
+  z-index: 1001;
+  box-shadow: 0 6px 6px 0 hsla(0, 0%, 0%, 0.6);
+}
+
+.ui.left.fixed.menu.expanded {
+  margin-left: 0em;
+}
+
+.ui.left.fixed.menu .header {
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.ui.left.fixed.menu .menu.navigation .item.active {
+  background-color: rgba(255, 255, 255, .15);
+}
+
+.ui.left.fixed.menu .menu.navigation .item:hover,
+.ui.left.fixed.menu .menu.navigation .item:focus {
+  background-color: rgba(255, 255, 255, .08);
 }
 
 
@@ -73,6 +124,14 @@ div#root {
 
 .small.text {
    font-size: @small;
+}
+
+.mini.text {
+   font-size: @mini;
+}
+
+.micro.text {
+   font-size: 0.7em;
 }
 
 .tiny.text {
@@ -156,5 +215,11 @@ div#root {
   [class*="widescreen hidden"],
   [class*="widescreen or lower hidden"] {
     display: none !important;
+  }
+}
+
+@media only screen and (max-width: @tabletBreakpoint - 1) {
+  h1 {
+    font-size: 1.5em;
   }
 }
