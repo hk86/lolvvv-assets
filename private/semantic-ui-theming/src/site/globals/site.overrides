@@ -81,37 +81,6 @@ div#root {
 }
 
 
-// Mobile/Tablet Menu Left
-
-.ui.left.fixed.menu {
-  width: 20em;
-  margin: 0 0 0 -20em;
-  transition:all 200ms ease-in;
-  overflow-y: auto;
-  z-index: 1001;
-  box-shadow: 0 6px 6px 0 hsla(0, 0%, 0%, 0.6);
-}
-
-.ui.left.fixed.menu.expanded {
-  margin-left: 0em;
-}
-
-.ui.left.fixed.menu .header {
-  margin-top: 1em;
-  text-transform: uppercase;
-}
-
-.ui.left.fixed.menu .menu.navigation .item.active {
-  background-color: rgba(255, 255, 255, .15);
-}
-
-.ui.left.fixed.menu .menu.navigation .item:hover,
-.ui.left.fixed.menu .menu.navigation .item:focus {
-  background-color: rgba(255, 255, 255, .08);
-}
-
-
-
 // TODO [class*="red text"] instead of .red.text
 @text-colors: blue, green, orange, pink, purple, red, teal, yellow, black, grey, white;
 .text {
@@ -147,7 +116,7 @@ div#root {
 }
 
 .secondary.text {
-  color: rgba(0, 0, 0, 0.4) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
 }
 
 // Semantic UI has these classes, however they're only applicable to
@@ -221,5 +190,11 @@ div#root {
 @media only screen and (max-width: @tabletBreakpoint - 1) {
   h1 {
     font-size: 1.5em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 1.2em;
   }
 }

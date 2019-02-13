@@ -18,3 +18,16 @@ div.ui.bordered.image {
 .ui.image.data:hover {
   opacity: 0.9;
 }
+
+
+/*--------------
+     Sizes
+---------------*/
+
+.ui.micro.images .image,
+.ui.micro.images img,
+.ui.micro.images svg,
+.ui.micro.image {
+  width: 16px!important;
+  height: auto!important;
+}

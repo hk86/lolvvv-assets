@@ -112,6 +112,7 @@ mark {
   position: absolute;
   top: 1em;
   right: 1em;
+  z-index: 10;
   opacity: 1;
   transition: visibility 0.5s, opacity 0.5s linear;
 }
@@ -205,4 +206,15 @@ mark {
 .ui.sidebar.menu {
   border: 0px solid transparent;
   box-shadow: none;
+}
+
+.scroll.x {
+  white-space: nowrap !important;
+  overflow-x: scroll !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.scroll.x::-webkit-scrollbar {
+  height: 0px;
 }

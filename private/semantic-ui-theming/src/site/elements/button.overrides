@@ -2,6 +2,10 @@
          Site Overrides
 *******************************/
 
+.ui.buttons .or:before {
+  display: none;
+}
+
 
 .ui.button:disabled, .ui.buttons .disabled.button,
 .ui.disabled.active.button, .ui.disabled.button, .ui.disabled.button:hover {

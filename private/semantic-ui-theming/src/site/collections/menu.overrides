@@ -41,3 +41,38 @@
 .ui.secondary.menu {
   overflow-x: initial;
 }
+
+
+
+// Mobile/Tablet Menu Left
+
+.ui.left.fixed.menu {
+  width: 20em;
+  margin: 0 0 0 -20em;
+  transition:all 200ms ease-in;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.ui.left.fixed.menu.expanded {
+  margin-left: 0em;
+  box-shadow: 0 6px 6px 0 hsla(0, 0%, 0%, 0.6);
+}
+
+.ui.left.fixed.menu .header {
+  margin-top: 1em;
+  text-transform: uppercase;
+}
+
+.ui.left.fixed.menu .menu.navigation .item {
+  padding: 1em @subMenuHorizontalPadding;
+}
+  
+.ui.left.fixed.menu .menu.navigation .item.active {
+  background-color: rgba(255, 255, 255, .15) !important;
+}
+
+.ui.left.fixed.menu .menu.navigation .item:hover,
+.ui.left.fixed.menu .menu.navigation .item:focus {
+  background-color: rgba(255, 255, 255, .08) !important;
+}

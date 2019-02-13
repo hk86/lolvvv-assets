@@ -23,7 +23,7 @@
      Breakpoints
 --------------------*/
 
-@mobileBreakpoint            : 375px;
+@mobileBreakpoint            : 320px;
 @tabletBreakpoint            : 662px;
 @computerBreakpoint          : 1200px;
 @largeMonitorBreakpoint      : 1200px;
