@@ -80,7 +80,7 @@ class ClipRecorder:
         # preparing for image recognition
         lol.modify_ui()
         sleep(2)
-        lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
+        # lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
         # end
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)

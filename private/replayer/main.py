@@ -30,7 +30,7 @@ class Clipper:
 
     def __init__(self, meteor_db: Meteor):
         self._logger = Logger('clipper', logging.DEBUG)
-        self._logger.warn('start')
+        self._logger.warning('start')
         self._start_time = datetime.now()
         self._fact_db = FactDataDb('mongodb://10.8.0.1:27017')
         self._meteor_db = meteor_db
