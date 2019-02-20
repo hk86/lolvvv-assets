@@ -1,4 +1,4 @@
-#this is the refactoring class to ../streamer/LoL.py
+# this is the refactoring class to ../streamer/LoL.py
 
 from os import path, walk, getcwd
 from shutil import copyfile
@@ -9,9 +9,11 @@ from array import array
 
 from DirectInput import DirectKey, toggle_key, press_key, release_key
 from Interval import Interval
+from ingame_position import IngamePosition
 from summoner.fact_team import FactTeamId
 
-from pyautogui import locateCenterOnScreen, screenshot #pip install pyautogui
+from pyautogui import locateCenterOnScreen, screenshot  # pip install pyautogui
+
 
 class LoLState:
     UNKNOWN = 0
@@ -21,47 +23,50 @@ class LoLState:
     FINISHED = 4
     RUNNING = 5
 
+
 class LoLTimeSpeed:
     TIMESPEED_X1 = 0
     TIMESPEED_X2 = 1
     TIMESPEED_X4 = 2
     TIMESPEED_X8 = 3
 
+
 class LoLDriver:
     _EXEC_TRIES = 3
     UPDATE_PLATFORM = 'EUW1'
 
-    _BLUE_FOCUS_KEYS = array('B', [
-        DirectKey.NUMERAL_1
-        , DirectKey.NUMERAL_2
-        , DirectKey.NUMERAL_3
-        , DirectKey.NUMERAL_4
-        , DirectKey.NUMERAL_5
-    ])
-    
-    _RED_FOCUS_KEYS = array('B', [
-        DirectKey.q
-        , DirectKey.w
-        , DirectKey.e
-        , DirectKey.r
-        , DirectKey.t
-    ])
+    _FOCUS_KEYS = {
+        FactTeamId.BLUE: [
+            DirectKey.NUMERAL_1
+            , DirectKey.NUMERAL_2
+            , DirectKey.NUMERAL_3
+            , DirectKey.NUMERAL_4
+            , DirectKey.NUMERAL_5
+        ],
+        FactTeamId.RED: [
+            DirectKey.q
+            , DirectKey.w
+            , DirectKey.e
+            , DirectKey.r
+            , DirectKey.t
+        ]
+    }
 
     def __init__(self, lol_path=r'C:\Riot Games\League of Legends'):
-        releases_path = path.join(lol_path, 'RADS','solutions',
-                              'lol_game_client_sln','releases')
+        releases_path = path.join(lol_path, 'RADS', 'solutions',
+                                  'lol_game_client_sln', 'releases')
         installed_releases = next(walk(releases_path))[1]
         installed_releases.sort(reverse=True)
         self._lol_path = lol_path
         self._version = installed_releases[0]
         self._deploy_path = path.join(releases_path, self._version, 'deploy')
 
-    def setup_settings(self, settings_path:str):
+    def setup_settings(self, settings_path: str):
         persistant_settings = path.join(self._lol_path, 'Config',
-            'PersistedSettings.json')
+                                        'PersistedSettings.json')
         copyfile(settings_path, persistant_settings)
 
-    def start_spectate(self, url:str, game_id:int, platform_id:str, encryption_key:str):
+    def start_spectate(self, url: str, game_id: int, platform_id: str, encryption_key: str):
         cmd = [path.join(getcwd(), 'spectate.bat'),
                url,
                str(game_id),
@@ -83,60 +88,66 @@ class LoLDriver:
             except OSError:
                 pass
 
-    def toggle_pause_play(self):
+    @staticmethod
+    def toggle_pause_play():
         toggle_key(DirectKey.p)
 
-    def toggle_scoreboard(self):
+    @staticmethod
+    def toggle_scoreboard():
         toggle_key(DirectKey.o)
 
-    def toggle_scoreboard_items(self):
+    @staticmethod
+    def toggle_scoreboard_items():
         toggle_key(DirectKey.x)
 
-    def toggle_timeline(self):
+    @staticmethod
+    def toggle_timeline():
         toggle_key(DirectKey.u)
 
-    def toggle_time_jump_back(self):
+    @staticmethod
+    def toggle_time_jump_back():
         toggle_key(DirectKey.BACK)
         sleep(1)
 
-    def toggle_battle_mode(self):
+    @staticmethod
+    def toggle_battle_mode():
         toggle_key(DirectKey.a)
 
     def toggle_player(self, match_team: FactTeamId, player_idx: int):
-        print('toggle focus team: {} player: {}'.format(match_team, player_idx))
-        if match_team == FactTeamId.BLUE:
-            toggle_key(self._BLUE_FOCUS_KEYS[player_idx])
-        else:
-            toggle_key(self._RED_FOCUS_KEYS[player_idx])
+        key = self._FOCUS_KEYS[match_team][player_idx]
+        toggle_key(key)
 
-    def center_player(self):
+    @staticmethod
+    def center_player():
         press_key(DirectKey.SPACE)
 
-    def autocam(self):
+    @staticmethod
+    def autocam():
         release_key(DirectKey.SPACE)
         toggle_key(DirectKey.d)
 
-    def set_time_speed(self, speed: LoLTimeSpeed):
+    @staticmethod
+    def set_time_speed(speed: LoLTimeSpeed):
         toggle_key(DirectKey.NUM_0)
         for x in range(0, speed):
             toggle_key(DirectKey.NUM_PLUS)
             sleep(0.1)
-        
+
     @property
     def state(self):
-        if (locateCenterOnScreen('images/PendingLoL.png')):
+        if locateCenterOnScreen('images/PendingLoL.png'):
             return LoLState.PENDING
         elif (locateCenterOnScreen('images/lolCrashed.png')
-            or
-            (locateCenterOnScreen('images/bugsplat.png'))):
+              or
+              (locateCenterOnScreen('images/bugsplat.png'))):
             return LoLState.CRASHED
-        elif (locateCenterOnScreen('images/dataUnavailable.png')):
+        elif locateCenterOnScreen('images/dataUnavailable.png'):
             return LoLState.DATA_UNAVAILBLE
         elif ((locateCenterOnScreen('images/Continue.png'))
               or
               (locateCenterOnScreen('images/GameOver.png'))):
             return LoLState.FINISHED
-        elif ((locateCenterOnScreen('images/running.png'))):
+        elif locateCenterOnScreen('images/running.png'):
             return LoLState.RUNNING
         else:
             return LoLState.UNKNOWN
@@ -161,11 +172,18 @@ class LeagueOfLegends(LoLDriver):
     _SECURE_TIMEOUT = 5
     _SETTINGS_PATH = r'../json/lol_settings.json'
 
-    def __init__(self, lol_path = 'C:\\Riot Games\\League of Legends'):
+    def __init__(self, lol_path='C:\\Riot Games\\League of Legends'):
         super().__init__(lol_path)
         self.setup_settings(self._SETTINGS_PATH)
+        self._in_game_pos = IngamePosition()
+        self._focus_team = None
+        self._focus_player_idx = -1
+        self._show_items_duration_s = -1
+        self._show_items_interval = None
+        self._focus_interval = None
 
-    def _time_string(self): # should be in sw_tools or something like this.
+    @staticmethod
+    def _time_string():  # should be in sw_tools or something like this.
         return datetime.now().strftime('%Y-%m-%d_%H%M%S')
 
     def wait_for_spectate_start(self):
@@ -184,17 +202,17 @@ class LeagueOfLegends(LoLDriver):
         screenshot(title + self._time_string() + '.png')
 
     def stop_pending(self, timeout_s, check_interval_s):
-        if (check_interval_s > 4):
-            check_interval_s = check_interval_s - 4 #time for locate on screen
+        if check_interval_s > 4:
+            check_interval_s = check_interval_s - 4  # time for locate on screen
         stop_time = (datetime.now() +
-                     timedelta(seconds=check_interval_s))
-        while (datetime.now() < stop_time):
+                     timedelta(seconds=timeout_s))
+        while datetime.now() < stop_time:
             state = self.state
-            if (state == LoLState.UNKNOWN):
+            if state == LoLState.UNKNOWN:
                 sleep(check_interval_s)
             else:
                 break
-        if (state == LoLState.UNKNOWN):
+        if state == LoLState.UNKNOWN:
             screenshot('noExit' + self._time_string() + '.png')
             state = LoLState.FINISHED
         self.stop_lol()
@@ -212,17 +230,19 @@ class LeagueOfLegends(LoLDriver):
     def stop_toggle_items(self):
         self._show_items_interval.stop()
 
-    def focus_player(self, team_id: int, inteam_idx: int):
+    def focus_player(self, team_id: int, in_team_idx: int):
         self._focus_team = team_id
-        self._focus_player_idx = inteam_idx - 1
-        TOGGLE_INTERVAL_S = 1
+        self._focus_player_idx = in_team_idx
+        toggle_interval_s = 1
         self._focus_player()
         self.center_player()
-        self._focus_interval = Interval(TOGGLE_INTERVAL_S,
+        self._focus_interval = Interval(toggle_interval_s,
                                         self._focus_player)
         self._focus_interval.start()
 
     def unfocus_player(self):
+        if not self._focus_interval:
+            return
         self._focus_interval.stop()
         self.autocam()
 
@@ -239,7 +259,7 @@ class LeagueOfLegends(LoLDriver):
             for x in range(0, count_back_jumps):
                 self.toggle_time_jump_back()
         else:
-            fast_forward_time_s = time_s/8
+            fast_forward_time_s = time_s / 8
             self.set_time_speed(LoLTimeSpeed.TIMESPEED_X8)
             sleep(fast_forward_time_s)
             self.set_time_speed(LoLTimeSpeed.TIMESPEED_X1)
@@ -253,6 +273,19 @@ class LeagueOfLegends(LoLDriver):
     def cleanup_event_list(self):
         self.toggle_battle_mode()
         self.toggle_battle_mode()
+
+    def init_positions(self):
+        """
+        have to be called after ui is modified and 1 sec timeout
+        :return:
+        """
+        self._in_game_pos.init_champs(screenshot())
+
+    def focus_champ(self, champ_key: str, team_id: FactTeamId):
+        in_game_champ = self._in_game_pos.get_in_game_champ(champ_key, team_id)
+        if not in_game_champ:
+            return
+        self.focus_player(team_id, in_game_champ.in_team_idx)
 
     def __del__(self):
         try:

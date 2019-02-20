@@ -80,8 +80,7 @@ class ClipRecorder:
         # preparing for image recognition
         lol.modify_ui()
         sleep(2)
-        # lol.screenshot('dbg_{}_{}'.format(match.platform_id, match.game_id))
-        # end
+        lol.init_positions()
         lol.specate_timeshift(timedelta(minutes=-1))
         ingame_time = timedelta(seconds=0)
         for clip in clips:
@@ -96,8 +95,9 @@ class ClipRecorder:
             self._obs.show_pregame_overlay(True)
             killer_summoner = clip.event.main_summoner
             self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
-            self._obs.set_champion(self._static_champ_db
-                                   .get_champ_key(killer_summoner.champ_id))
+            main_champ = self._static_champ_db\
+                                   .get_champ_key(killer_summoner.champ_id)
+            self._obs.set_champion(main_champ)
             self._obs.set_main_pro(clip.main_pros[0])
             pro_team = self._pro_team_db.get_pro_team(
                 clip.main_pros[0].team_id)
@@ -108,11 +108,8 @@ class ClipRecorder:
             lol.modify_ui()
             self._obs.start_recording()
             sleep(self._PREGAME_TIME_S)
-            """
-            lol.focus_player(
-                killer_summoner.team,
-                killer_summoner.inteam_idx)
-            """
+            if clip.event.main_focus:
+                lol.focus_champ(main_champ, killer_summoner.team)
             self._obs.show_pregame_overlay(False)
             lol.toggle_pause_play()
             start_record = datetime.now()
@@ -120,6 +117,7 @@ class ClipRecorder:
                   + self._RECORDING_OVERTIME_S
                   + clip.event.event_based_rec_overtime_s)
             self._obs.stop_recording()
+            lol.unfocus_player()
             sleep(self._RELEASE_HANDLE_TIME_S)
             clip_length = (datetime.now() - start_record)
             ingame_time += clip_length

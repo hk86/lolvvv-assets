@@ -86,11 +86,13 @@ class Event:
     companion_kills_pre = []
     companion_kills_post = []
     raw_events = []
+    main_focus = False
 
 
 class EventKillRow(Event):
     event_based_rec_overtime_s = 10
     kills_in_row = 0
+    main_focus = True
 
     def __init__(self, kill_row):
         self._events = kill_row

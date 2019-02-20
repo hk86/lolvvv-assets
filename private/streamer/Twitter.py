@@ -1,9 +1,10 @@
-import twitter #pip install python-twitter
+import twitter  # pip install python-twitter
 from pprint import pprint
 
 import json
 import threading
 from time import sleep
+
 
 class Twitter:
 
@@ -12,9 +13,9 @@ class Twitter:
         self._log = log
         access_data = json.load(open('Twitter.json'))
         self._api = twitter.Api(consumer_key=access_data['consumer_key'],
-                            consumer_secret=access_data['consumer_secret'],
-                            access_token_key=access_data['access_token_key'],
-                            access_token_secret=access_data['access_token_secret'])
+                                consumer_secret=access_data['consumer_secret'],
+                                access_token_key=access_data['access_token_key'],
+                                access_token_secret=access_data['access_token_secret'])
 
     def _getTwitterTag4Pro(self, proId):
         twitterName = None
@@ -29,7 +30,7 @@ class Twitter:
         return twitterTag
 
     def _generateTweet(self, live_match):
-        #something like this:
+        # something like this:
         # [KSV] CuVee & [EDG] Scout crushing SoloQ! NOW live on stream
         # https://www.lolvvv.com/live
         # ------------------------------
@@ -42,12 +43,12 @@ class Twitter:
         for pro in live_match.getPros():
             tweet += self._getTwitterTag4Pro(pro['pro']['proId']) + ' '
 
-            #tweet += ' as #' + self._db.getChampionKey(pro['championId']) + ' '
+            # tweet += ' as #' + self._db.getChampionKey(pro['championId']) + ' '
 
         tweet = tweet[:-1] + '\n#lolvvv #live #stream #twitch #leagueoflegends #LoL'
 
         return tweet
-        
+
     def tweeting(self, live_match, scoreboard):
         msg = self._generateTweet(live_match)
         try:
@@ -71,7 +72,7 @@ class Twitter:
         # Top 3 champs: #Swain [18] #Jhin [12] #LeeSin [9]
         # ---
         # #lolvvv #leagueoflegends #stream #twitch #live
-        
+
         new_line = '\n'
         bar = '---' + new_line
 
@@ -107,10 +108,12 @@ class Twitter:
 
     def follow(self, twitterId):
         try:
-            self._api.CreateFriendship(user_id=twitterId,retweets=False)
+            self._api.CreateFriendship(user_id=twitterId, retweets=False)
         except twitter.error.TwitterError:
             print('twitter error at id ' + str(twitterId))
-            print('proId: ' + str(self._db.getProIdByTwitterId(twitterId)) +  ' nickname: ' + self._db.getProNicknameByTwitterId(twitterId))
+            print('proId: ' + str(
+                self._db.getProIdByTwitterId(twitterId)) + ' nickname: ' + self._db.getProNicknameByTwitterId(
+                twitterId))
 
     def getUserName(self, twitterId):
         try:
