@@ -20,6 +20,12 @@
   cursor: pointer;
 }
 
+.nowrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /*-------------------
        Spaced
 --------------------*/
@@ -33,12 +39,21 @@
 
 .ui[class*="left spaced"] {
   margin-left: @spacedDistance;
+  margin-right: 0;
 }
 
 .ui[class*="right spaced"] {
+  margin-left: 0;
   margin-right: @spacedDistance;
 }
 
+.ui.inline {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  background-color: transparent;
+}
 
 .tooltip-inner {
   max-width: 300px;
@@ -217,4 +232,24 @@ mark {
 
 .scroll.x::-webkit-scrollbar {
   height: 0px;
+  display: none;
+}
+
+
+
+/*-------------------
+       FLEX
+--------------------*/
+
+.ui.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.ui.flex.middle.aligned {
+  align-items: center;
+}
+
+.ui.flex > .grow {
+  flex-grow: 1;
 }

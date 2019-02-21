@@ -5,3 +5,16 @@
 .ui.statistics:after {
   content: normal;
 }
+
+.ui.statistics.nowrap {
+  flex-wrap: nowrap;
+}
+
+.ui.statistics.nowrap .ui.statistic {
+  overflow: hidden;
+}
+
+.ui.statistics.nowrap .ui.statistic .label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -58,3 +58,17 @@
 .ui.button.selection.dropdown > .delete.icon {
   margin: @selectionIconMargin;
 }
+
+
+.ui.selection.dropdown .default.text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Menu Item */
+.ui.selection.dropdown .menu > .item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
