@@ -242,8 +242,14 @@ mark {
 --------------------*/
 
 .ui.flex {
-  display: flex;
-  flex-direction: row;
+  display: flex!important;
+  flex-direction: row!important;
+}
+
+.ui.flex.spaced {
+  justify-content: space-between;
+  margin-left: 0rem!important;
+  margin-right: 0rem!important;
 }
 
 .ui.flex.middle.aligned {

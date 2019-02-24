@@ -107,8 +107,20 @@ div#root {
    font-size: @tiny;
 }
 
+.large.text {
+   font-size: @large;
+}
+
 .big.text {
    font-size: @big;
+}
+
+.huge.text {
+   font-size: @huge;
+}
+
+.massive.text {
+   font-size: @massive;
 }
 
 .bold.text {
