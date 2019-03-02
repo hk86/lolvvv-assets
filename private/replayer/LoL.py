@@ -166,6 +166,7 @@ class LoLDriver:
 
 class LeagueOfLegends(LoLDriver):
     _APPRECIATED_UPDATE_TIME_S = 300
+    _APPRECIATED_REPAIR_TIME_S = 180
     _APPRECIATED_START_TIME_S = 35
     _SERVER_FOLLOWUP_TIME_S = 15
     _REPLAY_DATA_LOAD_TIME_S = 5
@@ -197,6 +198,9 @@ class LeagueOfLegends(LoLDriver):
 
     def wait_for_update(self):
         sleep(self._APPRECIATED_UPDATE_TIME_S)
+
+    def wait_for_repair(self):
+        sleep(self._APPRECIATED_REPAIR_TIME_S)
 
     def screenshot(self, title):
         screenshot(title + self._time_string() + '.png')

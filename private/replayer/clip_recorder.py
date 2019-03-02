@@ -50,14 +50,46 @@ class ClipRecorder:
             clips.append(clip)
         return clips
 
-    def record_clips(self, clips: [Clip], match: SpectateMatch):
-        match_video_path = path.join(
+    def _get_clip_video_path(self, clip):
+        match_path = path.join(
             self._MAIN_VIDEO_FOLDER,
-            clips[0].event.platform_id,
-            str(clips[0].event.game_id)
+            clip.event.platform_id,
+            str(clip.event.game_id)
         )
+        return path.join(match_path, str(clip.ingame_clip_num))
+
+    def record_clips(self, clips: [Clip], match: SpectateMatch):
+        if self._try_start_lol(match) != LoLState.RUNNING:
+            return []
+        # preparing for image recognition
+        lol = self._lol
+        self._init_lol_match()
+        ingame_time = timedelta(seconds=0)
+        for clip in clips:
+            self._timeshift_to_clip(ingame_time, clip)
+            self._prepare_for_record(clip)
+            self._obs.start_recording()
+            sleep(self._PREGAME_TIME_S)
+            self._obs.show_pregame_overlay(False)
+            lol.toggle_pause_play()
+            start_record = datetime.now()
+            sleep(clip.event.length.total_seconds()
+                  + self._RECORDING_OVERTIME_S
+                  + clip.event.event_based_rec_overtime_s)
+            self._obs.stop_recording()
+            lol.unfocus_player()
+            sleep(self._RELEASE_HANDLE_TIME_S)
+            clip_length = (datetime.now() - start_record)
+            ingame_time += clip_length
+            clip_folder = self._get_clip_video_path(clip)
+            clip.video = Video(glob(path.join(clip_folder, '*.*'))[0])
+        lol.stop_lol()
+        return clips
+
+    def _try_start_lol(self, match: SpectateMatch):
         start_tries = 3
         lol = self._lol
+        state = LoLState.UNKNOWN
         for x in range(0, start_tries):
             print('url: {}'.format(match.url))
             print('game: {} plat: {}'.format(match.game_id, match.platform_id))
@@ -75,55 +107,45 @@ class ClipRecorder:
                 break
             lol.screenshot('notStarted')
             lol.stop_lol()
-            if x == start_tries - 1:
-                return []
-        # preparing for image recognition
-        lol.modify_ui()
+            # try to repair lol
+            if state == LoLState.UNKNOWN:
+                lol.start_update()
+                lol.wait_for_repair()
+                lol.stop_update()
+        return state
+
+    def _init_lol_match(self):
+        self._lol.modify_ui()
         sleep(2)
-        lol.init_positions()
-        lol.specate_timeshift(timedelta(minutes=-1))
-        ingame_time = timedelta(seconds=0)
-        for clip in clips:
-            timeshift = clip.event.start_time - ingame_time \
-                        - timedelta(seconds=20)
-            ingame_time += lol.specate_timeshift(timeshift)
-            lol.toggle_pause_play()
-            clip_folder = path.join(match_video_path,
-                                    str(clip.ingame_clip_num))
-            Path(clip_folder).mkdir(parents=True, exist_ok=True)
-            self._obs.set_recording_folder(clip_folder)
-            self._obs.show_pregame_overlay(True)
-            killer_summoner = clip.event.main_summoner
-            self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
-            main_champ = self._static_champ_db\
-                                   .get_champ_key(killer_summoner.champ_id)
-            self._obs.set_champion(main_champ)
-            self._obs.set_main_pro(clip.main_pros[0])
-            pro_team = self._pro_team_db.get_pro_team(
-                clip.main_pros[0].team_id)
-            self._obs.set_pro_team(pro_team)
-            self._obs.set_fact_team(killer_summoner.team)
-            self._obs.set_event(clip.event)
-            lol.cleanup_event_list()
-            lol.modify_ui()
-            self._obs.start_recording()
-            sleep(self._PREGAME_TIME_S)
-            if clip.event.main_focus:
-                lol.focus_champ(main_champ, killer_summoner.team)
-            self._obs.show_pregame_overlay(False)
-            lol.toggle_pause_play()
-            start_record = datetime.now()
-            sleep(clip.event.length.total_seconds()
-                  + self._RECORDING_OVERTIME_S
-                  + clip.event.event_based_rec_overtime_s)
-            self._obs.stop_recording()
-            lol.unfocus_player()
-            sleep(self._RELEASE_HANDLE_TIME_S)
-            clip_length = (datetime.now() - start_record)
-            ingame_time += clip_length
-            clip.video = Video(glob(path.join(clip_folder, '*.*'))[0])
-        lol.stop_lol()
-        return clips
+        self._lol.init_positions()
+        self._lol.specate_timeshift(timedelta(minutes=-1))
+
+    def _timeshift_to_clip(self, ingame_time, clip_event):
+        timeshift = clip_event.event.start_time - ingame_time \
+                    - timedelta(seconds=20)
+        ingame_time += self._lol.specate_timeshift(timeshift)
+        self._lol.toggle_pause_play()
+
+    def _prepare_for_record(self, clip):
+        clip_folder = self._get_clip_video_path(clip)
+        Path(clip_folder).mkdir(parents=True, exist_ok=True)
+        self._obs.set_recording_folder(clip_folder)
+        self._obs.show_pregame_overlay(True)
+        killer_summoner = clip.event.main_summoner
+        self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
+        main_champ = self._static_champ_db \
+            .get_champ_key(killer_summoner.champ_id)
+        self._obs.set_champion(main_champ)
+        self._obs.set_main_pro(clip.main_pros[0])
+        pro_team = self._pro_team_db.get_pro_team(
+            clip.main_pros[0].team_id)
+        self._obs.set_pro_team(pro_team)
+        self._obs.set_fact_team(killer_summoner.team)
+        self._obs.set_event(clip.event)
+        self._lol.cleanup_event_list()
+        self._lol.modify_ui()
+        if clip.event.main_focus:
+            self._lol.focus_champ(main_champ, killer_summoner.team)
 
     def _summoners_to_pros(self, summoners):
         pros = []
