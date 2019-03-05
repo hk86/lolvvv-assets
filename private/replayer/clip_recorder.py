@@ -61,12 +61,11 @@ class ClipRecorder:
     def record_clips(self, clips: [Clip], match: SpectateMatch):
         if self._try_start_lol(match) != LoLState.RUNNING:
             return []
-        # preparing for image recognition
         lol = self._lol
         self._init_lol_match()
         ingame_time = timedelta(seconds=0)
         for clip in clips:
-            self._timeshift_to_clip(ingame_time, clip)
+            ingame_time += self._timeshift_to_clip(ingame_time, clip)
             self._prepare_for_record(clip)
             self._obs.start_recording()
             sleep(self._PREGAME_TIME_S)
@@ -123,8 +122,9 @@ class ClipRecorder:
     def _timeshift_to_clip(self, ingame_time, clip_event):
         timeshift = clip_event.event.start_time - ingame_time \
                     - timedelta(seconds=20)
-        ingame_time += self._lol.specate_timeshift(timeshift)
+        shift_time = self._lol.specate_timeshift(timeshift)
         self._lol.toggle_pause_play()
+        return shift_time
 
     def _prepare_for_record(self, clip):
         clip_folder = self._get_clip_video_path(clip)
