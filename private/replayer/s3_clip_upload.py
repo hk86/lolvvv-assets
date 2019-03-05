@@ -1,24 +1,17 @@
-from clip_upload_service import ClipUploadService
-from database.clip_store_service import ClipStoreService
-from s3_upload import S3Upload
+from os import path
+
 from clip import Clip
+from clip_upload_service import ClipUploadService
+from s3_upload import S3Upload
 
-
-
-from datetime import timedelta
-from time import sleep
-from pathlib import PurePath
-from os import path, listdir
-from shutil import rmtree
 
 class S3ClipUpload(ClipUploadService):
     _RESOLUTION_HEIGHTS = [480, 720, 1080]
 
-    def __init__(self, store_service: ClipStoreService):
+    def __init__(self):
         self._upload_service = S3Upload()
-        self._store_service = store_service
 
-    def upload(self, clip: Clip):
+    def upload(self, clip: Clip, callback_func):
         video = clip.video
         for required_height in self._RESOLUTION_HEIGHTS:
             resolution_video_name = '{}_{}p.mp4'.format(
@@ -29,28 +22,19 @@ class S3ClipUpload(ClipUploadService):
                 clip_res_path = video.path
             else:
                 clip_res_path = path.join(path.dirname(video.path),
-                    resolution_video_name)
+                                          resolution_video_name)
                 video.resize(required_height, clip_res_path)
             if required_height is self._RESOLUTION_HEIGHTS[-1]:
                 clip.clip_uri = ('https://d1jo2ofi91zpb5.cloudfront.net/'
-                    + resolution_video_name)
-                callback_func = self._upload_finished
+                                 + resolution_video_name)
+                callback = callback_func
                 callback_arg = clip
             else:
-                callback_func = None
+                callback = None
                 callback_arg = None
             self._upload_service.upload(
                 clip_res_path
                 , resolution_video_name
-                , callback_func
+                , callback
                 , callback_arg
             )
-
-    def _upload_finished(self, clip: Clip):
-        self._store_service.store(clip)
-        clip_path = path.dirname(clip.video.path)
-        rmtree(clip_path)
-        match_path = path.split(clip_path)[0]
-        # remove match folder if folder is empty
-        if len(listdir(match_path)) == 0:
-            rmtree(match_path)

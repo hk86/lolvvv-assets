@@ -61,7 +61,6 @@ class ClipRecorder:
     def record_clips(self, clips: [Clip], match: SpectateMatch):
         if self._try_start_lol(match) != LoLState.RUNNING:
             return []
-        lol = self._lol
         self._init_lol_match()
         ingame_time = timedelta(seconds=0)
         for clip in clips:
@@ -70,19 +69,19 @@ class ClipRecorder:
             self._obs.start_recording()
             sleep(self._PREGAME_TIME_S)
             self._obs.show_pregame_overlay(False)
-            lol.toggle_pause_play()
+            self._lol.toggle_pause_play()
             start_record = datetime.now()
             sleep(clip.event.length.total_seconds()
                   + self._RECORDING_OVERTIME_S
                   + clip.event.event_based_rec_overtime_s)
             self._obs.stop_recording()
-            lol.unfocus_player()
+            self._lol.unfocus_player()
             sleep(self._RELEASE_HANDLE_TIME_S)
             clip_length = (datetime.now() - start_record)
             ingame_time += clip_length
             clip_folder = self._get_clip_video_path(clip)
             clip.video = Video(glob(path.join(clip_folder, '*.*'))[0])
-        lol.stop_lol()
+        self._lol.stop_lol()
         return clips
 
     def _try_start_lol(self, match: SpectateMatch):

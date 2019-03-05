@@ -1,6 +1,7 @@
-from os import path, system
+from os import path, system, listdir
 from datetime import datetime, timedelta
 from pprint import pprint
+from shutil import rmtree
 from time import sleep
 import logging
 
@@ -44,7 +45,7 @@ class Clipper:
             self.upgrade_lol()
         self._logger.warning('playable match: {}'.format(self._playable_patch))
         self._recorder = ClipRecorder(self._meteor_db, self._lol)
-        self._store_service = S3ClipUpload(self._clip_store)
+        self._store_service = S3ClipUpload()
         self._replay_hoover = ReplayHoover(self._meteor_db)
 
     def upgrade_lol(self):
@@ -125,7 +126,16 @@ class Clipper:
         if len(clips) > 0:
             sleep(self._OBS_FILE_HANDLE_WAIT_TIME)
         for clip in clips:
-            self._store_service.upload(clip)
+            self._store_service.upload(clip, self._upload_finished)
+
+    def _upload_finished(self, clip: Clip):
+        self._clip_store.store(clip)
+        clip_path = path.dirname(clip.video.path)
+        rmtree(clip_path)
+        match_path = path.split(clip_path)[0]
+        # remove match folder if folder is empty
+        if len(listdir(match_path)) == 0:
+            rmtree(match_path)
 
     def match_rdy(self, match: Match):
         self._replay_manager.mark_as_handled_rep(

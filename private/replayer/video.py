@@ -57,6 +57,6 @@ class Video:
     @staticmethod
     def _close_video(video):
         video.reader.close()
-        video.audio.reader.close_proc()
-        video.close()
+        if video.audio and video.audio.reader:
+            video.audio.reader.close_proc()
         del video
