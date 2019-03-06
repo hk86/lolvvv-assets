@@ -1,3 +1,5 @@
+from shutil import rmtree
+
 from database.meteor import Meteor
 from database.static_pro_db import StaticProDb
 from database.static_champ_db import StaticChampDb
@@ -25,6 +27,8 @@ class ClipRecorder:
     _RELEASE_HANDLE_TIME_S = 3
 
     def __init__(self, meteor_db: Meteor, lol: LeagueOfLegends):
+        # cleanup previous clips that couldn't deleted
+        rmtree(self._MAIN_VIDEO_FOLDER)
         self._static_pro_db = StaticProDb(meteor_db)
         self._static_champ_db = StaticChampDb(meteor_db)
         self._pro_team_db = ProTeamDb(meteor_db)
@@ -64,21 +68,20 @@ class ClipRecorder:
         self._init_lol_match()
         ingame_time = timedelta(seconds=0)
         lol = self._lol
-        match_video_path = self._MAIN_VIDEO_FOLDER
         for clip in clips:
             timeshift = clip.event.start_time - ingame_time \
                         - timedelta(seconds=20)
             ingame_time += lol.specate_timeshift(timeshift)
             lol.toggle_pause_play()
-            clip_folder = path.join(match_video_path,
-                                    str(clip.ingame_clip_num))
+            clip_folder = path.join(self._MAIN_VIDEO_FOLDER,
+                                    str(clip.id))
             Path(clip_folder).mkdir(parents=True, exist_ok=True)
             self._obs.set_recording_folder(clip_folder)
             self._obs.show_pregame_overlay(True)
             killer_summoner = clip.event.main_summoner
             self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
-            main_champ = self._static_champ_db\
-                                   .get_champ_key(killer_summoner.champ_id)
+            main_champ = self._static_champ_db \
+                .get_champ_key(killer_summoner.champ_id)
             self._obs.set_champion(main_champ)
             self._obs.set_main_pro(clip.main_pros[0])
             pro_team = self._pro_team_db.get_pro_team(

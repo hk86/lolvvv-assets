@@ -1,27 +1,26 @@
-from os import path, system, listdir
+import logging
 from datetime import datetime, timedelta
-from pprint import pprint
+from os import path, system, listdir
 from shutil import rmtree
 from time import sleep
-import logging
 
+from LoL import LeagueOfLegends
+from clip import Clip
+from clip_recorder import ClipRecorder
+from database.clip_store_service import ClipStoreService
 from database.fact_db import FactDataDb
 from database.meteor import Meteor
 from database.static_pro_db import StaticProDb
-from database.clip_store_service import ClipStoreService
-from match.match import Match
-from match.fact_match import FactMatch
-from match.spectate_match import SpectateMatch
-from match.fact_replay import FactReplay
-from replay_manager import ReplayManager
-from replay_hoover import ReplayHoover
-from event import Event, generate_events, EventTripleKill
-from clip_recorder import ClipRecorder
-from clip import Clip
-from LoL import LeagueOfLegends
-from patch_version import PatchVersion
-from s3_clip_upload import S3ClipUpload
+from event import generate_events, EventTripleKill
 from logger import Logger
+from match.fact_match import FactMatch
+from match.fact_replay import FactReplay
+from match.match import Match
+from match.spectate_match import SpectateMatch
+from patch_version import PatchVersion
+from replay_hoover import ReplayHoover
+from replay_manager import ReplayManager
+from s3_clip_upload import S3ClipUpload
 
 
 class Clipper:
@@ -130,12 +129,8 @@ class Clipper:
 
     def _upload_finished(self, clip: Clip):
         self._clip_store.store(clip)
-        clip_path = path.dirname(clip.video.path)
-        rmtree(clip_path)
-        match_path = path.split(clip_path)[0]
-        # remove match folder if folder is empty
-        if len(listdir(match_path)) == 0:
-            rmtree(match_path)
+        clip_folder = path.dirname(clip.video.path)
+        rmtree(clip_folder)
 
     def match_rdy(self, match: Match):
         self._replay_manager.mark_as_handled_rep(

@@ -1,6 +1,5 @@
 from hashlib import blake2b
 
-from datetime import timedelta
 
 class Clip:
     clip_uri = ''
@@ -13,7 +12,7 @@ class Clip:
 
     @property
     def id(self, len_id=16):
-        id = blake2b(digest_size=int(len_id/2))
+        id = blake2b(digest_size=int(len_id / 2))
         id.update(self.event.platform_id.encode())
         id.update(str(self.event.game_id).encode())
         for pro in self.main_pros:
