@@ -1,3 +1,4 @@
+from os.path import exists
 from shutil import rmtree
 
 from database.meteor import Meteor
@@ -28,7 +29,8 @@ class ClipRecorder:
 
     def __init__(self, meteor_db: Meteor, lol: LeagueOfLegends):
         # cleanup previous clips that couldn't deleted
-        rmtree(self._MAIN_VIDEO_FOLDER)
+        if exists(self._MAIN_VIDEO_FOLDER):
+            rmtree(self._MAIN_VIDEO_FOLDER)
         self._static_pro_db = StaticProDb(meteor_db)
         self._static_champ_db = StaticChampDb(meteor_db)
         self._pro_team_db = ProTeamDb(meteor_db)
