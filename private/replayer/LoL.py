@@ -72,7 +72,7 @@ class LoLDriver:
                str(game_id),
                encryption_key,
                platform_id]
-        self._exec_os_cmd(cmd, self._deploy_path)
+        self._exec_os_cmd(cmd, path.join(self._deploy_path, 'Game'))
 
     def stop_lol(self):
         self._exec_os_cmd('taskkill /F /IM "League of Legends.exe"')
