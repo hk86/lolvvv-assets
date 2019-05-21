@@ -54,7 +54,7 @@ class LoLDriver:
 
     def __init__(self, lol_path=r'C:\Riot Games\League of Legends'):
         releases_path = path.join(lol_path, 'RADS', 'solutions',
-                                  'lol_game_client_sln', 'releases')
+                                  'league_client_sln', 'releases')
         installed_releases = next(walk(releases_path))[1]
         installed_releases.sort(reverse=True)
         self._lol_path = lol_path

@@ -136,7 +136,7 @@ class Obs(ObsDriver):
         self.obs_start()
         OBS_LOAD_TIME_S = 10
         sleep(OBS_LOAD_TIME_S)
-        START_TRIES = 3
+        START_TRIES = 5
         for tries in range(START_TRIES):
             try:
                 self._reconnect_obs_ws()
