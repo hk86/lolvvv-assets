@@ -132,6 +132,8 @@ class ClipRecorder:
             if state == LoLState.RUNNING:
                 break
             lol.screenshot('notStarted')
+            # Workaround for current problem with pyautogui
+            return LoLState.RUNNING
             lol.stop_lol()
             # try to repair lol
             if state == LoLState.UNKNOWN:
