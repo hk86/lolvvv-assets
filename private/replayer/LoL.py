@@ -1,18 +1,17 @@
 # this is the refactoring class to ../streamer/LoL.py
 
-from os import path, walk, getcwd
+from datetime import datetime, timedelta
+from os import path, getcwd
 from shutil import copyfile
 from subprocess import run
-from datetime import datetime, timedelta
 from time import sleep
-from array import array
+
+from pyautogui import locateCenterOnScreen, screenshot  # pip install pyautogui
 
 from DirectInput import DirectKey, toggle_key, press_key, release_key
 from Interval import Interval
 from ingame_position import IngamePosition
 from summoner.fact_team import FactTeamId
-
-from pyautogui import locateCenterOnScreen, screenshot  # pip install pyautogui
 
 
 class LoLState:
@@ -55,11 +54,12 @@ class LoLDriver:
     def __init__(self, lol_path=r'C:\Riot Games\League of Legends'):
         releases_path = path.join(lol_path, 'RADS', 'solutions',
                                   'league_client_sln', 'releases')
-        installed_releases = next(walk(releases_path))[1]
-        installed_releases.sort(reverse=True)
+        last_release = ''
+        with open(path.join(releases_path, 'releaselisting_EUW'), 'r') as f:
+            for last in f:
+                last_release = last.strip()
         self._lol_path = lol_path
-        self._version = installed_releases[0]
-        self._deploy_path = path.join(releases_path, self._version, 'deploy')
+        self._version = last_release
 
     def setup_settings(self, settings_path: str):
         persistant_settings = path.join(self._lol_path, 'Config',
@@ -72,7 +72,7 @@ class LoLDriver:
                str(game_id),
                encryption_key,
                platform_id]
-        self._exec_os_cmd(cmd, self._deploy_path)
+        self._exec_os_cmd(cmd, path.join(self._lol_path, 'Game'))
 
     def stop_lol(self):
         self._exec_os_cmd('taskkill /F /IM "League of Legends.exe"')
