@@ -19,7 +19,8 @@ import platform
 
 # pip install websocket-client
 import websocket
-from pprint import pprint # for debug
+from pprint import pprint  # for debug
+
 
 class ObsDriver:
     _message_id = 1
@@ -37,25 +38,25 @@ class ObsDriver:
 
     def obs_start(self):
         if platform.architecture()[0] == '64bit':
-            arch='64bit'
-            self._obs_exe='obs64.exe'
+            arch = '64bit'
+            self._obs_exe = 'obs64.exe'
         else:
-            arch='32bit'
-            self._obs_exe='obs32.exe'
+            arch = '32bit'
+            self._obs_exe = 'obs32.exe'
         _obs_path = os.path.join(self._obs_path, 'bin', arch)
         obs_full_path = os.path.join(_obs_path, self._obs_exe)
         Popen(
             [obs_full_path],
             cwd=_obs_path
-            )
+        )
 
     def _reconnect_obs_ws(self, url='ws://localhost:4444'):
-        self._ws=None
-        self._ws=websocket.WebSocket()
+        self._ws = None
+        self._ws = websocket.WebSocket()
         self._ws.connect(url)
 
     def _request(self, request):
-        for tries in range(0, 5): #workaround for some issues in websocket communication
+        for tries in range(0, 5):  # workaround for some issues in websocket communication
             self._message_id += 1
             request['message-id'] = str(self._message_id)
             self._ws.send(json.dumps(request))
@@ -69,7 +70,7 @@ class ObsDriver:
         return self._request(req)['sourceSettings']
 
     def _setSettings(self, sourceName, settings):
-        req = {"request-type": "SetSourceSettings", "sourceName": sourceName, 'sourceSettings':settings}
+        req = {"request-type": "SetSourceSettings", "sourceName": sourceName, 'sourceSettings': settings}
         return self._request(req)
 
     def _setMute(self, sourceName, mute):
@@ -78,7 +79,7 @@ class ObsDriver:
 
     def _getProperties(self, sourceName):
         req = {"request-type": "GetSceneItemProperties", "item": sourceName}
-        for tries in range(0, 5): #workaround for some issues in websocket communication
+        for tries in range(0, 5):  # workaround for some issues in websocket communication
             response = self._request(req)
             if 'bounds' in response:
                 break
@@ -127,9 +128,10 @@ class ObsDriver:
         prop = {"visible": visibility, "name": name}
         self._setProperties(prop)
 
+
 class Obs(ObsDriver):
     _SCENE_PATH = r''
-   
+
     def __init__(self, obs_path):
         super().__init__(obs_path)
         self.setup_scene(self._SCENE_PATH)
@@ -142,7 +144,7 @@ class Obs(ObsDriver):
                 self._reconnect_obs_ws()
                 break
             except ConnectionRefusedError:
-                if (tries == START_TRIES-1):
+                if (tries == START_TRIES - 1):
                     raise
             sleep(2)
 
@@ -150,16 +152,17 @@ class Obs(ObsDriver):
         settings = {"file": self._toObsPath(file_path)}
         return self._setSettings(name, settings)
 
-    def _set_txt(self, name, text:str):
+    def _set_txt(self, name, text: str):
         settings = {"text": text}
         self._setSettings(name, settings)
 
-    def _set_txt_color(self, name:str, color:int):
+    def _set_txt_color(self, name: str, color: int):
         settings = {"color": color}
         self._setSettings(name, settings)
 
     def _toObsPath(self, path):
         return Path(os.path.abspath(path)).as_posix()
+
 
 class ObsClips(Obs):
     _SCENE_PATH = r'../json/lolvvv_1080p_clips.json'
@@ -171,24 +174,24 @@ class ObsClips(Obs):
         super().__init__(obs_path)
         self._images = ImageService()
         backgrounds = ['banner_event_png', 'banner_runes1_png',
-            'banner_runes2_png', 'banner_proplayer_png']
+                       'banner_runes2_png', 'banner_proplayer_png']
         for name in backgrounds:
             self._set_img_file(name,
-            self._images.background_img_path())
+                               self._images.background_img_path())
         banners = ['banner_left', 'banner_middle', 'banner_right']
         for name in banners:
             self._set_img_file(name, self._images.banner_img_path())
         logos = ['lolvvv_logo', 'lolvvv_png']
         for lolvvv_logo in logos:
             self._set_img_file(lolvvv_logo,
-                self._images.logo_img_path()
-            )
-        self._set_img_file('overview_wallpaper_png', 
-            self._images.wallpaper_img_path()
-        )
-        self._set_img_file('vvv_logo', 
-            self._images.vvv_logo_path()
-        )
+                               self._images.logo_img_path()
+                               )
+        self._set_img_file('overview_wallpaper_png',
+                           self._images.wallpaper_img_path()
+                           )
+        self._set_img_file('vvv_logo',
+                           self._images.vvv_logo_path()
+                           )
 
     def show_pregame_overlay(self, visibilitiy: bool):
         if visibilitiy:
@@ -198,17 +201,17 @@ class ObsClips(Obs):
         self._setCurrentScene(scene_name)
 
     def set_champion(self, champion_key):
-        self._set_img_file('championplayed_img', 
-            self._images.champ_small_img_path(champion_key)
-        )
-        self._set_img_file('champion_png', 
-            self._images.champbanner_img_path(champion_key)
-        )
+        self._set_img_file('championplayed_img',
+                           self._images.champ_small_img_path(champion_key)
+                           )
+        self._set_img_file('champion_png',
+                           self._images.champbanner_img_path(champion_key)
+                           )
 
-    def _set_perk(self, name, perk_id:int):
+    def _set_perk(self, name, perk_id: int):
         self._set_img_file(name, self._images.perk_img_path(perk_id))
 
-    def set_perks(self, perks:FactPerks):
+    def set_perks(self, perks: FactPerks):
         self._set_perk('rune1.0_png', perks.rune1_0)
         self._set_perk('rune1.1_png', perks.rune1_1)
         self._set_perk('rune1.2_png', perks.rune1_2)
@@ -218,11 +221,11 @@ class ObsClips(Obs):
         self._set_perk('rune2.1_png', perks.rune2_1)
         self._set_perk('rune2.2_png', perks.rune2_2)
         self._set_img_file('perks1_img',
-            self._images.perk_small_img_path(perks.rune1_1)
-        )
+                           self._images.perk_small_img_path(perks.rune1_1)
+                           )
         self._set_img_file('perks2_img',
-            self._images.perk_small_img_path(perks.rune2_0)
-        )
+                           self._images.perk_small_img_path(perks.rune2_0)
+                           )
 
     def set_main_pro(self, main_pro: StaticPro):
         nickname = main_pro.nickname
@@ -231,8 +234,8 @@ class ObsClips(Obs):
         pro_imgs = ['proplayer_img', 'proplayer_png']
         for element in pro_imgs:
             self._set_img_file(element,
-                self._images.pro_med_img_path(main_pro.image)
-            )
+                               self._images.pro_med_img_path(main_pro.image)
+                               )
 
     def set_fact_team(self, fact_team_id: FactTeamId):
         color_code = 0
@@ -241,18 +244,18 @@ class ObsClips(Obs):
         else:
             color_code = self._RED_COLOR
         self._set_txt_color('proplayername_txt', color_code)
-        self._set_txt_color('proteam_txt', color_code)
+        #self._set_txt_color('proteam_txt', color_code)
 
     def set_pro_team(self, pro_team: ProTeam):
         if pro_team:
             fitted_name = pro_team.name
             if len(fitted_name) >= self._MAX_CHARS_PROTEAM_TXT:
                 fitted_name = (fitted_name
-                    [:self._MAX_CHARS_PROTEAM_TXT-1] + '..')
+                               [:self._MAX_CHARS_PROTEAM_TXT - 1] + '..')
             self._set_txt('proteam_txt', fitted_name)
             self._set_txt('team_txt', fitted_name)
             self._set_img_file('team_logo_png',
-                self._images.team_med_img_path(pro_team.image))
+                               self._images.team_med_img_path(pro_team.image))
             visibility = True
         else:
             """
@@ -266,6 +269,7 @@ class ObsClips(Obs):
 
     def set_event(self, event: Event):
         self._set_txt('event_txt', event.ev_type)
+
 
 class ObsStreamer(Obs):
     _SCENE_PATH = r'../json/obs_lolvvv_1080p.json'
@@ -308,9 +312,9 @@ class ObsStreamer(Obs):
         self._pros_settings['file'] = pro['pic']
         self._proName_settings['text'] = pro['name']
         self._proName_settings['color'] = txtColor
-        self._champion_settings['file']=pro['champion']
-        self._perk1_settings['file']=pro['perk1']
-        self._perk2_settings['file']=pro['perk2']
+        self._champion_settings['file'] = pro['champion']
+        self._perk1_settings['file'] = pro['perk1']
+        self._perk2_settings['file'] = pro['perk2']
 
         self._setSettings('proplayer_img', self._pros_settings)
         self._setSettings('proplayername_txt', self._proName_settings)
@@ -334,10 +338,10 @@ class ObsStreamer(Obs):
 
     def countdown(self, duration):
         interval_time = 0.1
-        for ii in range(int(duration/interval_time)):
-            countdown_time = duration-(ii*interval_time)
+        for ii in range(int(duration / interval_time)):
+            countdown_time = duration - (ii * interval_time)
             s, subs = divmod(countdown_time, 1)
-            text = '{:02.0f}:{:01.0f}'.format(s, subs*10)
+            text = '{:02.0f}:{:01.0f}'.format(s, subs * 10)
             self._countdown_settings['text'] = text
             self._setSettings('countdown_txt_up', self._countdown_settings)
             sleep(interval_time)
@@ -351,28 +355,30 @@ class ObsStreamer(Obs):
             db_pro = db.getPro(player['pro']['proId'])
 
             champion = db.getChampionKey(player['championId'])
-            champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion/champion_small', champion +'.png'))
+            champ_path = self._toObsPath(os.path.join(script_dir, 'obs/champion/champion_small', champion + '.png'))
             ppic_path = self._toObsPath(os.path.join(public_dir, 'image/pros/medium', db_pro['image']['full']))
-            perk1_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkStyle'])+'.png'))
-            perk2_path = self._toObsPath(os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkSubStyle'])+'.png'))
-            
+            perk1_path = self._toObsPath(
+                os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkStyle']) + '.png'))
+            perk2_path = self._toObsPath(
+                os.path.join(script_dir, 'obs/perks_small', str(player['perks']['perkSubStyle']) + '.png'))
+
             if db_pro['teamId'] == 0:
                 team = None
             else:
                 team = db.getTeamName(db_pro['teamId'])
-                team = (team[:(numOfTeamMaxChars-1)] + '..') if len(team) >= numOfTeamMaxChars else team
-            
-            pro = {'pic':ppic_path,
-                   'name':player['pro']['nickName'],
-                   'matchTeamId':player['teamId'],
-                   'team':team,
-                   'champion':champ_path,
-                   'perk1':perk1_path,
-                   'perk2':perk2_path}
+                team = (team[:(numOfTeamMaxChars - 1)] + '..') if len(team) >= numOfTeamMaxChars else team
+
+            pro = {'pic': ppic_path,
+                   'name': player['pro']['nickName'],
+                   'matchTeamId': player['teamId'],
+                   'team': team,
+                   'champion': champ_path,
+                   'perk1': perk1_path,
+                   'perk2': perk2_path}
             self._pros.append(pro)
-        
+
     def startDiashow(self, interval_s):
-        if ( len(self._pros) == 1 ):
+        if (len(self._pros) == 1):
             self._setupScene(self._pros[0])
             self._interval = None
         else:
@@ -391,7 +397,3 @@ class ObsStreamer(Obs):
             self._pro_index = len(self._pros) - 1
         else:
             self._pro_index = self._pro_index - 1
-
-
-
-
