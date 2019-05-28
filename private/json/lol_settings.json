@@ -249,7 +249,7 @@
                         },
                         {
                             "name": "ChatScale",
-                            "value": "0"
+                            "value": "31"
                         },
                         {
                             "name": "DisableHudSpellClick",
@@ -285,7 +285,7 @@
                         },
                         {
                             "name": "GlobalScale",
-                            "value": "0.2000"
+                            "value": "0.1700"
                         },
                         {
                             "name": "GlobalScaleReplay",
