@@ -62,7 +62,7 @@ class LoLDriver:
         self._version = last_release
 
     def setup_settings(self, settings_path: str):
-        persistant_settings = path.join(self._lol_path, 'Config',
+        persistant_settings = path.join(self._lol_path, 'Game', 'Config',
                                         'PersistedSettings.json')
         copyfile(settings_path, persistant_settings)
 
