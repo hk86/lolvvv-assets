@@ -1,11 +1,13 @@
 # this is the refactoring class to ../streamer/LoL.py
 
 from datetime import datetime, timedelta
-from os import path, getcwd
+from glob import glob
+from os import path, getcwd, remove, rename
 from shutil import copyfile
 from subprocess import run
 from time import sleep
 
+from PIL import Image
 from pyautogui import locateCenterOnScreen, screenshot  # pip install pyautogui
 
 from DirectInput import DirectKey, toggle_key, press_key, release_key
@@ -60,6 +62,11 @@ class LoLDriver:
                 last_release = last.strip()
         self._lol_path = lol_path
         self._version = last_release
+        for image in self._get_saved_screenshots():
+            remove(image)
+
+    def _get_saved_screenshots(self):
+        return glob(path.join(self._lol_path, 'Game', 'Screenshots', '*.png'))
 
     def setup_settings(self, settings_path: str):
         persistant_settings = path.join(self._lol_path, 'Game', 'Config',
@@ -159,6 +166,20 @@ class LoLDriver:
     def stop_update(self):
         self._exec_os_cmd('taskkill /F /IM "LeagueClientUx.exe"')
 
+    def screenshot(self, title=None):
+        toggle_key(DirectKey.F12)
+        sleep(3)  # wait for screenshot has been saved to the file system
+        images = self._get_saved_screenshots()
+        if len(images) == 0:
+            return
+        last_img = images[-1]
+        if title is not None:
+            screenshot_path = title + self._time_string() + '.png'
+            rename(last_img, screenshot_path)
+        else:
+            screenshot_path = last_img
+        return Image.open(screenshot_path)
+
     @property
     def version(self):
         return self._version
@@ -201,9 +222,6 @@ class LeagueOfLegends(LoLDriver):
 
     def wait_for_repair(self):
         sleep(self._APPRECIATED_REPAIR_TIME_S)
-
-    def screenshot(self, title):
-        screenshot(title + self._time_string() + '.png')
 
     def stop_pending(self, timeout_s, check_interval_s):
         if check_interval_s > 4:
@@ -283,7 +301,7 @@ class LeagueOfLegends(LoLDriver):
         have to be called after ui is modified and 1 sec timeout
         :return:
         """
-        self._in_game_pos.init_champs(screenshot())
+        self._in_game_pos.init_champs(self.screenshot())
 
     def focus_champ(self, champ_key: str, team_id: FactTeamId):
         in_game_champ = self._in_game_pos.get_in_game_champ(champ_key, team_id)

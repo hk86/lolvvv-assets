@@ -60,6 +60,7 @@ class DirectKey:
     NUMLOCK = 0x45
     p = 0x19
     a = 0x1e
+    F12 = 0x58
 
 # Actuals Functions
 # Keyboard Scan Hex Codes:
