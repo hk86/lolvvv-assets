@@ -7,7 +7,7 @@ from image_service import ImageService
 from ingame_champ import BlueIngameChamp, RedIngameChamp, IngameChamp
 from summoner.fact_team import FactTeamId
 from numpy import sqrt, sum, min, max, asarray, double, array, ones, shape, set_printoptions
-from resizeimage import resizeimage
+from resizeimage import resizeimage  # pip install python-resize-image
 from PIL import Image
 
 
