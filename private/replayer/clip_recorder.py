@@ -129,7 +129,8 @@ class ClipRecorder:
             lol.wait_for_replay_start()
             state = lol.state
             print('lol state {}'.format(state))
-            if state != LoLState.RUNNING:
+            if state != LoLState.NOT_RUNNING:
+                state = LoLState.RUNNING
                 break
             lol.stop_lol()
             # try to repair lol
