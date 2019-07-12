@@ -14,13 +14,12 @@ from DirectInput import DirectKey, toggle_key, press_key, release_key
 from Interval import Interval
 from ingame_position import IngamePosition
 from summoner.fact_team import FactTeamId
+from tools import filename_time_string
 
 
 class LoLState:
     UNKNOWN = 0
-    PENDING = 1
-    CRASHED = 2
-    DATA_UNAVAILBLE = 3
+    NOT_RUNNING = 3
     FINISHED = 4
     RUNNING = 5
 
@@ -142,14 +141,9 @@ class LoLDriver:
 
     @property
     def state(self):
-        if locateCenterOnScreen('images/PendingLoL.png'):
-            return LoLState.PENDING
-        elif (locateCenterOnScreen('images/lolCrashed.png')
-              or
-              (locateCenterOnScreen('images/bugsplat.png'))):
-            return LoLState.CRASHED
-        elif locateCenterOnScreen('images/dataUnavailable.png'):
-            return LoLState.DATA_UNAVAILBLE
+        screen = self.screenshot()
+        if screen is None:
+            return LoLState.NOT_RUNNING
         elif ((locateCenterOnScreen('images/Continue.png'))
               or
               (locateCenterOnScreen('images/GameOver.png'))):
@@ -173,11 +167,11 @@ class LoLDriver:
         if len(images) == 0:
             return
         last_img = images[-1]
-        if title is not None:
-            screenshot_path = title + self._time_string() + '.png'
-            rename(last_img, screenshot_path)
+        if title is None:
+            screenshot_path = "tmp.png"
         else:
-            screenshot_path = last_img
+            screenshot_path = title + filename_time_string() + '.png'
+        rename(last_img, screenshot_path)
         return Image.open(screenshot_path)
 
     @property
@@ -203,10 +197,6 @@ class LeagueOfLegends(LoLDriver):
         self._show_items_duration_s = -1
         self._show_items_interval = None
         self._focus_interval = None
-
-    @staticmethod
-    def _time_string():  # should be in sw_tools or something like this.
-        return datetime.now().strftime('%Y-%m-%d_%H%M%S')
 
     def wait_for_spectate_start(self):
         sleep(self._APPRECIATED_START_TIME_S)
@@ -235,7 +225,7 @@ class LeagueOfLegends(LoLDriver):
             else:
                 break
         if state == LoLState.UNKNOWN:
-            screenshot('noExit' + self._time_string() + '.png')
+            screenshot('noExit' + filename_time_string() + '.png')
             state = LoLState.FINISHED
         self.stop_lol()
         return state
