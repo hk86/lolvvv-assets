@@ -2,7 +2,6 @@ import re
 from datetime import datetime
 
 
-@staticmethod
 def filename_time_string():
     return datetime.now().strftime('%Y-%m-%d_%H%M%S')
 
