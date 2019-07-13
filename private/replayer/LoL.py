@@ -6,6 +6,7 @@ from os import path, getcwd, remove, rename
 from shutil import copyfile
 from subprocess import run
 from time import sleep
+from tempfile import gettempdir
 
 from PIL import Image
 from pyautogui import locateCenterOnScreen, screenshot  # pip install pyautogui
@@ -168,7 +169,7 @@ class LoLDriver:
             return
         last_img = images[-1]
         if title is None:
-            screenshot_path = "tmp.png"
+            screenshot_path = path.join(gettempdir(), filename_time_string() + ".png")
         else:
             screenshot_path = title + filename_time_string() + '.png'
         rename(last_img, screenshot_path)
