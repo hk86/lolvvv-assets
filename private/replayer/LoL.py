@@ -7,6 +7,7 @@ from shutil import copyfile
 from subprocess import run
 from time import sleep
 from tempfile import gettempdir
+from win32api import GetFileVersionInfo, LOWORD, HIWORD # pip install pypiwin32
 
 from PIL import Image
 from pyautogui import locateCenterOnScreen, screenshot  # pip install pyautogui
@@ -54,22 +55,24 @@ class LoLDriver:
     }
 
     def __init__(self, lol_path=r'C:\Riot Games\League of Legends'):
-        releases_path = path.join(lol_path, 'RADS', 'solutions',
-                                  'league_client_sln', 'releases')
-        last_release = ''
-        with open(path.join(releases_path, 'releaselisting_EUW'), 'r') as f:
-            for last in f:
-                last_release = last.strip()
+        self._game_folder = path.join(lol_path, 'Game')
+        try:
+            info = GetFileVersionInfo(path.join(self._game_folder, 'League of Legends.exe'), "\\")
+            ms = info['FileVersionMS']
+            ls = info['FileVersionLS']
+            last_release = HIWORD(ms), LOWORD(ms), HIWORD(ls), LOWORD(ls)
+        except:
+            last_release = 0, 0, 0, 0
+        self._version = '.'.join(str(e) for e in last_release)
         self._lol_path = lol_path
-        self._version = last_release
         for image in self._get_saved_screenshots():
             remove(image)
 
     def _get_saved_screenshots(self):
-        return glob(path.join(self._lol_path, 'Game', 'Screenshots', '*.png'))
+        return glob(path.join(self._game_folder, 'Screenshots', '*.png'))
 
     def setup_settings(self, settings_path: str):
-        persistant_settings = path.join(self._lol_path, 'Game', 'Config',
+        persistant_settings = path.join(self._game_folder, 'Config',
                                         'PersistedSettings.json')
         copyfile(settings_path, persistant_settings)
 
@@ -79,7 +82,7 @@ class LoLDriver:
                str(game_id),
                encryption_key,
                platform_id]
-        self._exec_os_cmd(cmd, path.join(self._lol_path, 'Game'))
+        self._exec_os_cmd(cmd, self._game_folder)
 
     def stop_lol(self):
         self._exec_os_cmd('taskkill /F /IM "League of Legends.exe"')
