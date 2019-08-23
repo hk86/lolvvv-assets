@@ -91,6 +91,15 @@ div#root {
     }.-;
 }
 
+.ui.dropdown.language div.text {
+    margin-right: 0.5em;
+}
+
+.ui.dropdown.language div.menu {
+    width: 150px !important;
+    margin-top: 1em;
+}
+
 .small.text {
    font-size: @small;
 }

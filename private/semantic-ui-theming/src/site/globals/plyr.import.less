@@ -38,6 +38,7 @@
     transition:box-shadow .3s ease
 }
 .plyr audio,.plyr video{
+    position: absolute;
     border-radius:inherit;
     height:auto;
     vertical-align:middle;
@@ -204,6 +205,9 @@ a.plyr__control::after,a.plyr__control::before{
 .plyr__controls>.plyr__control:first-child,.plyr__controls>.plyr__control:first-child+[data-plyr=pause]{
     margin-left:0;
     margin-right:auto
+}
+.plyr__controls>.plyr__progress__container {
+    flex-grow: 2;
 }
 .plyr__controls:empty{
     display:none
