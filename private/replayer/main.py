@@ -88,6 +88,7 @@ class Clipper:
                 replay.game_id
             )
             if not fact_match:
+                print("couldn't find match {} {}".format(replay.platform_id, replay.game_id))
                 continue
             fact_matches.append(FactReplay(fact_match, replay))
             if len(fact_matches) >= self.MAX_MATCHES_PER_SCAN:
@@ -96,8 +97,10 @@ class Clipper:
 
     def fact_to_patch_matches(self, fact_matches: [FactMatch]):
         patch_matches = []
+        print("fact_to_patch_matches patch {}".format(self._playable_patch))
         for fact_match in fact_matches:
             match_patch = self._patch_version.version_to_patch(fact_match.version)
+            print("match {} {} patch {}".format(fact_match.platform_id, fact_match.game_id, match_patch))
             if match_patch == self._playable_patch:
                 patch_matches.append(fact_match)
             elif match_patch < self._playable_patch:

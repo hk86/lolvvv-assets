@@ -159,7 +159,9 @@ class LoLDriver:
 
     def start_update(self):
         update_cmd = path.join(self._lol_path, 'LeagueClient.exe')
+        self._logger.warning('start_update')
         self._exec_os_cmd(update_cmd, self._lol_path)
+        self._logger.warning('leaving start_update')
 
     def stop_update(self):
         self._exec_os_cmd('taskkill /F /IM "LeagueClientUx.exe"')
