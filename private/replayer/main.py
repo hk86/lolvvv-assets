@@ -50,16 +50,25 @@ class Clipper:
     def upgrade_lol(self):
         self._logger.warning('upgrade lol')
         self._lol.start_update()
+        self._logger.warning('wait for upgrade')
         self._lol.wait_for_update()
+        self._logger.warning('stop upgrade')
         self._lol.stop_update()
+        self._logger.warning('delete lol object')
         del self._lol
+        self._logger.warning('create new lol object')
         self._lol = LeagueOfLegends()
+        self._logger.warning('get new lol patch version')
         self._playable_patch = self._lol_patch()
+        self._logger.warning('check for new lol version')
         if not self._playable_patch:
             # if this lol version is currently not known in db, save the current lol version
             # related to the current server patch version
+            self._logger.warning('get current server patch')
             server_patch = self._meteor_db.get_current_server_patch(self._lol.UPDATE_PLATFORM)
+            self._logger.warning('save current client version related to server patch version')
             self._meteor_db.set_patch_version(self._lol.version, server_patch)
+            self._logger.warning('get new lol patch version')
             self._playable_patch = self._lol_patch()
         self._logger.warning('upgrade finished new version = ' + self._lol.version)
 
