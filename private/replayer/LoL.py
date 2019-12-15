@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from glob import glob
 from os import path, getcwd, remove, rename
 from shutil import copyfile
-from subprocess import run
+from subprocess import Popen
 from time import sleep
 from tempfile import gettempdir
 from win32api import GetFileVersionInfo, LOWORD, HIWORD # pip install pypiwin32
@@ -90,11 +90,7 @@ class LoLDriver:
     def _exec_os_cmd(self, cmd, cwd=None):
         for tries in range(0, self._EXEC_TRIES):
             try:
-                if cwd:
-                    run(cmd, cwd=cwd)
-                else:
-                    run(cmd)
-                break
+                Popen(cmd, cwd=cwd)
             except OSError:
                 pass
 
@@ -159,9 +155,7 @@ class LoLDriver:
 
     def start_update(self):
         update_cmd = path.join(self._lol_path, 'LeagueClient.exe')
-        self._logger.warning('start_update')
         self._exec_os_cmd(update_cmd, self._lol_path)
-        self._logger.warning('leaving start_update')
 
     def stop_update(self):
         self._exec_os_cmd('taskkill /F /IM "LeagueClientUx.exe"')
