@@ -91,6 +91,7 @@ class LoLDriver:
         for tries in range(0, self._EXEC_TRIES):
             try:
                 Popen(cmd, cwd=cwd)
+                break
             except OSError:
                 pass
 
