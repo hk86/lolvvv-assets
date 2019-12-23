@@ -27,7 +27,7 @@
 @tabletBreakpoint            : 662px;
 @computerBreakpoint          : 1200px;
 @largeMonitorBreakpoint      : 1200px;
-@widescreenMonitorBreakpoint : 1920px;
+@widescreenMonitorBreakpoint : 1620px;
 
 /*-------------------
         Active
