@@ -48,7 +48,7 @@ def generate_events(fact_match: FactMatch):
         rows.extend(get_kill_rows(participant_kills))
     event_kill_row_classes = [EventTripleKill,
                               EventQuadraKill,
-                              # EventAloneDoubleKill,
+                              EventAloneDoubleKill,
                               EventAlonePentaKill,
                               EventAloneTripleKill,
                               EventAloneQuadraKill,
