@@ -207,7 +207,7 @@ class EventAloneTripleKill(EventTripleKill, EventAloneKillRow):
     ev_type = '1VS3'
 
 
-class EventAloneQuadraKill(EventTripleKill, EventAloneKillRow):
+class EventAloneQuadraKill(EventQuadraKill, EventAloneKillRow):
     ev_type = '1VS4'
 
 
