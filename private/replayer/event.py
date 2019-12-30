@@ -187,7 +187,7 @@ class EventAloneKillRow(EventKillRow):
     def is_valid(self):
         if len(self.participants) > 0:
             return False
-        if len(self._events) < EventAloneTripleKill.kills_in_row:
+        if len(self._events) < EventAloneDoubleKill.kills_in_row:
             return False
         for kill_idx, comp_kill in enumerate(self.companion_kills_post):
             if ((comp_kill.victim == self.main_summoner) and
