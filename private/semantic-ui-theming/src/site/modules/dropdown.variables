@@ -6,3 +6,7 @@
 @selectionVisibleBorderColor: @primaryColor;
 @selectionFocusBorderColor: @primaryColor;
 @selectionActiveHoverBorderColor: @primaryColor;
+
+@selectionMinHeight: 34px;
+@selectionBorder: none;
+@menuBorderWidth: 0px;

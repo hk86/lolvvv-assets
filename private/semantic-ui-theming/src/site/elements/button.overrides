@@ -56,6 +56,12 @@
   border-bottom: 1px solid @strongBorderColorInverted;
   border-top: 1px solid @strongBorderColorInverted;
 }
+.grid + .ui.attached.buttons > .active.button,
+.ui.inverted .grid + .ui.attached.buttons > .active.button {
+  border-bottom: 2px solid @primaryColor;
+  border-top: 2px solid @primaryColor;
+  box-shadow: none !important;
+}
 
 
 /* Twitch */
@@ -143,14 +149,40 @@
   border-left: 1px solid rgba(175, 175, 175, 0.20);
 }
 
-.ui.inverted .ui.basic.button:active,
-.ui.inverted .ui.basic.buttons .button:active,
-.ui.inverted .ui.basic.button:hover,
-.ui.inverted .ui.basic.buttons .button:hover {
+.ui.inverted .ui.basic.button:active:not(.blue),
+.ui.inverted .ui.basic.buttons .button:active:not(.blue),
+.ui.inverted .ui.basic.button:hover:not(.blue),
+.ui.inverted .ui.basic.buttons .button:hover:not(.blue) {
   background: #3a3a3a !important;
   color: rgba(255, 255, 255, .9) !important;
 }
 
+.ui.inverted .ui.basic.blue.buttons .button,
+.ui.inverted .ui.basic.blue.button,
+.ui.inverted .ui.basic.blue.buttons .button,
+.ui.inverted .ui.basic.blue.button {
+    background-color: @black !important;
+    color: @blue !important;
+}
+
+.ui.inverted .ui.basic.blue.buttons .button:active,
+.ui.inverted .ui.basic.blue.button:active,
+.ui.inverted .ui.basic.blue.buttons .button:hover,
+.ui.inverted .ui.basic.blue.button:hover {
+    background-color: #303030 !important;
+}
+
+
 .ui.inverted .ui.buttons .button:first-child {
   border-left: none;
+}
+
+.ui.buttons .button,
+.ui.buttons .or,
+.ui.button {
+  font-size: @medium;
+}
+
+.ui.active.button:not(.basic) {
+  box-shadow: inset 0 2px 0px 0px @primaryColor, inset 0 -2px 0px 0px @primaryColor !important;
 }

@@ -61,9 +61,9 @@
 
 
 .ui.selection.dropdown .default.text {
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 
 /* Menu Item */
@@ -71,4 +71,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.ui.selection.dropdown {
+  background-color: rgb(224, 225, 226);
+}
+
+.ui.selection.dropdown:hover {
+  background-color: #cacbcd;
 }

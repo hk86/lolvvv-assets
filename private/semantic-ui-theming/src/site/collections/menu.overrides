@@ -76,3 +76,16 @@
 .ui.left.fixed.menu .menu.navigation .item:focus {
   background-color: rgba(255, 255, 255, .08) !important;
 }
+
+.ui.secondary.pointing.menu a.item {
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.ui.inverted .ui.secondary.pointing.menu .item {
+  color: rgba(255, 255, 255, 0.87);
+  border-bottom: 2px solid #4d4d4d;
+}
+.ui.inverted .ui.secondary.pointing.menu .item.active {
+  color: @primaryColor;
+  border-bottom-color: @primaryColor;
+}
