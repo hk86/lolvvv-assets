@@ -60,3 +60,7 @@ h4 + div.ui.grid, h5 + div.ui.grid, h6 + div.ui.grid {
     box-shadow: none;
   }
 }
+
+.ui.grid.condensed.attached.segment {
+  margin: 0 -1px;
+}

@@ -50,6 +50,10 @@
   padding: 0.2em 0.4em;
 }
 
+.ui.attached.fitted.label {
+  padding: 0em;
+}
+
 .ui.label > img.inside {
   height: 16px !important;
 }

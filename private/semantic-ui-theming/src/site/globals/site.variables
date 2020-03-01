@@ -18,6 +18,8 @@
 @headerFontWeight: 600;
 @headerBottomMargin: 0.5rem;
 
+@h3: 1em;
+
 
 /*-------------------
      Breakpoints

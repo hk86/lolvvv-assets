@@ -89,3 +89,8 @@
   color: @primaryColor;
   border-bottom-color: @primaryColor;
 }
+
+.ui.inverted .ui.menu .item.disabled, 
+.ui.inverted .ui.menu .item.disabled:hover {
+  color: rgba(215, 215, 215, .3) !important;
+}
