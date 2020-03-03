@@ -52,3 +52,17 @@
 @redditFocusColor   : saturate(darken(@redditColor, 8), 20, relative);
 @redditDownColor    : darken(@redditColor, 10);
 @redditActiveColor  : saturate(darken(@redditColor, 5), 15, relative);
+
+
+
+/*-------------------
+     Inverted Colors
+--------------------*/
+
+@invertedOverflow:          #111111;
+@invertedBase:              #1f2023;
+@invertedSurface:           #27292d;
+@invertedOverlayDark:       #2d2f34;
+@invertedOverlayLight:      #383b40;
+
+@headerPrimaryBackground:   #29323e;

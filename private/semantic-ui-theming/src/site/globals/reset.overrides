@@ -21,3 +21,7 @@
 .clear-both {
   clear: both !important;
 }
+
+.ui.inverted .header-primary-bg {
+    background-color: @headerPrimaryBackground !important;
+}

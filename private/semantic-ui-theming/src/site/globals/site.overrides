@@ -82,7 +82,7 @@ div#root {
 
 
 // TODO [class*="red text"] instead of .red.text
-@text-colors: blue, green, orange, pink, purple, red, teal, yellow, black, grey, white;
+@text-colors: blue, green, orange, pink, purple, red, teal, yellow, violet, brown, black, grey, white;
 .text {
     .-(@i: length(@text-colors)) when (@i > 0) {
         @c: extract(@text-colors, @i);
