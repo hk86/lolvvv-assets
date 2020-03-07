@@ -59,7 +59,7 @@
      Inverted Colors
 --------------------*/
 
-@invertedOverflow:          #111111;
+@invertedOverflow:          #050505;
 @invertedBase:              #1f2023;
 @invertedSurface:           #27292d;
 @invertedOverlayDark:       #2d2f34;

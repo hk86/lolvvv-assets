@@ -221,5 +221,24 @@ div#root {
 }
 
 h3 {
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
+  margin-bottom: 1em;
+  white-space: nowrap;
+}
+
+h3::before {
+    content: "■ ";
+    color: #2185d0;
+    margin-right: 0.5em;
+}
+
+h3::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 1rem;
 }
