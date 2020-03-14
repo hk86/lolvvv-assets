@@ -12,3 +12,8 @@
 @labeledIconBackgroundColor: rgba(0, 0, 0, 0.1);
 
 @horizontalPadding: 1em;
+
+
+
+@invertedBackgroundColor: #2D3848;
+@invertedActiveBackgroundColor: #3A4556;
