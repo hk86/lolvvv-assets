@@ -80,3 +80,8 @@
 .ui.selection.dropdown:hover {
   background-color: #cacbcd;
 }
+
+.ui.active.selection.dropdown:not(.visible) {
+  border-bottom-left-radius: @selectionBorderRadius !important;
+  border-bottom-right-radius: @selectionBorderRadius !important;
+}

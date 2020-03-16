@@ -32,11 +32,14 @@
 @widescreenMonitorBreakpoint : 1620px;
 
 /*-------------------
-        Active
+        Colors
 --------------------*/
+
+@silver: #90a4ae;
 
 /*---  Dark Tones  ---*/
 @greyActive            : darken(@grey, 10);
+@borderBlueGrey:    #485163; // #3D4756
 
 
 /*-------------------
@@ -59,10 +62,17 @@
      Inverted Colors
 --------------------*/
 
-@invertedOverflow:          #050505;
+
+@invertedOverflow:          #090909;
 @invertedBase:              #1f2023;
 @invertedSurface:           #27292d;
 @invertedOverlayDark:       #2d2f34;
 @invertedOverlayLight:      #383b40;
 
 @headerPrimaryBackground:   #29323e;
+
+
+@invertedBackgroundColor: #2D3848;
+@invertedActiveBackgroundColor: #3A4556;
+@invertedHoverBackgroundColor: lighten(@invertedActiveBackgroundColor, 5);
+@invertedFocusBackgroundColor: lighten(@invertedActiveBackgroundColor, 8);

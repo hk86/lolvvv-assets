@@ -2,10 +2,13 @@
          Site Overrides
 *******************************/
 
+.ui.silver.segment:not(.inverted) {
+  border-top: 2px solid @silver!important;
+}
 
 .ui.inverted .ui.placeholder.segment {
   color: rgba(255,255,255,.87);
-  background-color: #1b1c1d;
+  background-color: @invertedSurface;
   border-color: rgba(175, 175, 175, 0.20);
 }
 
@@ -13,9 +16,16 @@
   color: rgba(255,255,255,.87);
 }
 
+.ui.segment {
+  border-left: none;
+  border-right: none;
+}
+
 .ui.inverted .ui.segment {
   background-color: @invertedBase;
   border: 1px solid rgba(175, 175, 175, 0.20);
+  border-left: none;
+  border-right: none;
   //box-shadow: 0 1px 2px 0 rgba(221, 223, 225, 0.1);
 }
 
@@ -25,8 +35,15 @@
   //border-top: 1px solid rgba(34, 36, 38, .15);
 }
 
+.ui.attached.segment {
+  border-left: none;
+  border-right: none;
+}
+
 .ui.inverted .ui.attached.segment {
   border: 1px solid rgba(175, 175, 175, 0.20);
+  border-left: none;
+  border-right: none;
 }
 
 .ui.grid+.grid.segment {

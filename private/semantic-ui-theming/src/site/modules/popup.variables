@@ -2,8 +2,7 @@
     User Variable Overrides
 *******************************/
 
-/*
-*/
+@tooltipInvertedBackground: @invertedOverlayLight;
 
 @invertedBorder: 1px solid #383838;
 @invertedBoxShadow: 

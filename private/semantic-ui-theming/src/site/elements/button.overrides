@@ -38,19 +38,19 @@
 .ui.inverted .ui.buttons.invertable .button:hover,
 .ui.inverted .ui.button.invertable:hover,
 .ui.inverted .ui.search.invertable .ui.button:hover {
-  background-color: @greyHover;
+  background-color: @invertedHoverBackgroundColor;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .button:focus,
 .ui.inverted .ui.button.invertable:focus,
 .ui.inverted .ui.search.invertable .ui.button:focus {
-  background-color: @greyFocus;
+  background-color: @invertedFocusBackgroundColor;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .button:active,
 .ui.inverted .ui.button.invertable:active,
 .ui.inverted .ui.search.invertable .ui.button:active {
-  background-color: @greyActive;
+  background-color: @invertedActiveBackgroundColor;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .active.button,
@@ -66,9 +66,8 @@
 
 /* Singular */
 .grid + .ui.attached.button {
-  margin: 0.5rem -0.5rem;
+  margin: 0 -1px;
   border-bottom: 1px solid @strongBorderColor;
-  border-top: 1px solid @strongBorderColor;
 }
 .ui.inverted .grid + .ui.attached.button {
   /* THIS SUPPORTS attched to segments!
@@ -77,19 +76,12 @@
   margin: 0 -1px;
   */
   border-bottom: 1px solid @strongBorderColorInverted;
-  border-top: 1px solid @strongBorderColorInverted;
 }
 
 /* Plural */
-.grid + .ui.attached.buttons {
-  margin: -0.5rem -0.5rem 0.5rem;
-}
 .grid + .ui.attached.buttons > .button {
   border-bottom: 1px solid @strongBorderColor;
   border-top: 1px solid @strongBorderColor;
-}
-.ui.inverted .grid + .ui.attached.buttons {
-  margin: -0.5rem -0.5rem 0.5rem;
 }
 .ui.inverted .grid + .ui.attached.buttons > .button {
   border-bottom: 1px solid @strongBorderColorInverted;
@@ -180,7 +172,7 @@
 
 .ui.inverted .ui.basic.button,
 .ui.inverted .ui.basic.buttons .button {
-  background: #303030 !important;
+  background: @invertedBase !important;
   color: rgba(255, 255, 255, .6) !important;
 }
 
@@ -200,7 +192,7 @@
 .ui.inverted .ui.basic.blue.button,
 .ui.inverted .ui.basic.blue.buttons .button,
 .ui.inverted .ui.basic.blue.button {
-    background-color: @black !important;
+    background-color: @invertedBase !important;
     color: @blue !important;
 }
 
@@ -208,7 +200,7 @@
 .ui.inverted .ui.basic.blue.button:active,
 .ui.inverted .ui.basic.blue.buttons .button:hover,
 .ui.inverted .ui.basic.blue.button:hover {
-    background-color: #303030 !important;
+    background-color: @invertedSurface !important;
 }
 
 

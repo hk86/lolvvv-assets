@@ -25,3 +25,8 @@
 .ui.inverted .header-primary-bg {
     background-color: @headerPrimaryBackground !important;
 }
+
+b,
+strong {
+  font-weight: 500;
+}

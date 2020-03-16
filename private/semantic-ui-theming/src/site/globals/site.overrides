@@ -82,7 +82,7 @@ div#root {
 
 
 // TODO [class*="red text"] instead of .red.text
-@text-colors: blue, green, orange, pink, purple, red, teal, yellow, violet, brown, black, grey, white;
+@text-colors: blue, green, orange, pink, purple, red, teal, yellow, violet, brown, black, grey, white, silver;
 .text {
     .-(@i: length(@text-colors)) when (@i > 0) {
         @c: extract(@text-colors, @i);
@@ -133,7 +133,7 @@ div#root {
 }
 
 .bold.text {
-   font-weight: bold;
+   font-weight: 500;
 }
 
 .secondary.text {

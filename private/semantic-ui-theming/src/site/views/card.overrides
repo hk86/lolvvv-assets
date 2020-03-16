@@ -1,3 +1,43 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+
+.ui.inverted .ui.cards > .card, .ui.inverted .ui.card {
+  background: @invertedSurface;
+  box-shadow: 0px 1px 1px 0px @borderBlueGrey, 0px 0px 0px 1px @borderBlueGrey;
+}
+
+.ui.inverted .ui.cards > .card:hover, .ui.inverted .ui.card:hover {
+  box-shadow: 0px 1px 1px 0px @borderBlueGrey, 0px 0px 0px 1px @borderBlueGrey;
+}
+
+.ui.inverted .ui.cards a.card:hover, .ui.inverted .ui.link.cards .card:hover,
+.ui.inverted a.ui.card:hover, .ui.inverted .ui.link.card:hover {
+  background: @invertedOverlayDark;
+}
+
+.ui.inverted .ui.cards > .card > .extra, .ui.inverted .ui.card > .extra {
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, .05)!important;
+}
+
+/* NEED FOR THAT?
+.ui.inverted .ui.cards > .card > .content {
+  background-color: #303030;
+}
+*/
+
+.ui.inverted .ui.cards > .card > .content > .header,
+.ui.inverted .ui.card > .content > .header {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.cards > .card .meta, .ui.inverted .ui.card .meta {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ui.inverted .ui.card > .image,
+.ui.cards > .card > .image {
+  background: rgba(255, 255, 255, .05);
+}
