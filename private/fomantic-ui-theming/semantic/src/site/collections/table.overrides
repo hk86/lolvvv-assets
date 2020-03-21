@@ -1,0 +1,144 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.condensed.table td {
+  padding: 0.25em;
+}
+
+.ui.table td, tr {
+  background-clip: padding-box!important;
+}
+
+.ui.inverted .ui.table td.green:not(.marked),
+.ui.inverted  tr.green:not(.marked) {
+  background: @green;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ui.inverted .ui.table td.grey:not(.marked),
+.ui.inverted  tr.grey:not(.marked) {
+  background: @borderBlueGrey;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ui.inverted .ui.table td.orange:not(.marked),
+.ui.inverted  tr.orange:not(.marked) {
+  background: @orange;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ui.sortable.table thead th {
+  border-top: 3px solid @lightGrey;
+}
+
+.ui.sortable.table thead th.sorted,
+.ui.sortable.table thead th.sorted:hover,
+.ui.inverted .ui.sortable.table thead th.sorted,
+.ui.inverted .ui.sortable.table thead th.sorted:hover {
+  border-top: 3px solid @primaryColor;
+  border-bottom: 1px solid @primaryColor;
+}
+
+.ui.inverted .ui.table.segment:not(.basic) thead {
+  background-color: @invertedSurface;
+}
+
+.ui.inverted .ui.table.segment:not(.basic) thead th {
+  background-color: @invertedSurface;
+}
+
+.ui.inverted .ui.table tr.disabled td .secondary.text,
+.ui.inverted .ui.table tr td.disabled .secondary.text {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ui.inverted .ui.table {
+  background: @invertedBase;
+  color: rgba(255, 255, 255, 0.87);
+  border: none;
+  border-bottom: 1px solid rgba(175, 175, 175, 0.30);
+}
+
+.ui.inverted .ui.striped.table > tr:nth-child(2n),
+.ui.inverted .ui.striped.table tbody tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.ui.inverted .ui.selectable.table tbody tr:hover,
+.ui.inverted .ui.table tbody tr td.selectable:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.table:not(.basic) thead {
+  background-color: @headerPrimaryBackground;
+}
+
+.ui.inverted .ui.table thead th {
+  background-color: @headerPrimaryBackground;
+  border-color: rgba(175, 175, 175, 0.20);
+  color: rgba(255, 255, 255, 0.87);
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.basic.table th {
+  background: 0 0;
+}
+
+.ui.inverted .ui.sortable.table thead th {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.sortable.table thead th.sorted {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ui.inverted .ui.sortable.table thead th.sorted:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted.table tr td {
+  border-color: rgba(175, 175, 175, 0.20) !important;
+}
+
+.ui.inverted .ui.table tr.disabled td,
+.ui.inverted .ui.table tr td.disabled,
+.ui.inverted .ui.table tr.disabled:hover td,
+.ui.inverted .ui.table tr:hover td.disabled {
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ui.inverted .ui.selectable.table tr.active:hover,
+.ui.inverted .ui.table tr td.selectable.active:hover,
+.ui.inverted .ui.selectable.table tr:hover td.active {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.basic.table {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.ui.inverted .ui.table tr.active,
+.ui.inverted .ui.table td.active {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .bg-team-blue, .ui.inverted .bg-team-win,
+.ui.inverted .ui.basic.table td.bg-team-blue {
+  background-color: #162228 !important;
+}
+
+.ui.table td.marked {
+  background: #e8e8e8;
+}
+
+.ui.inverted .ui.table td.marked {
+  background: @borderBlueGrey;
+}
