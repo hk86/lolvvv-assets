@@ -69,7 +69,7 @@ class LoLDriver:
             remove(image)
 
     def _get_saved_screenshots(self):
-        return glob(path.join(self._game_folder, 'Screenshots', '*.png'))
+        return glob(path.join(self._lol_path, 'Screenshots', '*.png'))
 
     def setup_settings(self, settings_path: str):
         persistant_settings = path.join(self._game_folder, 'Config',

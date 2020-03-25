@@ -40,7 +40,10 @@ def get_kill_index(kill, kills):
 
 
 def generate_events(fact_match: FactMatch):
-    kills = fact_match.get_kills()
+    try:
+        kills = fact_match.get_kills()
+    except:
+        return []
     kills = list(filter(lambda x: x.killer, kills))
     rows = []
     for p_id in range(1, 11):  # participant id
