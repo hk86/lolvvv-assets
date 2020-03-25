@@ -1,0 +1,11 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@tooltipInvertedBackground: @invertedOverlayLight;
+
+@invertedBorder: 1px solid #383838;
+@invertedBoxShadow: 
+  0 2px 4px 0 rgba(34,36,38,.42),
+  0 2px 10px 0 rgba(34,36,38,0.45)
+;

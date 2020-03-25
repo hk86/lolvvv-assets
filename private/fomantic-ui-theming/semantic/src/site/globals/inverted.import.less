@@ -1,0 +1,358 @@
+
+.ui.main.inverted {
+  background: @invertedOverflow;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted tspan {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted a.invertable {
+  color: @lightPrimaryColor !important;
+}
+
+.ui.inverted .bg-header {
+  background-color: @invertedSurface !important;
+}
+
+.ui.inverted .bg-footer {
+  background-color: @invertedSurface !important;
+}
+
+.ui.inverted .bg-neutral {
+  background-color: @invertedBase !important;
+}
+
+.ui.inverted .secondary.text {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.ui.inverted.bg-team-blue.selectable, .ui.inverted .bg-team-win.selectable,
+.ui.inverted .bg-team-red.selectable, .ui.inverted .bg-team-loss.selectable {
+    color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .bg-team-blue.selectable:hover,
+.ui.inverted .bg-team-win.selectable:hover {
+    background-color: lighten(#162228, 7%) !important;
+}
+
+.ui.inverted .bg-team-red.selectable:hover,
+.ui.inverted .bg-team-loss.selectable:hover {
+    background-color: lighten(#270C0C, 7%) !important;
+}
+
+.ui.inverted .bg-team-blue.selected {
+    background-color: lighten(#162228, 7%) !important;
+}
+
+.ui.inverted .bg-team-red, .ui.inverted .bg-team-loss,
+.ui.inverted .ui.basic.table td.bg-team-red {
+  background-color: #270C0C !important;
+}
+
+.ui.inverted .bg-team-red.selected {
+  background-color: lighten(#270C0C, 7%) !important;
+}
+
+.ui.inverted .scoreboard-player {
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.opaque.label {
+  background-color: rgba(45, 47, 52, 0.8);
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .bg-light-primary {
+  background-color: #142437 !important;
+}
+
+.block-neutral {
+  border-top: 3px solid rgba(175, 175, 175, 0.20) !important;
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20) !important;
+}
+
+.ui.inverted .ui.table tr.positive,
+.ui.inverted .ui.table td.positive {
+  background: #303030 !important; // TODO
+}
+
+.ui.inverted .ui.table tr.negative,
+.ui.inverted .ui.table td.negative {
+  background: #303030 !important; // TODO
+}
+
+
+.ui.inverted .ui.secondary.pointing.menu {
+  border-bottom: 2px solid rgba(175, 175, 175, 0.30);
+}
+
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(175, 175, 175, 0.20);
+}
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .column:first-child,
+.ui.inverted .ui.divided.grid:not([class*="vertically divided"]) > .row > .column:first-child {
+  box-shadow: none;
+}
+
+.ui.inverted .ui.grid > .divided.row > .column {
+  box-shadow: -1px 0px 0px 0px rgba(175, 175, 175, 0.20);
+}
+.ui.inverted .ui.grid > .divided.row > .column:first-child {
+  box-shadow: none;
+}
+
+
+.ui.inverted .ui.basic.table t.ui.main tr {
+  border-bottom: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.table tr td {
+  border-top: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.celled.table tr th:first-child,
+.ui.inverted .ui.celled.table tr td:first-child {
+  border-left: none;
+}
+
+.ui.inverted .ui.celled.table tr th,
+.ui.inverted .ui.celled.table tr td {
+  border-left: 1px solid rgba(175, 175, 175, 0.20);
+}
+
+.ui.inverted .ui.table tr:first-child td {
+  border-top: none;
+}
+
+.ui.inverted .ui.table tr.disabled td, .ui.inverted .ui.table tr td.disabled,
+.ui.inverted .ui.table tr.disabled:hover, .ui.inverted .ui.table tr:hover td.disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ui.inverted .ui.divider {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.form .field > label {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .rc-slider-mark-text-active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ui.inverted .rc-slider-rail {
+  background-color: @grey;
+}
+
+.ui.inverted .rc-slider-dot {
+  border-color: @grey;
+  background-color: @black;
+}
+
+.ui.inverted .rc-slider-dot-active {
+  border-color: @primaryColor;
+}
+
+.ui.inverted .rc-slider-handle {
+  background-color: @black;
+}
+
+.ui.inverted .rc-slider-disabled {
+    background-color: #454545;;
+}
+
+.ui.inverted .ui.search.invertable > .results .result.active,
+.ui.inverted .ui.category.search.invertable > .results .category .result.active {
+  background: @invertedOverlayLight;
+}
+
+.ui.inverted .ui.search.invertable > .results .result.title > div {
+  background-color: @headerPrimaryBackground;
+}
+
+.ui.inverted .ui.search.invertable > .results .result {
+  border-top: 1px solid rgba(235, 235, 235, 0.2);
+}
+
+.ui.inverted .ui.search.invertable a {
+  color: @lightPrimaryColor;
+}
+
+.ui.inverted .ui.search.invertable > .results .result:hover {
+  background-color: @invertedOverlayLight;
+}
+
+.ui.inverted .ui.search.invertable > .results > .message .header {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+
+.ui.inverted .ui.search.invertable > .results {
+  background-color: @invertedOverlayDark;;
+  border-color: rgba(235, 235, 235, 0.2);
+  border-left: 0px;
+  border-right: 0px;
+}
+
+.ui.inverted .ui.search.invertable > .results .result {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/*--- Label ---*/
+.ui.inverted .ui.labels.invertable .label,
+.ui.inverted .ui.label.invertable {
+  background-color: @borderBlueGrey !important;
+  border-color: @borderBlueGrey !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+/* Link */
+.ui.inverted a.ui.labels.invertable .label:hover,
+.ui.inverted a.ui.label.invertable:hover{
+  background-color: @greyHover !important;
+  border-color: @greyHover !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+/* Corner */
+.ui.inverted .ui.corner.label.invertable,
+.ui.inverted .ui.corner.label.invertable:hover {
+  background-color: transparent !important;
+}
+
+
+/*--- Input ---*/
+.ui.inverted .ui.input.invertable,
+.ui.inverted .ui.search.invertable .input {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.input.invertable input,
+.ui.inverted .ui.button.dropdown.invertable input,
+.ui.inverted .ui.search.invertable input, {
+  background-color: @invertedActiveBackgroundColor;
+  color: rgba(255, 255, 255, 0.87);
+  border: 0px;
+}
+
+.ui.inverted .ui.input.invertable input:hover,
+.ui.inverted .ui.search.invertable input:hover {
+  background-color: @invertedHoverBackgroundColor;
+}
+
+.ui.inverted .ui.input.invertable.focus input,
+.ui.inverted .ui.input.invertable input:focus,
+.ui.inverted .ui.search.invertable input:focus {
+  background-color: @invertedFocusBackgroundColor;
+  border-right-width: 0px;
+}
+
+.ui.inverted .ui.dropdown.invertable .menu {
+  background-color: @invertedOverlayDark;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.selection.dropdown .menu > .item {
+  border-top: none;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.selection.visible.dropdown > .text:not(.default) {
+  color: rgba(255, 255, 255, .4);
+}
+
+.ui.inverted .ui.form input:not([type]):hover, .ui.inverted .ui.form input[type="date"]:hover,
+.ui.inverted .ui.form input[type="datetime-local"]:hover, .ui.inverted .ui.form input[type="email"]:hover,
+.ui.inverted .ui.form input[type="number"]:hover, .ui.inverted .ui.form input[type="password"]:hover,
+.ui.inverted .ui.form input[type="search"]:hover, .ui.inverted .ui.form input[type="tel"]:hover,
+.ui.inverted .ui.form input[type="time"]:hover, .ui.inverted .ui.form input[type="text"]:hover,
+.ui.inverted .ui.form input[type="file"]:hover, .ui.inverted .ui.form input[type="url"]:hover,
+.ui.inverted .ui.form textarea:hover {
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.form input:not([type]):focus, .ui.inverted .ui.form input[type="date"]:focus,
+.ui.inverted .ui.form input[type="datetime-local"]:focus, .ui.inverted .ui.form input[type="email"]:focus,
+.ui.inverted .ui.form input[type="number"]:focus, .ui.inverted .ui.form input[type="password"]:focus,
+.ui.inverted .ui.form input[type="search"]:focus, .ui.inverted .ui.form input[type="tel"]:focus,
+.ui.inverted .ui.form input[type="time"]:focus, .ui.inverted .ui.form input[type="text"]:focus,
+.ui.inverted .ui.form input[type="file"]:focus, .ui.inverted .ui.form input[type="url"]:focus,
+.ui.inverted .ui.form textarea:focus {
+  border-color: @primaryColor;
+}
+
+.ui.inverted .ui.form input:not([type]), .ui.inverted .ui.form input[type="date"],
+.ui.inverted .ui.form input[type="datetime-local"], .ui.inverted .ui.form input[type="email"],
+.ui.inverted .ui.form input[type="number"], .ui.inverted .ui.form input[type="password"],
+.ui.inverted .ui.form input[type="search"], .ui.inverted .ui.form input[type="tel"],
+.ui.inverted .ui.form input[type="time"], .ui.inverted .ui.form input[type="text"],
+.ui.inverted .ui.form input[type="file"], .ui.inverted .ui.form input[type="url"],
+.ui.inverted .ui.form textarea {
+  background-color: #515151;
+  color: rgba(255, 255, 255, 0.87);
+  border-color: @grey;
+}
+
+.ui.inverted .ui.dropdown > .text > .description,
+.ui.inverted .ui.dropdown .menu > .item > .description {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+.ui.inverted .ui.selection.dropdown {
+  background-color: @invertedBackgroundColor;
+  border-color: @grey;
+}
+
+.ui.inverted .ui.selection.dropdown:hover {
+  background-color: @invertedHoverBackgroundColor;
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.selection.dropdown.active,
+.ui.inverted .ui.selection.dropdown.active:hover {
+  background-color: @invertedActiveBackgroundColor;
+  border-color:  @primaryColor;
+}
+
+.ui.inverted .ui.selection.dropdown.active input {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.selection.dropdown:hover {
+  border-color: lighten(@grey, 20%);
+}
+
+.ui.inverted .ui.dropdown .menu > .message:not(.ui) {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ui.inverted .ui.dropdown .menu {
+  background-color: @invertedOverlayDark;
+}
+
+.ui.inverted .ui.dropdown .menu > .item {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.ui.inverted .ui.dropdown.selected,
+.ui.inverted .ui.dropdown .menu .selected.item,
+.ui.inverted .ui.dropdown .menu > .item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ui.inverted .ui.menu .ui.dropdown .menu > .active.item {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.menu .ui.dropdown .menu > .item {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ui.inverted .ui.statistic > .value,
+.ui.inverted .ui.statistic > .label {
+  color: rgba(255, 255, 255, 0.87);
+}
