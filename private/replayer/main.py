@@ -32,7 +32,7 @@ class Clipper:
         self._logger = Logger('clipper', logging.DEBUG)
         self._logger.warning('start')
         self._start_time = datetime.now()
-        self._fact_db = FactDataDb('mongodb://10.8.0.1:27017')
+        self._fact_db = FactDataDb('mongodb://replayer:qdgr4nlXF6IOy@88.99.138.8:27017/meteor?authSource=admin7')
         self._meteor_db = meteor_db
         self._clip_store = ClipStoreService(self._meteor_db)
         self._static_pro_db = StaticProDb(self._meteor_db)
@@ -177,7 +177,7 @@ if __name__ == '__main__':
     # init
     MIN_RUNTIME = timedelta(hours=8)
     start_time = datetime.now()
-    meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
+    meteor_db = Meteor('mongodb://replayer:qdgr4nlXF6IOy@88.99.138.8:27017/factdata?authSource=admin')
     clipper = Clipper(meteor_db)
     clipper.start_downloads()
     # clipper.logger.warning('hoover not started')
