@@ -48,7 +48,7 @@ class ReplayHoover(Thread):
 
 if __name__ == "__main__":
     print('start')
-    meteor_db = Meteor('mongodb://root:ZTgh67gth1@10.8.0.2:27017/meteor?authSource=admin')
+    meteor_db = Meteor('mongodb://replayer:qdgr4nlXF6IOy@88.99.138.8:27017/factdata?authSource=admin')
     hoover = ReplayHoover(meteor_db)
     hoover.start()
     try:
