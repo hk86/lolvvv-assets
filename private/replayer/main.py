@@ -32,7 +32,7 @@ class Clipper:
         self._logger = Logger('clipper', logging.DEBUG)
         self._logger.warning('start')
         self._start_time = datetime.now()
-        self._fact_db = FactDataDb('mongodb://replayer:qdgr4nlXF6IOy@88.99.138.8:27017/meteor?authSource=admin7')
+        self._fact_db = FactDataDb('mongodb://replayer:qdgr4nlXF6IOy@88.99.138.8:27017/meteor?authSource=admin')
         self._meteor_db = meteor_db
         self._clip_store = ClipStoreService(self._meteor_db)
         self._static_pro_db = StaticProDb(self._meteor_db)
