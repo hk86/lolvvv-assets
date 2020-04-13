@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="master-artboard" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="enable-background:new 0 0 1400 980;" width="64px" height="64px"><defs><radialGradient id="gradient-0" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" style="stop-color: #785b28"/>
+                <stop offset="1" style="stop-color: #2c210f"/>
+              </radialGradient><radialGradient id="gradient-1" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" style="stop-color: #c8aa6e"/>
+                <stop offset="1" style="stop-color: #977839"/>
+              </radialGradient></defs><g transform="matrix(0.9999999403953552, 0, 0, 0.9999999403953552, -1.4210854715202004e-14, 0.0000019073486328125)"><g transform="matrix(0.196666670203208, 0, 0, 0.196666670203208, 10.760003969192605, 12.529999903202148)"><g id="g-3" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-4">
+		<path class="st0" d="M58,49h100v100H58V49z" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g><g transform="matrix(0.4683333117280199, 0, 0, 0.09833332151174545, -9.99665741177196, 49.34833526611328)"><g id="g-7" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-8">
+		<path class="st0" d="M58,49h100v100H58V49z" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g><g transform="matrix(0.09999994188547134, 0, 0, 0.38333324011208675, 48.463661193847656, -1.5600301225013262)"><g id="g-9" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-10">
+		<path class="st0" d="M58,49h100v100H58V49z" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g><path class="st0" d="M58,49h100v100H58V49z" style="fill: rgb(189, 195, 199);" transform="matrix(-0.46833229064941406, 0.0009467111085541546, -0.0001987754221772775, -0.09833316504955293, 73.71202341715495, 14.384559631347656)"/><g transform="matrix(-0.099999837577343, 0.00020214475807733834, -0.0007748882053419949, -0.38333258032798767, 15.354744593302428, 65.4109878540039)"><g id="g-13" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-14">
+		<path class="st0" d="M58,49h100v100H58V49z" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g><g transform="matrix(-0.15301972627639773, 0.15301969647407535, -0.1585945636034012, -0.15859694778919223, 144.97072855631512, 61.00280253092447)"><g id="g-15" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-16">
+		<path class="st0" d="M103,336.5L53,424h100L103,336.5" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g><g transform="matrix(-0.15301972627639773, 0.15301969647407535, -0.1585945636034012, -0.15859694778919223, 92.5802637736003, 113.26876576741536)"><g id="g-17" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-18">
+		<path class="st0" d="M103,336.5L53,424h100L103,336.5" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g><g transform="matrix(0.15230092406272888, -0.15375208854675296, 0.1593480259180069, 0.15785649418830874, -29.097256978352874, -49.297176361083984)"><g id="g-19" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-20">
+		<path class="st0" d="M103,336.5L53,424h100L103,336.5" style="fill: rgb(189, 195, 199);"/>
+	<path d="M 107.34054565429688 383.4134826660156" style="fill: rgb(189, 195, 199); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1; stroke-width: 0; paint-order: fill;"/></g>
+</g></g><g transform="matrix(0.15230092406272888, -0.15375208854675296, 0.1593480259180069, 0.15785649418830874, -81.43209075927734, 3.2014986673990897)"><g id="g-21" transform="matrix(1, 0, 0, 1, 0, 0)">
+	<g id="g-22">
+		<path class="st0" d="M103,336.5L53,424h100L103,336.5" style="fill: rgb(189, 195, 199);"/>
+	</g>
+</g></g></g></svg>

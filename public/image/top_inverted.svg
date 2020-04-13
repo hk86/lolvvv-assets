@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="master-artboard" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="enable-background:new 0 0 1400 980;" width="64px" height="64px"><defs><radialGradient id="gradient-0" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" style="stop-color: #785b28"/>
+                <stop offset="1" style="stop-color: #2c210f"/>
+              </radialGradient><radialGradient id="gradient-1" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" style="stop-color: #c8aa6e"/>
+                <stop offset="1" style="stop-color: #977839"/>
+              </radialGradient></defs><g transform="matrix(1, 0, 0, 1, -0.000002543131586207892, -1.7763568394002505e-15)"><g transform="matrix(1, 0, 0, 1, -0.000002543131586207892, -7.105427357601002e-15)"><g transform="matrix(1, 0, 0, 1, -0.000002543131586207892, -7.105427357601002e-15)"><g transform="matrix(1, 0, 0, 1, -1.4210854715202004e-14, -1.4210854715202004e-14)"><g transform="matrix(2.4592760272610645, 0, 0, 2.4592760272610645, -9.807693615794829, -9.807688529531543)"><path opacity="0.5" fill="#785a28" fill-rule="evenodd" d="M21,14H14v7h7V14Zm5-3V26L11.014,26l-4,4H30V7.016Z" style="fill: rgb(236, 240, 241);"/><path d="M 4 4 L 4.002999782562256 28.045000076293945 L 9 23 L 9 9 L 23 9 L 28.045000076293945 4.002999782562256 L 4 4 Z" class="active" fill="#c8aa6e" style="fill: rgb(236, 240, 241);"/><path d="M 8.58565616607666 45.28287124633789" style="fill: rgb(52, 152, 219); fill-opacity: 1; stroke: rgb(0, 0, 0); stroke-opacity: 1; stroke-width: 0; paint-order: fill;"/></g></g></g></g></g></svg>
