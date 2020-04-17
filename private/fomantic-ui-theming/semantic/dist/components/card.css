@@ -308,7 +308,7 @@
 }
 .ui.cards > .card > .content > a.header:hover,
 .ui.card > .content > a.header:hover {
-  color: #1e70bf;
+  color: #ffab0e;
 }
 
 /* Meta */
@@ -427,7 +427,7 @@
 }
 .ui.cards > .card > .extra a:not(.ui):hover,
 .ui.card > .extra a:not(.ui):hover {
-  color: #1e70bf;
+  color: #ffab0e;
 }
 
 
@@ -562,14 +562,14 @@ a.ui.card:hover,
 .ui.primary.cards > .card,
 .ui.cards > .primary.card,
 .ui.primary.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #2185D0, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #2185D0, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #f2b84b, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #f2b84b, 0 1px 3px 0 #D4D4D5;
 }
 .ui.primary.cards > .card:hover,
 .ui.cards > .primary.card:hover,
 .ui.primary.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1678c2, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1678c2, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #fab22a, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #fab22a, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.primary.cards > .card,
 .ui.inverted.cards > .primary.card,
@@ -610,14 +610,14 @@ a.ui.card:hover,
 .ui.red.cards > .card,
 .ui.cards > .red.card,
 .ui.red.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #DB2828, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #DB2828, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e74c3c, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e74c3c, 0 1px 3px 0 #D4D4D5;
 }
 .ui.red.cards > .card:hover,
 .ui.cards > .red.card:hover,
 .ui.red.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #d01919, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #d01919, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #ee2f1c, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #ee2f1c, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.red.cards > .card,
 .ui.inverted.cards > .red.card,
@@ -634,14 +634,14 @@ a.ui.card:hover,
 .ui.orange.cards > .card,
 .ui.cards > .orange.card,
 .ui.orange.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #F2711C, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #F2711C, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e67e22, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e67e22, 0 1px 3px 0 #D4D4D5;
 }
 .ui.orange.cards > .card:hover,
 .ui.cards > .orange.card:hover,
 .ui.orange.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #f26202, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #f26202, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e0710f, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e0710f, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.orange.cards > .card,
 .ui.inverted.cards > .orange.card,
@@ -658,14 +658,14 @@ a.ui.card:hover,
 .ui.yellow.cards > .card,
 .ui.cards > .yellow.card,
 .ui.yellow.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #FBBD08, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #FBBD08, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #f1c40f, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #f1c40f, 0 1px 3px 0 #D4D4D5;
 }
 .ui.yellow.cards > .card:hover,
 .ui.cards > .yellow.card:hover,
 .ui.yellow.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #eaae00, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #eaae00, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e4b702, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #e4b702, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.yellow.cards > .card,
 .ui.inverted.cards > .yellow.card,
@@ -706,14 +706,14 @@ a.ui.card:hover,
 .ui.green.cards > .card,
 .ui.cards > .green.card,
 .ui.green.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #21BA45, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #21BA45, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #2ecc71, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #2ecc71, 0 1px 3px 0 #D4D4D5;
 }
 .ui.green.cards > .card:hover,
 .ui.cards > .green.card:hover,
 .ui.green.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #16ab39, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #16ab39, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #22be64, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #22be64, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.green.cards > .card,
 .ui.inverted.cards > .green.card,
@@ -730,14 +730,14 @@ a.ui.card:hover,
 .ui.teal.cards > .card,
 .ui.cards > .teal.card,
 .ui.teal.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #00B5AD, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #00B5AD, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1abc9c, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1abc9c, 0 1px 3px 0 #D4D4D5;
 }
 .ui.teal.cards > .card:hover,
 .ui.cards > .teal.card:hover,
 .ui.teal.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #009c95, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #009c95, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #10ad8e, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #10ad8e, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.teal.cards > .card,
 .ui.inverted.cards > .teal.card,
@@ -754,14 +754,14 @@ a.ui.card:hover,
 .ui.blue.cards > .card,
 .ui.cards > .blue.card,
 .ui.blue.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #2185D0, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #2185D0, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #3498db, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #3498db, 0 1px 3px 0 #D4D4D5;
 }
 .ui.blue.cards > .card:hover,
 .ui.cards > .blue.card:hover,
 .ui.blue.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1678c2, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1678c2, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1c8dd9, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #1c8dd9, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.blue.cards > .card,
 .ui.inverted.cards > .blue.card,
@@ -802,14 +802,14 @@ a.ui.card:hover,
 .ui.purple.cards > .card,
 .ui.cards > .purple.card,
 .ui.purple.card {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #A333C8, 0 1px 3px 0 #D4D4D5;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #A333C8, 0 1px 3px 0 #D4D4D5;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #9b59b6, 0 1px 3px 0 #D4D4D5;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #9b59b6, 0 1px 3px 0 #D4D4D5;
 }
 .ui.purple.cards > .card:hover,
 .ui.cards > .purple.card:hover,
 .ui.purple.card:hover {
-  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #9627ba, 0 1px 3px 0 #BCBDBD;
-          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #9627ba, 0 1px 3px 0 #BCBDBD;
+  -webkit-box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #9146af, 0 1px 3px 0 #BCBDBD;
+          box-shadow: 0 0 0 1px #D4D4D5, 0 2px 0 0 #9146af, 0 1px 3px 0 #BCBDBD;
 }
 .ui.inverted.purple.cards > .card,
 .ui.inverted.cards > .purple.card,
@@ -1294,7 +1294,7 @@ a.ui.card:hover,
 }
 .ui.inverted.cards > .card > .extra a:not(.ui):hover,
 .ui.inverted.card > .extra a:not(.ui):hover {
-  color: #1e70bf;
+  color: #ffab0e;
 }
 
 /* Link card(s) */

@@ -11,7 +11,13 @@
 @attachedVerticalPadding: @verticalPadding;
 @attachedHorizontalPadding: @horizontalPadding;
 
-
+@green: @greenBackground;
+@red: @redBackground;
+@blue: @blueBackground;
+@yellow: @yellowBackground;
+@teal: @tealBackground;
+@orange: @orangeBackground;
+@purple: @purpleBackground;
 
 /* Colors */
 @redTextColor: rgba(255, 255, 255, 0.9);

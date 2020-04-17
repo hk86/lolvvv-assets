@@ -85,3 +85,19 @@
   border-bottom-left-radius: @selectionBorderRadius !important;
   border-bottom-right-radius: @selectionBorderRadius !important;
 }
+
+.ui.inverted .ui.selection.dropdown.error {
+  color: @red;
+}
+.ui.inverted .ui.dropdown.error,
+.ui.inverted .ui.dropdown.error > .default.text,
+.ui.inverted .ui.dropdown.error > .text {
+  color: @red;
+}
+
+
+.ui.dropdown > .default.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

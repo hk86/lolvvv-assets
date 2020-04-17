@@ -229,14 +229,14 @@
 
 /* Arrow Position */
 [data-tooltip][data-inverted]:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
 }
 
 /* Popup  */
 [data-tooltip][data-inverted]:after {
-  background: #383b40;
-  color: #FFFFFF;
-  border: 1px solid #383838;
+  background: rgba(52, 56, 60, 0.95);
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.42), 0 2px 10px 0 rgba(34, 36, 38, 0.45);
           box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.42), 0 2px 10px 0 rgba(34, 36, 38, 0.45);
 }
@@ -399,22 +399,22 @@
 
 /* Inverted Arrow Color */
 [data-inverted][data-position~="bottom"][data-tooltip]:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
   -webkit-box-shadow: -1px -1px 0 0 #bababc;
           box-shadow: -1px -1px 0 0 #bababc;
 }
 [data-inverted][data-position="left center"][data-tooltip]:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
   -webkit-box-shadow: 1px -1px 0 0 #bababc;
           box-shadow: 1px -1px 0 0 #bababc;
 }
 [data-inverted][data-position="right center"][data-tooltip]:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
   -webkit-box-shadow: -1px 1px 0 0 #bababc;
           box-shadow: -1px 1px 0 0 #bababc;
 }
 [data-inverted][data-position~="top"][data-tooltip]:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
 }
 [data-position~="bottom"][data-tooltip]:before {
   -webkit-transform-origin: center bottom;
@@ -618,14 +618,14 @@
 
 /* Inverted Arrow Color */
 .ui.inverted.bottom.popup:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
 }
 .ui.inverted.right.center.popup:before,
 .ui.inverted.left.center.popup:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
 }
 .ui.inverted.top.popup:before {
-  background: #1B1C1D;
+  background: rgba(52, 56, 60, 0.95);
 }
 
 
@@ -721,9 +721,9 @@
 
 /* Inverted colors  */
 .ui.inverted.popup {
-  background: #1B1C1D;
-  color: #FFFFFF;
-  border: 1px solid #383838;
+  background: rgba(52, 56, 60, 0.95);
+  color: rgba(255, 255, 255, 0.87);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.42), 0 2px 10px 0 rgba(34, 36, 38, 0.45);
           box-shadow: 0 2px 4px 0 rgba(34, 36, 38, 0.42), 0 2px 10px 0 rgba(34, 36, 38, 0.45);
 }
@@ -732,7 +732,7 @@
   color: #FFFFFF;
 }
 .ui.inverted.popup:before {
-  background-color: #1B1C1D;
+  background-color: rgba(52, 56, 60, 0.95);
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
 }
@@ -813,9 +813,6 @@
         User Overrides
 *******************************/
 
-.ui.popup {
-  opacity: 0.95;
-}
 .ui.inverted.popup:before {
   -webkit-box-shadow: 1px 1px 0 0 #444 !important;
           box-shadow: 1px 1px 0 0 #444 !important;

@@ -11,3 +11,11 @@
 @subMenuTextColor: inherit;
 @subMenuFontSize: inherit;
 @subMenuHorizontalPadding: @itemHorizontalPadding;
+
+@invertedBackground: @invertedSurface;
+@invertedItemBackground: @invertedSurface;
+
+@invertedActiveBackground: @invertedClickableActive;
+@invertedActiveHoverBackground: @invertedClickableActive;
+@invertedHoverBackground: @invertedClickableHover;
+@invertedMenuPressedBackground: @invertedClickableActive;

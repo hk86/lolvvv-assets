@@ -3,3 +3,11 @@
 *******************************/
 
 @barTransitionDuration: 1s;
+
+@green: @greenBackground;
+@red: @redBackground;
+@blue: @blueBackground;
+@yellow: @yellowBackground;
+@teal: @tealBackground;
+@orange: @orangeBackground;
+@purple: @purpleBackground;

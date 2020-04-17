@@ -12,7 +12,7 @@
 
 .ui.inverted .ui.table td.green:not(.marked),
 .ui.inverted  tr.green:not(.marked) {
-  background: @green;
+  background: @greenBackground;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -24,7 +24,7 @@
 
 .ui.inverted .ui.table td.orange:not(.marked),
 .ui.inverted  tr.orange:not(.marked) {
-  background: @orange;
+  background: @orangeBackground;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -36,8 +36,8 @@
 .ui.sortable.table thead th.sorted:hover,
 .ui.inverted .ui.sortable.table thead th.sorted,
 .ui.inverted .ui.sortable.table thead th.sorted:hover {
-  border-top: 3px solid @primaryColor;
-  border-bottom: 1px solid @primaryColor;
+  color: @primaryColor;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .ui.inverted .ui.table.segment:not(.basic) thead {
@@ -90,13 +90,9 @@
   color: rgba(255, 255, 255, 0.87);
 }
 
-.ui.inverted .ui.sortable.table thead th.sorted {
+.ui.inverted .ui.sortable.table thead th.sorted,
+.ui.inverted .ui.sortable.table:not(.basic)>thead>tr>th:hover {
   background: rgba(255, 255, 255, 0.05);
-}
-
-.ui.inverted .ui.sortable.table thead th.sorted:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.87);
 }
 
 .ui.inverted.table tr td {
