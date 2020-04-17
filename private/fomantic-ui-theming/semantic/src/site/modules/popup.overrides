@@ -2,10 +2,6 @@
         User Overrides
 *******************************/
 
-.ui.popup {
-  opacity: 0.95;
-}
-
 .ui.inverted.popup:before {
   box-shadow: 1px 1px 0 0 #444 !important;
 }

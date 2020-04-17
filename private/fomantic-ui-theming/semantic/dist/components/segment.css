@@ -564,24 +564,24 @@
 --------------------*/
 
 .ui.red.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #DB2828;
+  border-top: 2px solid #e74c3c;
 }
 .ui.inverted.red.segment.segment.segment.segment.segment {
-  background-color: #DB2828;
+  background-color: #e74c3c;
   color: #FFFFFF;
 }
 .ui.orange.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #F2711C;
+  border-top: 2px solid #e67e22;
 }
 .ui.inverted.orange.segment.segment.segment.segment.segment {
-  background-color: #F2711C;
+  background-color: #e67e22;
   color: #FFFFFF;
 }
 .ui.yellow.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #FBBD08;
+  border-top: 2px solid #f1c40f;
 }
 .ui.inverted.yellow.segment.segment.segment.segment.segment {
-  background-color: #FBBD08;
+  background-color: #f1c40f;
   color: #FFFFFF;
 }
 .ui.olive.segment.segment.segment.segment.segment:not(.inverted) {
@@ -592,24 +592,24 @@
   color: #FFFFFF;
 }
 .ui.green.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #21BA45;
+  border-top: 2px solid #2ecc71;
 }
 .ui.inverted.green.segment.segment.segment.segment.segment {
-  background-color: #21BA45;
+  background-color: #2ecc71;
   color: #FFFFFF;
 }
 .ui.teal.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #00B5AD;
+  border-top: 2px solid #1abc9c;
 }
 .ui.inverted.teal.segment.segment.segment.segment.segment {
-  background-color: #00B5AD;
+  background-color: #1abc9c;
   color: #FFFFFF;
 }
 .ui.blue.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #2185D0;
+  border-top: 2px solid #3498db;
 }
 .ui.inverted.blue.segment.segment.segment.segment.segment {
-  background-color: #2185D0;
+  background-color: #3498db;
   color: #FFFFFF;
 }
 .ui.violet.segment.segment.segment.segment.segment:not(.inverted) {
@@ -620,10 +620,10 @@
   color: #FFFFFF;
 }
 .ui.purple.segment.segment.segment.segment.segment:not(.inverted) {
-  border-top: 2px solid #A333C8;
+  border-top: 2px solid #9b59b6;
 }
 .ui.inverted.purple.segment.segment.segment.segment.segment {
-  background-color: #A333C8;
+  background-color: #9b59b6;
   color: #FFFFFF;
 }
 .ui.pink.segment.segment.segment.segment.segment:not(.inverted) {
@@ -875,6 +875,10 @@
   background-color: #1f2023;
   border: 1px solid rgba(175, 175, 175, 0.2);
 }
+.ui.top.attached.segment {
+  -webkit-transition: border 400ms ease-out;
+  transition: border 400ms ease-out;
+}
 .ui.inverted .ui.segments > .segment {
   border-top: 1px solid rgba(175, 175, 175, 0.2);
 }
@@ -886,4 +890,7 @@
 }
 .ui.segment.densed {
   padding: 0.5em;
+}
+.ui.disabled.segment {
+  color: rgba(255, 255, 255, 0.3);
 }

@@ -57,3 +57,7 @@
 .ui.label > img.inside {
   height: 16px !important;
 }
+
+.ui.large.screen.label, .ui.large.screen.labels .label {
+  font-size: @medium;
+}
