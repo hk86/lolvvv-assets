@@ -32,32 +32,32 @@
 .ui.inverted .ui.buttons.invertable .button,
 .ui.inverted .ui.button.invertable,
 .ui.inverted .ui.search.invertable .ui.button {
-  background-color: @invertedBackgroundColor; /* #717171; */
+  background-color: @invertedClickable;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .button:hover,
 .ui.inverted .ui.button.invertable:hover,
 .ui.inverted .ui.search.invertable .ui.button:hover {
-  background-color: @invertedHoverBackgroundColor;
+  background-color: @invertedClickableHover;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .button:focus,
 .ui.inverted .ui.button.invertable:focus,
 .ui.inverted .ui.search.invertable .ui.button:focus {
-  background-color: @invertedFocusBackgroundColor;
+  background-color: @invertedClickableFocus;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .button:active,
 .ui.inverted .ui.button.invertable:active,
 .ui.inverted .ui.search.invertable .ui.button:active {
-  background-color: @invertedActiveBackgroundColor;
+  background-color: @invertedClickableActive;
   color: rgba(255, 255, 255, 0.87);
 }
 .ui.inverted .ui.buttons.invertable .active.button,
 .ui.inverted .ui.buttons.invertable .active.button:active,
 .ui.inverted .ui.active.button.invertable,
 .ui.inverted .ui.button.invertable .active.button:active {
-  background-color: @invertedActiveBackgroundColor; /* #656565; */
+  background-color: @invertedClickableActive;
   color: rgba(255, 255, 255, 0.87);
 }
 
@@ -87,13 +87,6 @@
   border-bottom: 1px solid @strongBorderColorInverted;
   border-top: 1px solid rgba(175,175,175,.2);
 }
-.grid + .ui.attached.buttons > .active.button,
-.ui.inverted .grid + .ui.attached.buttons > .active.button {
-  border-bottom: 2px solid @primaryColor;
-  border-top: 1px solid @primaryColor;
-  box-shadow: none !important;
-}
-
 
 /* Twitch */
 .ui.twitch.button {
@@ -214,11 +207,15 @@
   font-size: @medium;
 }
 
-.ui.active.button:not(.basic) {
-  box-shadow: inset 0 2px 0px 0px @primaryColor, inset 0 -2px 0px 0px @primaryColor !important;
+.ui.active.button:not(.nohighlight) {
+  color: @primaryColor!important;
+  /* box-shadow: inset 0 2px 0px 0px @primaryColor, inset 0 -2px 0px 0px @primaryColor !important; */
 }
-.ui.active.button:not(.basic) {
-  box-shadow: inset 0 2px 0px 0px @primaryColor, inset 0 -2px 0px 0px @primaryColor !important;
+
+
+.ui.tiny.compact.active.button:not(.basic),
+.ui.tiny.compact.buttons .ui.active.button:not(.basic) {
+  box-shadow: none!important;
 }
 .ui.basic.buttons .button {
   box-shadow: none !important;

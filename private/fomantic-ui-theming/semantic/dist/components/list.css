@@ -193,11 +193,11 @@ ol.ui.list ol li,
 .ui.list .list > a.item,
 .ui.list > a.item {
   cursor: pointer;
-  color: #4183C4;
+  color: #f2b84b;
 }
 .ui.list .list > a.item:hover,
 .ui.list > a.item:hover {
-  color: #1e70bf;
+  color: #ffab0e;
 }
 
 /* Linked Item Icons */
@@ -212,11 +212,11 @@ ol.ui.list ol li,
 .ui.list .list > .item a.header,
 .ui.list > .item a.header {
   cursor: pointer;
-  color: #4183C4 !important;
+  color: #f2b84b !important;
 }
 .ui.list .list > .item > a.header:hover,
 .ui.list > .item > a.header:hover {
-  color: #1e70bf !important;
+  color: #ffab0e !important;
 }
 
 /* Floated Content */
@@ -392,7 +392,7 @@ ol.ui.list ol li,
 }
 .ui.inverted.list .list > a.item:hover,
 .ui.inverted.list > a.item:hover {
-  color: #1e70bf;
+  color: #ffab0e;
 }
 
 /* Linking Content */
@@ -400,7 +400,7 @@ ol.ui.list ol li,
   color: rgba(255, 255, 255, 0.9) !important;
 }
 .ui.inverted.list .item a:not(.ui):hover {
-  color: #1e70bf !important;
+  color: #ffab0e !important;
 }
 
 /*-------------------
@@ -974,3 +974,8 @@ ol.ui.suffixed.list li:before,
     User Variable Overrides
 *******************************/
 
+.ui.inverted .ui.ordered.list .list > .item:before,
+.ui.inverted .ui.ordered.list > .item:before,
+.ui.inverted ol.ui.list li:before {
+  color: rgba(255, 255, 255, 0.87);
+}

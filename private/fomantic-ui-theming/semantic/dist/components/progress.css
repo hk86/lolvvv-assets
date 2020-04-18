@@ -235,7 +235,7 @@
   ---------------*/
 
 .ui.ui.progress.success .bar {
-  background-color: #21BA45;
+  background-color: #27ae60;
 }
 .ui.ui.progress.success .bar,
 .ui.ui.progress.success .bar::after {
@@ -267,7 +267,7 @@
   ---------------*/
 
 .ui.ui.progress.error .bar {
-  background-color: #DB2828;
+  background-color: #c0392b;
 }
 .ui.ui.progress.error .bar,
 .ui.ui.progress.error .bar::after {
@@ -363,13 +363,13 @@
   color: #FFFFFF;
 }
 .ui.inverted.progress.success > .label {
-  color: #21BA45;
+  color: #27ae60;
 }
 .ui.inverted.progress.warning > .label {
   color: #F2C037;
 }
 .ui.inverted.progress.error > .label {
-  color: #DB2828;
+  color: #c0392b;
 }
 
 /*--------------
@@ -428,7 +428,7 @@
 .ui.indeterminate.primary.progress .bar::before,
 .ui.primary.progress .bar,
 .ui.progress .primary.bar {
-  background-color: #2185D0;
+  background-color: #f2b84b;
 }
 .ui.inverted.indeterminate.primary.progress .bar::before,
 .ui.primary.inverted.progress .bar,
@@ -448,7 +448,7 @@
 .ui.indeterminate.red.progress .bar::before,
 .ui.red.progress .bar,
 .ui.progress .red.bar {
-  background-color: #DB2828;
+  background-color: #c0392b;
 }
 .ui.inverted.indeterminate.red.progress .bar::before,
 .ui.red.inverted.progress .bar,
@@ -458,7 +458,7 @@
 .ui.indeterminate.orange.progress .bar::before,
 .ui.orange.progress .bar,
 .ui.progress .orange.bar {
-  background-color: #F2711C;
+  background-color: #d35400;
 }
 .ui.inverted.indeterminate.orange.progress .bar::before,
 .ui.orange.inverted.progress .bar,
@@ -468,7 +468,7 @@
 .ui.indeterminate.yellow.progress .bar::before,
 .ui.yellow.progress .bar,
 .ui.progress .yellow.bar {
-  background-color: #FBBD08;
+  background-color: #f39c12;
 }
 .ui.inverted.indeterminate.yellow.progress .bar::before,
 .ui.yellow.inverted.progress .bar,
@@ -488,7 +488,7 @@
 .ui.indeterminate.green.progress .bar::before,
 .ui.green.progress .bar,
 .ui.progress .green.bar {
-  background-color: #21BA45;
+  background-color: #27ae60;
 }
 .ui.inverted.indeterminate.green.progress .bar::before,
 .ui.green.inverted.progress .bar,
@@ -498,7 +498,7 @@
 .ui.indeterminate.teal.progress .bar::before,
 .ui.teal.progress .bar,
 .ui.progress .teal.bar {
-  background-color: #00B5AD;
+  background-color: #16a085;
 }
 .ui.inverted.indeterminate.teal.progress .bar::before,
 .ui.teal.inverted.progress .bar,
@@ -508,7 +508,7 @@
 .ui.indeterminate.blue.progress .bar::before,
 .ui.blue.progress .bar,
 .ui.progress .blue.bar {
-  background-color: #2185D0;
+  background-color: #2980b9;
 }
 .ui.inverted.indeterminate.blue.progress .bar::before,
 .ui.blue.inverted.progress .bar,
@@ -528,7 +528,7 @@
 .ui.indeterminate.purple.progress .bar::before,
 .ui.purple.progress .bar,
 .ui.progress .purple.bar {
-  background-color: #A333C8;
+  background-color: #8e44ad;
 }
 .ui.inverted.indeterminate.purple.progress .bar::before,
 .ui.purple.inverted.progress .bar,
@@ -835,12 +835,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-.ui.progress .blue.bar {
-  background-color: #2185d0;
-}
-.ui.progress .red.bar {
-  background-color: #db2828;
 }
 .ui.inverted .ui.progress > .label {
   color: rgba(255, 255, 255, 0.87);

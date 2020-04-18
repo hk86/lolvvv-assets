@@ -176,12 +176,9 @@
 }
 
 .ui.inverted .ui.search.invertable > .results .result {
-  border-top: 1px solid rgba(235, 235, 235, 0.2);
+  border-top: 1px solid rgba(235, 235, 235, 0.1);
 }
 
-.ui.inverted .ui.search.invertable a {
-  color: @lightPrimaryColor;
-}
 
 .ui.inverted .ui.search.invertable > .results .result:hover {
   background-color: @invertedOverlayLight;
@@ -233,20 +230,20 @@
 .ui.inverted .ui.input.invertable input,
 .ui.inverted .ui.button.dropdown.invertable input,
 .ui.inverted .ui.search.invertable input, {
-  background-color: @invertedActiveBackgroundColor;
+  background-color: @invertedClickableActive;
   color: rgba(255, 255, 255, 0.87);
   border: 0px;
 }
 
 .ui.inverted .ui.input.invertable input:hover,
 .ui.inverted .ui.search.invertable input:hover {
-  background-color: @invertedHoverBackgroundColor;
+  background-color: @invertedClickableHover;
 }
 
 .ui.inverted .ui.input.invertable.focus input,
 .ui.inverted .ui.input.invertable input:focus,
 .ui.inverted .ui.search.invertable input:focus {
-  background-color: @invertedFocusBackgroundColor;
+  background-color: @invertedClickableFocus;
   border-right-width: 0px;
 }
 
@@ -303,18 +300,19 @@
 
 
 .ui.inverted .ui.selection.dropdown {
-  background-color: @invertedBackgroundColor;
+  background-color: @invertedClickable;
   border-color: @grey;
+  color: rgba(255, 255, 255, 0.87);
 }
 
 .ui.inverted .ui.selection.dropdown:hover {
-  background-color: @invertedHoverBackgroundColor;
+  background-color: @invertedClickableHover;
   border-color: lighten(@grey, 20%);
 }
 
 .ui.inverted .ui.selection.dropdown.active,
 .ui.inverted .ui.selection.dropdown.active:hover {
-  background-color: @invertedActiveBackgroundColor;
+  background-color: @invertedClickableActive;
   border-color:  @primaryColor;
 }
 

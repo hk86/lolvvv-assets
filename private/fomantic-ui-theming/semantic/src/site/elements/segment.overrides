@@ -27,6 +27,10 @@
   //box-shadow: 0 1px 2px 0 rgba(221, 223, 225, 0.1);
 }
 
+.ui.top.attached.segment {
+  transition: border 400ms ease-out;
+}
+
 .ui.inverted .ui.segments>.segment {
   border-top: 1px solid rgba(175, 175, 175, 0.20);
   //box-shadow: 0 1px 2px 0 rgba(221, 223, 225, 0.1);
@@ -43,4 +47,8 @@
 
 .ui.segment.densed {
   padding: 0.5em;
+}
+
+.ui.disabled.segment {
+  color: rgba(255, 255, 255, 0.3);
 }

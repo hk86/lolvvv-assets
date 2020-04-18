@@ -8,7 +8,7 @@
 
 @pageBackground: #f9f9f9;
 
-@primaryColor: @blue;
+@primaryColor: #f2b84b;
 @secondaryColor: #546e7a;
 
 @lightPrimaryColor: #bbdefb;
@@ -21,6 +21,9 @@
 @h3: 1em;
 
 
+@linkColor           : @primaryColor;
+@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
+
 /*-------------------
      Breakpoints
 --------------------*/
@@ -32,10 +35,32 @@
 @widescreenMonitorBreakpoint : 1620px;
 
 /*-------------------
+     Background Colors
+--------------------*/
+
+@greenBackground: #27ae60;
+@redBackground: #c0392b;
+@blueBackground: #2980b9;
+@yellowBackground: #f39c12;
+@tealBackground: #16a085;
+@orangeBackground: #d35400;
+@purpleBackground: #8e44ad;
+@silverBackground: #bdc3c7;
+
+
+/*-------------------
         Colors
 --------------------*/
 
 @silver: #90a4ae;
+
+@green: #2ecc71;
+@teal: #1abc9c;
+@blue: #3498db;
+@yellow: #f1c40f;
+@orange: #e67e22;
+@red: #e74c3c;
+@purple: #9b59b6;
 
 /*---  Dark Tones  ---*/
 @greyActive            : darken(@grey, 10);
@@ -62,15 +87,22 @@
      Inverted Colors
 --------------------*/
 
+@invertedTextColorHigh: rgba(255, 255, 255, 0.87);
+@invertedTextColorMedium: rgba(255, 255, 255, 0.60);
+@invertedTextColorDisabled: rgba(255, 255, 255, 0.38);
 
-@invertedOverflow:          #090909;
+@invertedOverflow:          #121212;
 @invertedBase:              #1f2023;
 @invertedSurface:           #27292d;
 @invertedOverlayDark:       #2d2f34;
-@invertedOverlayLight:      #383b40;
+@invertedOverlayLight:      #34383c; //383b40
 
 @headerPrimaryBackground:   #29323e;
 
+@invertedClickable: #34495e;
+@invertedClickableActive: lighten(@invertedClickable, 4);
+@invertedClickableHover: lighten(@invertedClickable, 8);
+@invertedClickableFocus: lighten(@invertedClickable, 10);
 
 @invertedBackgroundColor: #2D3848;
 @invertedActiveBackgroundColor: #3A4556;

@@ -411,3 +411,6 @@ b,
 strong {
   font-weight: 500;
 }
+a.nohighlight {
+  color: rgba(255, 255, 255, 0.9);
+}
