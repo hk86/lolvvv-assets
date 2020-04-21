@@ -1,6 +1,7 @@
 from os import path
 from glob import glob
 from json import load as json_load
+from json import JSONDecodeError
 from shutil import rmtree
 from random import getrandbits
 
@@ -38,7 +39,13 @@ class ReplayManager:
                                     )
                 if not path.exists(metas_path):
                     continue
-                metas = json_load(open(metas_path))
+                try:
+                    with open(metas_path) as meta_file:
+                        metas = json_load(meta_file)
+                except JSONDecodeError:
+                    print('corrupt meta file found: {0} {1}'.format(platform, game_id))
+                    self.mark_as_handled_rep(platform, game_id)
+                    continue
                 match = SpectateMatch(
                     platform,
                     int(game_id),
