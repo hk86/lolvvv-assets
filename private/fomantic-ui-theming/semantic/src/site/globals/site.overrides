@@ -17,7 +17,6 @@ div#root {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  transition:all 200ms ease-in;
 }
 
 .ui.main > .ui.content {
@@ -89,6 +88,10 @@ div#root {
         &.@{c} { color: @@c }
         .-((@i - 1));
     }.-;
+}
+
+.primary.text {
+  color: @primaryColor;
 }
 
 .ui.dropdown.language div.text {

@@ -2,11 +2,17 @@
      User Global Variables
 *******************************/
 
+@invertedTextColorHigh: rgba(255, 255, 255, 0.87);
+@invertedTextColorMedium: rgba(255, 255, 255, 0.60);
+@invertedTextColorDisabled: rgba(255, 255, 255, 0.38);
+
+
 @pageFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 @importGoogleFonts: false;
 
-@pageBackground: #f9f9f9;
+@pageBackground: @invertedOverflow;
+@textColor: @invertedTextColorHigh;
 
 @primaryColor: #f2b84b;
 @secondaryColor: #546e7a;
@@ -16,9 +22,11 @@
 
 @headerFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 @headerFontWeight: 600;
-@headerBottomMargin: 0.5rem;
+@headerTopMargin: 1rem;
 
 @h3: 1em;
+
+@massive: 2.4rem;
 
 
 @linkColor           : @primaryColor;
@@ -87,9 +95,6 @@
      Inverted Colors
 --------------------*/
 
-@invertedTextColorHigh: rgba(255, 255, 255, 0.87);
-@invertedTextColorMedium: rgba(255, 255, 255, 0.60);
-@invertedTextColorDisabled: rgba(255, 255, 255, 0.38);
 
 @invertedOverflow:          #121212;
 @invertedBase:              #1f2023;

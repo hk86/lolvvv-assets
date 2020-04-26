@@ -25,11 +25,11 @@ body {
   padding: 0;
   overflow-x: hidden;
   min-width: 320px;
-  background: #f9f9f9;
+  background: #121212;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4285em;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 
@@ -44,7 +44,7 @@ h4,
 h5 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.28571429em;
-  margin: calc(2rem - 0.1428571428571429em) 0 0.5rem;
+  margin: 1rem 0 1rem;
   font-weight: 600;
   padding: 0;
 }
@@ -123,36 +123,36 @@ a:hover {
 /* Site */
 ::-webkit-selection {
   background-color: #CCE2FF;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 ::-moz-selection {
   background-color: #CCE2FF;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 ::selection {
   background-color: #CCE2FF;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 /* Form */
 textarea::-webkit-selection,
 input::-webkit-selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 textarea::-moz-selection,
 input::-moz-selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 textarea::-moz-selection, input::-moz-selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 textarea::selection,
 input::selection {
   background-color: rgba(100, 100, 100, 0.4);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 /* Force Simple Scrollbars */
@@ -232,6 +232,20 @@ body .ui.inverted:not(.dimmer)::-webkit-scrollbar-thumb:hover {
 }
 .very.bold.text {
   font-weight: 700;
+}
+
+/*-------------------
+       Backgrounds
+--------------------*/
+
+.bg-base {
+  background-color: #1f2023 !important;
+}
+.bg-surface {
+  background-color: #27292d !important;
+}
+.bg-overlay-dark {
+  background-color: #2d2f34 !important;
 }
 
 /*-------------------
@@ -542,7 +556,7 @@ div.segment.red-border-right {
 .bg-team-win.selectable,
 .bg-team-red.selectable,
 .bg-team-loss.selectable {
-  color: rgba(0, 0, 0, 0.87) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
 }
 .bg-team-blue.selectable:hover,
 .bg-team-win.selectable:hover {
@@ -694,15 +708,8 @@ div.segment.red-border-right {
 .popup .colorFFFFFF {
   color: #ffffff;
 }
-.ui.main.inverted {
-  background: #121212;
-  color: rgba(255, 255, 255, 0.87);
-}
 .ui.inverted tspan {
   color: rgba(255, 255, 255, 0.87);
-}
-.ui.inverted a.invertable {
-  color: #bbdefb !important;
 }
 .ui.inverted .bg-header {
   background-color: #27292d !important;
@@ -716,7 +723,7 @@ div.segment.red-border-right {
 .ui.inverted .secondary.text {
   color: rgba(255, 255, 255, 0.4) !important;
 }
-.ui.inverted.bg-team-blue.selectable,
+.ui.inverted .bg-team-blue.selectable,
 .ui.inverted .bg-team-win.selectable,
 .ui.inverted .bg-team-red.selectable,
 .ui.inverted .bg-team-loss.selectable {
@@ -840,7 +847,7 @@ div.segment.red-border-right {
   background-color: #29323e;
 }
 .ui.inverted .ui.search.invertable > .results .result {
-  border-top: 1px solid rgba(235, 235, 235, 0.2);
+  border-top: 1px solid rgba(235, 235, 235, 0.1);
 }
 .ui.inverted .ui.search.invertable > .results .result:hover {
   background-color: #34383c;
@@ -2515,8 +2522,6 @@ div#root {
       -ms-flex-direction: column;
           flex-direction: column;
   min-height: 100%;
-  -webkit-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
 }
 .ui.main > .ui.content {
   -webkit-box-flex: 1;
@@ -2615,6 +2620,9 @@ div#root {
 .text.blue {
   color: #3498db;
 }
+.primary.text {
+  color: #f2b84b;
+}
 .ui.dropdown.language div.text {
   margin-right: 0.5em;
 }
@@ -2644,7 +2652,7 @@ div#root {
   font-size: 1.42857143rem;
 }
 .massive.text {
-  font-size: 1.71428571rem;
+  font-size: 2.4rem;
 }
 .secondary.text {
   color: rgba(0, 0, 0, 0.5) !important;

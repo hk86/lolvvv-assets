@@ -7,3 +7,8 @@
 .ui.inverted ol.ui.list li:before {
   color: rgba(255, 255, 255, 0.87);
 }
+
+.ui.inverted .ui.list .list > .item > .content,
+.ui.inverted .ui.list > .item > .content {
+  color: rgba(255, 255, 255, 0.87);
+}

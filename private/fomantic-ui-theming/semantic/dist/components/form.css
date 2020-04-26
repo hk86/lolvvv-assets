@@ -56,7 +56,7 @@
 .ui.form .field > label {
   display: block;
   margin: 0 0 0.28571429rem 0;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   font-size: 0.92857143em;
   font-weight: bold;
   text-transform: none;
@@ -110,7 +110,7 @@
   font-size: 1em;
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   border-radius: 0.28571429rem;
   -webkit-box-shadow: 0 0 0 0 transparent inset;
           box-shadow: 0 0 0 0 transparent inset;
@@ -128,7 +128,7 @@
   background: #FFFFFF;
   border: 1px solid rgba(34, 36, 38, 0.15);
   outline: none;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   border-radius: 0.28571429rem;
   -webkit-box-shadow: 0 0 0 0 transparent inset;
           box-shadow: 0 0 0 0 transparent inset;
@@ -214,7 +214,7 @@
   -webkit-box-shadow: 0 0 0 0 transparent inset;
           box-shadow: 0 0 0 0 transparent inset;
   padding: 0.62em 1em;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
   transition: color 0.1s ease, border-color 0.1s ease;
 }
@@ -365,22 +365,22 @@
 
 /* browsers require these rules separate */
 .ui.form ::-webkit-input-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 .ui.form :-ms-input-placeholder {
-  color: rgba(191, 191, 191, 0.87) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
 }
 .ui.form ::-moz-placeholder {
-  color: rgba(191, 191, 191, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 .ui.form :focus::-webkit-input-placeholder {
-  color: rgba(115, 115, 115, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 .ui.form :focus:-ms-input-placeholder {
-  color: rgba(115, 115, 115, 0.87) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
 }
 .ui.form :focus::-moz-placeholder {
-  color: rgba(115, 115, 115, 0.87);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 /*--------------------
@@ -1440,7 +1440,7 @@
 .ui.inverted.form input[type="url"] {
   background: #FFFFFF;
   border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -1460,7 +1460,7 @@
 }
 .ui.form .grouped.fields > label {
   margin: 0 0 0.28571429rem 0;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   font-size: 0.92857143em;
   font-weight: bold;
   text-transform: none;
@@ -1697,7 +1697,7 @@
   vertical-align: baseline;
   font-size: 0.92857143em;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   text-transform: none;
 }
 
@@ -1793,7 +1793,7 @@
 .ui.massive.form,
 .ui.massive.form .field .dropdown,
 .ui.massive.form .field .dropdown .menu > .item {
-  font-size: 1.71428571rem;
+  font-size: 2.4rem;
 }
 
 
