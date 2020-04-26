@@ -4,3 +4,5 @@
 
 @verticalPadding: .75em;
 @boxShadow: none;
+
+@loaderDimmerColor: rgba(0, 0, 0, 0.8);

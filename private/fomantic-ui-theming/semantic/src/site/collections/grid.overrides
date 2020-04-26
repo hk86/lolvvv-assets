@@ -50,11 +50,6 @@
   border-top: 1px solid rgba(175,175,175,.2);
 }
 
-h1 + div.ui.grid, h2 + div.ui.grid, h3 + div.ui.grid,
-h4 + div.ui.grid, h5 + div.ui.grid, h6 + div.ui.grid {
-  margin-top: 0px;
-}
-
 @media only screen and (max-width: @largestMobileScreen) {
   .ui.divided.grid:not([class*="vertically divided"]) > .column:not(.row),
   .ui.divided.grid:not([class*="vertically divided"]) > .row > .column {

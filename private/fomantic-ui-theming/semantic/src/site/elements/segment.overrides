@@ -52,3 +52,8 @@
 .ui.disabled.segment {
   color: rgba(255, 255, 255, 0.3);
 }
+
+.segment.selectable:hover {
+  background-color: @invertedSurface!important;
+  cursor: pointer;
+}

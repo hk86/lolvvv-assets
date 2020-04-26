@@ -166,7 +166,7 @@
 .ui.inverted .ui.basic.button,
 .ui.inverted .ui.basic.buttons .button {
   background: @invertedBase !important;
-  color: rgba(255, 255, 255, .6) !important;
+  color: rgba(255, 255, 255, .87) !important;
 }
 
 .ui.inverted .ui.basic.buttons .button {

@@ -746,7 +746,7 @@
 .ui.massive.buttons .button,
 .ui.massive.buttons .or,
 .ui.ui.ui.ui.massive.button {
-  font-size: 1.71428571rem;
+  font-size: 2.4rem;
 }
 
 /*--------------
@@ -4528,7 +4528,7 @@
 .ui.inverted .ui.basic.button,
 .ui.inverted .ui.basic.buttons .button {
   background: #1f2023 !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
 }
 .ui.inverted .ui.basic.buttons .button {
   border-left: 1px solid rgba(175, 175, 175, 0.2);
