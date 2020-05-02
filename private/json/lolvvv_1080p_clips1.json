@@ -1,5 +1,6 @@
 {
     "DesktopAudioDevice1": {
+        "balance": 0.5,
         "deinterlace_field_order": 0,
         "deinterlace_mode": 0,
         "enabled": true,
@@ -15,6 +16,7 @@
         "monitoring_type": 0,
         "muted": false,
         "name": "Desktop Audio",
+        "prev_ver": 419430404,
         "private_settings": {},
         "push-to-mute": false,
         "push-to-mute-delay": 0,
@@ -24,11 +26,12 @@
             "device_id": "default"
         },
         "sync": 0,
+        "versioned_id": "wasapi_output_capture",
         "volume": 1.0
     },
     "current_program_scene": "clips_ingame",
     "current_scene": "clips_ingame",
-    "current_transition": "Überblenden",
+    "current_transition": "Überblende",
     "groups": [],
     "modules": {
         "auto-scene-switcher": {
@@ -47,6 +50,7 @@
         "output-timer": {
             "autoStartRecordTimer": false,
             "autoStartStreamTimer": false,
+            "pauseRecordTimer": false,
             "recordTimerHours": 0,
             "recordTimerMinutes": 0,
             "recordTimerSeconds": 0,
@@ -56,7 +60,7 @@
         },
         "scripts-tool": []
     },
-    "name": "lolvvv_1080p_clips",
+    "name": "lolvvv_1080p_clips1",
     "preview_locked": false,
     "quick_transitions": [],
     "saved_projectors": [],
@@ -74,6 +78,7 @@
     ],
     "sources": [
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -84,6 +89,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "team_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -103,9 +109,11 @@
                 "text": "FNATIC"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -116,6 +124,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "proplayer_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -136,9 +145,11 @@
                 "text": "CAPS"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -149,6 +160,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "event_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -168,9 +180,11 @@
                 "text": "PENTAKILL"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -181,6 +195,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune2.2_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -190,9 +205,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8352.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -203,6 +220,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune2.1_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -212,9 +230,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8313.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -225,6 +245,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune1.1_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -234,9 +255,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8230.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -247,6 +270,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune1.4_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -256,9 +280,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8236.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -269,6 +295,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune1.3_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -278,9 +305,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8210.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -291,6 +320,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune2.0_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -300,9 +330,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8300.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -313,6 +345,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_runes2_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -322,9 +355,11 @@
                 "file": "C:/lolvvv_com/private/streamer/obs/hintergrund_schrift.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -335,6 +370,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_runes1_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -344,9 +380,11 @@
                 "file": "C:/lolvvv_com/private/streamer/obs/hintergrund_schrift.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -357,6 +395,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune1.0_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -366,9 +405,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8200.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -379,6 +420,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "rune1.2_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -388,9 +430,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/perks/8275.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -401,6 +445,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_proplayer_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -410,9 +455,11 @@
                 "file": "C:/lolvvv_com/private/streamer/obs/hintergrund_schrift.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -423,6 +470,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_event_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -432,9 +480,11 @@
                 "file": "C:/lolvvv_com/private/streamer/obs/hintergrund_schrift.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -445,6 +495,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "overview_wallpaper_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -454,9 +505,11 @@
                 "file": "C:/lolvvv_com/private/streamer/obs/wallpaper_clips.jpg"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -467,18 +520,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "perks2_img",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/perks_small/8200.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/perks_small/8009.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -489,18 +545,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "perks1_img",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/perks_small/8000.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/perks_small/8112.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -511,18 +570,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "championplayed_img",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/champion/champion_small/Tristana.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/champion/champion_small/Bard.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -533,6 +595,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "proteam_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -552,9 +615,11 @@
                 "text": "Fnatic"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -565,6 +630,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "proplayername_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -584,9 +650,11 @@
                 "text": "Rekkles"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -597,18 +665,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "proplayer_img",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/Projects/LolVvv/Assets/public/image/pros/medium/rekkles_2017.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/public/image/pros/medium/3z_2017.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -619,18 +690,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_middle",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/banner_clean.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -641,18 +715,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "lolvvv_logo",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/lolvvv_logo.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/lolvvv_logo.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -663,18 +740,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_left",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/banner_clean.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -685,6 +765,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "teamcolour_img",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -705,21 +786,23 @@
                 "name": "teamcolour_img",
                 "position": {
                     "alignment": 5,
-                    "x": 440.0,
-                    "y": 1059.0
+                    "x": 440,
+                    "y": 1059
                 },
-                "rotation": 0.0,
+                "rotation": 0,
                 "scale": {
-                    "x": 1.0,
-                    "y": 1.0
+                    "x": 1,
+                    "y": 1
                 },
                 "status": "ok",
                 "visible": true
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -733,6 +816,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "LoL",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -743,9 +827,11 @@
                 "window": "League of Legends (TM) Client:RiotWindowClass:League of Legends.exe"
             },
             "sync": 0,
+            "versioned_id": "game_capture",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -756,18 +842,22 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "vvv_logo",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/vvv_logo.jpeg"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/vvv_logo.jpeg",
+                "unload": false
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -778,6 +868,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "champion_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -787,9 +878,11 @@
                 "file": "C:/Projects/LolVvv/Assets/private/streamer/obs/champion_banner/swain.jpg"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -800,6 +893,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "lolvvv_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -809,9 +903,11 @@
                 "file": "C:/lolvvv_com/private/streamer/obs/lolvvv_logo.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -822,6 +918,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "proplayer_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -831,9 +928,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/image/pros/medium/caps_2017.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -844,6 +943,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "team_logo_png",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -853,9 +953,11 @@
                 "file": "C:/Projects/LolVvv/Assets/public/image/teams/medium/logo_fnc_2017.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -866,18 +968,21 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "banner_right",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
             "push-to-talk": false,
             "push-to-talk-delay": 0,
             "settings": {
-                "file": "C:/lolvvv_com/private/streamer/obs/banner_clean.png"
+                "file": "C:/Projects/lolvvv/Assets/Assets/private/streamer/obs/banner_clean.png"
             },
             "sync": 0,
+            "versioned_id": "image_source",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -920,6 +1025,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "clips_ingame",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -981,7 +1087,7 @@
                         "private_settings": {},
                         "rot": 0.0,
                         "scale": {
-                            "x": 0.70072990655899048,
+                            "x": 0.66666668653488159,
                             "y": 0.69999998807907104
                         },
                         "scale_filter": "disable",
@@ -1004,14 +1110,14 @@
                         "locked": false,
                         "name": "lolvvv_logo",
                         "pos": {
-                            "x": 7.0,
-                            "y": 972.0
+                            "x": 2.0,
+                            "y": 973.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
                         "scale": {
-                            "x": 0.55000001192092896,
-                            "y": 0.5494505763053894
+                            "x": 0.54199999570846558,
+                            "y": 0.5604395866394043
                         },
                         "scale_filter": "disable",
                         "visible": true
@@ -1033,14 +1139,14 @@
                         "locked": false,
                         "name": "banner_middle",
                         "pos": {
-                            "x": 288.0,
-                            "y": 939.0
+                            "x": 274.0,
+                            "y": 940.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
                         "scale": {
-                            "x": 0.82238441705703735,
-                            "y": 0.82333332300186157
+                            "x": 0.78832119703292847,
+                            "y": 0.70999997854232788
                         },
                         "scale_filter": "disable",
                         "visible": true
@@ -1062,14 +1168,14 @@
                         "locked": false,
                         "name": "proplayer_img",
                         "pos": {
-                            "x": 296.0,
-                            "y": 952.0
+                            "x": 284.0,
+                            "y": 951.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
                         "scale": {
-                            "x": 1.0,
-                            "y": 1.0
+                            "x": 0.96875,
+                            "y": 0.96875
                         },
                         "scale_filter": "disable",
                         "visible": true
@@ -1091,7 +1197,7 @@
                         "locked": false,
                         "name": "proplayername_txt",
                         "pos": {
-                            "x": 436.0,
+                            "x": 418.0,
                             "y": 954.0
                         },
                         "private_settings": {},
@@ -1120,7 +1226,7 @@
                         "locked": false,
                         "name": "proteam_txt",
                         "pos": {
-                            "x": 436.0,
+                            "x": 418.0,
                             "y": 984.0
                         },
                         "private_settings": {},
@@ -1149,8 +1255,8 @@
                         "locked": false,
                         "name": "championplayed_img",
                         "pos": {
-                            "x": 437.0,
-                            "y": 1020.0
+                            "x": 416.0,
+                            "y": 1016.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
@@ -1178,8 +1284,8 @@
                         "locked": false,
                         "name": "perks1_img",
                         "pos": {
-                            "x": 510.0,
-                            "y": 1026.0
+                            "x": 476.0,
+                            "y": 1018.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
@@ -1207,8 +1313,8 @@
                         "locked": false,
                         "name": "perks2_img",
                         "pos": {
-                            "x": 564.0,
-                            "y": 1026.0
+                            "x": 530.0,
+                            "y": 1017.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
@@ -1265,14 +1371,14 @@
                         "locked": false,
                         "name": "banner_right",
                         "pos": {
-                            "x": 1307.0,
-                            "y": 976.0
+                            "x": 1334.0,
+                            "y": 975.0
                         },
                         "private_settings": {},
                         "rot": 0.0,
                         "scale": {
-                            "x": 0.84914839267730713,
-                            "y": 0.85000002384185791
+                            "x": 0.74695861339569092,
+                            "y": 0.85333335399627686
                         },
                         "scale_filter": "disable",
                         "visible": true
@@ -1294,7 +1400,7 @@
                         "locked": false,
                         "name": "vvv_logo",
                         "pos": {
-                            "x": 1354.0,
+                            "x": 1363.0,
                             "y": 1033.0
                         },
                         "private_settings": {},
@@ -1323,7 +1429,7 @@
                         "locked": false,
                         "name": "slogan_txt",
                         "pos": {
-                            "x": 1344.0,
+                            "x": 1351.0,
                             "y": 986.0
                         },
                         "private_settings": {},
@@ -1352,7 +1458,7 @@
                         "locked": false,
                         "name": "lolvvv_txt",
                         "pos": {
-                            "x": 1429.0,
+                            "x": 1442.0,
                             "y": 1030.0
                         },
                         "private_settings": {},
@@ -1367,9 +1473,11 @@
                 ]
             },
             "sync": 0,
+            "versioned_id": "scene",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -1422,6 +1530,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "clips_pregame",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -2014,9 +2123,11 @@
                 ]
             },
             "sync": 0,
+            "versioned_id": "scene",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -2027,6 +2138,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "slogan_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -2043,9 +2155,11 @@
                 "text": "Start your Climb!"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         },
         {
+            "balance": 0.5,
             "deinterlace_field_order": 0,
             "deinterlace_mode": 0,
             "enabled": true,
@@ -2056,6 +2170,7 @@
             "monitoring_type": 0,
             "muted": false,
             "name": "lolvvv_txt",
+            "prev_ver": 419430404,
             "private_settings": {},
             "push-to-mute": false,
             "push-to-mute-delay": 0,
@@ -2072,6 +2187,7 @@
                 "text": "lolvvv.com"
             },
             "sync": 0,
+            "versioned_id": "text_gdiplus",
             "volume": 1.0
         }
     ],
