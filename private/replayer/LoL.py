@@ -7,6 +7,8 @@ from shutil import copyfile
 from subprocess import Popen
 from time import sleep
 from tempfile import gettempdir
+from zipfile import ZipFile
+
 from win32api import GetFileVersionInfo, LOWORD, HIWORD # pip install pypiwin32
 
 from PIL import Image
@@ -75,6 +77,11 @@ class LoLDriver:
         persistant_settings = path.join(self._lol_path, 'Config',
                                         'PersistedSettings.json')
         copyfile(settings_path, persistant_settings)
+
+    def restore_config(self, config_zip_path: str):
+        lol_config = path.join(self._lol_path, 'Config')
+        with ZipFile(config_zip_path, 'r') as config_zip:
+            config_zip.extractall(Path=lol_config)
 
     def start_spectate(self, url: str, game_id: int, platform_id: str, encryption_key: str):
         cmd = [path.join(getcwd(), 'spectate.bat'),
@@ -187,11 +194,11 @@ class LeagueOfLegends(LoLDriver):
     _SERVER_FOLLOWUP_TIME_S = 15
     _REPLAY_DATA_LOAD_TIME_S = 5
     _SECURE_TIMEOUT = 5
-    _SETTINGS_PATH = r'../json/lol_settings.json'
+    _CONFIG_ZIP_PATH = r'../json/Config.zip'
 
     def __init__(self, lol_path='C:\\Riot Games\\League of Legends'):
         super().__init__(lol_path)
-        self.setup_settings(self._SETTINGS_PATH)
+        self.restore_config(self._CONFIG_ZIP_PATH)
         self._in_game_pos = IngamePosition()
         self._focus_team = None
         self._focus_player_idx = -1
