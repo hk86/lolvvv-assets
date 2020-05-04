@@ -7,7 +7,9 @@
 @resultPaddingA: @relative8px @relativeMini;
 
 @resultsWidth: 100%;
-@resultsBoxShadow: 0px 2px 3px 0px @borderColor;
+
+@resultsBackground: @invertedOverlayDark;
+@resultsBoxShadow: @subtleShadow;
 
 @resultImageBorderRadius: 0;
 @resultImageWidth: 24px;

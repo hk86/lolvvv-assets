@@ -151,55 +151,11 @@
   left: 0em;
 }
 
-/* Basic Inverted Button */
-.ui.inverted .ui.basic.buttons {
-  border: 1px solid rgba(175, 175, 175, 0.20);
-}
-
-.ui.inverted .ui.basic.active.button,
-.ui.inverted .ui.basic.buttons .active.button {
-  background: rgba(255, 255, 255, .05) !important;
-  color: rgba(255, 255, 255, .95) !important;
+.ui.basic.buttons .active.button, .ui.basic.active.button {
+  color: @textColor!important;
 }
 
 
-.ui.inverted .ui.basic.button,
-.ui.inverted .ui.basic.buttons .button {
-  background: @invertedBase !important;
-  color: rgba(255, 255, 255, .87) !important;
-}
-
-.ui.inverted .ui.basic.buttons .button {
-  border-left: 1px solid rgba(175, 175, 175, 0.20);
-}
-
-.ui.inverted .ui.basic.button:active:not(.blue),
-.ui.inverted .ui.basic.buttons .button:active:not(.blue),
-.ui.inverted .ui.basic.button:hover:not(.blue),
-.ui.inverted .ui.basic.buttons .button:hover:not(.blue) {
-  background: #3a3a3a !important;
-  color: rgba(255, 255, 255, .9) !important;
-}
-
-.ui.inverted .ui.basic.blue.buttons .button,
-.ui.inverted .ui.basic.blue.button,
-.ui.inverted .ui.basic.blue.buttons .button,
-.ui.inverted .ui.basic.blue.button {
-    background-color: @invertedBase !important;
-    color: @blue !important;
-}
-
-.ui.inverted .ui.basic.blue.buttons .button:active,
-.ui.inverted .ui.basic.blue.button:active,
-.ui.inverted .ui.basic.blue.buttons .button:hover,
-.ui.inverted .ui.basic.blue.button:hover {
-    background-color: @invertedSurface !important;
-}
-
-
-.ui.inverted .ui.buttons .button:first-child {
-  border-left: none;
-}
 
 .ui.buttons .button,
 .ui.buttons .or,
@@ -219,4 +175,20 @@
 }
 .ui.basic.buttons .button {
   box-shadow: none !important;
+}
+
+.ui.subtle.buttons .button, .ui.button.subtle {
+  background-color: @invertedSubtleClickable;
+}
+.ui.subtle.buttons .button:hover, .ui.button.subtle:hover {
+  background-color: @invertedSubtleClickableHover;
+}
+.ui.subtle.buttons .button:focus, .ui.button.subtle:focus {
+  background-color: @invertedSubtleClickableFocus;
+}
+.ui.subtle.buttons .button:active, .ui.button.subtle:active {
+  background-color: @invertedSubtleClickableActive;
+}
+.ui.subtle.buttons .active.button, .ui.active.button.subtle {
+  background-color: @invertedSubtleClickableActive;
 }

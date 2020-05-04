@@ -15,10 +15,6 @@
   background-color: @invertedBase !important;
 }
 
-.ui.inverted .secondary.text {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
 .ui.inverted .bg-team-blue.selectable, .ui.inverted .bg-team-win.selectable,
 .ui.inverted .bg-team-red.selectable, .ui.inverted .bg-team-loss.selectable {
     color: rgba(255, 255, 255, 0.87) !important;
@@ -51,11 +47,6 @@
   border-bottom: 1px solid rgba(175, 175, 175, 0.20);
 }
 
-.ui.inverted .ui.opaque.label {
-  background-color: rgba(45, 47, 52, 0.8);
-  color: rgba(255, 255, 255, 0.87);
-}
-
 .ui.inverted .bg-light-primary {
   background-color: #142437 !important;
 }
@@ -64,17 +55,6 @@
   border-top: 3px solid rgba(175, 175, 175, 0.20) !important;
   border-bottom: 1px solid rgba(175, 175, 175, 0.20) !important;
 }
-
-.ui.inverted .ui.table tr.positive,
-.ui.inverted .ui.table td.positive {
-  background: #303030 !important; // TODO
-}
-
-.ui.inverted .ui.table tr.negative,
-.ui.inverted .ui.table td.negative {
-  background: #303030 !important; // TODO
-}
-
 
 .ui.inverted .ui.secondary.pointing.menu {
   border-bottom: 2px solid rgba(175, 175, 175, 0.30);
@@ -97,25 +77,25 @@
 }
 
 
-.ui.inverted .ui.basic.table t.ui.main tr {
+.ui.inverted .removed.ui.basic.table t.ui.main tr {
   border-bottom: 1px solid rgba(175, 175, 175, 0.20);
 }
 
-.ui.inverted .ui.table tr td {
+.ui.inverted .removed.ui.table tr td {
   border-top: 1px solid rgba(175, 175, 175, 0.20);
 }
 
-.ui.inverted .ui.celled.table tr th:first-child,
-.ui.inverted .ui.celled.table tr td:first-child {
+.ui.inverted .removed.ui.celled.table tr th:first-child,
+.ui.inverted .removed.ui.celled.table tr td:first-child {
   border-left: none;
 }
 
-.ui.inverted .ui.celled.table tr th,
-.ui.inverted .ui.celled.table tr td {
+.ui.inverted .removed.ui.celled.table tr th,
+.ui.inverted .removed.ui.celled.table tr td {
   border-left: 1px solid rgba(175, 175, 175, 0.20);
 }
 
-.ui.inverted .ui.table tr:first-child td {
+.ui.inverted .removed.ui.table tr:first-child td {
   border-top: none;
 }
 
@@ -192,15 +172,15 @@
 }
 
 /*--- Label ---*/
-.ui.inverted .ui.labels.invertable .label,
-.ui.inverted .ui.label.invertable {
+.ui.inverted .removed.ui.labels.invertable .label,
+.ui.inverted .removed.ui.label.invertable {
   background-color: @borderBlueGrey !important;
   border-color: @borderBlueGrey !important;
   color: rgba(255, 255, 255, 0.87) !important;
 }
 /* Link */
-.ui.inverted a.ui.labels.invertable .label:hover,
-.ui.inverted a.ui.label.invertable:hover{
+.ui.inverted a.removed.ui.labels.invertable .label:hover,
+.ui.inverted a.removed.ui.label.invertable:hover{
   background-color: @greyHover !important;
   border-color: @greyHover !important;
   color: rgba(255, 255, 255, 0.87) !important;

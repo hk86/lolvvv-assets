@@ -2,11 +2,25 @@
     User Variable Overrides
 *******************************/
 
+
+@backgroundColor: @invertedClickable;
+@hoverBackgroundColor: @invertedClickableHover;
+@downBackgroundColor: @invertedClickableFocus;
+@activeBackgroundColor: @invertedClickableActive;
+
+@textColor: @invertedTextColorHigh;
+
+
+@basicHoverBoxShadow: none;
+@basicFocusBoxShadow: none;
+@basicDownBoxShadow: none;
+
+@basicHoverBackground: @strongTransparentBlack;
+@basicDownBackground: @basicActiveBackground; //@veryStrongTransparentBlack;;
+
 @attachedBoxShadow: none;
 
-@focusBackgroundColor: @backgroundColor;
 
-@basicBackground: @white;
 @basicFontWeight: bold;
 
 @labeledIconBackgroundColor: rgba(0, 0, 0, 0.1);

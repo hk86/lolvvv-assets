@@ -136,7 +136,7 @@ div#root {
 }
 
 .secondary.text {
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: @invertedTextColorDisabled!important;
 }
 
 // Semantic UI has these classes, however they're only applicable to

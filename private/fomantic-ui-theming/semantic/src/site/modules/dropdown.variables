@@ -10,3 +10,7 @@
 @selectionMinHeight: 34px;
 @selectionBorder: none;
 @menuBorderWidth: 0px;
+
+
+@menuBackground: @invertedOverlayDark;
+@raisedShadow: @subtleShadow;

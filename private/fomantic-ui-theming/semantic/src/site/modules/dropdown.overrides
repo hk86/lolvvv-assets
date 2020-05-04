@@ -86,6 +86,10 @@
   border-bottom-right-radius: @selectionBorderRadius !important;
 }
 
+.ui.selection.active.dropdown {
+color: @primaryColor;
+}
+
 .ui.inverted .ui.selection.dropdown.error {
   color: @red;
 }
