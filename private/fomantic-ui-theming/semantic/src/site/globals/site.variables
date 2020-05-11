@@ -3,7 +3,7 @@
 *******************************/
 
 @invertedTextColorHigh: rgba(255, 255, 255, 0.87);
-@invertedTextColorMedium: rgba(255, 255, 255, 0.60);
+@invertedTextColorMedium: rgba(255, 255, 255, 0.50);
 @invertedTextColorDisabled: rgba(255, 255, 255, 0.38);
 
 
@@ -31,6 +31,53 @@
 
 @linkColor           : @primaryColor;
 @linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
+
+/*-------------------
+      Borders
+--------------------*/
+
+@circularRadius                : 500rem;
+
+@borderColor               : rgba(221, 219, 217, 0.15);
+@strongBorderColor         : rgba(221, 219, 217, 0.22);
+@internalBorderColor       : rgba(221, 219, 217, 0.1);
+@selectedBorderColor       : rgba(221, 219, 217, 0.35);
+@strongSelectedBorderColor : rgba(221, 219, 217, 0.5);
+@disabledBorderColor       : rgba(221, 219, 217, 0.05);
+
+@solidInternalBorderColor  : #2E2F31;
+@solidBorderColor          : #3C3D3F;
+@solidSelectedBorderColor  : #4A4B4D;
+
+/*-------------------
+     Neutral Text
+--------------------*/
+
+
+@darkTextColor               : rgba(255, 255, 255, 0.87);
+@mutedTextColor              : rgba(255, 255, 255, 0.6);
+@lightTextColor              : rgba(255, 255, 255, 0.38);
+
+@unselectedTextColor         : rgba(255, 255, 255, 0.4);
+@hoveredTextColor            : rgba(255, 255, 255, 0.8);
+@pressedTextColor            : rgba(255, 255, 255, 0.9);
+@selectedTextColor           : rgba(255, 255, 255, 0.95);
+@disabledTextColor           : rgba(255, 255, 255, 0.2);
+
+/*-------------------
+     Alpha Colors
+--------------------*/
+
+@subtleTransparentBlack     : rgba(255, 255, 255, 0.03);
+@transparentBlack           : rgba(255, 255, 255, 0.05);
+@strongTransparentBlack     : rgba(255, 255, 255, 0.10);
+@veryStrongTransparentBlack : rgba(255, 255, 255, 0.15);
+
+/*-------------------
+       Accents
+--------------------*/
+
+@subtleShadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
 
 /*-------------------
      Breakpoints
@@ -69,11 +116,33 @@
 @orange: #e67e22;
 @red: #e74c3c;
 @purple: #9b59b6;
+@markedColor: #2c3e50; // Midnight Blue
+@markedColorLight: #34495e; // Wet Asphalt
+
+/*---  Light Colors  ---*/
+@lightRed         : @redBackground;
+@lightOrange      : @orangeBackground;
+@lightYellow      : @yellowBackground;
+@lightOlive       : @oliveBackground;
+@lightGreen       : @greenBackground;
+@lightTeal        : @tealBackground;
+@lightBlue        : @blueBackground;
+@lightViolet      : @violetBackground;
+@lightPurple      : @purpleBackground;
+@lightPink        : @pinkBackground;
+@lightBrown       : @brownBackground;
+@lightGrey        : @greyBackground;
+@lightBlack       : @blackBackground;
 
 /*---  Dark Tones  ---*/
 @greyActive            : darken(@grey, 10);
 @borderBlueGrey:    #485163; // #3D4756
 
+/*--- Colored Text ---*/
+@yellowTextColor    : @yellow;
+@oliveTextColor     : @olive;
+@greenTextColor     : @green;
+@tealTextColor      : @teal;
 
 /*-------------------
      Brand Colors
@@ -113,3 +182,9 @@
 @invertedActiveBackgroundColor: #3A4556;
 @invertedHoverBackgroundColor: lighten(@invertedActiveBackgroundColor, 5);
 @invertedFocusBackgroundColor: lighten(@invertedActiveBackgroundColor, 8);
+
+
+@invertedSubtleClickable: fade(@invertedClickable, 20%);
+@invertedSubtleClickableActive: fade(@invertedClickableActive, 50%);
+@invertedSubtleClickableHover: fade(@invertedClickableHover, 50%);
+@invertedSubtleClickableFocus: fade(@invertedClickableFocus, 50%);

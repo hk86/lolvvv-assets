@@ -1,6 +1,21 @@
 /*******************************
     User Variable Overrides
 *******************************/
+
+@background: @invertedBase;
+@headerBackground: @invertedSurface;
+
+/*
+@rowBorder: 1px solid @solidInternalBorderColor;
+@cellBorder: 1px solid @solidInternalBorderColor;
+@headerBorder: 1px solid @solidInternalBorderColor;
+
+@footerBorder: 1px solid @solidBorderColor;
+@border: @borderWidth solid @solidBorderColor;
+@sortableBorder: 1px solid @solidBorderColor;
+@basicTableBorder: @borderWidth solid @solidBorderColor;
+*/
+
 /*--------------
      Parts
 ---------------*/

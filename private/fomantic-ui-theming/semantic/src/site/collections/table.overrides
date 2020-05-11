@@ -29,7 +29,7 @@
 }
 
 .ui.sortable.table thead th {
-  border-top: 3px solid @lightGrey;
+  border-top: 3px solid @solidBorderColor;
 }
 
 .ui.sortable.table thead th.sorted,
@@ -53,7 +53,8 @@
   color: rgba(255, 255, 255, 0.3);
 }
 
-.ui.inverted .ui.table {
+
+.ui.inverted .removed.ui.table {
   background: @invertedBase;
   color: rgba(255, 255, 255, 0.87);
   border: none;
@@ -71,11 +72,7 @@
     color: rgba(255, 255, 255, 0.87) !important;
 }
 
-.ui.inverted .ui.table:not(.basic) thead {
-  background-color: @headerPrimaryBackground;
-}
-
-.ui.inverted .ui.table thead th {
+.ui.inverted .removed.ui.table thead th {
   background-color: @headerPrimaryBackground;
   border-color: rgba(175, 175, 175, 0.20);
   color: rgba(255, 255, 255, 0.87);
@@ -132,9 +129,5 @@
 }
 
 .ui.table td.marked {
-  background: #e8e8e8;
-}
-
-.ui.inverted .ui.table td.marked {
-  background: @borderBlueGrey;
+  background: @markedColorLight;
 }

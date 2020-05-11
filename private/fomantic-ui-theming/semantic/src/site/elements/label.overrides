@@ -19,7 +19,7 @@
 
 .ui.opaque.labels .label,
 .ui.opaque.label {
-  background-color: fade(@backgroundColor, 80%);
+  background-color: fade(@invertedOverlayDark, 80%);
 }
 
 .ui.transparent.label {

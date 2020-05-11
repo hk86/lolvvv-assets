@@ -2,6 +2,9 @@
     User Variable Overrides
 *******************************/
 
+@backgroundColor: @markedColorLight;
+@color: @invertedTextColorHigh;
+
 @imageLabelRightPadding: @imageLabelVerticalPadding @imageLabelTextDistance @imageLabelVerticalPadding @imageLabelHorizontalPadding;
 @imageLabelRightImageMargin: -@verticalPadding -@imageLabelTextDistance -@verticalPadding @imageLabelTextDistance;
 

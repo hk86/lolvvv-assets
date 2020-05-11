@@ -2,6 +2,8 @@
     User Variable Overrides
 *******************************/
 
+@background: @invertedBase;
+
 @verticalPadding: .75em;
 @boxShadow: none;
 

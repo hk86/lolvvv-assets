@@ -79,9 +79,8 @@ class LoLDriver:
         copyfile(settings_path, persistant_settings)
 
     def restore_config(self, config_zip_path: str):
-        lol_config = path.join(self._lol_path, 'Config')
         with ZipFile(config_zip_path, 'r') as config_zip:
-            config_zip.extractall(Path=lol_config)
+            config_zip.extractall(path=self._lol_path)
 
     def start_spectate(self, url: str, game_id: int, platform_id: str, encryption_key: str):
         cmd = [path.join(getcwd(), 'spectate.bat'),
