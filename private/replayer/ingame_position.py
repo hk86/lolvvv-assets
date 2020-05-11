@@ -1,3 +1,7 @@
+import datetime
+import locale
+from os import path
+from pathlib import Path
 from typing import Dict, Any
 
 from scipy.signal import fftconvolve
@@ -44,6 +48,19 @@ class IngamePosition:
         best_match = sorted(compare_value.items(), reverse=True)[0]
         if best_match[0] > 1.0:
             return best_match[1]
+        else:
+            debug_folder = "/debug/{}_{}".format(champ_key, datetime.now().strftime("%m%d-%H%M%S"))
+            print("Couldn't find ingame champ position creating files {}".format(debug_folder))
+            Path(debug_folder).mkdir(parents=True, exist_ok=True)
+            champ_img_path = path.join(debug_folder, '{}.png'
+                                       .format(champ_key))
+            Image.save(champ_img_path, "PNG")
+            for in_game_champ in team:
+                comp_index = float(sum(self._pic_compare(in_game_champ.icon, champ_img)))
+                in_game_champ_path = path.join(debug_folder,
+                                       "{}_{}".format(in_game_champ.in_team_idx,
+                                                      locale.format_string('%.3f', comp_index)))
+                in_game_champ.icon.save(in_game_champ_path, "PNG")
 
     @staticmethod
     def _equalize_pics(im1: Image, im2: Image):
