@@ -22,6 +22,7 @@ class IngamePosition:
         else:
             self._image_service = ImageService()
         self._in_game_champ = None
+        self._lol_screenshot = None
 
     def init_champs(self, lol_screenshot: Image):
         self._in_game_champ = {
@@ -60,8 +61,8 @@ class IngamePosition:
             for in_game_champ in team:
                 comp_index = float(sum(self._pic_compare(in_game_champ.icon, champ_img)))
                 in_game_champ_path = path.join(debug_folder,
-                                       "{}_{}.png".format(in_game_champ.in_team_idx,
-                                                      locale.format_string('%.3f', comp_index)))
+                                               "{}_{}.png".format(in_game_champ.in_team_idx,
+                                                                  locale.format_string('%.3f', comp_index)))
                 in_game_champ.icon.save(in_game_champ_path, "PNG")
 
     @staticmethod

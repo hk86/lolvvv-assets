@@ -16,6 +16,7 @@ from logger import Logger
 from match.fact_match import FactMatch
 from match.fact_replay import FactReplay
 from match.match import Match
+from match.replay import Replay
 from match.spectate_match import SpectateMatch
 from patch_version import PatchVersion
 from replay_hoover import ReplayHoover
@@ -25,6 +26,7 @@ from s3_clip_upload import S3ClipUpload
 
 class Clipper:
     _MIN_RUNTIME = timedelta(hours=8)
+    _MAX_TIME_REPLAY_PENDING = timedelta(hours=8)
     MAX_MATCHES_PER_SCAN = 50
     _OBS_FILE_HANDLE_WAIT_TIME = 10
 
@@ -80,7 +82,7 @@ class Clipper:
         self._logger.debug('pending matches = {}'.format(len(replays)))
         return replays
 
-    def replays_to_fact_replays(self, replays: [SpectateMatch]):
+    def replays_to_fact_replays(self, replays: [Replay]):
         fact_matches = []
         for replay in replays:
             fact_match = self._fact_db.get_fact_match(
@@ -89,6 +91,8 @@ class Clipper:
             )
             if not fact_match:
                 print("couldn't find match {} {}".format(replay.platform_id, replay.game_id))
+                if datetime.now()-replay.record_timestamp > self._MAX_TIME_REPLAY_PENDING:
+                    self._replay_manager.mark_as_handled_rep(replay.platform_id, replay.game_id)
                 continue
             fact_matches.append(FactReplay(fact_match, replay))
             if len(fact_matches) >= self.MAX_MATCHES_PER_SCAN:

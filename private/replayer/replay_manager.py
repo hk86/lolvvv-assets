@@ -1,12 +1,13 @@
-from os import path
+from datetime import datetime
 from glob import glob
-from json import load as json_load
 from json import JSONDecodeError
-from shutil import rmtree
+from json import load as json_load
+from os import path
 from random import getrandbits
+from shutil import rmtree
 
-from match.spectate_match import SpectateMatch
-from replay_server import ReplayServer
+from match.replay import Replay
+
 
 class ReplayManager:
     _URL = '127.0.0.1:1337'
@@ -46,12 +47,14 @@ class ReplayManager:
                     print('corrupt meta file found: {0} {1}'.format(platform, game_id))
                     self.mark_as_handled_rep(platform, game_id)
                     continue
-                match = SpectateMatch(
+                replay = Replay(
                     platform,
                     int(game_id),
                     metas['encryptionKey'],
-                    self._URL + '-' + str(getrandbits(32)))
-                replays.append(match)
+                    self._URL + '-' + str(getrandbits(32)),
+                    datetime.fromisoformat(metas['downloadFinishedTime'])
+                )
+                replays.append(replay)
         return replays
 
     def mark_as_handled_rep(self, platform_id, game_id):
