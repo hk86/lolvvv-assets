@@ -28,6 +28,7 @@ class IngamePosition:
             FactTeamId.BLUE: [],
             FactTeamId.RED: []
         }
+        self._lol_screenshot = lol_screenshot
         for in_team_idx in range(5):
             blue_champ = BlueIngameChamp(in_team_idx, lol_screenshot)
             red_champ = RedIngameChamp(in_team_idx, lol_screenshot)
@@ -55,6 +56,7 @@ class IngamePosition:
             champ_img_path = path.join(debug_folder, '{}.png'
                                        .format(champ_key))
             champ_img.save(champ_img_path, "PNG")
+            self._lol_screenshot.save(path.join(debug_folder, 'screenshot.png'), "PNG")
             for in_game_champ in team:
                 comp_index = float(sum(self._pic_compare(in_game_champ.icon, champ_img)))
                 in_game_champ_path = path.join(debug_folder,
