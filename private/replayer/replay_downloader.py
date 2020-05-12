@@ -301,7 +301,8 @@ class ReplayDownloader(Thread):
             'startGameChunkId': end_metas['startGameChunkId'],
             'endGameChunkId': self._last_chunk_id,
             'endGameKeyFrameId': self._last_key_frame_id,
-            'encryptionKey': self._replay.encryption_key
+            'encryptionKey': self._replay.encryption_key,
+            'downloadFinishedTime': datetime.now().astimezone().isoformat()
             }
         return metas
 

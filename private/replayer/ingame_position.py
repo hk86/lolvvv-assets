@@ -49,7 +49,7 @@ class IngamePosition:
         if best_match[0] > 1.0:
             return best_match[1]
         else:
-            debug_folder = "/debug/{}_{}".format(champ_key, datetime.now().strftime("%m%d-%H%M%S"))
+            debug_folder = "debug/{}_{}".format(champ_key, datetime.now().strftime("%m%d-%H%M%S"))
             print("Couldn't find ingame champ position creating files {}".format(debug_folder))
             Path(debug_folder).mkdir(parents=True, exist_ok=True)
             champ_img_path = path.join(debug_folder, '{}.png'
@@ -58,7 +58,7 @@ class IngamePosition:
             for in_game_champ in team:
                 comp_index = float(sum(self._pic_compare(in_game_champ.icon, champ_img)))
                 in_game_champ_path = path.join(debug_folder,
-                                       "{}_{}".format(in_game_champ.in_team_idx,
+                                       "{}_{}.png".format(in_game_champ.in_team_idx,
                                                       locale.format_string('%.3f', comp_index)))
                 in_game_champ.icon.save(in_game_champ_path, "PNG")
 
