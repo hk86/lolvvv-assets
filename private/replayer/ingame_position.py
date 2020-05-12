@@ -1,8 +1,8 @@
-import datetime
 import locale
 from os import path
 from pathlib import Path
 from typing import Dict, Any
+from datetime import datetime
 
 from scipy.signal import fftconvolve
 from scipy.signal.windows import gaussian
@@ -54,7 +54,7 @@ class IngamePosition:
             Path(debug_folder).mkdir(parents=True, exist_ok=True)
             champ_img_path = path.join(debug_folder, '{}.png'
                                        .format(champ_key))
-            Image.save(champ_img_path, "PNG")
+            champ_img.save(champ_img_path, "PNG")
             for in_game_champ in team:
                 comp_index = float(sum(self._pic_compare(in_game_champ.icon, champ_img)))
                 in_game_champ_path = path.join(debug_folder,
