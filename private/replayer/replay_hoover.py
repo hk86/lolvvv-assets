@@ -1,12 +1,12 @@
-from database.replay_files import ReplayFiles
-from database.meteor import Meteor
+from datetime import timedelta
+from threading import Thread, Event
+from time import sleep
+
 from database.live_match_db import LiveMatchGenerator
-from match.live_match import LiveMatch
+from database.meteor import Meteor
+from database.replay_files import ReplayFiles
 from replay_downloader import ReplayDownloader
 
-from threading import Thread, Event
-from datetime import timedelta
-from time import sleep
 
 class ReplayHoover(Thread):
     YOUNGER_THAN_MIN = 2
@@ -45,6 +45,7 @@ class ReplayHoover(Thread):
         for idx, download in enumerate(self._downloads):
             if not download.is_alive():
                 self._downloads.pop(idx)
+
 
 if __name__ == "__main__":
     print('start')
