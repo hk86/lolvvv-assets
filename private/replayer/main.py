@@ -212,7 +212,7 @@ if __name__ == '__main__':
                     and (len(patch_matches) == 0)
                     and clipper.pending_patch):
                 clipper.upgrade_lol()
-                continue
+                break
             for match in patch_matches:
                 clips = clipper.prepare_clips(match)
                 if len(clips) > 0:
