@@ -5,7 +5,7 @@ from PIL import Image
 class IngameChamp(ABC):
     size_y = 31
     _COORDINATE_Y_CHAMP1 = 876
-    _COORDINATE_Y_OFFSET = 30
+    _COORDINATE_Y_OFFSET = 41
 
     def __init__(self, in_team_index: int, lol_screenshot: Image):
         self._in_team_index = in_team_index
