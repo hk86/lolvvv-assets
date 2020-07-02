@@ -3,9 +3,9 @@ from PIL import Image
 
 
 class IngameChamp(ABC):
-    size_y = 35
-    _COORDINATE_Y_CHAMP1 = 860
-    _COORDINATE_Y_OFFSET = 45
+    size_y = 31
+    _COORDINATE_Y_CHAMP1 = 876
+    _COORDINATE_Y_OFFSET = 41
 
     def __init__(self, in_team_index: int, lol_screenshot: Image):
         self._in_team_index = in_team_index
@@ -46,11 +46,11 @@ class IngameChamp(ABC):
 
 class BlueIngameChamp(IngameChamp):
     team_id = 100
-    coordinate_x = 924
-    size_x = 35
+    coordinate_x = 926
+    size_x = 32
 
 
 class RedIngameChamp(IngameChamp):
     team_id = 200
     coordinate_x = 975
-    size_x = 35
+    size_x = 31
