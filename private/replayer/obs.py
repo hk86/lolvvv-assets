@@ -271,6 +271,30 @@ class ObsClips(Obs):
         self._set_txt('event_txt', event.ev_type)
 
 
+class ObsClips2020(Obs):
+    _SCENE_PATH = r'../json/lolvvv_1080p_clips_new.json'
+    _BLUE_COLOR = 4823517
+    _RED_COLOR = 14567991
+
+    def __init__(self, obs_path=r'C:\Program Files\obs-studio'):
+        super().__init__(obs_path)
+        self._images = ImageService()
+
+    def set_main_pro(self, main_pro: StaticPro):
+        nickname = main_pro.nickname
+        self._set_txt('proplayername_txt', nickname)
+        self._set_img_file('proplayer_img',
+                           self._images.pro_med_img_path(main_pro.image)
+                           )
+
+    def set_fact_team(self, fact_team_id: FactTeamId):
+        if fact_team_id == FactTeamId.BLUE:
+            color_code = self._BLUE_COLOR
+        else:
+            color_code = self._RED_COLOR
+        self._set_txt_color('proplayername_txt', color_code)
+
+
 class ObsStreamer(Obs):
     _SCENE_PATH = r'../json/obs_lolvvv_1080p.json'
 

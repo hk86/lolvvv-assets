@@ -11,7 +11,7 @@ from match.spectate_match import SpectateMatch
 from event import Event
 from clip import Clip
 from video import Video
-from obs import ObsClips
+from obs import ObsClips2020
 from LoL import LeagueOfLegends, LoLState
 
 from os import path
@@ -24,7 +24,6 @@ from glob import glob
 class ClipRecorder:
     _MAIN_VIDEO_FOLDER = r'./replays/clips'
     _RECORDING_OVERTIME_S = 15
-    _PREGAME_TIME_S = 3
     _RELEASE_HANDLE_TIME_S = 3
 
     def __init__(self, meteor_db: Meteor, lol: LeagueOfLegends):
@@ -34,7 +33,7 @@ class ClipRecorder:
         self._static_pro_db = StaticProDb(meteor_db)
         self._static_champ_db = StaticChampDb(meteor_db)
         self._pro_team_db = ProTeamDb(meteor_db)
-        self._obs = ObsClips()
+        self._obs = ObsClips2020()
         self._lol = lol
 
     def prepare_clips(self, events: [Event]):
@@ -79,25 +78,16 @@ class ClipRecorder:
                                     str(clip.id))
             Path(clip_folder).mkdir(parents=True, exist_ok=True)
             self._obs.set_recording_folder(clip_folder)
-            self._obs.show_pregame_overlay(True)
             killer_summoner = clip.event.main_summoner
-            self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
             main_champ = self._static_champ_db \
                 .get_champ_key(killer_summoner.champ_id)
-            self._obs.set_champion(main_champ)
             self._obs.set_main_pro(clip.main_pros[0])
-            pro_team = self._pro_team_db.get_pro_team(
-                clip.main_pros[0].team_id)
-            self._obs.set_pro_team(pro_team)
             self._obs.set_fact_team(killer_summoner.team)
-            self._obs.set_event(clip.event)
             lol.cleanup_event_list()
             lol.modify_ui()
-            self._obs.start_recording()
-            sleep(self._PREGAME_TIME_S)
             if clip.event.main_focus:
                 lol.focus_champ(main_champ, killer_summoner.team)
-            self._obs.show_pregame_overlay(False)
+            self._obs.start_recording()
             lol.toggle_pause_play()
             start_record = datetime.now()
             sleep(clip.event.length.total_seconds()
@@ -157,18 +147,13 @@ class ClipRecorder:
         clip_folder = self._get_clip_video_path(clip)
         Path(clip_folder).mkdir(parents=True, exist_ok=True)
         self._obs.set_recording_folder(clip_folder)
-        self._obs.show_pregame_overlay(True)
         killer_summoner = clip.event.main_summoner
-        self._obs.set_perks(FactPerks(killer_summoner.fact_stats))
         main_champ = self._static_champ_db \
             .get_champ_key(killer_summoner.champ_id)
-        self._obs.set_champion(main_champ)
         self._obs.set_main_pro(clip.main_pros[0])
         pro_team = self._pro_team_db.get_pro_team(
             clip.main_pros[0].team_id)
-        self._obs.set_pro_team(pro_team)
         self._obs.set_fact_team(killer_summoner.team)
-        self._obs.set_event(clip.event)
         self._lol.cleanup_event_list()
         self._lol.modify_ui()
         if clip.event.main_focus:
