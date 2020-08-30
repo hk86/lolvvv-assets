@@ -273,8 +273,8 @@ class ObsClips(Obs):
 
 class ObsClips2020(Obs):
     _SCENE_PATH = r'../json/lolvvv_1080p_clips_new.json'
-    _BLUE_COLOR = 4823517
-    _RED_COLOR = 14567991
+    _BLUE_COLOR = 4292581428
+    _RED_COLOR = 4282141927
 
     def __init__(self, obs_path=r'C:\Program Files\obs-studio'):
         super().__init__(obs_path)
