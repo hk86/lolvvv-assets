@@ -1,0 +1,234 @@
+#Query
+
+query {
+  prosMatchesCollection(offset: 0) {
+    matches {
+      platformId
+      gameId
+      gameVersion
+      patch
+      gameDuration
+      gameEnding
+      gameType
+      mapId
+      queueId
+      participant {
+        participantId
+        teamId
+        spell1Id
+        spell2Id
+        championId
+        opponentChampionId
+        laneWin
+        position
+        stats {
+          win
+          item0
+          item1
+          item2
+          item3
+          item4
+          item5
+          item6
+          kills
+          deaths
+          assists
+          perk0
+          perk1
+          perk2
+          perk3
+          perk4
+          perk5
+          perkPrimaryStyle
+          perkSubStyle
+          statPerk0
+          statPerk1
+          statPerk2
+          champLevel
+          visionScore
+          totalMinionsKilled
+          neutralMinionsKilled
+          neutralMinionsKilledTeamJungle
+          neutralMinionsKilledEnemyJungle
+        }
+        timeline {
+          creepsDiffPerMinDeltas {
+            from0To10
+          }
+        }
+      }
+      participantIdentity {
+        pro {
+          proId
+        }
+      }
+      matchUp {
+        team100
+        team200
+      }
+    }
+    pageInfo {
+      countEntries
+      hasNextPage
+      nextOffset
+    }
+    nextOptions {
+      positions {
+        values
+        counts
+      }
+      opponents {
+        values
+        counts
+      }
+      wonOnly {
+        values
+        counts
+      }
+      regions {
+        values
+        counts
+      }
+    }
+  }
+}
+
+
+#Schema
+
+type Query {
+    prosMatchesCollection(
+        offset: Int,
+        amount: Int,
+        championKey: String,
+        proKey: String,
+        position: String,
+        platformId: String,
+        opponentChampionId: Int,
+        wonOnly: Boolean
+    ): ProsMatchesCollection
+}
+
+type ProsMatchesCollection {
+    pageInfo: ProsMatchesCollectionPageInfo!
+    matches: [ProsMatch]!
+    nextOptions: ProsMatchesCollectionNextOptions
+}
+
+type ProsMatchesCollectionPageInfo {
+    countEntries: Int!
+    hasNextPage: Boolean!
+    nextOffset: Int
+    proId: Int
+    championId: Int
+    position: String
+}
+
+type ProsMatchesCollectionNextOptions {
+    positions: ProsMatchesCollectionNextOptionsPositions
+    opponents: ProsMatchesCollectionNextOptionsOpponens
+    wonOnly: ProsMatchesCollectionNextOptionsWonOnly
+    regions: ProsMatchesCollectionNextOptionsRegions
+    totalCount: Int!
+}
+
+type ProsMatch {
+    platformId: String!
+    gameId: GameId!
+    gameVersion: String!
+    patch: String!
+    gameDuration: Int!
+    gameCreation: Float!
+    gameEnding: Float!
+    gameMode: String!
+    queueId: Int!
+    gameType: String!
+    mapId: MapId!
+    seasonId: Int!
+    bans: [Int]!
+    participants: [MatchParticipant]!
+    participant: MatchParticipant
+    participantIdentities: [MatchParticipantIdentity]!
+    participantIdentity: MatchParticipantIdentity
+    teams: [MatchTeam]!
+    team: MatchTeam
+    matchUp: MatchMatchUp!
+    tournament: MatchTournament
+}
+
+type MatchParticipant {
+    participantId: Int!
+    teamId: Int!
+    spell1Id: SummonerSpellId!
+    spell2Id: SummonerSpellId!
+    championId: ChampionId!
+    opponentChampionId: ChampionId!
+    laneWin: String!
+    position: String!
+    stats: MatchParticipantStats
+    timeline: MatchParticipantTimeline!
+    summonerSpells: [SummonerSpellId]
+    itemsPurchasedSold: [MatchParticipantItemsPurchasedSold]
+    itemsStarter: [ItemId]
+    itemsBuyOrder: [ItemId]
+    itemMythic: ItemId
+    itemFinalBoots: ItemId
+    itemFinalTrinket: ItemId
+    itemStarterTrinket: ItemId
+    spellsSkillOrder: [ChampionSpellId]
+    rankSpells: [Int]
+    spellsSkillLevelUp: [ChampionSpellId]
+    spellsSkillLevelUpEvolve: [ChampionSpellId]
+}
+
+type MatchParticipantIdentity {
+    participantId: Int!
+    player: MatchParticipantIdentityPlayer!
+    pro: MatchParticipantIdentityPro
+    team: MatchParticipantIdentityTeam
+}
+
+type MatchParticipantIdentityPro {
+    proId: ProId!
+    key: String!
+    nickName: String!
+    position: String!
+    mainPositionMatch: Boolean!
+}
+
+type MatchTeam {
+    teamId: Int!
+    win: String!
+    firstBlood: Boolean
+    firstTower: Boolean
+    firstBaron: Boolean
+    firstDragon: Boolean
+    firstRiftHerald: Boolean
+    towerKills: Int!
+    inhibitorKills: Int!
+    baronKills: Int!
+    dragonKills: Int!
+    vilemawKills: Int!
+    riftHeraldKills: Int!
+    airDragonKills: Int!
+    earthDragonKills: Int!
+    elderDragonKills: Int!
+    fireDragonKills: Int!
+    waterDragonKills: Int!
+    bans: [MatchTeamBan]!
+}
+
+type MatchTeamBan {
+    championId: ChampionId!
+    pickTurn: Int!
+}
+
+type MatchMatchUp {
+    team100: [ChampionId]!
+    team200: [ChampionId]!
+}
+
+type MatchTournament {
+    startTime: String
+    tournamentName: String!
+}

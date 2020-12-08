@@ -1,0 +1,12 @@
+#Query
+
+query {
+    freeToPlayChampions
+}
+
+
+#Schema
+
+type Query {
+    freeToPlayChampions: [ChampionId]
+}
