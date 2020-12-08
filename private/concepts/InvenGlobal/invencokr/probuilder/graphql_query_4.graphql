@@ -1,0 +1,48 @@
+#Query
+
+query {
+  prosAggrChampionsByPosition(platformId: "KR") {
+    patches
+    championId
+    position
+    platformId
+    tierLetter
+    counts {
+      matches
+      wins
+    }
+  }
+}
+
+
+#Schema
+
+type Query {
+    prosAggrChampionsByPosition(
+        patches: [String],
+        platformId: String,
+        patchOffsetStart: Int,
+        patchOffsetEnd: Int
+    ): [ProsAggrChampion]
+}
+
+type ProsAggrChampion {
+    patches: [String]!
+    championId: ChampionId!
+    primaryPositions: [String]!
+    position: String
+    platformId: String!
+    opponentChampionId: ChampionId!
+    win: Boolean!
+    tierLetter: String!
+    inRotation: Boolean!
+    counts: ProsAggrChampionCounts!
+}
+
+type ProsAggrChampionCounts {
+    matches: Int!
+    bans: Int!
+    picks: Int!
+    wins: Int!
+    losses: Int!
+}

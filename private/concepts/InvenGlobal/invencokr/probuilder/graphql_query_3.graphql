@@ -1,0 +1,35 @@
+#Query
+
+query {
+    staticData(language: "en_US") {
+        pros
+        teams
+    }
+}
+
+
+#Schema
+
+type Query {
+    staticData(
+        language: String!,
+        gameVersion: String
+    ): StaticData!
+}
+
+type StaticData {
+    language: String!
+    latestGameVersion: String!
+    gameVersion: String!
+    champions(championIds: [ChampionId]): JSON
+    championsSpells(championSpellIds: [ChampionSpellId]): JSON
+    championsPassive(championPassiveIds: [ChampionPassiveId]): JSON
+    items(itemIds: [ItemId]): JSON
+    maps(mapIds: [MapId]): JSON
+    runeStyles(runeStyleIds: [RuneStyleId]): JSON
+    runeSlots(runeSlotIds: [RuneSlotId], runeStyleIds: [RuneStyleId]): JSON
+    runeShards(runeShardIds: [RuneShardId]): JSON
+    summonerSpells(summonerSpellIds: [SummonerSpellId]): JSON
+    pros(proIds: [ProId]): JSON
+    teams(teamIds: [TeamId]): JSON
+}
