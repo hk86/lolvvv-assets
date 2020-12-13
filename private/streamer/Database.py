@@ -59,7 +59,7 @@ class Database:
             return False
 
     def getMatch(self, gameId, platformId):
-        return self.db['fact_matches'].find_one({'$and': [{'gameId': gameId},
+        return self.db['fact_pros_matches'].find_one({'$and': [{'gameId': gameId},
                                                           {'platformId':platformId}]})
 
     def getStreaimedMatchesByTime(self, timeStart, timeStop):
@@ -171,6 +171,7 @@ class Database:
         # Generate a match criteria for the selection from the fact_matches_pro col
         return [match for match in streamed_matches_24h]
 
+    # TODO fact_matches_pro outdated!
     def _getMostPlayedChampsOnStream(self, match_criteria, limit=3):
         stats = []
         pipeline = [
@@ -192,6 +193,7 @@ class Database:
             })
         return stats
     
+    # TODO fact_matches_pro outdated!
     def _getMostShownProsOnStream(self, match_criteria, limit=3):
         stats = []
         pipeline = [
