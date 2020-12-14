@@ -9,7 +9,7 @@ class Meteor(Database):
         Database.__init__(self, uri_meteor_db)
         self._meteor = self._db['meteor']
         self._fact_replays = self._meteor['fact_pros_matches']
-        self._active_matches = self._meteor['fact_active_matches']
+        self._active_matches = self._meteor['fact_pros_active_matches']
         self._fact_clips = self._meteor['fact_clips']
         self._static_champs = self._meteor['static_file_champions']
         self._static_teams = self._meteor['static_teams']
