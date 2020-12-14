@@ -12,7 +12,7 @@ class Database:
     def __init__(self, uriMeteor):
         mc = pymongo.MongoClient(uriMeteor)
         self.db = mc['meteor']
-        self.active_matches = self.db['fact_active_matches']
+        self.active_matches = self.db['fact_pros_active_matches']
         self.streamed_matches = self.db['fact_streamed_matches']
         self._server_state = self.db['dim_server_state']
         self._fact_replays = self.db['fact_replays']
