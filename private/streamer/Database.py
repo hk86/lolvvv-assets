@@ -52,15 +52,15 @@ class Database:
             return None
 
     def matchStillRunning(self, gameId, platformId):
-        if self.active_matches.find({'$and': [{'gameId': gameId},
-                                              {'platformId':platformId}]}).count() > 0:
+        if self.active_matches.find({'$and': [{'platformId':platformId},
+                                              {'gameId': gameId}]}).count() > 0:
             return True
         else:
             return False
 
     def getMatch(self, gameId, platformId):
-        return self.db['fact_pros_matches'].find_one({'$and': [{'gameId': gameId},
-                                                          {'platformId':platformId}]})
+        return self.db['fact_pros_matches'].find_one({'$and': [{'platformId':platformId,
+                                                          {'gameId': gameId}}]})
 
     def getStreaimedMatchesByTime(self, timeStart, timeStop):
         spectatorOffset=timedelta(minutes=3)
