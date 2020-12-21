@@ -12,7 +12,7 @@ class Database:
     def __init__(self, uriMeteor):
         mc = pymongo.MongoClient(uriMeteor)
         self.db = mc['meteor']
-        self.active_matches = self.db['fact_active_matches']
+        self.active_matches = self.db['fact_pros_active_matches']
         self.streamed_matches = self.db['fact_streamed_matches']
         self._server_state = self.db['dim_server_state']
         self._fact_replays = self.db['fact_replays']
@@ -52,15 +52,15 @@ class Database:
             return None
 
     def matchStillRunning(self, gameId, platformId):
-        if self.active_matches.find({'$and': [{'gameId': gameId},
-                                              {'platformId':platformId}]}).count() > 0:
+        if self.active_matches.find({'$and': [{'platformId':platformId},
+                                              {'gameId': gameId}]}).count() > 0:
             return True
         else:
             return False
 
     def getMatch(self, gameId, platformId):
-        return self.db['fact_matches'].find_one({'$and': [{'gameId': gameId},
-                                                          {'platformId':platformId}]})
+        return self.db['fact_pros_matches'].find_one({'$and': [{'platformId':platformId,
+                                                          {'gameId': gameId}}]})
 
     def getStreaimedMatchesByTime(self, timeStart, timeStop):
         spectatorOffset=timedelta(minutes=3)
@@ -171,6 +171,7 @@ class Database:
         # Generate a match criteria for the selection from the fact_matches_pro col
         return [match for match in streamed_matches_24h]
 
+    # TODO fact_matches_pro outdated!
     def _getMostPlayedChampsOnStream(self, match_criteria, limit=3):
         stats = []
         pipeline = [
@@ -192,6 +193,7 @@ class Database:
             })
         return stats
     
+    # TODO fact_matches_pro outdated!
     def _getMostShownProsOnStream(self, match_criteria, limit=3):
         stats = []
         pipeline = [
