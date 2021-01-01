@@ -1,0 +1,65 @@
+SOURCE: https://lolesports.com/article/how-to-play-viktor-like-an-lec-pro/bltc45ceca8651bd128
+
+How To Play XXXViktor Like An LEC Pro
+
+XXXViktor has been out of the spotlight for a while, but some new changes to both him and the item system have left him in a strong spot. Lets see what's changed during the preseason.
+
+It’s the preseason, the time where XXXLeagueYYofYYLegends gets flipped upside down and a huge array of changes are made to the game, and this preseason is all about item changes. Some champions also received a slew of changes of their own, including XXXViktor. Today, we’re taking a look at what's changed for XXXViktor, not only with his kit, but his item build and skill order as well.
+
+Abilities
+
+XXXViktor has received a rework to his passive. He no longer has his XXXHexcore item, which he used to upgrade by spending gold on it, in turn allowing him to augment his abilities. XXXGloriousYYEvolution now instead allows XXXViktor to augment his abilities, giving them different effects and making them more powerful. To augment an ability, XXXViktor must collect 100 Hex Fragments. He gains these fragments by killing minions, monsters, and champions. Minions give one fragment each, while taking down an enemy champion awards XXXViktor with 25 fragments. This makes hunting for kills quite beneficial, and can allow XXXViktor to snowball if he gets a kill or two.
+
+XXXSiphonYYPower is a point-and-click ability that deals damage to the target and shields XXXViktor. The next basic attack that XXXViktor casts within a few seconds is empowered, dealing additional magic damage to the target. Once augmented, XXXViktor gains movement speed upon casting XXXSiphonYYPower and increases its shielding powers. This is a strong ability for trading with opponents, dealing a decent chunk of damage to them while shielding yourself from harm.
+
+XXXViktor can deploy XXXGravityYYField, which lasts for a few seconds. Any enemy standing within the gravity field are slowed and gain a stack. Upon reaching three stacks, they are stunned. Once augmented, XXXGravityYYField grants XXXViktor’s other abilities (excluding his ultimate) a slowing effect. XXXGravityYYField is a great area of effect ability that denies your opponents options for escaping or engaging in that area. If they try to run through it, they’ll be stunned, leaving them more vulnerable to you and your team and allowing you some time to reposition.
+
+XXXDeathYYRay is XXXViktors E. It fires a beam in a line, dealing a large amount of damage to any enemy it passes through. Once augmented, an explosion follows a second after XXXDeathYYRay is cast, dealing damage to the same area again. This is XXXViktor's main waveclear and poke damage. A few points into XXXDeathYYRay, along with an augment, turns XXXViktor into one of the strongest wave clearing champions in the game.
+
+For his ultimate, XXXViktor summons a XXXChaosYYStorm, disrupting enemies upon spawning and dealing damage in the area for the duration. XXXViktor can choose to move XXXChaosYYStorm in any direction, allowing him to easily keep damage on fleeing enemies. Upon augmenting all other abilities, XXXChaosYYStorm also gains an augment. This augment allows XXXChaosYYStorm to move faster, making it that much easier to stick onto enemies.
+
+Max Order
+
+XXXDeathYYRay is the priority skill to max for XXXViktor. As mentioned above, this is his main waveclear and poking tool. Once maxed and augmented, XXXDeathYYRay deals incredible damage, allowing XXXViktor to make short work of incoming minion waves and enemy health bars alike.
+
+Next up is XXXSiphonYYPower. The damage and shield scaling with points in XXXSiphonYYPower shouldn’t be underrated, and can grant XXXViktor a ton of additional survivability and burst damage in the mid game.
+
+Finally, XXXGravityYYField is left for last. This is mostly due to the fact that the extra damage and utility from the other two spells are stronger and more often utilised than XXXGravityYYField. The increased slow is nice, but not game-changing, and the other abilities being on a shorter cooldown is much more important than having XXXGravityYYField on a shorter cooldown, as it's unlikely to be cast more than twice in a fight. Put points into XXXChaosYYStorm at levels six, 11, and 16.
+
+Augment order is quite static for most players. XXXDeathYYRay is the most optimal augment for your first, as XXXDeathYYRay is XXXViktor’s most important spell for the majority of the game. XXXSiphonYYPower follows that, with XXXGravityYYField left for last.
+
+Runes
+
+It seems as though a majority of high Elo players, and our pros in the LEC, have agreed that XXXPhaseYYRush is the best keystone rune to run on XXXViktor. XXXPhaseYYRush offers more flexibility and options to weave in and out of danger, which can be helpful in this case since that's essentially XXXViktor’s main playstyle. This is usually followed up by taking XXXManaflowYYBand for additional mana and mana sustain, XXXTranscendence for some more XXXAbilityYYHaste, and XXXGatheringYYStorm for the late game insurance.
+
+There is some discussion around the best secondary tree. This is usually personal preference, or changed depending on the opponent you’re facing. Using former XXXFnatic midlaner Tim “Nemesis” Lipovšek as an example, he runs the XXXInspiration tree with XXXMagicalYYFootwear and XXXBiscuitYYDelivery.
+
+The former allows for more gold to be funneled into your core items, granting you slightly magical boots of speed for free after some time. The latter provides sustain during the laning phase, granting a few biscuits that, upon use, restore a portion of missing health and mana while also increasing your maximum mana. There are some who run the XXXPrecision and XXXDomination trees, but XXXInspiration seems to be the most standard as of right now.
+
+Item Build
+
+There are whispers going around of a super secret OP build for many mid lane mages right now, but that seems to be getting addressed by the balance team, so we won’t be including that in the item section. Instead, we’ll be focusing on a more standard build that many players are finding success with right now.
+
+Start out with a XXXDoran’sYYRing and two XXXHealthYYPotions for the laning phase. This will grant you all the stats you want early on, while making sure you can top your health back up if you take a couple of trades or need to survive a gank from the enemy jungler. Upon your first recall, you should try to pick up a XXXLostYYChapter, which will build into your first core item, XXXLuden’sYYEcho. After that, work towards upgrading to XXXSorcerer’sYYShoes, followed by a XXXLichYYBane as your next core item. These core items allow XXXViktor the ability to waveclear effectively, and have quite potent trading and skirmishing power.
+
+After those, there’s a bit more of a choice to be made. If in need of utility, XXXZhonya’sYYHourglass could be a strong consideration, but if you can forgo the defensives, XXXRabadon’sYYDeathcap will allow you to pack much more of a punch with your damage output, which will feel great when you're getting into the team fighting stage of the game. Following up with a XXXVoidYYStaff to negate a portion of your opponent's magic resist will definitely aid in melting through those health bars.
+
+If you didn’t opt for the XXXZhonya’sYYHourglass earlier, now might be a good time to get it. If you aren’t in need of the armour, or you aren’t taking much aggro from your opponents, you can choose a more aggressive item such as XXXMorellonimicon to try and cut down on the opponents healing, XXXCosmicYYDrive for even more movement speed, or even a XXXBanshee’sYYVeil if the enemy team has a lot of magic damage.
+
+Laning Phase
+
+Focusing on last hitting as many minions as you can is very important for any midlaner. This is especially true for XXXViktor, since each last hit gets him closer to reaching an ability augment. Your goal is to farm up as many hex fragments as possible, hopefully reaching an upgrade or two before the mid game starts.
+
+Look for opportunities to punish your opponent with the incredibly high range provided from XXXDeathYYRay. Many champions don’t have ways of matching its range, allowing you to essentially trade damage for free. Try to work with your jungler for times to roam or gank. Getting a takedown can aid you in getting an early augment, allowing you to take control of your lane that much sooner.
+
+Team Fights
+
+XXXViktor is one of the kings of AoE in LoL. Your job is to nuke down everyone you can in an area, especially the squisher targets. The sheer amount of area control provided via XXXChaosYYStorm, XXXGravityYYField, and XXXDeathYYRay will put fear in the hearts of every squishy member of the opposing team trying to walk up to you.
+
+The movement speed increases provided by both your kit and from XXXPhaseYYRush should aid you in kiting away from those posing a threat to you, while allowing you to chunk down their health bars from range. These movement speed buffs can also aid you in chasing down targets, or allow you to reach a priority target who isn’t expecting you to be so fast.
+
+Those who underestimate XXXViktor’s damage output will likely suffer the same fate that Yiliang "Doublelift" Peng did in everyone's favourite clip. Hopefully your opponents will be saving Flash for their next game as well.
+
+Conclusion
+
+To conclude, XXXViktor is an incredibly powerful AoE mage who can outright destroy anything in his path – if played correctly. He is one of the higher skill-capped champions in the game, requiring both strong knowledge of the game and potent mechanical skill to pull off correctly. This allows for rewarding gameplay that makes XXXViktor both fun to learn and main. We’d urge anyone aspiring to learn a new mage in the mid lane to give XXXViktor a try!

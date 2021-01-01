@@ -1,0 +1,54 @@
+SOURCE: https://lolesports.com/article/how-to-play-orianna-like-an-lec-pro/bltc0e56094b94d9948
+
+How To Play XXXOrianna Like An LEC Pro
+
+We’re taking a look at how XXXHumanoid and XXXLarssen play XXXOrianna to improve your own skills.
+XXXOrianna is a staple of the XXXLeagueYYofYYLegends professional play meta and has been for years. She never falls out of favour for too long, and she always seems to come back every few seasons. During the 2020 Summer Season and over the course of the World Championship, XXXOrianna was one of the most picked champions in the mid lane.
+
+And while almost all of our midlaners have played XXXOrianna on stage, XXXMADYYLions’ Marek “XXXHumanoid” Brázda and XXXRogue’s Emil “XXXLarssen” Larsson had the most experience on the XXXClockworkYYLady across the 2020 Summer Season.
+
+Abilities
+
+XXXOrianna’s passive, XXXClockworkYYWindup, comes in two parts. The first part is called XXXTheYYBall, which allows XXXOrianna to control her ball with her abilities. The second part, XXXClockworkYYWinding, increases the damage of XXXOrianna’s auto-attacks, gaining potency if she uses subsequent attacks on a specific target. This gives her an easier time farming minions with auto-attacks early on and allows her to win out in most auto-attack trades in lane.
+
+XXXCommandCYAttack is XXXOrianna’s Q. XXXOrianna commands her ball to move to the chosen location, damaging anything it passes through. This is an amazing poke tool in lane, and it’s XXXOrianna’s main way of controlling her ball position in fights. XXXCommandCYAttack doesn’t draw minion aggro, making it a very oppressive way of chipping your lane opponent down without the downside of the minions attacking you.
+
+XXXCommandCYDissonance causes the ball to emit a pulse around its location, damaging anyone caught in the blast and leaving a lingering field on the ground that slows enemies and speeds up allies. This is not only another strong poke tool, as it doesn’t draw minion aggro, but is also quite a potent team fighting and lane pushing tool since it's an area of effect (AoE) ability.
+
+XXXCommandCYProtect causes the ball to attach to the chosen ally, shielding them while granting magic resist and armor for as long as the ball stays on them. This is a great way to get your ball into the fray of a teamfight. By using XXXCommandCYProtect onto an engaging ally, XXXOrianna is able to aid in soaking up some of the initial damage while also getting her ball into the fight easily, allowing her to control the fight from the beginning.
+
+XXXCommandCYShockwave causes the ball to erupt, pulling all enemies in the area towards the ball and dealing huge damage to them. This is what makes XXXOrianna’s team fighting ability so scary for her opponents. They always have to be wary of the positioning of her ball and what range she is able to move it to, or be prone to taking huge damage or even outright killed if they misstep. This is one of the most iconic abilities in XXXLeagueYYofYYLegends and there have been many incredible plays made with XXXCommandCYShockwave that are considered some of the best plays of all time.
+
+Skill Max Order
+
+XXXCommandCYAttack is the first skill our players prioritise. As mentioned before, it’s a strong laning tool that excels at zoning and pushing the opponent with few downsides. It can also be an effective wave clearing tool with how often it can be used, and with the fact that it’s an AoE ability. Follow up with XXXCommandCYDissonance for team fight and lane pushing potency. The extra damage is definitely noticeable when XXXOrianna has a couple of core items. XXXCommandCYProtect is left to last as, generally, XXXOrianna prefers to be dealing damage over granting shields. Points in XXXCommandCYShockwave are at level 6, 11, and 16 as per usual.
+
+Runes
+
+There's one particular set of runes that is the clear favourite for players and pros alike. This setup uses XXXPhaseYYRush as the keystone rune. XXXPhaseYYRush, upon landing three separate attacks or abilities onto an enemy champion, grants the user a burst of movement speed. This is a great way of weaving in and out of danger during full scale fights, as well as giving your opponent less of an opportunity to trade damage back onto you in smaller skirmishes.
+
+Following up, our players like to take XXXManaflowYYBand for additional mana and sustain, XXXTranscendence for a chunk of cooldown reduction upon reaching level 10, and XXXScorch or XXXGatheringYYStorm for either early game control or late game scaling. This page offers strong sustain and scaling, while granting the ability to better weave in and out of danger during fights via XXXPhaseYYRush.
+
+The secondary page has a few variants, the most popular being XXXInspiration with XXXMagicalYYFootwear and XXXCosmicYYInsight. The former allows you to focus on your core items while getting your 300 gold boots for free. It's a great value rune that is often taken in the mid lane. XXXCosmicYYInsight, meanwhile, grants additional cooldown reduction on everything from abilities to active items, and even summoner spells. The added cooldown from XXXCosmicYYInsight ignores the 40 percent cap, making the maximum cooldown reduction 45 percent.
+
+Item Build
+
+XXXHumanoid shows us a great example of a final build for XXXOrianna in XXXMADYYLions' game against Origen in Week 3 of the LEC 2020 Summer Season.
+
+He starts off with a XXXDoran’sYYRing and two XXXHealthYYPotions for laning, and follows up with an early recall for a XXXTearYYofYYtheYYGoddess. He gets an early lead over Erlend "Nukeduck" Holm and grabs himself an XXXArchangelYYStaff into XXXSpellbinder as his early core items. He purchases XXXSorcerer’sYYShoes and works towards his XXXRabadon’sYYDeathcap after that. He rounds out his build with a XXXVoidYYStaff and a XXXStopwatch, which he likely would’ve turned into a XXXZhonya’sYYHourglass.
+
+This build offers early mana sustain, which allows XXXOrianna to control the lane easier, a healthy mix of ability power, cooldown reduction, and strong passives, making her a team fighting and zoning machine, able to threaten the entire enemy team with strong placement of the ball. The mix of active items allows XXXOrianna to gain tons of safety in the form of a shield and stasis, while the others allow her to decimate even the tankiest of targets in a relatively short amount of time.
+
+Laning
+
+In lane, you’ll find XXXHumanoid zoning his opponents away from the minions, threatening damage onto them if they walk into XXXCommandCYAttack range. XXXOrianna has overall control of the lane against a large majority of the current top picks in the mid lane, forcing them to play by her rules or ask for aid from their team. Due to her ability to control the mid lane, playing with the jungler to set up ganks either in mid or roaming to other lanes is usually the most optimal thing to do, as the opposing midlaner shouldn’t be able to freely follow XXXOrianna’s roam. This can create a strong gap in map control and allow XXXOrianna and her team to take over the game.
+
+Team fighting
+
+XXXOrianna excels in team fights. She has the ability to completely tip the scales in her team’s favour with good positioning of herself and the ball, and through proper usage of her abilities. Most of the time, you’ll catch XXXLarssen zoning away the enemy team from objectives such as Dragon or Baron with the ball, threatening to seriously hurt the opponents if they misstep. XXXOrianna has the ability to set up a complete team wipe with strong use of XXXCommandCYShockwave.
+
+Here’s an example of a fight between XXXSchalkeYY04 and XXXRogue. Watch how XXXLarssen zones out a few members of XXXSchalkeYY04, keeping them far enough away, buying his team enough time to secure the dragon before unleashing a beautiful four man XXXCommandCYShockwave and completely changing the outcome of the fight for his team, collecting an ace with just a single casualty.
+
+Conclusion
+
+XXXOrianna is a frequent, staple pick for mid lane, and always seems to find her way back into the meta. Consider picking up XXXOrianna if you’re looking for a control mage with the ability to dictate the outcome of a team fight through clever use of your abilities.

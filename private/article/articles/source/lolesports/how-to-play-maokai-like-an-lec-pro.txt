@@ -1,0 +1,64 @@
+SOURCE: https://lolesports.com/article/how-to-play-maokai-like-an-lec-pro/blt270298684509aba1
+
+How to Play XXXMaokai Like an LEC Pro
+
+The XXXTwistedYYTreant has as much bite as he does bark – here's how to make the most of him in his new support role
+
+The XXXTwistedYYTreant has seen a surge in playtime since the preseason began. While XXXMaokai was previously mostly played in the top lane, the preseason changes have made him an extremely potent support. With more and more support players adding him to their arsenal, it’s inevitable that he will spring up in the LEC in the 2021 season as well.
+
+Pros and Cons
+
+Support XXXMaokai combines damage, crowd control, and excellent peel. By focusing on magic damage in the item build, XXXMaokai is able to dish out a lot of poke and burst damage with his saplings. The saplings also provide you with free vision for when you have no wards at your disposal, and they make face-checking brush entirely unnecessary.
+
+XXXMaokai has multiple roots, slows, and knock-backs available for setting up the perfect kill for his allies, or for stopping enemies in their tracks. Although support XXXMaokai doesn't necessarily focus on durability, with the right runes and the sustain you get from XXXSapYYMagic, he is tankier than most other ability power (AP) supports, and can play the part of an initiator later on in the game as well as a XXXNautilus or XXXLeona could.
+
+The number one drawback is likely his lack of mobility. XXXTwistedYYAdvance (W) is your only gap closer, but it's a one-way trip like XXXLeona's XXXZenithYYBlade, so it's useless as an escape mechanism. His mana costs and cooldowns can also be somewhat high, so you may want to invest in specific items and runes to combat that.
+
+Abilities
+
+XXXSapYYMagic: XXXSapYYMagic grants you a good deal of sustain to help you stay in lane longer. It's very useful in the bot lane where you are likely to get pelted with poke, seeing as you're melee and you will usually be facing at least one ranged enemy.
+
+XXXBrambleYYSmash: Upon activation, XXXMaokai slams the ground, dealing area-of-effect damage to nearby enemies, knocking them back, and slowing them for a quarter of a second by 99%. This ability is usually used in conjunction with XXXTwistedYYAdvance, and the combo of these two abilities is devastating for whatever enemy you choose to target.
+
+XXXTwistedYYAdvance: XXXTwistedYYAdvance is one of the few remaining targeted abilities in the game. Because the enemy cannot dodge it, it's extremely valuable against slippery, high-mobility opponents. With XXXTwistedYYAdvance, XXXBrambleYYSmash, and XXXNature’sYYGrasp (R), you can keep your quarry locked in place for several seconds, leaving them at the mercy of your allies.
+
+XXXSaplingYYToss: While XXXBrambleYYSmash and XXXTwistedYYAdvance are your bread and butter for initiating fights, XXXSaplingYYToss is XXXMaokai's signature ability in the support role. Upon activating E, you can choose a location to toss one of your saplings. When an enemy approaches, the sapling will chase them and explode, dealing damage and slowing affected enemies.
+
+Saplings tossed into the brush are more potent, dealing more damage and lasting longer before expiring. By focusing on AP in your build and maxing this ability, you will be able to dish out an extreme amount of damage during laning phase, as well as keep a monopoly on the brush, since enemies will be understandably too scared to walk into them.
+
+XXXNature’sYYGrasp: XXXNature’sYYGrasp is a colossal area-of-effect ability which damages and roots every enemy it collides with. While ordinarily this would be overpowered, its major drawback is its incredibly slow pace. In order to bypass this flaw, you should generally use it in close range, especially on enemies that are already immobilized in some way.
+
+Runes
+
+XXXAftershock is XXXMaokai’s best and most commonly selected keystone. The rune bulks you up, increasing both armour and magic resistance, whenever you immobilize a champion. XXXAftershock will activate whenever you engage with XXXTwistedYYAdvance (W), so you will always be tankier when you choose to initiate a fight.
+
+Other valuable runes from the Resolve tree are XXXFontYYofYYLife, XXXBoneYYPlating, and XXXOvergrowth. The latter two make XXXMaokai overall tankier, either by decreasing the amount of poke damage he takes or by increasing his max health. XXXFontYYofYYLife, on the other hand, provides your botlaner with more sustain by healing them whenever they attack a champion whose movement you've recently impaired.
+
+When it comes to the secondary rune page, there are several options. If you choose to go with XXXInspiration, you can pick up XXXCosmicYYInsight to help with your cooldowns, as well as XXXHextechYYFlashtraption. Since XXXMaokai’s XXXTwistedYYAdvance (W) is a targeted ability, having an extra way to close the gap with the XXXFlashtraption will make an engage much easier to pull off. Some players opt for XXXDomination, selecting XXXCheapYYShot and XXXUltimateYYHunter. XXXCheapYYShot increases damage dealt to enemies whose movement is impaired, so it’s a clear choice for a crowd control powerhouse like XXXMaokai.
+
+Items
+
+Your starting item should always be XXXRelicYYShield, coupled with two potions. XXXRelicYYShield offers good stats and extra sustain for you and your botlaner. This item will self-upgrade as the game progresses, leaving you with XXXBulwarkYYofYYtheYYMountain come mid-late game.
+
+When it comes to boots, the most commonly purchased pair are the XXXSorcerer'sYYShoes, which will increase your damage overall. You may also consider XXXPlatedYYSteelcaps if the enemy team has an abundance of physical damage dealing threats, or XXXMercury'sYYTreads if the enemy team is mostly magic damage based, or has a lot of crowd control you need to avoid.
+
+The best mythic item for XXXMaokai is undeniably XXXImperialYYMandate. The stats are all tailor-made for XXXMaokai, making him tankier, decreasing his mana issues, and increasing his damage. The most important feature of the item is the passive, however. Abilities that slow or immobilize enemy champions with XXXImperialYYMandate also deal bonus magic damage and mark enemies. Allies who damage marked enemies also deal bonus magic damage. With XXXMaokai's slows, roots, and knock-backs galore, it's easy to see why this item is so coveted.
+
+Once you've got your Mythic Item, there are a lot of different AP options to choose from, and one very important utility item – XXXVigilantYYWardstone. This item will increase your overall ward carrying capacity, including allowing you to store three Control Wards. It cannot be overstated how useful it is for a support player. Having this item means always having wards at your disposal, and staying on the map longer before having to recall to refresh your wards.
+
+When it comes to the AP options, some of the most popular ones are XXXDemonicYYEmbrace, XXXMorellonomicon, XXXRylai'sYYCrystalYYScepter, and XXXRabadon'sYYDeathcap. In general, you're looking for items that benefit the most from XXXMaokai's area-of-effect style of damage. With a single Sapling, you could infect several enemies with XXXGrievousYYWounds from XXXMorellonomicon, slow them with XXXRylai's, or burn them with XXXDemonicYYEmbrace. XXXRabadon'sYYDeathcap is a good all-around AP choice when you've got the disposable income to afford it.
+
+Laning Phase
+
+When it comes to gameplay, XXXMaokai is pretty simple. Most of your damage comes from your saplings, so you can focus on planting several of them in a single bush – not too close to the minion wave, or they will be aggro'd by them – and then wait for an unsuspecting enemy to walk in. Because of the fear of walking into the brush, you can zone the enemies away from farming, causing them to lose out on experience and gold.
+
+If you do have a good opportunity to engage, XXXMaokai is pretty great at that from level two onwards. The best thing to do is to whittle down your enemies with a sapling poke, then charge at them with XXXTwistedYYAdvance. Once they're rooted, you can walk a bit in front of them and use your XXXBrambleYYSmash to push them closer towards your ally. Remember that your auto-attacks do a lot of damage in the early levels too, and they will heal you when XXXSapYYMagic is up as well.
+
+XXXMaokai is great at avoiding ganks thanks to the fact that saplings work as security as well. Place a sapling in the tri-bush or the river bush, and they will detect the enemy jungler or midlaner if they approach. If your jungler is ganking for you, don't be afraid to burn a Flash to ensure that XXXTwistedYYAdvance finds its target. Your ultimate is also a fantastic initiation or follow-up tool when you are getting a gank.
+
+Teamfights
+
+While XXXMaokai is somewhat tanky compared to other AP supports, with the AP support build you will want to stay far away from the front line. In a teamfight, your usual job is to either follow up on an engage, find a pick with XXXTwistedYYAdvance, or peel an enemy off for your botlaner.
+XXXSaplingYYToss is generally not very useful in team fights, unless you are fighting somewhere in the jungle where there is brush to take advantage of. Peeling is a breeze for XXXMaokai with his targeted root, and he can follow it up by knocking the enemy back with XXXBrambleYYSmash or activating XXXNature’sYYGrasp.
+
+With the preseason changes giving XXXMaokai a whole new role on the Summoner's Rift, it'll be fascinating to see how the LEC pros make use of this tanky support in 2021.

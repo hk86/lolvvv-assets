@@ -1,0 +1,70 @@
+SOURCE: https://lolesports.com/article/how-to-play-kha'zix-like-an-lec-pro/bltd8f1dbb9a0b6cd08
+
+How To Play XXXKha'Zix Like An LEC Pro
+
+XXXKha'Zix is one of the strongest junglers with the newest preseason changes to the game – let’s see how much has changed, and what works best with him.
+The new season is upon us, and the game has been shaken up once again. What better time to take a look at a few of the champions who have benefitted the most from the recent changes this preseason. We’re focusing on XXXKha'Zix this time around, and as he would say, “change is good” – so let's see what’s changed with him.
+
+Abilities
+
+XXXKha'Zix is an ever-evolving champion. This is due to how his ultimate ability works. Usually we’d go down the abilities in order, but in this case, it makes the most sense to start with the ultimate.
+
+XXXVoidYYAssault has a passive and an active. The passive allows XXXKha'Zix to choose one of his abilities to evolve, making it stronger and changing it in some way. The active allows XXXKha'Zix to enter stealth for a short time, granting him movement speed and activating his passive. He can do this twice. If XXXVoidYYAssault is evolved, it becomes XXXAdaptiveYYCloaking, giving XXXKha'Zix three charges which also stealth him for longer.
+
+XXXKha'Zix’s passive is XXXUnseenYYThreat. When the enemy loses sight of XXXKha'Zix, or when he activates his ultimate, XXXKha'Zix’s next attack on an enemy champion deals a large chunk of damage and slows the target. Quite a powerful passive for an assassin champion.
+
+XXXTasteYYTheirYYFear has a passive and an active effect. The passive allows XXXKha'Zix to notice if an enemy or monster is Isolated. Some of XXXKha'Zix’s abilities have special interactions with isolated targets. XXXTasteYYTheirYYFear’s damage, for example, is increased against isolated targets. If evolved, XXXTasteYYTheirYYFear becomes XXXReaperYYClaws, gaining additional range and a partial cooldown refund upon striking an isolated target.
+
+XXXVoidYYSpike shoots out a cluster of spikes, detonating at the first enemy hit, and dealing damage in a small area. If XXXKha'Zix is within the detonation range, he heals himself. This is great for dealing with jungle camps that have more than one enemy, while also allowing XXXKha'Zix to sustain in the jungle thanks to the provided heal. The evolved version, XXXSpikeYYRacks, shoots out three clusters of spikes, slowing and revealing enemies struck. XXXSpikeYYRacks slows isolated targets much more potently than non-isolated ones.
+
+XXXLeap allows XXXKha'Zix to leap to the targeted destination within range, dealing damage upon landing. XXXTasteYYTheirYYFear can be cast mid leap, allowing for a lot of burst damage in a small window. XXXEvolvedYYWings increases the leap range and resets its cooldown upon enemy takedowns. XXXEvolvedYYWings is great for aiding XXXKha'Zix in eliminating his chosen target and getting out of the fray thanks to this reset mechanic.
+
+Max Order
+
+XXXTasteYYTheirYYFear is always maxed first, as it aids XXXKha'Zix in clearing the jungle much easier. The additional damage allows him to have some more healthy clears with a few points dedicated, and increases the damage that isolated targets take from XXXTasteYYTheirYYFear.
+
+XXXVoidYYSpike is next. This is for the additional burst damage and healing capabilities. You don’t really need to prioritise XXXLeap as much since, once evolved, its cooldown can be reset, whereas XXXVoidYYSpikes cannot. Put points into XXXVoidYYAssault at 6, 11, and 16.
+
+There is no clear cut best option for choosing which abilities to evolve, as it is very situational to both your team and the enemy team comps. XXXTasteYYTheirYYFear is great when you have the opportunity to assassinate isolated targets often. This also aids with jungle clear speed and objective taking, as the cooldown refund allows you to deal incredible damage quickly. XXXVoidYYSpike works well when there is difficulty jumping into fights, or when it's hard to stick to your targets. The slow helps a lot in these instances. XXXLeap gives the ability to get in and out of fights thanks to its cooldown reset mechanic, and XXXVoidYYAssault allows you to take longer fights with more stealth charges and passive usages.
+
+Runes
+
+Taking a look through the games that our pros have been playing in the offseason shows us that many of them think XXXKha'Zix is in a strong position. They also use fairly similar rune setups across the board with minor changes here and there.
+
+XXXElectrocute seems to be the go to keystone for XXXKha'Zix. This is for the burst damage it can provide, aiding them in nuking down their target and getting out of the fight. XXXSuddenYYImpact is seeing the most use in the next tier. This is due to how easy it is to use on XXXKha'Zix with the amount of ways he has to stealth and leap. The additional lethality most certainly helps to take down the priority targets that much easier.
+
+XXXEyeballYYCollection is next up. This grants the user additional damage with every takedown they score. This is definitely useful for an assassin, whose main job is takedowns. XXXRavenousYYHunter is the final rune for the XXXDomination tree. This rune gives some sustain while clearing the jungle and during skirmishes. The additional health is nothing to scoff at, and can mean the difference between winning or losing a trade.
+
+There seems to be a bit more variety when it comes to the secondary tree. You’ve got the likes of Fnatic's Oskar "Selfmade" Boderek who prefers the XXXSorcery tree, going for XXXAbsoluteYYFocus and XXXGatheringYYStorm for some late game insurance. On the other hand, G2's Marcin “Jankos” Jankowski has been favouring the XXXInspiration tree, opting for XXXMagicalYYFootwear for the ability to gain free boots and focus more on his core items, and XXXCosmicYYInsight which grants summoner spell and item haste. You even have some people going for the XXXPrecision tree with XXXTriumph and XXXCoupYYDeYYGrace. The secondary tree seems to be one of personal preference when it comes to XXXKha'Zix.
+
+Item Build
+
+Looking at the most common build for XXXKha'Zix, it seems that either XXXHailblade or XXXEmberknife and a XXXRefillableYYPotion are both viable choices for starting items. XXXHailblade, upon smiting five times, transforms the Smite spell, allowing it to be used to damage and slow opponents. XXXEmberknife does much the same, except instead of a slow, it reduces the target's damage dealt to you and increases your damage on them.
+
+XXXDuskbladeYYofYYDraktharr is the mythic item of choice for most XXXKha'Zix players at the moment. XXXDuskblade provides a large chunk of damage when attacking from being unseen, which works perfectly with Unseen Threat. XXXDuskblade also grants invisibility on takedown, also synergising with Unseen Threat.
+
+After XXXDuskblade, most players tend to upgrade their boots to either XXXPlatedYYSteelcaps when facing heavy attack damage threats, or XXXMercuryYYTreads when against heavy ability power or crowd control-based compositions. XXXYoumuu’sYYGhostblade is the most popular follow-up item. It grants a strong amount of attack damage, ability haste, and lethality along with an active that increases movement speed – great for catching targets out of position. This is your core two item build on XXXKha'Zix.
+
+Finishing up, XXXEdgeYYofYYNight is a great option and one many players tend to pick up. It provides damage, lethality, and some tankiness, along with a very strong passive effect that blocks the next ability that strikes you. This is an incredibly strong passive for winning those close one-on-one fights later on, where a single misstep could lead to your demise.
+
+XXXSerylda’sYYGrudge is a new item added in the preseason. This grants attack damage, ability haste, and armour penetration. All of these stats are amazing for XXXKha'Zix, and the armour penetration helps him in dealing with tankier enemies later into the game. XXXSerylda’sYYGrudge also provides a passive, giving all of your damaging abilities a slow.
+
+Finally, XXXGuardianYYAngel and XXXChempunkYYChainsword are the most popular final items on XXXKha'Zix right now. The former grants a passive which revives you on death. This can be a huge benefit for those late game moments when death timers are long and one fight can lead to the end of the game. The latter grants the XXXGrievousYYWounds passive, cutting healing effects down. It's an incredibly useful passive to have versus heavy sustain compositions and champions, such as Soraka or Yuumi.
+
+Early Game
+
+XXXKha'Zix’s early game is quite powerful, with the ability to outduel many of the current meta junglers. If he manages to find his opposing jungler in an isolated position, it's tough for him to lose in a fair fight. He also has a strong jungle clear when using the isolation mechanic to the fullest by clearing out smaller minions on jungle camps, leaving the bigger, higher health enemy alone and isolated. This is a viable tactic most of the time, but can vary depending on level and if XXXSmite is used or not.
+
+Look to clear your jungle, attempting to either invade the enemy jungle whenever safe to do so, or help out your laner by ganking for them whenever possible. XXXKha'Zix has a very powerful level six power spike, so it is always a perfectly okay option to farm up until then before making a big influence over the game.
+
+Late Game
+
+Once you’re a bit later into the game and you have an evolution or two, your job is to get onto and assassinate the highest priority target that you can safely eliminate. Sometimes, this is easier said than done. For example, executing a lone marksman who is pushing bot lane by themselves is quite easy to do, and is usually just a straight free kill. Other times, it can be tricky.
+
+You need to take calculated risks often on XXXKha'Zix, such as in a teamfight, where you can get focused and blown up easily. Learn to position yourself accordingly, using your abilities to their maximum potential in order to strike at the perfect opportunity.
+
+XXXVoidYYAssault can buy you some time with its invisibility, and the XXXDuskbladeYYofYYDraktharr invisibility on takedown can allow you to weave your way out and around the battlefield. Each fight could play out differently depending on what you’ve chosen to evolve and the enemy champions you are facing, so adaptability is a must-learn skill for all players wanting to master XXXKha'Zix.
+
+Conclusion
+
+XXXKha'Zix is a powerful assassin with a strong jungle clear and early dueling potential. His ever-changing gameplay, thanks to the evolve mechanic, allows for more decision making and a higher skill cap for those interested in learning the in-depth parts of his kit. XXXKha'Zix is a great option for anyone looking to carry their games from the jungle position in the upcoming season.
