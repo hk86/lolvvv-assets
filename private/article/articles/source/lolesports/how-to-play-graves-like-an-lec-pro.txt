@@ -1,0 +1,64 @@
+SOURCE: https://lolesports.com/article/how-to-play-graves-like-an-lec-pro/blt2f34ef4c681a41ff
+
+How To Play XXXGraves Like An LEC Pro
+
+XXXGraves was a beast at Worlds 2020, and both XXXSelfmade and XXXJankos made expert use of him – let's take a look at their playstyle to improve your own.
+
+XXXGraves was, by far, the most popular champion pick at the 2020 World Championship among all teams and regions, with a hefty 69 picks throughout the tournament. Let's find out what makes him so strong, and how our LEC pros like to pilot him in order to find success.
+
+Skills
+
+XXXGraves’ passive is XXXNewYYDestiny. He wields a shotgun which can carry two shots that deal damage in an Area of Effect (AoE), allowing him to effectively clear camps in the jungle, since many of the camps have multiple enemies which XXXGraves can deal with all at once. XXXNewYYDestiny also knocks back the first enemy struck (apart from enemies and epic monsters), allowing him to kite camps effectively to reduce the damage he takes in the jungle.
+
+XXXEndYYofYYtheYYLine shoots out a pellet in a T-shape, damaging any enemies within the area. It then explodes and deals damage on the way back. The explosion happens instantly if the pellet collides with terrain. This makes XXXGraves’ jungle clear that much stronger, as he has another form of AoE that deals a large chunk of damage. There is terrain around every jungle camp, making it easy for XXXGraves to get the quicker explosion damage. XXXEndYYofYYtheYYLine is also a great team fighting ability, able to deal a large chunk of damage instantly if it collides with a wall.
+
+XXXSmokeYYScreen obscures enemies within its radius, reducing their vision and slowing them. This is an incredibly strong and underrated ability. Denying vision from enemies mid-fight can be crucial to their demise. XXXSmokeYYScreen indirectly affects how much damage the enemy can deal if they’re within its radius, as having their vision obscured will make it so they can’t see anyone to attack or cast spells at. It can also be used to dissuade the opponent from fleeing by cutting off their escape route, since they won’t want to get slowed and obscured.
+
+XXXQuickdraw allows XXXGraves to dash a short distance, and grants an extra shell if he has less than two loaded. XXXQuickdraw also gives XXXGraves stacking armor until he leaves combat with non-minions, or doesn’t refresh the stacks with another cast of XXXQuickdraw. This can make XXXGraves deceptively tanky, and allows him to become even bulkier as the fight goes on. The extra shell provided by XXXQuickdraw aids in not only clearing jungle camps, but also in bursting down the health bars of his enemies quicker.
+
+XXXCollateralYYDamage is XXXGraves’ ultimate. He shoots an explosive shell that shatters upon impact, dealing damage to the first target hit and creating a blast behind it, damaging all enemies hit. XXXGraves is also pushed backwards by the recoil of the shot. This is a great tool for a long-range execution of a low health enemy, or to use in a team fight on the grouped up enemies for massive damage.
+
+Skill Max Order
+
+Maxing XXXEndYYofYYtheYYLine first guarantees a faster jungle clear, and allows XXXGraves to deal more damage in both skirmishes and full on team fights. This is because XXXEndYYofYYtheYYLine is XXXGraves’ biggest damage source outside of auto-attacks. His other basic abilities don’t directly increase damage by very much.
+
+Follow up with XXXQuickdraw. The extra armor per stack granted with additional levels, along with the lower overall cooldown, makes XXXQuickdraw a great secondary priority skill. XXXSmokeYYScreen is last as it doesn’t gain much more effectiveness after one point. It gets a slight damage upgrade and a lower cooldown, but it’s still almost as effective at level one as it is once maxed. Opt for points into XXXCollateralYYDamage at levels 6, 11, and 16.
+
+Runes
+
+G2 Esports' Marcin “XXXJankos” Jankowski and Fnatic’s Oskar “XXXSelfmade” Boderek both opt for the same rune page as the most optimal for XXXGraves. It consists of Phase Rush as the keystone rune. This aids them with the in-and-out, slippery playstyle that XXXGraves excels at. They continue down the Sorcery tree, picking up Nimbus Cloak, which grants movement speed upon casting a Summoner Spell. This works amazingly well with junglers in particular as they take the shortest cooldown Summoner Spell, Smite.
+
+Absolute Focus allows XXXGraves to clear his camps faster, since he shouldn’t take damage if the player knows how to clear the camps properly. Waterwalking grants movement speed in the river, which helps XXXGraves get around the map quicker. The extra damage will also help in those all important dragon and baron fights.
+
+Both players also like the precision tree as secondary, taking Triumph and Legend: Alacrity. These runes are great at helping XXXGraves scale a bit better and allowing him to gain some health after taking down an enemy champion.
+
+Build
+
+There are two builds in particular that seem to be the most popular among pro XXXGraves players. You’ll often see a Black Cleaver rush into Death’s Dance in many games, but our players in the LEC prefer a more lethality and crit-focused build, which ended up being the more successful of the two at Worlds 2020.
+
+XXXJankos in particular had a great performance as XXXGraves against Gen.G in his third game in the Quarterfinals at Worlds 2020. Let's take a look at what he built to achieve success.
+
+He starts out with Hunter’s Machete and a Refillable Potion. Hunter’s Machete allows him to deal additional damage to jungle monsters and gain more experience from slaying them. He follows up on his first recall, picking up Skirmisher’s Sabre. He then upgrades this with the Warrior enchant, granting him more attack damage and cooldown reduction. He then focuses on damage items, grabbing a Serrated Dirk which he upgrades to Youmuu’s Ghostblade soon after.
+
+XXXJankos picks up a Phantom Dancer and Ninja Tabi for some defensive stats, making sure he can stay alive in the coming team fights. Afterwards, he purchases the components for his Infinity Edge, but manages to end the game before completing the item.
+
+This build provides XXXGraves with a lot of flexibility in how he can play team fights. The movement speed granted from Youmuu’s Ghostblade allows him to weave in and out of danger, or catch up to fleeing foes when needed. This, in tandem with Phase Rush, can be quite oppressive and hard to play against for the enemy. The innate tankiness XXXGraves gains from XXXQuickdraw along with Phantom Dancer makes him a dueling menace, and the additional damage from Infinity Edge in this lethality-crit-hybrid build allows XXXGraves to shred through anyone in his path.
+
+Early Game
+
+XXXGraves tends to prefer “power farming”, putting more focus on clearing the jungle camps as fast as possible and gaining an experience and gold advantage, getting to his core items earlier and allowing him to take over the game. This style of jungling is especially good against those who have slower clear times and prefer to gank, such as Lee Sin or Elise.
+
+XXXGraves isn’t as strong as those champions early on, but with an item or two, he becomes much stronger than them and scales much better. That being said, if an opportunity presents itself, getting a kill or two can really speed up that scaling process. Below, here's a great example of XXXSelfmade doing just that in Fnatic’s game against Gen.G in the group stage of Worlds 2020.
+
+
+Team Fights
+
+XXXGraves’ job in a team fight is to try and deal as much damage across everyone he can. This means hitting as many enemies as possible with XXXEndYYofYYtheYYLine and XXXCollateralYYDamage when they group up. It’s also a good idea to try and use XXXSmokeYYScreen as a zoning tool, denying an exit route from the enemies, or using it mid-fight to make it harder for the carries to deal damage by obscuring their vision.
+
+
+In the above fight against Gen.G, XXXJankos hits three enemies with XXXCollateralYYDamage and three again with XXXEndYYofYYtheYYLine, allowing him and the rest of G2 to clean up the fight and finish the game.
+
+
+Conclusion
+
+To conclude, XXXGraves is a fast clearing, power farming jungler who scales well into the mid and late game, with a diversity of builds and items to choose from. If you’re looking for a carry style jungler with the agency to take over the game, then take a look at XXXGraves.

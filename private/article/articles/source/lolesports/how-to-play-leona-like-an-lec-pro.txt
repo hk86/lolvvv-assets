@@ -1,0 +1,66 @@
+SOURCE: https://lolesports.com/article/how-to-play-leona-like-an-lec-pro/blt59665c0279cf34b9
+
+How to Play XXXLeona Like an LEC Pro
+
+We take a look at how XXXMikyx and XXXHylissang make the most of The Radiant Dawn to help up your game
+XXXLeona has seen a steady rise in presence in professional play since the XXXLeagueYYofYYLegends European Championship 2020 Spring Season. In spring, she was picked once and banned once, and both were very surprising, as XXXLeona had never really been commonplace outside of solo queue at that point in time.
+
+This all changed in the regular Summer Season, when her presence bumped up to 20 percent, and then 30 percent in playoffs. At XXXWorlds, she exceeded 50 percent presence, becoming the most played and most contested support pick throughout the entirety of the tournament. From the LEC, XXXLeona was prominently played by G2 Esports' Mihael "XXXMikyx" Mehle and Fnatic's Zdravets "XXXHylissang" Iliev Galabov.
+
+Strengths and Weaknesses
+
+XXXLeona is in a fantastic spot right now where it seems that her strengths far outweigh any weaknesses. Her biggest attribute is the sheer amount of crowd control she possesses. Her kit comes with a low-cooldown targeted stun, an area-of-effect stun and slow, and a dash which roots on-hit. All of these make peeling, engaging, and disengaging a piece of cake for XXXLeona. She is one of the tankiest supports thanks to XXXEclipse (W), an ability that increases both her armour and magic resistance for several seconds upon activation.
+
+Some may call this a pro, and others a con, but XXXLeona’s playstyle is very aggressive. On the one hand, there are few supports so effective at getting their botlaners some kills. On the other hand, XXXLeona has a difficult time when she’s not capable of going in a lot. As such, she will struggle if she doesn’t get ahead in the early game, and she may have a hard time if the enemy jungler camps bot lane. While she has no trouble getting into the thick of a fight, she may find it difficult to get out, since her gap-closer (E) only works one way. As a melee support, she can also have trouble dealing with poke supports, particularly ones that also have a lot of tools to disengage, such as XXXLulu and XXXJanna.
+
+Abilities
+
+XXXSunlight: Any enemy XXXLeona damages with an ability gains a stack of XXXSunlight. XXXSunlight can be popped by an ally to deal extra damage to the target. In the early game, this damage can make or break a 2v2 skirmish, so be sure to give your botlaner a chance to pop a XXXSunlight stack before you reset it.
+
+XXXShieldYYofYYDaybreak: Once activated, the next enemy targeted by XXXLeona's auto-attack gets stunned. This is a powerful ability because there is little counter-play available, other than not getting too close to a XXXLeona. XXXShieldYYofYYDaybreak has a very short cooldown, meaning you can potentially stun a target more than once within a single fight. Also worth noting is that this ability resets your auto-attack animation, meaning that you can instantly remove spotted wards with the simple AA-Q-AA combo.
+
+Flash plus XXXShieldYYofYYDaybreak makes for an easy kill in the bot lane.
+
+XXXEclipse: XXXEclipse is what makes XXXLeona such a powerhouse tank. Upon activation, XXXLeona gets a large boost to her armour and magic resistance. The boost scales with your items, so the ability remains strong throughout the whole game, provided you invest some money into resistances.
+
+XXXZenithYYBlade: XXXZenithYYBlade is an extremely powerful tool for XXXLeona, as it is her only gap-closer. It’s a skillshot that, if it connects to an enemy champion, dashes XXXLeona into their melee range, where she is free to wreak havoc with her other abilities, most notably the undodgeable XXXShieldYYofYYDaybreak (Q). It's important to remember that this ability can be cancelled by abilities such as XXXHowlingYYGale or XXXFlay.
+
+XXXLeona is one of the strongest tower-diving supports, with XXXZenithYYBlade allowing her to close the gap unexpectedly and XXXEclipse keeping her tanky.
+
+XXXSolarYYFlare: XXXLeona’s ultimate is a long-ranged stun and slow which always proves invaluable in team fights. It can hit multiple targets and applies XXXSunlight to all enemies hit, making it deadly in combination with other area-of-effect abilities such as XXXOrianna's XXXCommand:YYShockwave or XXXMissYYFortune's XXXBulletYYTime.
+
+Runes
+
+XXXLeona's keystone of choice is XXXAftershock. This keystone synergises both with the sheer amount of crowd control XXXLeona possesses and her need to be a durable tank. In the Resolve tree, you will also want to pick up XXXFontYYofYYLife, XXXBoneYYPlating, and XXXOvergrowth. The latter two are useful to combat poke, whereas XXXFontYYofYYLife takes advantage of XXXLeona's CC to grant her bottom laner more sustain.
+
+When it comes to your secondary tree, some XXXLeona players prefer to go with XXXDomination, and others with XXXInspiration. In the XXXDomination tree, your best options are XXXCheapYYShot and XXXRelentlessYYHunter. The former makes you deal more damage to enemies with impaired movement, which has great synergy with XXXLeona's kit. XXXRelentlessYYHunter boosts XXXLeona's movement speed, making roaming and warding all the easier.
+
+The XXXInspiration tree offers many good options for XXXLeona too. You can pick up XXXBiscuitYYDelivery for more sustain, which may be necessary when you're up against a heavy poke duo bot lane. XXXCosmicYYInsight lowers the cooldown of your spells and items, and XXXHextechYYFlashtraption gives you another gap-closer, making it easier to engage fights.
+
+Items
+
+XXXLeona’s build has not changed all too much since the Preseason has begun. You will still start your game out with XXXSteelYYShoulderguards, the most efficient starting item for a melee tank. On the first return to the shop, many XXXLeona players prefer to rush XXXMobilityYYBoots. These will make you all the more intimidating in lane, allowing you to roam into the River to ward and de-ward more efficiently and rotate to mid or top lane to gank more quickly.
+
+When it comes to your next big purchase, it's time to pick a Mythic item, and XXXLocketYYofYYtheYYIronYYSolari seems to be the best choice for now. The stats complement XXXLeona splendidly, making both her and her allies tankier, and the shield is extremely useful in any skirmish.
+
+The next item you should consider is the brand new XXXWatchfulYYWardstone. In the past, and especially in professional play, supports would have to recall very often to refresh their wards and purchase more XXXControlYYWards. XXXWatchfulYYWardstone will make this easier for you by increasing your ward capacity and giving you more movement speed. At level 13, upgrade this item to XXXVigilantYYWardstone to increase the benefits.
+
+You can round out your build with many different items, and the way to choose is to examine your team and your enemies. If your botlaner needs more protection, consider a XXXZeke'sYYConvergence or a XXXKnight'sYYVow. If the enemy team consists mainly of physical damage dealers, XXXRanduin'sYYOmen and XXXThornmail are good options. XXXAbyssalYYMask is your go-to for dealing with enemy team compositions with a lot of magic damage. Finally, XXXGargoyleYYStoneplate is a great option when playing against mixed-damage teams, when you just need some more raw durability.
+
+Laning Phase
+
+XXXLeona remains powerful throughout the whole game, provided things are going smoothly. Her kit ensures that she can create many opportunities for her botlaner to get kills, stay safe, and farm up.
+
+XXXLeona’s level two is one of the strongest in the bottom lane. With both XXXZenithYYBlade (E) and XXXShieldYYofYYDaybreak (Q), you can close the gap between yourself and the enemy botlaner or support and stun them with ease. With a level advantage at level two, XXXLeona can easily either secure a kill or burn a few Summoner Spells.
+
+XXXHylissang demonstrates XXXLeona’s early game power.
+
+XXXLeona's an excellent roamer thanks to her ultimate. You should be especially vigilant in ganking lanes that have no Summoner Spells or gap-closers. Ganking in conjunction with your jungler is all the more deadly, so try to coordinate with them to pull off successful ganks, and turn those kills into objectives as well.
+
+Team Fights
+
+Team fighting is XXXLeona's forte. She excels at initiating fights, either by catching enemies out with her XXXZenithYYBlade or stunning several enemy team members with XXXSolarYYFlare. The latter is also a terrific tool for disengaging unfavourable team fights.
+
+An excellent team fight from XXXHylissang as he keeps XXXSelfmade safe, counter-engages, and keeps key targets locked down.
+
+If your botlaner is very strong, it might be worthwhile sticking by their side throughout the entire fight and peeling. With XXXShieldYYofYYDaybreak (Q), XXXZenithYYBlade (E), and XXXSolarYYFlare (R) all together, you can keep enemies stun-locked long enough that your botlaner can kill them, or flee.
