@@ -1,0 +1,58 @@
+SOURCE: https://lolesports.com/article/how-to-play-lucian-like-an-lec-pro/blt3d544eede8007a4d
+
+How To Play XXXLucian Like An LEC Pro
+
+We’re taking a look at how XXXNemesis and Larssen play XXXLucian to improve your own skills.
+XXXLucian has recently seen a huge rise in priority in professional League of Legends over the course of the Summer Season and leading up to the World Championship. In fact, he’s currently one of the most highly contested picks at Worlds, sporting a pick/ban rate above 90 percent. Let’s take a look at what makes the Purifier such a prominent pick in today's meta.
+
+Abilities
+
+XXXLightslinger is XXXLucian’s passive. After casting a spell, XXXLucian’s next basic attack shoots an additional shot. This makes XXXLucian’s trading and burst damage incredibly potent, as he can land an ability and two basic attacks in very quick succession. XXXLightslinger is also able to critically strike and make use of on-hit effects, which synergises perfectly with the current meta build.
+
+XXXLucian’s Q, XXXPiercingYYLight, deals damage to targets in a straight line. This is XXXLucian’s main trading and wave clear tool. You’ll always see Fnatic’s Tim XXX“Nemesis” Lipovšek taking trades with XXXPiercingYYLight in order to deal a large amount of burst damage to his opponent. It’s also possible to hit multiple enemies with XXXPiercingYYLight, meaning that it can deal huge damage in a team fight if the enemies line up and get struck by it.
+
+XXXArdentYYBlaze is a bit more of a utility spell. While it does deal some damage, its main use is the movement speed provided when XXXLucian or his ally attacks a target who has been struck by the spell, allowing XXXLucian to catch up to, or kite away from, his opponents. XXXArdentYYBlaze also grants vision at the explosion, making it useful for safely checking unwarded areas such as bushes.
+
+XXXRelentlessYYPursuit is XXXLucian’s E. Possibly the biggest skill expression tool within XXXLucian’s kit, XXXRelentlessYYPursuit simply allows XXXLucian to dash in a chosen direction. The cooldown is also reduced for each XXXLightslinger shot that is landed, and reduces more if it hits an enemy champion, meaning that its cooldown can be fully reset with a well-executed combo or ability chain.
+
+During all in’s, Rogue's Emil “Larssen” Larsson will use XXXRelentlessYYPursuit to dodge away from key abilities that would otherwise result in a lost trade, and maybe death. The outplay potential provided by XXXRelentlessYYPursuit is huge, and often is the deciding factor in who wins and loses any one-on-one duel.
+
+XXXLucian’s ultimate, XXXTheYYCulling, rapidly fires XXXLucian’s guns in a straight line. XXXLucian is also able to cast XXXRelentlessYYPursuit during XXXTheYYCulling, allowing him to dodge key abilities while still dishing out damage from a distance. XXXTheYYCulling has a much longer range than XXXLucian’s normal auto-attacks, making it great for melting through enemies who are just out of range, or from a bit of a safer distance. XXXTheYYCulling also deals double damage to minions, so if a minion wave ever needs to be cleared incredibly fast, it's an option – but maybe not the wisest use of an ultimate ability.
+
+Here in the clip below, XXXNemesis makes a huge outplay against Rogue, keeping Renekton from ever hitting him thanks to great kiting and usage of XXXRelentlessYYPursuit, while still being able to melt down XXXSejuani with XXXTheYYCulling.
+
+Skill Max Order
+
+Our players agree with the normal skill order for XXXLucian. XXXPiercingYYLight should be maxed out first. It's the main trading and wave clear tool, and also scales the best out of all of XXXLucian’s abilities. Follow up with points in XXXRelentlessYYPursuit. More points means a lower cooldown, which makes it easier to reset its cooldown with ability chains. It's kind of a two-for-one. If not for the incredible damage scaling and early game power provided by XXXPiercingYYLight, XXXRelentlessYYPursuit could be a contender for maxing first.
+
+XXXArdentYYBlaze is left for last as, while its damage scales well, the base cooldown on the ability is too high. It is also an Area of Effect (AoE) ability like XXXPiercingYYLight, but in a much more restrictive manner, meaning that it's not a strong or effective wave clearing tool. It also doesn’t scale with your Attack Damage, making it pretty clear that it shouldn’t be maxed any earlier realistically. As always, put points into XXXTheYYCulling at levels 6, 11, and 16.
+
+Runes
+
+The runes used on XXXLucian are pretty unanimous among all pros, with some slight deviations depending on the enemy team comp. XXXPressYYtheYYAttack is the go to keystone. XXXLucian has a very easy time activating this rune with XXXLightslinger which also synergises well with XXXPressYYtheYYAttack’s damage increase once activated.
+
+Follow up with XXXPresenceYYofYYMind, XXXLegend:YYBloodline, and any of the three in the bottom row depending on the enemy team comp, usually taking XXXCutYYDown against tanks, or XXXCoupYYDeYYGrace against more squishy teams. XXXPresenceYYofYYMind helps XXXLucian with his mana problems by restoring mana and increasing XXXLucian’s maximum mana pool, which allows XXXLucian’s first core item XXXMuramana to deal more damage. XXXLegend:YYBloodline gives some much needed lifesteal, which aids in winning trades and all out fights later on.
+
+XXXInspiration is the go-to secondary tree for XXXMagicalYYFootwear and XXXBiscuitYYDelivery. XXXMagicalYYFootwear allows more gold to be spent on core early items without having to worry about spending the extra 300g on boots. XXXBiscuitYYDelivery grants sustain in lane, and also increases XXXLucian’s maximum mana pool like XXXPresenceYYofYYMind.
+
+Item Build
+
+We’re going to take a look at what XXXNemesis built on XXXLucian in his recent match against XXXTeamYYSoloMid during the group stage of Worlds 2020. He starts out with a XXXCorruptingYYPotion for laning sustain, before following up with an early XXXPickaxe and XXXNull-MagicYYMantle. His first core item is XXXManamune, which is followed up with XXXMercury’sYYTreads. He picks up XXXEssenceYYReaver soon after, and grabs an additional XXXNull-MagicYYMantle since the enemy has a lot of magic damage. He goes directly for an XXXInfinityYYEdge, and ends his build with a XXXRapidfireYYCannon.
+
+This build offers unbeatable scaling, with XXXManamune transforming into XXXMuramana, along with a mix of cooldown reduction, critical strike chance, attack damage, and incredible passive effects provided by the other items in the build, synergising perfectly with one another and XXXLucian himself. This build allows XXXLucian to take over the game in the later stages and be the biggest difference maker in dictating the outcome of fights.
+
+Laning
+
+XXXLucian has a quite dominant laning phase against most champions, especially melee ones. He can zone them away from the minions, and sometimes even deny minion experience due to how easily he can punish and out-damage them in a trade, thanks to the range advantage he has. He has a bit of a tougher time against ranged champions, but is still capable of holding his own.
+
+XXXLucian is considered a lane bully and can force opponents into taking bad trades which they won’t win. He can also dodge skillshots with XXXRelentlessYYPursuit, and punish the enemy for missing by trading hard onto them. As a lane bully, XXXLucian has a great laning phase against most champions. You’ll often see Larssen abusing his opponents early, getting mid pressure and allowing him and his jungle duo Kacper "Inspired" Słoma to control the map.
+
+Team Fighting
+
+XXXLucian can be a big deciding factor in the outcome of a team fight based on how well it’s played. Far too often do we see a fight turned on its head due to an outplay from Larssen or XXXNemesis on the XXXLucian pick. XXXLucian’s job in a team fight is to deal as much damage as possible to the best targets available to him. In some cases, this can be wailing on the frontline while sliding around the battlefield with XXXRelentlessYYPursuit, or it can be with a deep dive onto the backline, assassinating a squishier target with the immense burst damage he can output when played correctly.
+
+As seen below, XXXNemesis cleans up the teamfight with a nice flank against Rogue, showcasing Lucien’s prowess.
+
+Conclusion
+
+XXXLucian is an incredibly strong AD lane bully who synergises best with an AP threat in the jungle. This synergy is what we most often see, and one reason as to why he is such a strong pick in the current meta. If you’re looking for a solo lane, or even a marksman who has a high amount of skill expression and can hard win his lane, then try out XXXLucian.

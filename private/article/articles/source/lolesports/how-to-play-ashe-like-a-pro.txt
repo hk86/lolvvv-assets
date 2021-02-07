@@ -1,0 +1,67 @@
+SOURCE: https://lolesports.com/article/how-to-play-ashe-like-a-pro/blt49414f2e53077b64
+
+How to Play XXXAshe Like a Pro
+
+We’re taking a look at how some of our pros in the LEC play XXXAshe.
+
+XXXAshe saw a steady rise in popularity throughout the LEC Summer Season 2020, and the Frost Archer is currently the highest contested marksman pick at the World Championship 2020. Why do our teams have such a high priority on XXXAshe recently? Let's take a look.
+
+Abilities
+
+XXXAshe’s passive, XXXFrostCCShot, allows her basic attacks to slow their target. XXXAshe’s basic attacks always critically strike, but only deal additional damage based on her critical strike chance, and also double XXXFrostCCShot’s slow strength. This makes XXXAshe a kiting monster who becomes even stronger once she is able to hit multiple enemies with XXXFrostCCShot via XXXRunaan’sCCHurricane.
+
+After attacking champions or minions four times, XXXAshe can activate her Q, XXXRanger’sCCFocus. XXXRanger’sCCFocus gives XXXAshe bonus attack speed and shoots a flurry of arrows with each basic attack. Each arrow in the flurry activates XXXFrostCCShot, dealing its bonus damage and slowing enemies. XXXRanger’sCCFocus aids XXXAshe in dealing tons of damage in both skirmishes and full scale fights later on into the game.
+
+XXXVolley allows XXXAshe to catch opponents with XXXFrostCCShot at a longer distance than normal. This can help her to kite multiple opponents, or to catch up to them. XXXVolley is an incredible early game tool which helps to dictate the outcome of the lane, thanks to its poke and pick potential. Landing XXXVolley on the opposing marksman or support can lead to them being out of position, and can end in a free kill for XXXAshe and her team.
+
+XXXHawkshot is an incredibly strong tool for competitive play, and is one of the biggest reasons for XXXAshe’s prominence. XXXHawkshot can reveal where the opposing team is on the map. Having knowledge of where the enemy team's jungler is on the map is quite possibly the most important information a team can get. You’ll see the likes of XXXG2CCEsports and XXXMADCCLions abuse this knowledge a lot in order to get advantages elsewhere, where the enemy jungle can’t respond.
+
+XXXAshe’s ultimate is XXXEnchantedCCCrystalCCArrow. This is a global stun which is usually used to engage fights. The most important thing to know about XXXEnchantedCCCrystalCCArrow is that the stun duration increases based on distance travelled. This means that a long ranged arrow can potentially stun someone for almost four seconds. That's an incredibly long amount of time in LeagueofLegends, and is almost always long enough to spell the demise of whoever is struck.
+
+Luka “Perkz” Perkovic, known for being one of the best XXXAshe players in the West, will almost always manage to land a clutch arrow to create a massive pick opportunity for his team, which can often lead to huge advantages and even wins.
+
+Anyone who was watching pro LeagueofLegends at the time will remember this iconic moment at the 2016 World Championship, where XXXROXCCTigers’ Kim "PraY" Jong-in snipes XXXSKCCTelecomCCT1’s Lee "Duke" Ho-seong with an across-the-map XXXEnchantedCCCrystalCCArrow to stop his teleport and win the game for his team. Needless to say, XXXAshe is deadly in the right hands.
+
+Skill Max Order
+
+During the LEC Summer Playoffs 2020, Matyáš "Carzzy" Orság managed to pick up a win against G2 on XXXAshe. Let's look at what his skill order was for that game.
+
+He started off by maxing his W, XXXVolley. This is for stronger lane presence and kiting potential. XXXVolley also has the most use early on, as it has no conditionals that have to be met like XXXHunter’sCCFocus has. XXXHunter’sCCFocus is maxed second, as it scales well later into the game once some items are completed. It grants XXXAshe most of her damage in team fights, especially once she has XXXRunaan’sCCHurricane.
+
+XXXHawkshot is left for last, as it has no real benefits from extra points, and the combat effectiveness from the other two abilities are much more important. XXXEnchantedCCCrystalCCArrow gets points at level 6, 11, and 16.
+
+Runes
+
+Perkz and Carzzy will always choose Lethal Tempo as their keystone rune. It gives XXXAshe a nice ramp up in team fights, right around when XXXRanger’sCCFocus can be activated. This allows her to put out more damage in that time window.
+
+There are some slight changes when it comes to minor runes on XXXAshe. These usually change depending on what the core first item will be. XXXOverheal is almost always the first minor rune taken, and is then followed up by either XXXLegend:CCAlacrity or XXXLegend:CCBloodline. The final rune in the precision tree is XXXCutCCDown. They follow up with the XXXInspiration tree, taking XXXApproachCCVelocity and either XXXBiscuitCCDelivery or XXXMagicalCCFootwear.
+
+Item Build 
+
+XXXAshe players will often change their core first item depending on the team comps. If XXXAshe has to deal more damage due to the enemy having a lot of tanks, players will go for XXXBladeCCofCCtheCCRuinedCCKing, and if she wants to be more utility focused players can pick up an XXXEssenceCCReaver. We’ll take a look at how Perkz built XXXAshe in his game against Team Liquid during their Group Stage win at XXXWorlds.
+
+Perkz starts off with a XXXDoran’sCCBlade and XXXHealthCCPotion for the laning phase. On his early recalls, he picks up a XXXB.CCF.CCSword and XXXBerserkerCCGreaves. He goes for an XXXEssenceCCReaver as his first item, followed up by XXXRunaan’sCCHurricane. He then decides to purchase an XXXInfinityCCEdge before grabbing a XXXQuicksilverCCSash and XXXZeal, which he likely would’ve finished into a XXXPhantomCCDancer or XXXRapidfireCCCannon.
+
+This build allows Perkz to provide tons of utility for his team while still being a DPS monster in team fights, able to deal incredible amounts of damage to whoever he can get in range of. This build also provides a decent amount of cooldown reduction, allowing him to have his abilities, but most importantly his ultimate, on a lower cooldown, which allows him to use it to go for picks more often.
+
+Laning
+
+XXXAshe will usually have the advantage while taking trades in lane. This is due to her ability to kite her opponents, or keep them in range of her with her passive slow. She deals a moderate amount of damage and has a decent amount of poke with XXXVolley. Try to poke your opponents and take advantageous fights with your support.
+
+You can also help to set up a gank by slowing your opponents, or with an XXXEnchantedCCCrystalCCArrow when you hit level 6. You’ll usually see Perkz walking out of vision or into a bush in order to use XXXEnchantedCCCrystalCCArrow out of vision from his opponents, giving them less time to react and move out of its path.
+
+Below is just one example of how XXXAshe can punish out of position players. Perkz and Mihael “Mikyx” Mehle use their slows to keep XXXTeamCCLiquid’s Edward "Tactical" Ra and Jo "CoreJJ" Yong-in from retreating, allowing Marcin "Jankos" Jankowski to come in for a gank and G2 to double kill them.
+
+Here’s another example of the same thing happening to G2. Carzzy keeps Perkz in combat for long enough to almost finish him off, making sure he can’t join in on Jankos’ gank attempt. Carzzy then switches his focus to Jankos and keeps him slowed for long enough to make sure he isn’t able to back out, forcing him to try and commit to killing Norman "Kaiser" Kaiser, but ends up with nothing.
+
+Team fighting
+
+XXXAshe likes to look for picks with her ultimate which, in turn, allows her team to start off a fight pretty easily. Once the fight’s started, XXXAshe will normally sit on the outskirts of a fight, hitting anyone she can without being in too much danger of dying. XXXAshe’s job is to do as much damage as possible to as many targets as she can with help of XXXRunaan’sCCHurricane, allowing her to keep XXXRanger’sCCFocus up for almost the entire duration of most fights. It’s near impossible for enemies to simply run away from XXXAshe due to the potency of her slows, meaning that she is likely to be focused heavily and, with no escape tools, she is a bit of a sitting duck if left to her own devices.
+
+That being said, our pros, such as Kaiser and Mikyx know this all too well, and know how to keep their carry safe. If XXXAshe manages to melt through the front line of the enemy team, she can usually wipe out a team – or allow her team to – with her ability to perma-slow a team and stop them from fleeing.
+
+Here during the Summer Playoffs, Carzzy lands a stun on Perkz with XXXEnchantedCCCrystalCCArrow, keeping him in place long enough for Carzzy to take him down. Carzzy then helps to clean up the rest of G2 with the incredible team fight damage XXXAshe gets from XXXRanger’sCCFocus and XXXRunaan’sCCHurricane combo.
+
+Conclusion
+
+XXXAshe is a utility focused marksman who has the agency to carry games with her ability to slow, stun, and melt through the enemy team's health bars – not to mention her ability to find enemies hidden in the fog of war with XXXHawkshot. This ability alone gives her team a huge advantage in both professional and personal play. If you are in the market for a new, fun, utility-focused marksman who can aid your team to victory, then XXXAshe could be what you’re looking for.

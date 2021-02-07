@@ -26,23 +26,23 @@ Follow up with XXXQuickdraw. The extra armor per stack granted with additional l
 
 Runes
 
-G2 Esports' Marcin “XXXJankos” Jankowski and Fnatic’s Oskar “XXXSelfmade” Boderek both opt for the same rune page as the most optimal for XXXGraves. It consists of Phase Rush as the keystone rune. This aids them with the in-and-out, slippery playstyle that XXXGraves excels at. They continue down the Sorcery tree, picking up Nimbus Cloak, which grants movement speed upon casting a Summoner Spell. This works amazingly well with junglers in particular as they take the shortest cooldown Summoner Spell, Smite.
+G2 Esports' Marcin “XXXJankos” Jankowski and Fnatic’s Oskar “XXXSelfmade” Boderek both opt for the same rune page as the most optimal for XXXGraves. It consists of XXXPhaseYYRush as the keystone rune. This aids them with the in-and-out, slippery playstyle that XXXGraves excels at. They continue down the XXXSorcery tree, picking up XXXNimbusYYCloak, which grants movement speed upon casting a Summoner Spell. This works amazingly well with junglers in particular as they take the shortest cooldown Summoner Spell, XXXSmite.
 
-Absolute Focus allows XXXGraves to clear his camps faster, since he shouldn’t take damage if the player knows how to clear the camps properly. Waterwalking grants movement speed in the river, which helps XXXGraves get around the map quicker. The extra damage will also help in those all important dragon and baron fights.
+XXXAbsoluteYYFocus allows XXXGraves to clear his camps faster, since he shouldn’t take damage if the player knows how to clear the camps properly. XXXWaterwalking grants movement speed in the river, which helps XXXGraves get around the map quicker. The extra damage will also help in those all important dragon and baron fights.
 
-Both players also like the precision tree as secondary, taking Triumph and Legend: Alacrity. These runes are great at helping XXXGraves scale a bit better and allowing him to gain some health after taking down an enemy champion.
+Both players also like the XXXPrecision tree as secondary, taking XXXTriumph and XXXLegend:YYAlacrity. These runes are great at helping XXXGraves scale a bit better and allowing him to gain some health after taking down an enemy champion.
 
 Build
 
-There are two builds in particular that seem to be the most popular among pro XXXGraves players. You’ll often see a Black Cleaver rush into Death’s Dance in many games, but our players in the LEC prefer a more lethality and crit-focused build, which ended up being the more successful of the two at Worlds 2020.
+There are two builds in particular that seem to be the most popular among pro XXXGraves players. You’ll often see a XXXBlackYYCleaver rush into XXXDeath’sYYDance in many games, but our players in the LEC prefer a more lethality and crit-focused build, which ended up being the more successful of the two at Worlds 2020.
 
 XXXJankos in particular had a great performance as XXXGraves against Gen.G in his third game in the Quarterfinals at Worlds 2020. Let's take a look at what he built to achieve success.
 
-He starts out with Hunter’s Machete and a Refillable Potion. Hunter’s Machete allows him to deal additional damage to jungle monsters and gain more experience from slaying them. He follows up on his first recall, picking up Skirmisher’s Sabre. He then upgrades this with the Warrior enchant, granting him more attack damage and cooldown reduction. He then focuses on damage items, grabbing a Serrated Dirk which he upgrades to Youmuu’s Ghostblade soon after.
+He starts out with XXXHunter’sYYMachete and a Refillable Potion. XXXHunter’sYYMachete allows him to deal additional damage to jungle monsters and gain more experience from slaying them. He follows up on his first recall, picking up Skirmisher’s Sabre. He then upgrades this with the Warrior enchant, granting him more attack damage and cooldown reduction. He then focuses on damage items, grabbing a XXXSerratedYYDirk which he upgrades to XXXYoumuu’sYYGhostblade soon after.
 
-XXXJankos picks up a Phantom Dancer and Ninja Tabi for some defensive stats, making sure he can stay alive in the coming team fights. Afterwards, he purchases the components for his Infinity Edge, but manages to end the game before completing the item.
+XXXJankos picks up a XXXPhantomYYDancer and XXXNinjaYYTabi for some defensive stats, making sure he can stay alive in the coming team fights. Afterwards, he purchases the components for his XXXInfinityYYEdge, but manages to end the game before completing the item.
 
-This build provides XXXGraves with a lot of flexibility in how he can play team fights. The movement speed granted from Youmuu’s Ghostblade allows him to weave in and out of danger, or catch up to fleeing foes when needed. This, in tandem with Phase Rush, can be quite oppressive and hard to play against for the enemy. The innate tankiness XXXGraves gains from XXXQuickdraw along with Phantom Dancer makes him a dueling menace, and the additional damage from Infinity Edge in this lethality-crit-hybrid build allows XXXGraves to shred through anyone in his path.
+This build provides XXXGraves with a lot of flexibility in how he can play team fights. The movement speed granted from XXXYoumuu’sYYGhostblade allows him to weave in and out of danger, or catch up to fleeing foes when needed. This, in tandem with XXXPhaseYYRush, can be quite oppressive and hard to play against for the enemy. The innate tankiness XXXGraves gains from XXXQuickdraw along with XXXPhantomYYDancer makes him a dueling menace, and the additional damage from XXXInfinityYYEdge in this lethality-crit-hybrid build allows XXXGraves to shred through anyone in his path.
 
 Early Game
 
